@@ -144,7 +144,14 @@ class RandomForest:
       score = decision_tree.get_rule_score(rule)
       min_score = min_score + score[0]
       max_score = max_score + score[1]
-    return [min_score, max_score]
+    return [min_score, max_score]  
+
+  def __str__(self):
+    string_rep = ""
+    for i in range(len(self.decision_tree_ensemble)):
+      string_rep = string_rep + "Tree " + str(i) + "\n"
+      string_rep = string_rep + self.decision_tree_ensemble[i].__str__() + "\n\n"
+    return string_rep
 
 
 

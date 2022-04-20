@@ -15,17 +15,16 @@ class Rule:
     right_identity_map = {}
     for i in range(len(self.identity)):
       tn = self.identity[i].split(",")
-      tn = sorted(tn)
 
       left_key = ",".join(tn[1:])
       if(left_key not in left_identity_map):
         left_identity_map[left_key] = []
-      left_identity_map[left_key].append(self.identity[i])
+      left_identity_map[left_key].append(tn[0])
       
       right_key = ",".join(tn[:-1])
       if(right_key not in right_identity_map):
         right_identity_map[right_key] = []
-      right_identity_map[right_key].append(self.identity[i])
+      right_identity_map[right_key].append(tn[-1])
 
     self.left_identity_map = left_identity_map
     self.right_identity_map = right_identity_map
@@ -50,17 +49,14 @@ class Rule:
     for key in keys:
       for i in range(len(self.left_identity_map[key])):
         for j in range(len(rule.right_identity_map[key])):
-          identity_left = self.left_identity_map[key][i].split(",")
-          identity_right = rule.right_identity_map[key][j].split(",")
-          identity = sorted(list(set(identity_left).union(set(identity_right))))
-
-          tree_id_left = [tn.split("_")[0] for tn in identity_left]
-          tree_id_right = [tn.split("_")[0] for tn in identity_right]
-          tree_id = sorted(list(set(tree_id_left).union(set(tree_id_right))))
-          
-          if((len(identity) == num_nodes + 1) and (len(tree_id) == num_nodes + 1) and 
-            (min(tree_id_left) < min(tree_id_right)) and (max(tree_id_left) < max(tree_id_right))):
-            identity = ",".join(identity)
+          if(key == ''):
+            left_tree = int(self.left_identity_map[key][i].split("_")[0])
+            right_tree = int(rule.right_identity_map[key][j].split("_")[0])
+            if(left_tree < right_tree):
+              identity = self.left_identity_map[key][i] +  "," + rule.right_identity_map[key][j]
+              joined_identity.append(identity)
+          else:
+            identity = self.left_identity_map[key][i] +  "," + key + "," + rule.right_identity_map[key][j]            
             joined_identity.append(identity)
     
     #assert(len(list(set(joined_identity))) == len(joined_identity))
