@@ -66,7 +66,11 @@ def get_fidelity(rules, y_pred):
       fidelity = fidelity + 1
   fidelity = fidelity / len(y_pred)
   return fidelity
-  
+
+def sigma(x):
+  e = 2.71828
+  return 1/(1+e**(-x))
+
 print()
 print("Rules from trees")
 print()
@@ -82,14 +86,20 @@ candidates = []
 solutions = []
 for r in old_candidates:
   min_score, max_score = random_forest.get_rule_score(r.decision_rule)
+  min_score = sigma(min_score*learning_rate + bias)
+  max_score = sigma(max_score*learning_rate + bias)
 
+  decision_rule_precision = 0.00
+  if(min_score >= 0.5):
+    decision_rule_precision = 1.00
+  
   decision_value = []
   for data_index in r.decision_support:
     decision_value.append(y_pred[data_index])
-
-  if(max_score*learning_rate + bias >= 0):
-    if(min_score*learning_rate + bias >= 0):
-    #if(sum(decision_value)/len(decision_value) >= 0.95):
+  decision_rule_precision = sum(decision_value)/len(decision_value)
+  
+  if(max_score >= 0.5):
+    if(decision_rule_precision >= 0.95):
       solutions.append(r)
     else:
       candidates.append(r)
@@ -119,14 +129,20 @@ for stage in range(1, num_trees):
       r = old_candidates[i].join(old_candidates[j])
       if(r is not None):
         min_score, max_score = random_forest.get_rule_score(r.decision_rule)
-          
+        min_score = sigma(min_score*learning_rate + bias)
+        max_score = sigma(max_score*learning_rate + bias)
+
+        decision_rule_precision = 0.00
+        if(min_score >= 0.5):
+          decision_rule_precision = 1.00
+           
         decision_value = []
         for data_index in r.decision_support:
           decision_value.append(y_pred[data_index])
-
-        if(max_score*learning_rate + bias >= 0):
-          if(min_score*learning_rate + bias >= 0):
-          #if(sum(decision_value)/len(decision_value) >= 0.95):
+        decision_rule_precision = sum(decision_value)/len(decision_value)
+        
+        if(max_score >= 0.5):
+          if(decision_rule_precision >= 0.95):
             solutions.append(r)
           else:
             candidates.append(r)
