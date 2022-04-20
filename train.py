@@ -50,6 +50,23 @@ def merge(candidates):
 
   return merged_candidates
 
+def get_fidelity(rules, y_pred):
+  support = []
+  for r in rules:
+    support = support + r.decision_support
+  support = list(set(support))
+
+  y_pred_dup = [0]*len(y_pred)
+  for s in support:
+    y_pred_dup[s] = 1 
+
+  fidelity = 0
+  for i in range(len(y_pred)):
+    if(y_pred_dup[i] == y_pred[i]):
+      fidelity = fidelity + 1
+  fidelity = fidelity / len(y_pred)
+  return fidelity
+  
 print()
 print("Rules from trees")
 print()
@@ -88,6 +105,8 @@ candidates = merge(candidates)
 solutions = merge(solutions)
 print(str(len(candidates)) + " candidates")
 print(str(len(solutions)) + " solutions")
+print()
+print("Fidelity " + str(get_fidelity(solutions, y_pred)))
 
 
 
@@ -121,6 +140,8 @@ for stage in range(1, num_trees):
   solutions = merge(solutions)
   print(str(len(candidates)) + " candidates")
   print(str(len(solutions)) + " solutions")
+  print()
+  print("Fidelity " + str(get_fidelity(solutions, y_pred)))
 
 
 print()
@@ -128,15 +149,3 @@ print("Solutions:")
 for r in solutions:
   print(r.decision_rule)
 
-print("Verifying Solutions:")
-support = []
-for r in solutions:
-  support = support + r.decision_support
-support = list(set(support))
-
-y_pred_dup = [0]*len(y_pred)
-for s in support:
-  y_pred_dup[s] = 1 
-
-for i in range(len(y_pred)):
-  assert(y_pred_dup[i] == y_pred[i]) 
