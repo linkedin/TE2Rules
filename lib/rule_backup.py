@@ -107,13 +107,14 @@ class Rule:
     decision_support = list(set(self.decision_support).intersection(set(rule.decision_support)))
     return decision_support
 
-  def validate_support(self, joined_support):
-    if(len(joined_support) > 0):
+  def validate_support(self, joined_support, support):
+    extra_support = list(set(joined_support).difference(set(support)))
+    if((len(joined_support) > 0) and (len(extra_support) > 0)):
       return True
     else:
       return False
 
-  def join(self, rule):
+  def join(self, rule, support):
     assert(self.get_num_nodes() == rule.get_num_nodes())
               
     decision_rule = self.join_rule(rule)
@@ -121,7 +122,7 @@ class Rule:
       return None
 
     decision_support = self.join_support(rule)
-    if(self.validate_support(decision_support) == False):
+    if(self.validate_support(decision_support, support) == False):
       return None
 
     identity = self.join_identity(rule)

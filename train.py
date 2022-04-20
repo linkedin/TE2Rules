@@ -92,13 +92,20 @@ for r in old_candidates:
   decision_rule_precision = 0.00
   if(min_score >= 0.5):
     decision_rule_precision = 1.00
+
+  solution_is_possible = True 
+  if(max_score < 0.5):
+    solution_is_possible = False
   
   decision_value = []
   for data_index in r.decision_support:
     decision_value.append(y_pred[data_index])
   decision_rule_precision = sum(decision_value)/len(decision_value)
+
+  if(max(decision_value) == 0):
+    solution_is_possible = False
   
-  if(max_score >= 0.5):
+  if(solution_is_possible):
     if(decision_rule_precision >= 0.95):
       solutions.append(r)
     else:
@@ -135,13 +142,20 @@ for stage in range(1, num_trees):
         decision_rule_precision = 0.00
         if(min_score >= 0.5):
           decision_rule_precision = 1.00
-           
+
+        solution_is_possible = True 
+        if(max_score < 0.5):
+          solution_is_possible = False
+                   
         decision_value = []
         for data_index in r.decision_support:
           decision_value.append(y_pred[data_index])
         decision_rule_precision = sum(decision_value)/len(decision_value)
+      
+        if(max(decision_value) == 0):
+          solution_is_possible = False
         
-        if(max_score >= 0.5):
+        if(solution_is_possible):
           if(decision_rule_precision >= 0.95):
             solutions.append(r)
           else:
