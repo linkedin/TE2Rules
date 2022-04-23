@@ -157,6 +157,7 @@ print()
 fidelity, fidelity_positives, fidelity_negatives = get_fidelity(solutions, y_pred)
 print("Fidelity")
 print("Total: " + str(fidelity) + ", Positive: " + str(fidelity_positives) + ", Negative: " + str(fidelity_negatives))
+print("Unexplained Positives")
 print(len(list(set(positive_points).difference(set(explained_positive_points)))))
 
 
@@ -226,8 +227,49 @@ for stage in range(1, num_trees):
   fidelity, fidelity_positives, fidelity_negatives = get_fidelity(solutions, y_pred)
   print("Fidelity")
   print("Total: " + str(fidelity) + ", Positive: " + str(fidelity_positives) + ", Negative: " + str(fidelity_negatives))
+  print("Unexplained Positives")
   print(len(list(set(positive_points).difference(set(explained_positive_points)))))
 
+
+print()
+print("Set Cover")
+
+rules = [] 
+support = []
+for r in solutions:
+  rules.append(r.decision_rule)
+  support.append(r.decision_support)
+
+covered_rules = []
+while(True):
+  #choose biggest one
+  index = 0
+  while((index < len(support)) and (len(support[index]) == 0)):
+    index = index + 1
+  if(index == len(support)):
+    break
+
+  for i in range(len(support)):
+    if(len(support[i]) > 0):
+      if(len(support[i]) > len(support[index])):
+        index = i
+      else:
+        if(len(support[i]) == len(support[index])):
+          if(len(rules[i]) < len(rules[index])):
+            index = i
+
+  covered_rules.append(index)
+
+  #remove support
+  for i in range(len(support)):
+    if(index != i):
+      support[i] = list(set(support[i]).difference(set(support[index])))
+  support[index] = []
+
+old_solutions = solutions
+solutions = []
+for i in covered_rules:
+  solutions.append(old_solutions[i])
 
 print()
 print("Solutions:")
