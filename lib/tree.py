@@ -5,7 +5,7 @@ class Node:
     self.is_leaf = is_leaf
 
 class TreeNode(Node):
-  def __init__(self, node_name, threshold = 0.5):
+  def __init__(self, node_name, threshold):
     super().__init__(is_leaf=False)
     self.node_name = node_name
     self.threshold = threshold

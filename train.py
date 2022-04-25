@@ -1,14 +1,14 @@
 from sklearn.ensemble import GradientBoostingClassifier
 from lib.trainer import Trainer
 from lib.adapter import ScikitTreeAdapter, ScikitForestAdapter
-from sklearn.tree import export_text
+from sklearn.tree import export_text, plot_tree
 from lib.rule import Rule
 import numpy as np
 
 print("XGBoost Model")
 trainer = Trainer(training_data_loc="data/train.csv", 
       testing_data_loc="data/test.csv",
-      scikit_model=GradientBoostingClassifier(n_estimators=15))
+      scikit_model=GradientBoostingClassifier(n_estimators=10))
 print("Accuracy")
 accuracy, auc = trainer.evaluate_model()
 print(accuracy) 
@@ -90,7 +90,7 @@ for i in range(len(y_pred)):
     positive_points.append(i)
 assert(len(positive_points) == sum(y_pred))
 
-# Crossing 0 threshold -> crossing 0.5 probability
+# Threshold on score is 0, sigma(0) = 0.5
 old_candidates = candidates
 candidates = []
 solutions = []

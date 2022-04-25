@@ -14,17 +14,17 @@ class Rule:
     left_identity_map = {}
     right_identity_map = {}
     for i in range(len(self.identity)):
-      tn = self.identity[i].split(",")
+      node_ids = self.identity[i].split(",")
 
-      left_key = ",".join(tn[1:])
+      left_key = ",".join(node_ids[1:])
       if(left_key not in left_identity_map):
         left_identity_map[left_key] = []
-      left_identity_map[left_key].append(tn[0])
+      left_identity_map[left_key].append(node_ids[0])
       
-      right_key = ",".join(tn[:-1])
+      right_key = ",".join(node_ids[:-1])
       if(right_key not in right_identity_map):
         right_identity_map[right_key] = []
-      right_identity_map[right_key].append(tn[-1])
+      right_identity_map[right_key].append(node_ids[-1])
 
     self.left_identity_map = left_identity_map
     self.right_identity_map = right_identity_map
@@ -50,9 +50,9 @@ class Rule:
       for i in range(len(self.left_identity_map[key])):
         for j in range(len(rule.right_identity_map[key])):
           if(key == ''):
-            left_tree = int(self.left_identity_map[key][i].split("_")[0])
-            right_tree = int(rule.right_identity_map[key][j].split("_")[0])
-            if(left_tree < right_tree):
+            left_tree_id = int(self.left_identity_map[key][i].split("_")[0])
+            right_tree_id = int(rule.right_identity_map[key][j].split("_")[0])
+            if(left_tree_id < right_tree_id):
               identity = self.left_identity_map[key][i] +  "," + rule.right_identity_map[key][j]
               joined_identity.append(identity)
           else:
@@ -72,33 +72,6 @@ class Rule:
     decision_rule = list(set(self.decision_rule).union(set(rule.decision_rule)))
     return sorted(decision_rule)
 
-  def validate_rule(self, joined_rule):
-    # This assumes data is one hot encoded: atmost one positive value per feature and
-    # the same value cannot be both positive and negative
-    is_valid = True
-    feature_name = None
-    feature_name_values = []
-    for clause in joined_rule:
-      if(clause.split("_")[0] != feature_name):
-        feature_name = clause.split("_")[0]
-        feature_name_values.append([])
-      feature_name_values[-1].append(clause)
-    
-    for fnv in feature_name_values:
-      positive = []
-      negative = []
-      for f in fnv:
-        if(f[-6:] == '<= 0.5'):
-          negative.append(f)
-        else:
-          positive.append(f)
-      if(len(positive) > 1):
-        is_valid = False
-      if((len(positive) == 1) and (positive[0][:-5] + "<= 0.5" in negative)):
-        is_valid = False
-    
-    return is_valid
-
   def join_support(self, rule):
     decision_support = list(set(self.decision_support).intersection(set(rule.decision_support)))
     return decision_support
@@ -113,8 +86,6 @@ class Rule:
     assert(self.get_num_nodes() == rule.get_num_nodes())
               
     decision_rule = self.join_rule(rule)
-    if(self.validate_rule(decision_rule) == False):
-      return None
 
     decision_support = self.join_support(rule)
     if(self.validate_support(decision_support) == False):

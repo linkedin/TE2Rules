@@ -23,6 +23,7 @@ class ScikitTreeAdapter:
     self.feature_names = feature_names
     
     self.feature_indices = scikit_tree.tree_.feature
+    self.threshold = scikit_tree.tree_.threshold
     self.children_left = scikit_tree.tree_.children_left
     self.children_right = scikit_tree.tree_.children_right
     self.value = scikit_tree.tree_.value
@@ -40,7 +41,7 @@ class ScikitTreeAdapter:
       node_index = self.feature_indices[i]
       if(node_index != self.LEAF_INDEX):
         node_name = self.feature_names[node_index]
-        nodes = nodes + [DecisionTree(TreeNode(node_name = node_name))]
+        nodes = nodes + [DecisionTree(TreeNode(node_name = node_name, threshold = self.threshold[i]))]
       else:
         value = self.value[i]
         nodes = nodes + [DecisionTree(LeafNode(value = value))]

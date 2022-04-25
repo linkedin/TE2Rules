@@ -35,14 +35,6 @@ def custom_preprocessing(df):
 	
 	df = df.drop('fnlwgt',1)
 	df = df.drop('education-num',1)
-
-	# df = df.drop('education',1)
-	df = df.drop('workclass',1)   # dont drop
-	# df = df.drop('occupation',1)
-	df = df.drop('relationship',1)
-	df = df.drop('race',1)        # dont drop
-	# df = df.drop('marital-status',1)
-	# df = df.drop('hours-per-week',1)
 	
 	return df
 
@@ -57,18 +49,24 @@ with open(download_to + 'adult.test', 'w') as fout:
 	fout.writelines(data[1:])
 
 df_train = clean_missing(download_to + 'adult.data', column_names)
-df_train = discretize_continuous_columns(df_train, ['age', 'capital-gain', 'capital-loss', 'hours-per-week'])
 df_train = rename_label(df_train, 'income', ["<=50K", ">50K"], ["0", "1"])
 df_train = custom_preprocessing(df_train)
 df_train.to_csv('data/train_raw.csv', index = False)
-df_train = tensor_transform(df_train)
+df_train = pd.get_dummies(data=df_train, columns=[
+	'workclass', 'education', 'marital-status', 'occupation', 
+	'relationship', 'race', 'sex', 'native-country', 'label'
+	])
+df_train = df_train.drop('label_0', 1)
 df_train.to_csv('data/train.csv', index = False)
 
 
 df_test = clean_missing(download_to + 'adult.test', column_names)
-df_test = discretize_continuous_columns(df_test, ['age', 'capital-gain', 'capital-loss', 'hours-per-week'])
 df_test = rename_label(df_test, 'income', ["<=50K", ">50K"], ["0", "1"])
 df_test = custom_preprocessing(df_test)
 df_test.to_csv('data/test_raw.csv', index = False)
-df_test = tensor_transform(df_test)
+df_test = pd.get_dummies(data=df_test, columns=[
+	'workclass', 'education', 'marital-status', 'occupation', 
+	'relationship', 'race', 'sex', 'native-country', 'label'
+	])
+df_test = df_test.drop('label_0', 1)
 df_test.to_csv('data/test.csv', index = False)
