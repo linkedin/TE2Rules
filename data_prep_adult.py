@@ -57,6 +57,9 @@ df_train = pd.get_dummies(data=df_train, columns=[
 	'relationship', 'race', 'sex', 'native-country', 'label'
 	])
 df_train = df_train.drop('label_0', 1)
+feature_names = [x.replace('-', '_') for x in df_train.columns]
+feature_names[feature_names.index('marital_status_not married')] = 'marital_status_not_married'
+df_train.columns = feature_names
 df_train.to_csv('data/train.csv', index = False)
 
 
@@ -69,4 +72,5 @@ df_test = pd.get_dummies(data=df_test, columns=[
 	'relationship', 'race', 'sex', 'native-country', 'label'
 	])
 df_test = df_test.drop('label_0', 1)
+df_test.columns = feature_names
 df_test.to_csv('data/test.csv', index = False)
