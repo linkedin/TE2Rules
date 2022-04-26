@@ -235,36 +235,36 @@ print()
 print("Set Cover")
 
 rules = [] 
-support = []
+positive_support = []
 for r in solutions:
   rules.append(r.decision_rule)
-  support.append(r.decision_support)
+  positive_support.append(list(set(positive_points).intersection(set(r.decision_support))))
 
 covered_rules = []
 while(True):
   #choose biggest one
   index = 0
-  while((index < len(support)) and (len(support[index]) == 0)):
+  while((index < len(positive_support)) and (len(positive_support[index]) == 0)):
     index = index + 1
-  if(index == len(support)):
+  if(index == len(positive_support)):
     break
 
-  for i in range(len(support)):
-    if(len(support[i]) > 0):
-      if(len(support[i]) > len(support[index])):
+  for i in range(len(positive_support)):
+    if(len(positive_support[i]) > 0):
+      if(len(positive_support[i]) > len(positive_support[index])):
         index = i
       else:
-        if(len(support[i]) == len(support[index])):
+        if(len(positive_support[i]) == len(positive_support[index])):
           if(len(rules[i]) < len(rules[index])):
             index = i
 
   covered_rules.append(index)
 
   #remove support
-  for i in range(len(support)):
+  for i in range(len(positive_support)):
     if(index != i):
-      support[i] = list(set(support[i]).difference(set(support[index])))
-  support[index] = []
+      positive_support[i] = list(set(positive_support[i]).difference(set(positive_support[index])))
+  positive_support[index] = []
 
 old_solutions = solutions
 solutions = []
@@ -273,8 +273,25 @@ for i in covered_rules:
 
 print()
 print("Solutions:")
-for r in solutions:
-  print(r.decision_rule)
+coverage = []
+positive_coverage = []
+for i in range(len(solutions)):
+  r = solutions[i]
+  print("Rule " + str(i + 1) + ": " + str(r.decision_rule))
+  positive_support = list(set(positive_points).intersection(set(r.decision_support)))
+  print("Precision: " + str(len(positive_support)/len(r.decision_support)))
+  print("Recall: " + str(len(positive_support)/len(positive_points)))
+  print("Coverage: " + str(len(r.decision_support)/len(y_pred)))
+  coverage = list(set(coverage).union(r.decision_support))
+  positive_coverage = list(set(positive_coverage).union(positive_support))
+  print("Cumulative Precision: " + str(len(positive_coverage)/len(coverage)))
+  print("Cumulative Recall: " + str(len(positive_coverage)/len(positive_points)))
+  print("Cumulative Coverage: " + str(len(coverage)/len(y_pred)))
+  fidelity, fidelity_positives, fidelity_negatives = get_fidelity(solutions[0 : i+1], y_pred)
+  print("Cumulative Fidelity: ")
+  print("Total: " + str(fidelity) + ", Positive: " + str(fidelity_positives) + ", Negative: " + str(fidelity_negatives))
+  print()
+
 
 print()
 print(str(num_trees) + " trees")
