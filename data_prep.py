@@ -10,9 +10,9 @@ def download(url, download_to, files):
 	r = requests.get(url)
 	data = bs4.BeautifulSoup(r.text, "html.parser")
 	for f in files:
-	    r = requests.get(url + f)
-	    with open(download_to + f, 'w') as f_handle:
-		    f_handle.write(r.text)    
+		r = requests.get(url + f)
+		with open(download_to + f, 'w') as f_handle:
+			f_handle.write(r.text)
 
 def clean_missing(filename, column_names, sep = ", "):
 	df = pd.read_csv(filename, sep = sep, engine = "python")
@@ -22,6 +22,9 @@ def clean_missing(filename, column_names, sep = ", "):
 	for col in df.columns:
 		df[col] = df[col].replace("?", np.NaN)
 	df = df.apply(lambda x:x.fillna(x.value_counts().index[0]))
+
+	# Replace hyphens with underscores
+	df = df.replace('-','_', regex=True)
 	return df
 
 def reduce_categories(df, col_name, categories, reduced_categories):
