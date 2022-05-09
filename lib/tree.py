@@ -124,8 +124,10 @@ class DecisionTree:
 
 
 class RandomForest:
-  def __init__(self, decision_tree_ensemble):
+  def __init__(self, decision_tree_ensemble, weight, bias):
     self.decision_tree_ensemble = decision_tree_ensemble
+    self.weight = weight
+    self.bias = bias
 
   def get_num_trees(self):
     return len(self.decision_tree_ensemble)

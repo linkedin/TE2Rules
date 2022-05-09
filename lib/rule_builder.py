@@ -1,11 +1,9 @@
 class RuleBuilder:
-	def __init__(self, random_forest, candidate_rules, labels, tree_weight, tree_bias):
+	def __init__(self, random_forest, X, y, feature_names):
 		self.random_forest = random_forest
-		self.candidate_rules = candidate_rules
-		self.solution_rules = []
-		self.tree_weight = tree_weight
-		self.tree_bias = tree_bias
-		self.labels = labels
+		self.tree_weight = self.random_forest.weight
+		self.tree_bias = self.random_forest.bias
+		self.labels = y
 		self.positives = []
 		for i in range(len(self.labels)):
 			if(self.labels[i] == 1):
@@ -16,6 +14,8 @@ class RuleBuilder:
 
 		print()
 		print("Rules from trees")
+		self.candidate_rules = random_forest.get_rules(data=X, feature_names=feature_names)
+		self.solution_rules = []
 		print(str(len(self.candidate_rules)) + " candidate rules")
 		
 		self.deduplicate()

@@ -4,7 +4,6 @@ from lib.adapter import ScikitTreeAdapter, ScikitForestAdapter
 from sklearn.tree import export_text, plot_tree
 from lib.rule import Rule
 from lib.rule_builder import RuleBuilder
-import numpy as np
 
 print("XGBoost Model")
 trainer = Trainer(training_data_loc="data/train.csv", 
@@ -20,23 +19,13 @@ y_pred = trainer.model.predict(trainer.x_train)
 if(sum(y_pred) == 0):
   print("Model doen't learn any positive")
 
-# Calculating bias
-positive = sum(trainer.y_train)
-negative = len(trainer.y_train) - sum(trainer.y_train)
-log_odds = np.log(positive/negative)
-bias = log_odds
-
-# Weights of Trees
-learning_rate = trainer.model.get_params()['learning_rate']
-
-# Get candidate rules
 random_forest = ScikitForestAdapter(trainer.model, trainer.feature_names).random_forest
 num_trees = random_forest.get_num_trees()
 print(str(num_trees) + " trees")
-candidates = random_forest.get_rules(data=trainer.x_train, feature_names=trainer.feature_names)
 
-explainer = RuleBuilder(random_forest = random_forest, candidate_rules = candidates, labels = y_pred, 
-  tree_weight = learning_rate, tree_bias = log_odds)
+explainer = RuleBuilder(random_forest = random_forest, 
+  X = trainer.x_train, y = y_pred, 
+  feature_names = trainer.feature_names)
 
 solutions = explainer.solution_rules
 positive_points = explainer.positives

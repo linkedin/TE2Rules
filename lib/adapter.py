@@ -1,8 +1,13 @@
 from sklearn.tree import _tree
 from lib.tree import RandomForest, DecisionTree, TreeNode, LeafNode
+import numpy as np
 
 class ScikitForestAdapter:
   def __init__(self, scikit_forest, feature_names):
+    n0 , n1 = scikit_forest.init_.class_prior_
+    self.bias = np.log(n1/n0)    
+    self.weight = scikit_forest.get_params()['learning_rate']
+
     scikit_tree_ensemble = scikit_forest.estimators_
     scikit_tree_ensemble = [dtr[0] for dtr in scikit_tree_ensemble]
     self.scikit_tree_ensemble = scikit_tree_ensemble
@@ -16,7 +21,7 @@ class ScikitForestAdapter:
       decision_tree = ScikitTreeAdapter(scikit_tree, self.feature_names).decision_tree
       decision_tree_ensemble.append(decision_tree)
     
-    return RandomForest(decision_tree_ensemble)
+    return RandomForest(decision_tree_ensemble, weight=self.weight, bias=self.bias)
 
 class ScikitTreeAdapter:
   def __init__(self, scikit_tree, feature_names):
