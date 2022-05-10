@@ -21,7 +21,7 @@ class ScikitForestAdapter:
       decision_tree = ScikitTreeAdapter(scikit_tree, self.feature_names).decision_tree
       decision_tree_ensemble.append(decision_tree)
     
-    return RandomForest(decision_tree_ensemble, weight=self.weight, bias=self.bias)
+    return RandomForest(decision_tree_ensemble, weight=self.weight, bias=self.bias, feature_names=self.feature_names)
 
 class ScikitTreeAdapter:
   def __init__(self, scikit_tree, feature_names):

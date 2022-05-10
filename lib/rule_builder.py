@@ -1,8 +1,6 @@
 class RuleBuilder:
-	def __init__(self, random_forest, X, y, feature_names):
+	def __init__(self, random_forest, X, y):
 		self.random_forest = random_forest
-		self.tree_weight = self.random_forest.weight
-		self.tree_bias = self.random_forest.bias
 		self.labels = y
 		self.positives = []
 		for i in range(len(self.labels)):
@@ -14,7 +12,7 @@ class RuleBuilder:
 
 		print()
 		print("Rules from trees")
-		self.candidate_rules = random_forest.get_rules(data=X, feature_names=feature_names)
+		self.candidate_rules = random_forest.get_rules(data=X)
 		self.solution_rules = []
 		print(str(len(self.candidate_rules)) + " candidate rules")
 		
@@ -156,6 +154,8 @@ class RuleBuilder:
 				if(y_pred_rules[i] == self.labels[i]):
 					fidelity_negatives = fidelity_negatives + 1
 
+		print(fidelity_positives, positives)
+		print(fidelity_negatives, negatives)
 		return (fidelity_positives + fidelity_negatives) / (positives + negatives), fidelity_positives / positives, fidelity_negatives / negatives
 
 
@@ -179,7 +179,7 @@ class RuleBuilder:
 		min_score, max_score = self.random_forest.get_rule_score(rule.decision_rule)
 
 		decision_rule_precision = 0.00
-		if(min_score*self.tree_weight + self.tree_bias >= 0):
+		if(min_score*self.random_forest.weight + self.random_forest.bias >= 0):
 			decision_rule_precision = 1.00
 		
 		if(scores is not None):
@@ -191,7 +191,7 @@ class RuleBuilder:
 		min_score, max_score = self.random_forest.get_rule_score(rule.decision_rule)
 
 		solution_is_possible = True 
-		if(max_score*self.tree_weight + self.tree_bias < 0):
+		if(max_score*self.random_forest.weight + self.random_forest.bias < 0):
 			solution_is_possible = False
 				
 		if(scores is not None):

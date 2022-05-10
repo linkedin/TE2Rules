@@ -124,18 +124,19 @@ class DecisionTree:
 
 
 class RandomForest:
-  def __init__(self, decision_tree_ensemble, weight, bias):
+  def __init__(self, decision_tree_ensemble, weight, bias, feature_names):
     self.decision_tree_ensemble = decision_tree_ensemble
     self.weight = weight
     self.bias = bias
+    self.feature_names = feature_names
 
   def get_num_trees(self):
     return len(self.decision_tree_ensemble)
 
-  def get_rules(self, data, feature_names):
+  def get_rules(self, data):
     rules_from_tree = []
     for tree_index, decision_tree in enumerate(self.decision_tree_ensemble):
-      rules = decision_tree.get_rules(data=data, feature_names=feature_names, tree_id=tree_index)
+      rules = decision_tree.get_rules(data=data, feature_names=self.feature_names, tree_id=tree_index)
       rules_from_tree = rules_from_tree + rules
     return rules_from_tree
 

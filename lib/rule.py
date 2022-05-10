@@ -5,9 +5,12 @@ class Rule:
     self.identity = identity
 
   def __str__(self):
+    '''
     string_rep = "rule: " + str(self.decision_rule) + '\n'
     string_rep = string_rep + "support: " + str(len(self.decision_support)) + '\n'
     string_rep = string_rep + "identity: " + str(self.identity) + '\n'
+    '''
+    string_rep = ' & '.join(self.decision_rule)
     return string_rep 
 
   def create_identity_map(self):
