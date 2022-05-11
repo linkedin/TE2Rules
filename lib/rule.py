@@ -85,14 +85,15 @@ class Rule:
     else:
       return False
 
-  def join(self, rule):
+  def join(self, rule, support_pruning = False):
     assert(self.get_num_nodes() == rule.get_num_nodes())
               
     decision_rule = self.join_rule(rule)
 
     decision_support = self.join_support(rule)
-    if(self.validate_support(decision_support) == False):
-      return None
+    if(support_pruning is True):
+      if(self.validate_support(decision_support) == False):
+        return None
 
     identity = self.join_identity(rule)
     if(self.validate_identity(identity) == False):

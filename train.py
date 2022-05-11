@@ -27,13 +27,13 @@ random_forest = ScikitForestAdapter(trainer.model, trainer.feature_names).random
 num_trees = random_forest.get_num_trees()
 print(str(num_trees) + " trees")
 
-solutions = RuleBuilder(random_forest = random_forest, 
-  X = trainer.x_train, y = y_pred).solution_rules
+rules = RuleBuilder(random_forest = random_forest).explain(X = trainer.x_train, y = y_pred) 
+#rules = RuleBuilder(random_forest = random_forest).explain()
 
 if(not os.path.exists('result/te2rules')):
   os.mkdir('result/te2rules')
 with open('result/te2rules/te2rules.txt', 'w') as f:
-  for r in solutions:
+  for r in rules:
     f.write(str(r) + '\n')
 
 # Evaluate rules
@@ -45,18 +45,18 @@ data_train = pd.read_csv("data/train_pred.csv")
 positive_points = data_train.query('y_pred > 0.5').index.tolist()
 negative_points = data_train.query('y_pred < 0.5').index.tolist()
 
-solutions = []
+rules = []
 with open('result/te2rules/te2rules.txt', 'r') as f:
-  solutions = f.readlines()
-solutions = [r.strip() for r in solutions]
+  rules = f.readlines()
+rules = [r.strip() for r in rules]
 
 print()
-print("Solutions:")
+print("Rules:")
 coverage = []
 positive_coverage = []
 negative_coverage = list(range(len(y_pred)))
-for i in range(len(solutions)):
-  r = solutions[i]
+for i in range(len(rules)):
+  r = rules[i]
   print("Rule " + str(i + 1) + ": " + r)
   support = data_train.query(r).index.tolist()
   positive_support = data_train.query(r).query('y_pred > 0.5').index.tolist()
@@ -80,7 +80,7 @@ for i in range(len(solutions)):
 
 print()
 print(str(num_trees) + " trees")
-print(str(len(solutions)) + " solutions")
+print(str(len(rules)) + " rules")
 print("Fidelity")
 print("Total: " + str(fidelity) + ", Positive: " + str(fidelity_positives) + ", Negative: " + str(fidelity_negatives))
 

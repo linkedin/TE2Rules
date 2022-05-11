@@ -76,7 +76,9 @@ class DecisionTree:
       self.max_decision_value = self.node.value
 
   def propagate_decision_support(self, data, feature_names, decision_support=None):
-    if(decision_support==None):
+    if(data is None):
+      data = []
+    if(decision_support is None):
       decision_support = [i for i in range(len(data))]
     self.decision_support = decision_support
 
@@ -141,13 +143,23 @@ class RandomForest:
     return rules_from_tree
 
   def get_rule_score(self, rule):
-    min_score = 0
-    max_score = 0
+    min_score = self.bias
+    max_score = self.bias
     for decision_tree in self.decision_tree_ensemble:
       score = decision_tree.get_rule_score(rule)
-      min_score = min_score + score[0]
-      max_score = max_score + score[1]
+      min_score = min_score + score[0] * self.weight
+      max_score = max_score + score[1] * self.weight
+    min_score = self.activation_function(min_score)
+    max_score = self.activation_function(max_score)
     return [min_score, max_score]  
+
+  def activation_function(self, value):
+    transformed_value = 1/(1 + 2.71828**(-value))
+    if(transformed_value >= 0.5):
+      thresholded_value = 1.0
+    else:
+      thresholded_value = 0.0
+    return thresholded_value
 
   def __str__(self):
     string_rep = ""
