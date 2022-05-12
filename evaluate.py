@@ -1,42 +1,8 @@
-from sklearn.ensemble import GradientBoostingClassifier
-from lib.trainer import Trainer
-from lib.adapter import ScikitTreeAdapter, ScikitForestAdapter
-from sklearn.tree import export_text, plot_tree
-from lib.rule import Rule
-from lib.rule_builder import RuleBuilder
 import pandas as pd 
-import os 
-
-# Train model to explain
-print("XGBoost Model")
-trainer = Trainer(training_data_loc="data/train.csv", 
-      testing_data_loc="data/test.csv",
-      scikit_model=GradientBoostingClassifier(n_estimators=10))
-print("Accuracy")
-accuracy, auc = trainer.evaluate_model()
-print(accuracy) 
-print("AUC")
-print(auc)
-
-y_pred = trainer.model.predict(trainer.x_train)
-if(sum(y_pred) == 0):
-  print("Model doen't learn any positive")
-
-# Explain using rules 
-random_forest = ScikitForestAdapter(trainer.model, trainer.feature_names).random_forest
-num_trees = random_forest.get_num_trees()
-print(str(num_trees) + " trees")
-
-rules = RuleBuilder(random_forest = random_forest).explain(X = trainer.x_train, y = y_pred) 
-#rules = RuleBuilder(random_forest = random_forest).explain()
-
-if(not os.path.exists('result/te2rules')):
-  os.mkdir('result/te2rules')
-with open('result/te2rules/te2rules.txt', 'w') as f:
-  for r in rules:
-    f.write(str(r) + '\n')
 
 # Evaluate rules
+y_pred = pd.read_csv("result/te2rules/pred_train.csv", header=None).to_numpy() 
+
 data_train = pd.read_csv("data/train.csv") 
 data_train['y_pred'] = y_pred 
 data_train.to_csv("data/train_pred.csv")
@@ -79,9 +45,6 @@ for i in range(len(rules)):
 
 
 print()
-print(str(num_trees) + " trees")
 print(str(len(rules)) + " rules")
 print("Fidelity")
 print("Total: " + str(fidelity) + ", Positive: " + str(fidelity_positives) + ", Negative: " + str(fidelity_negatives))
-
-

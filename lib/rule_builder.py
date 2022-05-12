@@ -226,3 +226,17 @@ class RuleBuilder:
 			dedup_rules[i].create_identity_map()
 		return dedup_rules
 
+	def apply(self, df):
+		coverage = []
+		for r in self.solution_rules:
+		  support = df.query(str(r)).index.tolist()
+		  coverage = list(set(coverage).union(set(support)))
+
+		y_rules = [0.0]*len(df)
+		for i in coverage:
+		  y_rules[i] = 1.0
+
+		return y_rules
+
+
+

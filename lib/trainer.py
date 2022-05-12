@@ -1,5 +1,4 @@
 import numpy as np
-import tensorflow as tf
 import pandas as pd
 from sklearn import metrics
 
@@ -11,7 +10,6 @@ class Trainer:
 
   def set_seed(self, seed=123):
     np.random.seed(123)
-    tf.random.set_seed(123)
 
   def read_data(self, training_data_loc, testing_data_loc):
     data_train = pd.read_csv(training_data_loc) 
