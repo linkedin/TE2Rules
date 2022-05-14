@@ -31,12 +31,15 @@ class RuleBuilder:
 		print("Deduping...")
 		print(str(len(self.candidate_rules)) + " candidate rules")
 		
-		self.generate_solutions() 
+		self.generate_solutions(num_trees_to_merge = self.random_forest.get_num_trees()) 
 
 		if(self.use_data is True):
 			print()
 			print("Set Cover")
-			self.rules_to_cover_positives(self.positives)   
+			total_support = []
+			for r in self.solution_rules:
+				total_support = list(set(total_support).union(set(r.decision_support)))
+			self.rules_to_cover_positives(list(set(total_support).intersection(set(self.positives))))   
 			print(str(len(self.solution_rules)) + " rules found")
 		return self.solution_rules
 
@@ -71,12 +74,12 @@ class RuleBuilder:
 
 		self.solution_rules = selected_rules
 
-	def generate_solutions(self):
+	def generate_solutions(self, num_trees_to_merge):
 		print()
 		print("Running Apriori")
 		
 		positives_to_explain = self.positives
-		for stage in range(self.random_forest.get_num_trees()):
+		for stage in range(num_trees_to_merge):
 			print()
 			print("Rules from " + str(stage + 1) + " trees")
 
