@@ -62,4 +62,10 @@ model_dir = os.path.join(result_dir, 'skoperules')
 show_model_performance(model_dir)
 show_rule_performance(model_dir)
 
+print()
+print("RuleFit")
+os.system('python3 rulefit_baseline.py %s %s %s' % (train_file, test_file, result_dir))
+model_dir = os.path.join(result_dir, 'rulefit')
+show_model_performance(model_dir)
+show_rule_performance(model_dir)
 
