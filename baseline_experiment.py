@@ -2,13 +2,14 @@ import os
 import pandas as pd
 from sklearn import metrics
 
-current_dir = os.getcwd()
-data_dir = os.path.join(current_dir, 'data')
+dataset_name = "breast"
+# current_dir = os.getcwd()
+data_dir = os.path.join("data/", dataset_name)
 train_file = os.path.join(data_dir, 'train.csv')
 test_file = os.path.join(data_dir, 'test.csv')
-result_dir = os.path.join(current_dir, 'result')
+result_dir = os.path.join('comparison_result/', dataset_name)
 if(not os.path.exists(result_dir)):
-  os.mkdir(result_dir)
+    os.makedirs(result_dir)
 
 
 def show_rule_performance(model_dir):
@@ -48,12 +49,12 @@ model_dir = os.path.join(result_dir, 'intrees')
 show_model_performance(model_dir)
 show_rule_performance(model_dir)
 
-print()
-print("TE2Rules")
-os.system('python3 te2rule.py %s %s %s' % (train_file, test_file, result_dir))
-model_dir = os.path.join(result_dir, 'te2rules')
-show_model_performance(model_dir)
-show_rule_performance(model_dir)
+# print()
+# print("TE2Rules")
+# os.system('python3 te2rule.py %s %s %s' % (train_file, test_file, result_dir))
+# model_dir = os.path.join(result_dir, 'te2rules')
+# show_model_performance(model_dir)
+# show_rule_performance(model_dir)
 
 print()
 print("Skope Rules")
