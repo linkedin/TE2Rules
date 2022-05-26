@@ -1,5 +1,8 @@
 import numpy as np
 import pandas as pd 
+import six
+import sys
+sys.modules['sklearn.externals.six'] = six
 from skrules import SkopeRules
 import sys 
 import os 
@@ -13,6 +16,8 @@ np.random.seed(123)
 training_data_loc = sys.argv[1]
 testing_data_loc = sys.argv[2]
 result_dir = sys.argv[3]
+ntrees = int(sys.argv[4])
+max_depth = int(sys.argv[5])
 
 data_train = pd.read_csv(training_data_loc) 
 data_test = pd.read_csv(testing_data_loc)
@@ -30,8 +35,8 @@ label_name = cols[-1]
 
 # Create and Train RuleFit Model
 rulefit = RuleFit(
-    tree_generator=RandomForestRegressor(n_estimators=10, random_state=42), 
-    exp_rand_tree_size=False)
+    tree_generator=RandomForestRegressor(n_estimators=ntrees, max_depth=max_depth, random_state=0), 
+    exp_rand_tree_size=False,random_state=0)
 rulefit.fit(x_train, y_train, feature_names=feature_names)
 
 rf = rulefit.tree_generator
@@ -84,11 +89,3 @@ with open(os.path.join(result_dir, 'pred_test.csv'), 'w') as f:
 with open(os.path.join(result_dir, 'pred_test_rules.csv'), 'w') as f:
   for i in range(len(y_pred_rules)):
     f.write(str(y_pred_rules[i]) + '\n')
-
-
-
-
-
-
-
-

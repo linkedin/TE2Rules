@@ -55,16 +55,22 @@ with open(download_to + 'adult.test', 'w') as fout:
 df_train = clean_missing(download_to + 'adult.data', column_names)
 df_train = rename_label(df_train, 'label', ["<=50K", ">50K"], ["0", "1"])
 df_train = custom_preprocessing(df_train)
-df_train.to_csv('data/train_raw.csv', index = False)
+if not os.path.exists('data/adult'):
+    os.makedirs('data/adult')
+# df_train.to_csv('data/adult/train_raw.csv', index = False)
 df_train = pd.get_dummies(data=df_train, columns=column_names_categorical)
 df_train = df_train.drop('label_0', 1)
-df_train.to_csv('data/train.csv', index = False)
+df_train.to_csv('data/adult/train.csv', index = False)
 
 
 df_test = clean_missing(download_to + 'adult.test', column_names)
 df_test = rename_label(df_test, 'label', ["<=50K", ">50K"], ["0", "1"])
 df_test = custom_preprocessing(df_test)
-df_test.to_csv('data/test_raw.csv', index = False)
+# df_test.to_csv('data/adult/test_raw.csv', index = False)
 df_test = pd.get_dummies(data=df_test, columns=column_names_categorical)
 df_test = df_test.drop('label_0', 1)
-df_test.to_csv('data/test.csv', index = False)
+df_test.to_csv('data/adult/test.csv', index = False)
+
+# remove redundant files
+os.remove('data/adult.test')
+os.remove('data/adult.data')

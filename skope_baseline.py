@@ -1,5 +1,8 @@
 import numpy as np
 import pandas as pd 
+import six
+import sys
+sys.modules['sklearn.externals.six'] = six
 from skrules import SkopeRules
 import sys 
 import os 
@@ -12,6 +15,8 @@ np.random.seed(123)
 training_data_loc = sys.argv[1]
 testing_data_loc = sys.argv[2]
 result_dir = sys.argv[3]
+ntrees = sys.argv[4]
+max_depth = sys.argv[5]
 
 data_train = pd.read_csv(training_data_loc) 
 data_test = pd.read_csv(testing_data_loc)
@@ -27,11 +32,12 @@ feature_names = cols[:-1]
 label_name = cols[-1]
 
 clf = SkopeRules(max_depth_duplication=3,
-                 n_estimators=10,
+                 n_estimators=int(ntrees),
+                 max_depth=int(max_depth),
                  precision_min=0.95,
                  recall_min=0.01,
                  feature_names=feature_names,
-                 random_state=42)
+                 random_state=0)
 
 clf.fit(x_train, y_train)
 rules = clf.rules_
@@ -101,6 +107,4 @@ with open(os.path.join(result_dir, 'pred_test.csv'), 'w') as f:
 with open(os.path.join(result_dir, 'pred_test_rules.csv'), 'w') as f:
   for i in range(len(y_pred_rules)):
     f.write(str(y_pred_rules[i]) + '\n')
-
-
 

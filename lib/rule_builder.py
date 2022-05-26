@@ -1,6 +1,10 @@
 class RuleBuilder:
-	def __init__(self, random_forest):
+	def __init__(self, random_forest, num_stages=None, decision_rule_precision=0.95):
 		self.random_forest = random_forest
+		# if num_stages not set by user, will set it to the number of trees
+		# note that we neednum_stages <= num_trees
+		self.num_stages = self.random_forest.get_num_trees() if not num_stages else min(num_stages, self.random_forest.get_num_trees())
+		self.decision_rule_precision = decision_rule_precision
 
 	def explain(self, X=None, y=None):		
 		self.data = X
@@ -39,7 +43,7 @@ class RuleBuilder:
 			total_support = []
 			for r in self.solution_rules:
 				total_support = list(set(total_support).union(set(r.decision_support)))
-			self.rules_to_cover_positives(list(set(total_support).intersection(set(self.positives))))   
+			self.rules_to_cover_positives(list(set(total_support).intersection(set(self.positives)))) 
 			print(str(len(self.solution_rules)) + " rules found")
 		return self.solution_rules
 
@@ -79,7 +83,7 @@ class RuleBuilder:
 		print("Running Apriori")
 		
 		positives_to_explain = self.positives
-		for stage in range(num_trees_to_merge):
+		for stage in range(self.num_stages):
 			print()
 			print("Rules from " + str(stage + 1) + " trees")
 
@@ -134,6 +138,7 @@ class RuleBuilder:
 			
 			if(self.use_data is True):
 				fidelity, fidelity_positives, fidelity_negatives = self.get_fidelity()
+				self.fidelities = (fidelity, fidelity_positives, fidelity_negatives)
 				
 				print("Fidelity")
 				print("Total: " + str(fidelity) + ", Positive: " + str(fidelity_positives) + ", Negative: " + str(fidelity_negatives))
@@ -165,12 +170,12 @@ class RuleBuilder:
 			min_score, max_score = self.score_rule_using_model(rule)
 			
 			if(min_score == 1.0):
-				decision_rule_precision = 1.00
+				decision_rule_precision = self.decision_rule_precision
 			else:
 				decision_rule_precision = 0.00
 
 
-		if(decision_rule_precision >= 0.95):
+		if(decision_rule_precision >= 1):
 			# solution, throw candidate: it is already a solution
 			return True, False
 		else:

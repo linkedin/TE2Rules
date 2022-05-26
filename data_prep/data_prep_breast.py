@@ -42,15 +42,17 @@ num_rows_train = int(0.8*len(df))
 
 df_train = df[:num_rows_train]
 df_test = df[num_rows_train:]
-df_train.to_csv('data/train_raw.csv', index = False)
-df_test.to_csv('data/test_raw.csv', index = False)
+if not os.path.exists('data/breast'):
+    os.makedirs('data/breast')
+df_train.to_csv('data/breast/train_raw.csv', index = False)
+df_test.to_csv('data/breast/test_raw.csv', index = False)
 
 df = pd.get_dummies(data=df, columns=column_names_categorical)
 df = df.drop('label_0', 1)
 
 df_train = df[:num_rows_train]
 df_test = df[num_rows_train:]
-df_train.to_csv('data/train.csv', index = False)
-df_test.to_csv('data/test.csv', index = False)
+df_train.to_csv('data/breast/train.csv', index = False)
+df_test.to_csv('data/breast/test.csv', index = False)
 
-
+os.remove('data/breast-cancer.data')
