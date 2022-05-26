@@ -107,3 +107,4 @@ with open(os.path.join(result_dir, 'pred_test.csv'), 'w') as f:
 with open(os.path.join(result_dir, 'pred_test_rules.csv'), 'w') as f:
   for i in range(len(y_pred_rules)):
     f.write(str(y_pred_rules[i]) + '\n')
+

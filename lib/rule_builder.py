@@ -35,7 +35,7 @@ class RuleBuilder:
 		print("Deduping...")
 		print(str(len(self.candidate_rules)) + " candidate rules")
 		
-		self.generate_solutions() 
+		self.generate_solutions(num_trees_to_merge = self.random_forest.get_num_trees()) 
 
 		if(self.use_data is True):
 			print()
@@ -78,7 +78,7 @@ class RuleBuilder:
 
 		self.solution_rules = selected_rules
 
-	def generate_solutions(self):
+	def generate_solutions(self, num_trees_to_merge):
 		print()
 		print("Running Apriori")
 		
