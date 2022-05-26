@@ -1,12 +1,11 @@
-# set working directory - please set to your project directory
 import sys
-project_directory = '/Users/elachen/Desktop/code/TE2Rule'
-sys.path.append(project_directory)
 import utils.experiment_utils
 import sys
 import os
 import pandas as pd
 from time import time
+
+project_directory = os.getcwd()
 
 # grid search parameters
 # Note that some of the experiments with bank and adult datasets take a long time (> 8 hours) to finish.
@@ -17,7 +16,7 @@ max_depth_list = [3, 5]
 num_stages_list = [1, 2, 3]
 decision_rule_precision = 0.95
 experiment_desc = "all_global_te2rules_experiments"
-need_data_prep = False
+need_data_prep = True
 
 # prep datasets if needed
 if need_data_prep:
@@ -42,7 +41,7 @@ def experiment_iter(dataset_name, n_estimators, max_depth, num_stages):
     # configure paths
     training_path = os.path.join(project_directory, "data/{}/train.csv".format(dataset_name))
     testing_path = os.path.join(project_directory, "data/{}/test.csv".format(dataset_name))
-    output_path = os.path.join(project_directory, "experiments/global_result/te2rules/{}".format(dataset_name))
+    output_path = os.path.join(project_directory, "results/global_result/te2rules/{}".format(dataset_name))
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     
@@ -118,4 +117,4 @@ experiment_result_df = pd.DataFrame({
     'time': _time_list
 })
 
-experiment_result_df.to_csv(os.path.join(project_directory, "experiments/global_result/te2rules/experiment_summary_{}.csv".format(experiment_desc), index = False))
+experiment_result_df.to_csv(os.path.join(project_directory, "results/global_result/te2rules/experiment_summary_{}.csv".format(experiment_desc), index = False))

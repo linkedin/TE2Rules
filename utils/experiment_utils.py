@@ -1,9 +1,9 @@
 from sklearn.ensemble import GradientBoostingClassifier
-from lib.trainer import Trainer
-from lib.adapter import ScikitTreeAdapter, ScikitForestAdapter
+from te2rule.trainer import Trainer
+from te2rule.adapter import ScikitTreeAdapter, ScikitForestAdapter
 from sklearn.tree import export_text, plot_tree
-from lib.rule import Rule
-from lib.rule_builder import RuleBuilder
+from te2rule.rule import Rule
+from te2rule.rule_builder import RuleBuilder
 import pandas as pd 
 import os 
 

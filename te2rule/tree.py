@@ -1,4 +1,4 @@
-from lib.rule import Rule
+from te2rule.rule import Rule
 
 class Node:
   def __init__(self, is_leaf):

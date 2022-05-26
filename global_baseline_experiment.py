@@ -5,10 +5,8 @@ from time import time
 import warnings
 warnings.filterwarnings('ignore')
 
-# set working directory - please set to your project directory
 import sys
-project_directory = '/Users/elachen/Desktop/code/TE2Rule'
-sys.path.append(project_directory)
+project_directory = os.getcwd()
 
 # experiment parameters
 dataset_name_params = ['breast', 'compas', 'bank', 'adult']
@@ -16,7 +14,7 @@ method_name_params = ['intrees', 'skoperules', 'rulefit']
 n_estimators_params = [10, 20, 50]
 max_depth_params = [3, 5]
 experiment_desc = "test"
-need_data_prep = False
+need_data_prep = True
 
 # prep datasets if needed
 if need_data_prep:
@@ -62,11 +60,11 @@ def show_model_performance(model_dir, test_file, use_test=True):
 
 def run_baseline_script(method_name, train_file, test_file, result_dir, n_estimators, max_depth):
     if method_name == 'intrees':
-        os.system('Rscript ../intrees_baseline.R %s %s %s %d' % (train_file, test_file, result_dir, n_estimators))
+        os.system('Rscript baseline/intrees_baseline.R %s %s %s %d' % (train_file, test_file, result_dir, n_estimators))
     elif method_name == 'skoperules':
-        os.system('python3 ../skope_baseline.py %s %s %s %d %d' % (train_file, test_file, result_dir, n_estimators, max_depth))
+        os.system('python3 baseline/skope_baseline.py %s %s %s %d %d' % (train_file, test_file, result_dir, n_estimators, max_depth))
     elif method_name == 'rulefit':
-        os.system('python3 ../rulefit_baseline.py %s %s %s %d %d' % (train_file, test_file, result_dir, n_estimators, max_depth))
+        os.system('python3 baseline/rulefit_baseline.py %s %s %s %d %d' % (train_file, test_file, result_dir, n_estimators, max_depth))
     else:
         print("error!")
     
@@ -76,7 +74,7 @@ def experiment_iter(dataset_name, method_name, n_estimators, max_depth):
     data_dir = os.path.join(project_directory, "data/{}".format(dataset_name))
     train_file = os.path.join(data_dir, 'train.csv')
     test_file = os.path.join(data_dir, 'test.csv')
-    result_dir = os.path.join(project_directory, 'experiments/global_result/baselines/{}'.format(dataset_name))
+    result_dir = os.path.join(project_directory, 'results/global_result/baselines/{}'.format(dataset_name))
     if(not os.path.exists(result_dir)):
         os.makedirs(result_dir)
 
@@ -141,4 +139,4 @@ experiment_result_df = pd.DataFrame({
 
 experiment_result_df.to_csv(os.path.join(
     project_directory, 
-    "experiments/global_result/baselines/experiment_summary_{}.csv".format(experiment_desc)), index = False)
+    "results/global_result/baselines/experiment_summary_{}.csv".format(experiment_desc)), index = False)

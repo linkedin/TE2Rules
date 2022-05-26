@@ -1,5 +1,5 @@
 from sklearn.tree import _tree
-from lib.tree import RandomForest, DecisionTree, TreeNode, LeafNode
+from te2rule.tree import RandomForest, DecisionTree, TreeNode, LeafNode
 import numpy as np
 
 class ScikitForestAdapter:

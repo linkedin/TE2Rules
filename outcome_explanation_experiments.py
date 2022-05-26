@@ -1,20 +1,19 @@
-# set working directory - please set to your project directory
 import sys
-project_directory = '/Users/elachen/Desktop/code/TE2Rule'
-sys.path.append(project_directory)
 
 # load packages
 # pip install anchor-exp
 from sklearn.ensemble import GradientBoostingClassifier
-from lib.trainer import Trainer
-from lib.adapter import ScikitTreeAdapter, ScikitForestAdapter
+from te2rule.trainer import Trainer
+from te2rule.adapter import ScikitTreeAdapter, ScikitForestAdapter
 
 from sklearn.tree import export_text
-from lib.rule import Rule
+from te2rule.rule import Rule
 import numpy as np
 import pandas as pd
 from anchor import utils
 from anchor import anchor_tabular
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import lime
 import time
@@ -25,6 +24,8 @@ import os
 import pandas as pd
 from time import time
 
+project_directory = os.getcwd()
+
 
 # experiment parameters
 # Note: the rule search might take a while - to speed up, set num_stages = 2 for early stop 
@@ -32,7 +33,7 @@ from time import time
 n_estimators = 20
 max_depth = 3
 num_stages = n_estimators
-need_data_prep = False
+need_data_prep = True
 
 # prep datasets if needed
 if need_data_prep:
@@ -47,7 +48,7 @@ for (dataset_name, sample_size) in [("breast", 30), ("compas", 100), ("bank", 10
     # configure paths
     training_path = os.path.join(project_directory, "data/{}/train.csv".format(dataset_name))
     testing_path = os.path.join(project_directory, "data/{}/test.csv".format(dataset_name))
-    output_path = os.path.join(project_directory, "experiments/local_result/{}".format(dataset_name))
+    output_path = os.path.join(project_directory, "results/local_result/{}".format(dataset_name))
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
@@ -196,36 +197,44 @@ for (dataset_name, sample_size) in [("breast", 30), ("compas", 100), ("bank", 10
     plt.rcParams['font.size'] = '23'
     plt.rcParams.update({'figure.autolayout': True})
 
+    plt.figure()
     plt.hist([te2rules_result.precision, anchors_result.precision], label=['te2rules', 'anchors'])
     plt.legend(loc='upper left', framealpha=0.6)
     plt.xlabel("rule precision")
     plt.ylabel("number of instances")
     # plt.xlim([0, 1.1])
     plt.savefig(output_path + '/{}_outcome_precision.png'.format(dataset_name), dpi=1000)
-    plt.show()
+    # plt.show()
+    plt.close()
 
     # recall
+    plt.figure()
     plt.hist([te2rules_result.recall, anchors_result.recall], label=['te2rules', 'anchors'])
     plt.legend(loc='upper left', framealpha=0.6)
     plt.xlabel("rule recall")
     plt.ylabel("number of instances")
     # plt.xlim([0, 1.1])
     plt.savefig(output_path + '/{}_outcome_recall.png'.format(dataset_name), dpi=1000)
-    plt.show()
+    # plt.show()
+    plt.close()
 
     # coverage
+    plt.figure()
     plt.hist([te2rules_result.coverage, anchors_result.coverage], label=['te2rules', 'anchors'])
     plt.legend(loc='upper left', framealpha=0.6)
     plt.xlabel("rule coverage")
     plt.ylabel("number of instances")
     # plt.xlim([0, 1.1])
     plt.savefig(output_path + '/{}_outcome_coverage.png'.format(dataset_name), dpi=1000)
-    plt.show()
+    # plt.show()
+    plt.close()
 
     # rule_length
+    plt.figure()
     plt.hist([te2rules_result.rule_length, anchors_result.rule_length], label=['te2rules', 'anchors'])
     plt.legend(loc='upper right', framealpha=0.6)
     plt.xlabel("rule rule_length")
     plt.ylabel("number of instances")
     plt.savefig(output_path + '/{}_outcome_rule_length.png'.format(dataset_name), dpi=1000)
-    plt.show()
+    # plt.show()
+    plt.close()
