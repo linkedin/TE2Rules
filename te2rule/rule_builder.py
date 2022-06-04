@@ -3,7 +3,10 @@ class RuleBuilder:
 		self.random_forest = random_forest
 		# if num_stages not set by user, will set it to the number of trees
 		# note that we neednum_stages <= num_trees
-		self.num_stages = self.random_forest.get_num_trees() if not num_stages else min(num_stages, self.random_forest.get_num_trees())
+		if(num_stages is not None):
+			self.num_stages = min(num_stages, self.random_forest.get_num_trees())
+		else:
+			self.num_stages = self.random_forest.get_num_trees()	
 		self.decision_rule_precision = decision_rule_precision
 
 	def explain(self, X=None, y=None):		
@@ -35,7 +38,7 @@ class RuleBuilder:
 		print("Deduping...")
 		print(str(len(self.candidate_rules)) + " candidate rules")
 		
-		self.generate_solutions(num_trees_to_merge = self.random_forest.get_num_trees()) 
+		self.generate_solutions() 
 
 		if(self.use_data is True):
 			print()
@@ -78,7 +81,7 @@ class RuleBuilder:
 
 		self.solution_rules = selected_rules
 
-	def generate_solutions(self, num_trees_to_merge):
+	def generate_solutions(self):
 		print()
 		print("Running Apriori")
 		
@@ -170,12 +173,12 @@ class RuleBuilder:
 			min_score, max_score = self.score_rule_using_model(rule)
 			
 			if(min_score == 1.0):
-				decision_rule_precision = self.decision_rule_precision
+				decision_rule_precision = 1.00
 			else:
 				decision_rule_precision = 0.00
 
 
-		if(decision_rule_precision >= 1):
+		if(decision_rule_precision >= self.decision_rule_precision):
 			# solution, throw candidate: it is already a solution
 			return True, False
 		else:

@@ -4,7 +4,6 @@ import six
 import sys
 sys.modules['sklearn.externals.six'] = six
 from skrules import SkopeRules
-import sys 
 import os 
 from sklearn.ensemble import RandomForestClassifier, BaggingClassifier
 from sklearn.tree import DecisionTreeClassifier
