@@ -1,7 +1,7 @@
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.tree import _tree
-from te2rule.tree import RandomForest, DecisionTree, TreeNode, LeafNode
+from te2rules.tree import RandomForest, DecisionTree, TreeNode, LeafNode
 import numpy as np
 
 class ScikitGradientBoostingClassifierAdapter:

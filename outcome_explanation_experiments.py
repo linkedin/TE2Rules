@@ -1,46 +1,51 @@
-import sys
-
-# load packages
-# pip install anchor-exp
+import os
+from trainer import Trainer
 from sklearn.ensemble import GradientBoostingClassifier
-from te2rule.trainer import Trainer
-from te2rule.adapter import ScikitTreeAdapter, ScikitForestAdapter
-
-from sklearn.tree import export_text
-from te2rule.rule import Rule
-import numpy as np
-import pandas as pd
-from anchor import utils
-from anchor import anchor_tabular
+from time import time
+from te2rules.explainer import ModelExplainer
+import numpy as np 
+import pandas as pd 
+from anchor import utils, anchor_tabular
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import lime
-import time
-import os
-
-import utils.experiment_utils
-import os
-import pandas as pd
-from time import time
 
 project_directory = os.getcwd()
 
-
 # experiment parameters
-# Note: the rule search might take a while - to speed up, set num_stages = 2 for early stop 
-# or use smaller n_estimators and max_depth.
 n_estimators = 20
 max_depth = 3
 num_stages = n_estimators
-need_data_prep = True
 
-# prep datasets if needed
-if need_data_prep:
-    os.system('python3 data_prep/data_prep_adult.py')
-    os.system('python3 data_prep/data_prep_bank.py')
-    os.system('python3 data_prep/data_prep_compas.py')
-    os.system('python3 data_prep/data_prep_breast.py')
+# prep datasets
+os.system('python3 data_prep/data_prep_adult.py')
+os.system('python3 data_prep/data_prep_bank.py')
+os.system('python3 data_prep/data_prep_compas.py')
+os.system('python3 data_prep/data_prep_breast.py')
+
+# Train model to explain
+def train_tree_ensemble(training_data_loc, testing_data_loc, n_estimators, max_depth):
+    print("XGBoost Model")
+    trainer = Trainer(training_data_loc=training_data_loc, 
+        testing_data_loc=testing_data_loc,
+        scikit_model=GradientBoostingClassifier(n_estimators=n_estimators, max_depth=max_depth, random_state=1))
+    accuracy, auc = trainer.evaluate_model()
+    print("Accuracy: ", accuracy)
+    print("AUC: ", auc)
+    y_pred = trainer.model.predict(trainer.x_train)
+    if(sum(y_pred) == 0):
+        print("Model doen't learn any positive")
+    return trainer, y_pred, accuracy, auc
+
+# Explain using rules 
+def explain_with_rules(model, feature_names, x_train, y_train_pred, num_stages, decision_rule_precision):
+    # build rules
+    model_explainer = ModelExplainer(model=model, feature_names=feature_names)
+    rules = model_explainer.explain(X=x_train, y=y_train_pred,
+                                      num_stages=num_stages, 
+                                      decision_rule_precision=decision_rule_precision) 
+    fidelities = model_explainer.get_fidelity()
+    return rules, fidelities
 
 # set for parameters for each dataset
 # the training data only contains about 30 positive instances, so we cannot set it to be too large
@@ -53,14 +58,14 @@ for (dataset_name, sample_size) in [("breast", 30), ("compas", 100), ("bank", 10
         os.makedirs(output_path)
 
     # write to summary_stats
-    f = open(output_path + "/summary_stats.txt", "w")
-    f = open(output_path + "/summary_stats.txt", "a")
+    f = open(os.path.join(output_path, "summary_stats.txt"), "w")
+    f = open(os.path.join(output_path, "summary_stats.txt"), "a")
     f.write("dataset_name: {}\n".format(dataset_name))
     f.write("sample_size: {}\n".format(sample_size))
     f.close()
 
-    # set up trainer and model
-    trainer, random_forest, y_pred, accuracy, auc = utils.experiment_utils.train_tree_ensemble(
+    # Train tree ensemble model
+    trainer, y_train_pred, accuracy, auc = train_tree_ensemble(
         training_data_loc=training_path,
         testing_data_loc=testing_path,
         n_estimators=n_estimators,
@@ -69,10 +74,11 @@ for (dataset_name, sample_size) in [("breast", 30), ("compas", 100), ("bank", 10
 
     # Explain the training data using rules
     start_time = time()
-    rules, fidelities = utils.experiment_utils.explain_with_rules(
+    rules, fidelities = explain_with_rules(
+        model=trainer.model, 
+        feature_names=trainer.feature_names,
         x_train=trainer.x_train,
-        y_train_pred=y_pred,
-        random_forest=random_forest,
+        y_train_pred=y_train_pred,
         num_stages=num_stages,
         decision_rule_precision=0.95
     )

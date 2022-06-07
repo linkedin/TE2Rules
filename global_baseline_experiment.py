@@ -1,28 +1,25 @@
 import os
 import pandas as pd
-from sklearn import metrics
 from time import time
-import warnings
-warnings.filterwarnings('ignore')
+from sklearn import metrics
 
-import sys
 project_directory = os.getcwd()
+result_directory = os.path.join(project_directory, "results/global_result/baselines/")
+if not os.path.exists(result_directory):
+    os.makedirs(result_directory)
 
-# experiment parameters
+# grid search parameters
 dataset_name_params = ['breast', 'compas', 'bank', 'adult']
 method_name_params = ['intrees', 'skoperules', 'rulefit']
 n_estimators_params = [10, 20, 50]
 max_depth_params = [3, 5]
-experiment_desc = "test"
-need_data_prep = True
+experiment_desc = "all_global_baseline_experiments"
 
-# prep datasets if needed
-if need_data_prep:
-    os.system('python3 data_prep/data_prep_adult.py')
-    os.system('python3 data_prep/data_prep_bank.py')
-    os.system('python3 data_prep/data_prep_compas.py')
-    os.system('python3 data_prep/data_prep_breast.py')
-
+# prep datasets
+os.system('python3 data_prep/data_prep_adult.py')
+os.system('python3 data_prep/data_prep_bank.py')
+os.system('python3 data_prep/data_prep_compas.py')
+os.system('python3 data_prep/data_prep_breast.py')
 
 def show_rule_performance(model_dir):
     print("Performance of rules on train data")
@@ -57,7 +54,6 @@ def show_model_performance(model_dir, test_file, use_test=True):
     print("Acc: " + str(acc))
     return (auc, acc)
 
-
 def run_baseline_script(method_name, train_file, test_file, result_dir, n_estimators, max_depth):
     if method_name == 'intrees':
         os.system('Rscript baseline/intrees_baseline.R %s %s %s %d' % (train_file, test_file, result_dir, n_estimators))
@@ -68,75 +64,72 @@ def run_baseline_script(method_name, train_file, test_file, result_dir, n_estima
     else:
         print("error!")
     
-def experiment_iter(dataset_name, method_name, n_estimators, max_depth):    
-    # config path
-    
-    data_dir = os.path.join(project_directory, "data/{}".format(dataset_name))
-    train_file = os.path.join(data_dir, 'train.csv')
-    test_file = os.path.join(data_dir, 'test.csv')
-    result_dir = os.path.join(project_directory, 'results/global_result/baselines/{}'.format(dataset_name))
-    if(not os.path.exists(result_dir)):
-        os.makedirs(result_dir)
+def experiment_iter(dataset_name, method_name, n_estimators, max_depth):        
+    # configure paths
+    training_path = os.path.join(project_directory, "data/{}/train.csv".format(dataset_name))
+    testing_path = os.path.join(project_directory, "data/{}/test.csv".format(dataset_name))
+    output_path = os.path.join(result_directory, dataset_name)
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
 
     # run experiment
-    print("started experiment for: {}, {}, {}, {}".format(dataset_name, method_name, n_estimators, max_depth))
-    dataset_name_list.append(dataset_name)
-    method_list.append(method_name)
-    n_estimators_list.append(n_estimators)
-    max_depth_list.append(max_depth)
     start_time = time()
-    run_baseline_script(method_name, train_file, test_file, result_dir, n_estimators, max_depth)
-    model_dir = os.path.join(result_dir, method_name)
-    time_list.append(time() - start_time)
-    
-    (fidelity, fidelity_positives, fidelity_negatives) = show_rule_performance(model_dir)
-    fidelity_list.append(fidelity)
-    fidelity_pos_list.append(fidelity_positives)
-    fidelity_neg_list.append(fidelity_negatives)
-    (auc, acc) = show_model_performance(model_dir, test_file)
-    model_accuracy_list.append(acc)
-    model_auc_list.append(auc)
+    run_baseline_script(method_name, training_path, testing_path, output_path, n_estimators, max_depth)
+    model_dir = os.path.join(output_path, method_name)
+    total_time = time() - start_time
+
+    fidelity = show_rule_performance(model_dir)
+    (auc, acc) = show_model_performance(model_dir, testing_path)
     
     rules = []
-    with open(result_dir+'/{}/rules.txt'.format(method_name), 'r') as f:
+    with open(os.path.join(output_path, '{}/rules.txt'.format(method_name)), 'r') as f:
         rules = f.readlines()
-    num_rules_list.append(max(0, len(rules) - 1))
+
+    return acc, auc, len(rules), total_time, fidelity 
     
-def experiment(dataset_name_params, method_name_params, n_estimators_params, max_depth_params):
+def experiment(method_name_params, dataset_name_params, n_estimators_params, max_depth_params):
+    method_col=[]
+    dataset_name_col=[]
+    n_estimators_col=[]
+    max_depth_col=[]
+    model_accuracy_col=[]
+    model_auc_col=[]
+    num_rules_col=[]
+    time_col=[]
+    fidelity_col=[]
+    
     for method_name in method_name_params:
-        if method_name == 'intrees':  # intrees runs RF and doesn't use max_depth
-            max_depth = 'NA'
-            for dataset_name in dataset_name_params:
-                for n_estimators in n_estimators_params:
-                    experiment_iter(dataset_name, method_name, n_estimators, max_depth)
-        else:
-            for dataset_name in dataset_name_params:
-                for n_estimators in n_estimators_params:
-                    for max_depth in max_depth_params:
-                        experiment_iter(dataset_name, method_name, n_estimators, max_depth)
+        for dataset_name in dataset_name_params:
+            for n_estimators in n_estimators_params:
+                for max_depth in max_depth_params:
+                    print("experiment: {} method, {} data, {} trees, {} depth".format(method_name, dataset_name, n_estimators, max_depth))
+                    accuracy, auc, num_rules, time, fidelity = experiment_iter(dataset_name, method_name, n_estimators, max_depth)
+                    print()
+                    method_col.append(method_name)
+                    dataset_name_col.append(dataset_name)
+                    n_estimators_col.append(n_estimators)
+                    max_depth_col.append(max_depth)
+
+                    model_accuracy_col.append(accuracy)
+                    model_auc_col.append(auc)
+                    num_rules_col.append(num_rules)
+                    time_col.append(time)
+                    fidelity_col.append(fidelity)
 
 
-# experiment pipeline
-dataset_name_list, method_list, n_estimators_list, max_depth_list = [], [], [], []
-model_accuracy_list, model_auc_list, num_rules_list, time_list = [], [], [], []
-fidelity_list, fidelity_pos_list, fidelity_neg_list = [], [], []
+    experiment_result_df = pd.DataFrame({
+        'method': method_col,
+        'dataset_name': dataset_name_col,
+        'n_estimators': n_estimators_col,
+        'max_depth': max_depth_col,
+        'model_accuracy': model_accuracy_col,
+        'model_auc': model_auc_col,
+        'num_rules': num_rules_col,
+        'time': time_col,
+        'fidelity': fidelity_col,
+    })
 
-experiment(dataset_name_params, method_name_params, n_estimators_params, max_depth_params)
+    experiment_result_df.to_csv(os.path.join(result_directory, "experiment_summary_{}.csv".format(experiment_desc)), index = False)
 
-experiment_result_df = pd.DataFrame({
-    'method': method_list,
-    'dataset_name': dataset_name_list,
-    'n_estimators': n_estimators_list,
-    'max_depth': max_depth_list,
-    'model_accuracy': model_accuracy_list,
-    'model_auc': model_auc_list,
-    'num_rules': num_rules_list,
-    'time': time_list,
-    'fidelity': fidelity_list,
-    'fidelity_pos': fidelity_pos_list,
-    'fidelity_neg': fidelity_neg_list,
-})
+experiment(method_name_params, dataset_name_params, n_estimators_params, max_depth_params)
 
-experiment_result_df.to_csv(os.path.join(
-    project_directory, 
-    "results/global_result/baselines/experiment_summary_{}.csv".format(experiment_desc)), index = False)

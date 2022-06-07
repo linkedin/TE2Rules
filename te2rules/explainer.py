@@ -1,6 +1,6 @@
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from te2rule.adapter import ScikitRandomForestClassifierAdapter, ScikitGradientBoostingClassifierAdapter
-from te2rule.rule import Rule
+from te2rules.adapter import ScikitRandomForestClassifierAdapter, ScikitGradientBoostingClassifierAdapter
+from te2rules.rule import Rule
 import logging
 log = logging.getLogger()
 from tqdm import tqdm
