@@ -34,7 +34,7 @@ df_train.to_csv('data/bank/train_raw.csv', index = False)
 df_test.to_csv('data/bank/test_raw.csv', index = False)
 
 df = pd.get_dummies(data=df, columns=column_names_categorical)
-df = df.drop('label_0', 1)
+df = df.drop(columns = ['label_0'])
 df.columns = [x.replace('-', '_').replace(' ', '_') for x in df.columns]
 
 df_train = df[:num_rows_train]

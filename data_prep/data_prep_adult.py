@@ -37,8 +37,7 @@ def custom_preprocessing(df):
 	df = reduce_categories(df, 'native_country',
 		country_list, [c if c == 'United_States' else 'Other' for c in country_list])
 	
-	df = df.drop('fnlwgt',1)
-	df = df.drop('education_num',1)
+	df = df.drop(columns = ['fnlwgt', 'education_num'])
 	
 	return df
 
@@ -59,7 +58,7 @@ if not os.path.exists('data/adult'):
     os.makedirs('data/adult')
 df_train.to_csv('data/adult/train_raw.csv', index = False)
 df_train = pd.get_dummies(data=df_train, columns=column_names_categorical)
-df_train = df_train.drop('label_0', 1)
+df_train = df_train.drop(columns = ['label_0'])
 df_train.to_csv('data/adult/train.csv', index = False)
 
 
@@ -68,7 +67,7 @@ df_test = rename_label(df_test, 'label', ["<=50K", ">50K"], ["0", "1"])
 df_test = custom_preprocessing(df_test)
 df_test.to_csv('data/adult/test_raw.csv', index = False)
 df_test = pd.get_dummies(data=df_test, columns=column_names_categorical)
-df_test = df_test.drop('label_0', 1)
+df_test = df_test.drop(columns = ['label_0'])
 df_test.to_csv('data/adult/test.csv', index = False)
 
 # remove redundant files

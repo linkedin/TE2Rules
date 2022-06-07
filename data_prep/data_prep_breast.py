@@ -48,7 +48,7 @@ df_train.to_csv('data/breast/train_raw.csv', index = False)
 df_test.to_csv('data/breast/test_raw.csv', index = False)
 
 df = pd.get_dummies(data=df, columns=column_names_categorical)
-df = df.drop('label_0', 1)
+df = df.drop(columns = ['label_0'])
 
 df_train = df[:num_rows_train]
 df_test = df[num_rows_train:]
