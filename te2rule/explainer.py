@@ -1,5 +1,5 @@
-from sklearn.ensemble import GradientBoostingClassifier
-from te2rule.adapter import ScikitForestAdapter
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from te2rule.adapter import ScikitRandomForestClassifierAdapter, ScikitGradientBoostingClassifierAdapter
 import logging
 log = logging.getLogger()
 from tqdm import tqdm
@@ -12,9 +12,11 @@ class ModelExplainer:
       logging.basicConfig(format='%(message)s')
 
     if(isinstance(model, GradientBoostingClassifier)):
-      self.random_forest = ScikitForestAdapter(model, feature_names).random_forest
+      self.random_forest = ScikitGradientBoostingClassifierAdapter(model, feature_names).random_forest
+    elif(isinstance(model, RandomForestClassifier)):
+      self.random_forest = ScikitRandomForestClassifierAdapter(model, feature_names).random_forest
     else:
-      raise ValueError("Only XGB models supported. But received " + str(type(model)))
+      raise ValueError("Only GradientBoostingClassifier and RandomForestClassifier are supported. But received " + str(type(model)))
 
   def explain(self, X = None, y = None):
       self.rule_builder = RuleBuilder(random_forest = self.random_forest) 

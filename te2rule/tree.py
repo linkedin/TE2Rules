@@ -112,6 +112,18 @@ class DecisionTree:
       rules = self.left.collect_rules(tree_id, 2*node_id + 1, rules)
       rules = self.right.collect_rules(tree_id, 2*node_id + 2, rules)
     return rules
+  
+  def get_scores(self, scores):
+    if(not self.node.is_leaf):
+      scores = self.left.get_scores(scores)
+      scores = self.right.get_scores(scores)
+    else:
+      for i in self.decision_support:
+        if(i not in scores):
+          scores[i] = self.node.value
+        else:
+          scores[i] = scores[i] + self.node.value
+    return scores
 
   def get_rule_score(self, rule):
     #print(self.decision_rule)
@@ -126,11 +138,14 @@ class DecisionTree:
 
 
 class RandomForest:
-  def __init__(self, decision_tree_ensemble, weight, bias, feature_names):
+  def __init__(self, decision_tree_ensemble, weight, bias, feature_names, activation):
     self.decision_tree_ensemble = decision_tree_ensemble
     self.weight = weight
     self.bias = bias
     self.feature_names = feature_names
+    self.activation = activation
+    if(self.activation not in ['sigmoid', 'linear']):
+      raise ValueError('activation of forest can only be sigmoid or linear')
 
   def get_num_trees(self):
     return len(self.decision_tree_ensemble)
@@ -142,6 +157,20 @@ class RandomForest:
       rules_from_tree = rules_from_tree + rules
     return rules_from_tree
 
+  def get_scores(self):
+    scores = {}
+    for tree in self.decision_tree_ensemble:
+      scores = tree.get_scores(scores)
+    
+    for i in scores.keys():
+      scores[i] = scores[i]*self.weight + self.bias
+      scores[i] = self.activation_function(scores[i])
+    scores_list = []
+    for i in range(max(scores.keys())):
+      scores_list.append(scores[i])      
+
+    return scores_list
+
   def get_rule_score(self, rule):
     min_score = self.bias
     max_score = self.bias
@@ -150,12 +179,20 @@ class RandomForest:
       min_score = min_score + score[0] * self.weight
       max_score = max_score + score[1] * self.weight
     min_score = self.activation_function(min_score)
+    min_score = self.thresholding_function(min_score)
     max_score = self.activation_function(max_score)
+    max_score = self.thresholding_function(max_score)
     return [min_score, max_score]  
 
   def activation_function(self, value):
-    transformed_value = 1/(1 + 2.71828**(-value))
-    if(transformed_value >= 0.5):
+    if(self.activation == 'sigmoid'):
+      transformed_value = 1/(1 + 2.71828**(-value))
+    if(self.activation == 'linear'):
+      transformed_value = value
+    return transformed_value
+
+  def thresholding_function(self, value):
+    if(value >= 0.5):
       thresholded_value = 1.0
     else:
       thresholded_value = 0.0
