@@ -1,5 +1,6 @@
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from te2rule.adapter import ScikitRandomForestClassifierAdapter, ScikitGradientBoostingClassifierAdapter
+from te2rule.rule import Rule
 import logging
 log = logging.getLogger()
 from tqdm import tqdm
@@ -18,8 +19,10 @@ class ModelExplainer:
     else:
       raise ValueError("Only GradientBoostingClassifier and RandomForestClassifier are supported. But received " + str(type(model)))
 
-  def explain(self, X = None, y = None):
-      self.rule_builder = RuleBuilder(random_forest = self.random_forest) 
+  def explain(self, X = None, y = None, num_stages=None, decision_rule_precision=0.95):
+      self.rule_builder = RuleBuilder(random_forest = self.random_forest, 
+        num_stages=num_stages, 
+        decision_rule_precision=decision_rule_precision) 
       rules = self.rule_builder.explain(X, y)
       return rules 
   
@@ -49,14 +52,14 @@ class RuleBuilder:
       for i in range(len(self.labels)):
         if(self.labels[i] == 1):
           self.positives.append(i)
-      log.info('\n')
+      log.info('')
       log.info("Positives: " + str(len(self.positives)))
     else:
       self.use_data = False
       self.positives = None
     
 
-    log.info('\n')
+    log.info('')
     log.info("Rules from trees")
     self.candidate_rules = self.random_forest.get_rules(data=self.data)
     self.solution_rules = []
@@ -70,15 +73,19 @@ class RuleBuilder:
     log.info(str(len(self.candidate_rules)) + " candidate rules")
     
     self.generate_solutions() 
+    
+    self.solution_rules = self.shorten(self.solution_rules)
+    self.solution_rules = self.deduplicate(self.solution_rules)
 
     if(self.use_data is True):
-      log.info('\n')
+      log.info('')
       log.info("Set Cover")
       total_support = []
       for r in self.solution_rules:
         total_support = list(set(total_support).union(set(r.decision_support)))
       self.rules_to_cover_positives(list(set(total_support).intersection(set(self.positives)))) 
       log.info(str(len(self.solution_rules)) + " rules found")
+    
     return self.solution_rules
 
   def rules_to_cover_positives(self, positives):
@@ -113,16 +120,18 @@ class RuleBuilder:
     self.solution_rules = selected_rules
 
   def generate_solutions(self):
-    log.info('\n')
+    log.info('')
     log.info("Running Apriori")
-    
+    log.info('')
+      
     positives_to_explain = self.positives
     for stage in tqdm(range(self.num_stages), desc="Merging Trees...",):
+      log.info('')
+
       if(self.use_data is True):        
         if(len(positives_to_explain) == 0):
           continue
 
-      log.info('\n')
       log.info("Rules from " + str(stage + 1) + " trees")
 
       new_candidates = []
@@ -180,6 +189,7 @@ class RuleBuilder:
         
         log.info("Fidelity")
         log.info("Total: " + str(fidelity) + ", Positive: " + str(fidelity_positives) + ", Negative: " + str(fidelity_negatives))
+      log.info('')
                 
 
   def score_rule_using_data(self, rule, labels):
@@ -268,6 +278,35 @@ class RuleBuilder:
     for i in range(len(dedup_rules)):
       dedup_rules[i].create_identity_map()
     return dedup_rules
+
+  def shorten(self, rules): 
+    for i in range(len(rules)):
+      pred_dict = {}
+      for pred in rules[i].decision_rule:
+          f, op, val = pred.split()
+          # determine direction of op
+          op_type = 'equal'
+          if op in ('<', '<='):
+              op_type = 'less than'
+          elif op in ('>', '>='):
+              op_type = 'greater than'
+          # store value if haven't seen (f, op_type)
+          if (f, op_type) not in pred_dict:
+              pred_dict[(f, op_type)] = (op, val)
+          # otherwise, combine rules
+          else:
+              old_op, old_val = pred_dict[(f, op_type)]
+              if (old_op == '<=' and op == '<' and val == old_val) or (old_op == '>=' and op == '>' and val == old_val):
+                  pred_dict[(f, op_type)] = (op, val)
+              elif (op_type == 'less than' and val < old_val) or (op_type == 'greater than' and val > old_val):
+                  pred_dict[(f, op_type)] = (op, val)
+      # make shorter rule from predicate list
+      final_rule = []
+      for (f, _) in pred_dict:
+        op, val = pred_dict[(f, _)]
+        final_rule.append((' ').join([f, op, val]))
+      rules[i].decision_rule = final_rule
+    return rules
 
   def apply(self, df):
     coverage = []
