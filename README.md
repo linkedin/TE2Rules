@@ -1,4 +1,4 @@
-# TE2Rule
+# TE2Rules
 
 Tree Ensembles (eg. Gradient Boosted Trees and Random Forests) provide a higher prediction performance compared to Single Decision Trees. However, it is generally difficult for humans to make sense of Tree Ensembles (TE), resulting in a lack of model transparency and interpretability. This project presents a novel approach to convert a Tree Ensemble  trained for a binary classification task, to an equivalent, globally comprehensible rule list. This rule list (RL) captures the necessary and sufficient conditions for classification by the TE. Experiments on benchmark datasets demonstrate that (i) predictions from the RL have high fidelity w.r.t. the original TE, (ii) RL have high interpretability measured by the number of the decision rules, (iii) there is an easy trade-off between RL fidelity and its interpretability and compute time, and (iv) RL can provide a fast alternative to state-of-art rule-based instance-level outcome explanation techniques.
 
