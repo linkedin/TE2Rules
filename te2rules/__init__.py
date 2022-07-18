@@ -1,3 +1,1 @@
-import importlib.metadata
-
-__version__ = importlib.metadata.version("te2rules")
+__version__ = "0.0.3"

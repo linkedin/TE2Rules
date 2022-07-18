@@ -9,13 +9,12 @@ Tree Ensembles (eg. Gradient Boosted Trees and Random Forests) provide a higher 
 For more detailed introduction of TE2Rules, please check out our [paper](https://arxiv.org/abs/2206.14359).
 
 ## Required python packages for TE2Rules:
-numpy >=1.22.3 \
-pandas >=1.4.2 \
-scikit-learn >=1.1.1 \
+numpy >=1.19.1 \
+pandas >=1.2.4 \
+scikit-learn >=1.0.1 \
 six >=1.15.0 \
-testresources \
-tqdm \
-xgboost >=1.6.1
+tqdm >=4.43.0 \
+xgboost >=1.4.2
 
 ## Required python packages for running experiments:
 anchor==0.4.0 \
