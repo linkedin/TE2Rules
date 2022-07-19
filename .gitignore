@@ -2,7 +2,6 @@
 *.txt
 __pycache__
 .ipynb_checkpoints
-data/
 results/
 dist/
 *egg-info/
