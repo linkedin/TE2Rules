@@ -33,11 +33,11 @@ class ModelExplainer:
                 + str(type(model))
             )
 
-    def explain(self, X=None, y=None, num_stages=None, decision_rule_precision=0.95):
+    def explain(self, X=None, y=None, num_stages=None, min_precision=0.95):
         self.rule_builder = RuleBuilder(
             random_forest=self.random_forest,
             num_stages=num_stages,
-            decision_rule_precision=decision_rule_precision,
+            min_precision=min_precision,
         )
         rules = self.rule_builder.explain(X, y)
         return rules
@@ -52,7 +52,7 @@ class ModelExplainer:
 
 
 class RuleBuilder:
-    def __init__(self, random_forest, num_stages=None, decision_rule_precision=0.95):
+    def __init__(self, random_forest, num_stages=None, min_precision=0.95):
         self.random_forest = random_forest
         # if num_stages not set by user, will set it to the number of trees
         # note that we neednum_stages <= num_trees
@@ -60,7 +60,7 @@ class RuleBuilder:
             self.num_stages = min(num_stages, self.random_forest.get_num_trees())
         else:
             self.num_stages = self.random_forest.get_num_trees()
-        self.decision_rule_precision = decision_rule_precision
+        self.min_precision = min_precision
 
     def explain(self, X=None, y=None):
         self.data = X
@@ -261,17 +261,17 @@ class RuleBuilder:
             max_score = max(scores)
             avg_score = sum(scores) / len(scores)
 
-            decision_rule_precision = avg_score
+            min_precision = avg_score
 
         else:
             min_score, max_score = self.score_rule_using_model(rule)
 
             if min_score == 1.0:
-                decision_rule_precision = 1.00
+                min_precision = 1.00
             else:
-                decision_rule_precision = 0.00
+                min_precision = 0.00
 
-        if decision_rule_precision >= self.decision_rule_precision:
+        if min_precision >= self.min_precision:
             # solution, throw candidate: it is already a solution
             return True, False
         else:

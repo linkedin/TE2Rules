@@ -48,7 +48,7 @@ def train_tree_ensemble(training_data_loc, testing_data_loc, n_estimators, max_d
 
 # Explain using rules
 def explain_with_rules(
-    model, feature_names, x_train, y_train_pred, num_stages, decision_rule_precision
+    model, feature_names, x_train, y_train_pred, num_stages, min_precision
 ):
     # build rules
     model_explainer = ModelExplainer(model=model, feature_names=feature_names)
@@ -56,7 +56,7 @@ def explain_with_rules(
         X=x_train,
         y=y_train_pred,
         num_stages=num_stages,
-        decision_rule_precision=decision_rule_precision,
+        min_precision=min_precision,
     )
     fidelities = model_explainer.get_fidelity()
     return rules, fidelities
@@ -106,7 +106,7 @@ for (dataset_name, sample_size) in [
         x_train=trainer.x_train,
         y_train_pred=y_train_pred,
         num_stages=num_stages,
-        decision_rule_precision=0.95,
+        min_precision=0.95,
     )
     total_time = time() - start_time
     print("algorithm_runtime: ", total_time)
