@@ -4,7 +4,7 @@
 [![PyPI](https://img.shields.io/pypi/v/te2rules?color=blue)](https://pypi.org/project/te2rules/)
 
 
-TE2Rules is a technique to explain Tree Ensemble models (TE) like XGBoost, Random Forest etc., trained on a binary classification task, using a rule list. The extracted rule list (RL) captures the necessary and sufficient conditions for classification by the Tree Ensemble. The algorithm used by TE2Rules is based on Apriori Rule Mining. For more details on the algorithm, please check out our [paper](https://arxiv.org/abs/2206.14359).
+TE2Rules is a technique to explain Tree Ensemble models (TE) like XGBoost, Random Forest, trained on a binary classification task, using a rule list. The extracted rule list (RL) captures the necessary and sufficient conditions for classification by the Tree Ensemble. The algorithm used by TE2Rules is based on Apriori Rule Mining. For more details on the algorithm, please check out our [paper](https://arxiv.org/abs/2206.14359).
 
 TE2Rules provides a ```ModelExplainer``` which takes a trained TE model and training data to extract rules. Though the algorithm can be run without any data, we would recommend against doing so. The training data is used for extracting rules with relevant combination of input features. Without data, the algorithm would try to extract rules for all possible combinations of input features, including those combinations which are extremely rare in the data. 
 
@@ -34,6 +34,7 @@ The tree ensemble model used in this notebook is a XGBoost model with 10 trees.
 
 Let us use TE2Rules ```ModelExplainer``` to explain the positive class prediciton by the XGBoost model. We observe that TE2Rules extracts 5 rules to explain more than 99% of the positive class prediction by the tree ensemble model. In this usgae, we use the default values of ```min_precision``` (0.95) and  ```num_stages``` (10), since the algorithm runs quickly for a tree ensemble with 10 trees.
 ![TE2Rules Adult Screenshot4](https://raw.githubusercontent.com/groshanlal/TE2Rules/master/docs/images/4-explain.png)
+![TE2Rules Adult Screenshot5](https://raw.githubusercontent.com/groshanlal/TE2Rules/master/docs/images/5-evaluate.png)
 
 ## For reproducing results in the paper :
 Run the follwing python scripts to generate the results in the [paper](https://arxiv.org/abs/2206.14359):

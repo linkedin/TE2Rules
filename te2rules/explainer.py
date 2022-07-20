@@ -12,7 +12,54 @@ log = logging.getLogger()
 
 
 class ModelExplainer:
+    """
+    The :mod:`te2rules.explainer.ModelExplainer` module explains
+    Tree Ensemble models (TE) like XGBoost, Random Forest, trained
+    on a binary classification task, using a rule list. The algorithm used by TE2Rules
+    is based on Apriori Rule Mining.
+    For more details on the algorithm, please check out our paper
+    `TE2Rules: Extracting Rule Lists from Tree Ensembles
+    <https://arxiv.org/abs/2206.14359/>`_.
+    """
+
     def __init__(self, model, feature_names, verbose=False):
+        """
+        Initialize the explainer with the trained tree ensemble model
+        and feature names used by the model.
+
+        Returns a ModelExplainer object
+
+        Parameters
+        ----------
+        model: sklearn.ensemble.GradientBoostingClassifier or
+        sklearn.ensemble.RandomForestClassifier
+            The trained Tree Ensemble model to be explained.
+            The model is expected to be a binary classifier.
+        feature_name: List[str]
+            List of feature names used by the `model`
+        verbose: bool, optional
+            Optional boolean value to give more insights on the running of the
+            explanation algorithm.
+            Default = False
+
+        Returns
+        -------
+        self: te2rules.explainer.ModelExplainer
+            A ModelExplainer object initialized with the model to be explained.
+
+        Raises
+        ------
+        ValueError:
+            when `model` is not a supported Tree Ensemble Model.
+            Currently, only Scikit Learn's GradientBoostingClassifier and
+            RandomForestClassifier are supported.
+
+        Warning
+        ------
+        The implementation works fine with scikit learn's GradientBoostingClassifier.
+        For now, we are still testing the case when the `model` is scikit learn's
+        RandomForestClassifier.
+        """
         if verbose is True:
             logging.basicConfig(format="%(message)s", level=logging.DEBUG)
         else:
@@ -34,6 +81,53 @@ class ModelExplainer:
             )
 
     def explain(self, X=None, y=None, num_stages=None, min_precision=0.95):
+        """
+        A method to extract rule list from the tree ensemble model.
+        This method takes in input features used by the model and predicted class
+        output by the model.
+
+        Returns a List of te2rules.Rule objects.
+
+        Parameters
+        ----------
+        X: 2d np.array, optional
+            2 dimensional input data used by the `model`
+        y: 2d np.array, optional
+            2 dimensional label data output from the `model`
+        num_stages: int, optional
+            The algorithm runs in stages starting from stage 1, stage 2 to all the way
+            till stage n where n is the number of trees in the ensemble.
+            Stopping the algorithm at an early stage  results in a few short rules
+            (with quicker run time, but less coverage in data). By default,
+            the algorithm explores all stages before terminating.
+        min_precision: float, optional
+            This paramter controls the minimum precision of extracted rules.
+            Setting it to a smaller threhsold, allows extracting shorter
+            (more interpretable, but less faithful) rules.
+            By default, the algorithm uses a minimum precision threshold of 0.95.
+
+        Returns
+        -------
+        rules: List[te2rules.Rule]
+            A List of te2rules.Rule objects. Casting the te2rules.Rule into string
+            gives human readable rules.
+
+        Notes
+        -----
+        Though the data parameters X and y are optional, we highly recommend
+        using the data. The data is used for extracting rules with relevant
+        combination of input features. Without data, the algorithm would try
+        to extract rules for all possible combinations of input features,
+        including those combinations which are extremely rare in the data.
+
+        Examples
+        --------
+        >>> from te2rules.explainer import ModelExplainer
+        >>> model_explainer = ModelExplainer(model=model, feature_names=feature_names)
+        >>> rules = model_explainer.explain(X=x_train, y=y_train_pred)
+        >>> rules = [str(r) for r in rules]
+        """
+
         self.rule_builder = RuleBuilder(
             random_forest=self.random_forest,
             num_stages=num_stages,
@@ -42,12 +136,32 @@ class ModelExplainer:
         rules = self.rule_builder.explain(X, y)
         return rules
 
-    def apply(self, df):
+    def _apply(self, df):
         return self.rule_builder.apply(df)
 
     def get_fidelity(
         self,
     ):
+        """
+        A method to evaluate the rule list extracted by the `explain` method
+
+        Returns a fidelity on positives, negative, overall
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        fidelity: [float, float, float]
+            Fidelity is the fraction of data for which the rule list agrees
+            with the tree ensemble. Returns the fidelity on overall data,
+            positive predictions and negative predictions by the model.
+
+        Examples
+        --------
+        >>> (fidelity, fidelity_pos, fidelity_neg) = model_explainer.get_fidelity()
+        """
+
         return self.rule_builder.get_fidelity()
 
 
