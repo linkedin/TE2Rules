@@ -31,8 +31,8 @@ class ModelExplainer:
 
         Parameters
         ----------
-        model: sklearn.ensemble.GradientBoostingClassifier or
-        sklearn.ensemble.RandomForestClassifier
+        model: sklearn.ensemble.GradientBoostingClassifier or \
+            sklearn.ensemble.RandomForestClassifier
             The trained Tree Ensemble model to be explained.
             The model is expected to be a binary classifier.
         feature_name: List[str]

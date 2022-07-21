@@ -2,6 +2,8 @@
 [![License](https://img.shields.io/badge/license-BSD-green.svg)](https://github.com/groshanlal/TE2Rules/blob/master/LICENSE)
 [![Paper](http://img.shields.io/badge/cs.LG-arXiv%3A2206.14359-orange.svg)](https://arxiv.org/abs/2206.14359)
 [![PyPI](https://img.shields.io/pypi/v/te2rules?color=blue)](https://pypi.org/project/te2rules/)
+[![PyPI](https://img.shields.io/readthedocs/te2rules)](https://te2rules.readthedocs.io/en/latest/index.html)
+
 
 
 TE2Rules is a technique to explain Tree Ensemble models (TE) like XGBoost, Random Forest, trained on a binary classification task, using a rule list. The extracted rule list (RL) captures the necessary and sufficient conditions for classification by the Tree Ensemble. The algorithm used by TE2Rules is based on Apriori Rule Mining. For more details on the algorithm, please check out our [paper](https://arxiv.org/abs/2206.14359).
@@ -15,13 +17,17 @@ TE2Rules package is available on PyPI and can be installed with pip:
 pip install te2rules
 ```
 
-## Usage
+## Documentation
 
-The ```ModelExplainer``` in TE2Rules has a ```explain()``` method which returns a rule list corresponding to the positive class prediciton of the tree ensemble. While using the rule list, any data instance that does not trigger any of the extracted rules is to be interpreted as belonging to the negative class. The ```explain()``` method has two tunable parameters to control the interpretability, faithfulness, runtime and coverage of the extracted rules. These are: 
+The official documentation of TE2Rules can be found at [te2rules.readthedocs.io](https://te2rules.readthedocs.io/). 
+
+TE2Rules contains a ```ModelExplainer``` class with an ```explain()``` method which returns a rule list corresponding to the positive class prediciton of the tree ensemble. While using the rule list, any data instance that does not trigger any of the extracted rules is to be interpreted as belonging to the negative class. The ```explain()``` method has two tunable parameters to control the interpretability, faithfulness, runtime and coverage of the extracted rules. These are: 
 - ```min_precision```: ```min_precision``` controls the minimum precision of extracted rules. Setting it to a smaller threhsold, allows extracting shorter (more interpretable, but less faithful) rules. By default, the algorithm uses a minimum precision threshold of 0.95.  
 - ```num_stages```: The algorithm runs in stages starting from stage 1, stage 2 to all the way till stage n where n is the number of trees in the ensemble. Stopping the algorithm at an early stage  results in a few short rules (with quicker run time, but less coverage in data). By default, the algorithm explores all stages before terminating.
 
 For evaluating the performance of the extracted rule list, the ```ModelExplainer``` provides a method ```get_fidelity()``` which returns the fractions of data for which the rule list agrees with the tree ensemble. ```get_fidelity()``` returns the fidelity on positives, negatives and overall fidelity. 
+
+## Usage
 
 The following notebook shows a typical use case of TE2Rules on Adult Income Data. The notebook can be found [here](https://github.com/groshanlal/TE2Rules/blob/master/notebooks/demo-adult-income.ipynb). Let us start with importing ```te2rules``` and other relevant libraries
 ![TE2Rules Adult Screenshot1](https://raw.githubusercontent.com/groshanlal/TE2Rules/master/docs/images/1-intro.png)
