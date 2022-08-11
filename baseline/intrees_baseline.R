@@ -3,60 +3,59 @@ train_file = commandArgs(trailingOnly=TRUE)[1]
 test_file = commandArgs(trailingOnly=TRUE)[2]
 res_dir = commandArgs(trailingOnly=TRUE)[3]
 ntree = as.integer(commandArgs(trailingOnly=TRUE)[4])
+max_depth = as.integer(commandArgs(trailingOnly=TRUE)[5])
 
 # library
-# install.packages("randomForest", repos = "http://cran.us.r-project.org")
+# install.packages("xgboost", repos = "http://cran.us.r-project.org")
 # install.packages("inTrees", repos = "http://cran.us.r-project.org")
-library(randomForest)
+library(xgboost)
 library(inTrees)
 set.seed(123)
 
 # data
 data_train <- read.csv(train_file)
-X_train <- data_train[,1:(ncol(data_train)-1)]
-y_train <- as.factor(data_train[,ncol(data_train)])
+X_train <- as.matrix(data_train[,1:(ncol(data_train)-1)])
+y_train <- data_train$label_1
 
 data_test <- read.csv(test_file)
-X_test <- data_test[,1:(ncol(data_test)-1)]
-y_test <- as.factor(data_test[,ncol(data_test)])
+X_test <- as.matrix(data_test[,1:(ncol(data_test)-1)])
+y_test <- data_test$label_1
 
-# rf training
-# ntree <- 10
-rf <- randomForest(X_train, y_train, ntree=ntree, nodesize=10, maxnodes=8)
-err = rf$err.rate[ntree]
-print(err)
+# xgb training
+xgb <- xgboost(data = X_train, label = y_train,
+               nround = ntree, max_depth = max_depth,
+               objective = "binary:logistic")
 
 # build rules from inTrees
-treeList <- RF2List(rf)
+treeList <- XGB2List(xgb, X_train)
 ruleExec <- unique(extractRules(treeList, X_train))
 
-# evaluate on data and use it to prune
+# evaluate on data and use it to prune (optional: pruning gives less fidelity, smaller rules)
 ruleMetric <- getRuleMetric(ruleExec, X_train, y_train)
 ruleMetric <- unique(pruneRule(ruleMetric, X_train, y_train))
 
-# build a if-else program
-ruleOrdered <- buildLearner(ruleMetric, X_train, y_train)
+# build a if-else program: only works for classifiaction. XGB in R is a regression.
+# ruleOrdered <- buildLearner(ruleMetric, X_train, y_train)
+ruleOrdered <- ruleMetric
 y_pred_train_rules <- applyLearner(ruleOrdered, X_train)
+y_pred_train_rules <- as.numeric(y_pred_train_rules > 0.5)
 y_pred_test_rules <- applyLearner(ruleOrdered, X_test)
+y_pred_test_rules <- as.numeric(y_pred_test_rules > 0.5)
 
 # save
 res_dir = sprintf('%s/intrees', res_dir)
 dir.create(res_dir, showWarnings = FALSE)
 
-y_pred_train <- predict(rf, X_train)
-y_pred_test <- predict(rf, X_test)
+y_pred_train <- predict(xgb, as.matrix(X_train))
+y_pred_train <- as.numeric(y_pred_train > 0.5)
+
+y_pred_test <- predict(xgb, as.matrix(X_test))
+y_pred_test <- as.numeric(y_pred_test > 0.5)
+
 write.table(y_pred_train, sprintf('%s/pred_train.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
 write.table(y_pred_test, sprintf('%s/pred_test.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
 write.table(y_pred_train_rules, sprintf('%s/pred_train_rules.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
 write.table(y_pred_test_rules, sprintf('%s/pred_test_rules.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
 
 explanation <- presentRules(ruleOrdered,colnames(X_train))
-write.table(explanation, file=sprintf("%s/rules.txt", res_dir), quote=F, sep=", ", row.names=F, append=T)
-
-forest_dir = sprintf('%s/forest', res_dir)
-dir.create(forest_dir, showWarnings = FALSE)
-
-for (t in 1:ntree) {
-    tree <- getTree(rf, k=t)
-    write.table(tree, file=sprintf("%s/tree%03d.txt", forest_dir, t), quote=F, sep=", ", row.names=F, append=F)
-}
+write.table(explanation, file=sprintf("%s/rules.txt", res_dir), quote=F, sep=", ", row.names=F, append=F)

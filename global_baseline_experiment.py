@@ -80,8 +80,8 @@ def run_baseline_script(
 ):
     if method_name == "intrees":
         os.system(
-            "Rscript baseline/intrees_baseline.R %s %s %s %d"
-            % (train_file, test_file, result_dir, n_estimators)
+            "Rscript baseline/intrees_baseline.R %s %s %s %d %d"
+            % (train_file, test_file, result_dir, n_estimators, max_depth)
         )
     elif method_name == "skoperules":
         os.system(
