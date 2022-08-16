@@ -6,6 +6,7 @@ sys.modules['sklearn.externals.six'] = six
 from skrules import SkopeRules
 import os 
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.tree import export_text
 from rulefit import RuleFit
