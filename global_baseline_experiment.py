@@ -59,14 +59,20 @@ def show_model_performance(model_dir, test_file, use_test=True):
         y_pred = pd.read_csv(
             os.path.join(model_dir, "pred_test.csv"), names=["model_pred"]
         )["model_pred"].to_numpy()
+        y_pred_score = pd.read_csv(
+            os.path.join(model_dir, "pred_test_score.csv"), names=["model_pred"]
+        )["model_pred"].to_numpy()
         y = pd.read_csv(test_file)["label_1"].to_numpy()
     else:
         data_name = "train data"
         y_pred = pd.read_csv(
             os.path.join(model_dir, "pred_train.csv"), names=["model_pred"]
         )["model_pred"].to_numpy()
+        y_pred_score = pd.read_csv(
+            os.path.join(model_dir, "pred_train_score.csv"), names=["model_pred"]
+        )["model_pred"].to_numpy()
         y = pd.read_csv(train_file)["label_1"].to_numpy()
-    fpr, tpr, thresholds = metrics.roc_curve(y, y_pred)
+    fpr, tpr, thresholds = metrics.roc_curve(y, y_pred_score)
     auc = metrics.auc(fpr, tpr)
     acc = metrics.accuracy_score(y, y_pred)
     print("Model performance on " + str(data_name))

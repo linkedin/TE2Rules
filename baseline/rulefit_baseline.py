@@ -53,12 +53,17 @@ def predict(model, x):
             y_pred_reg[i] = 0.0
     return y_pred_reg
 
+def predict_proba(model, x):
+    y_pred_reg = model.predict(x)
+    return y_pred_reg
+
 result_dir = os.path.join(result_dir, 'rulefit')
 if(not os.path.exists(result_dir)):
   os.mkdir(result_dir)
 
 rules.to_csv(os.path.join(result_dir, 'rules.txt'))
 
+y_pred_score = predict_proba(rf, x_train)
 y_pred = predict(rf, x_train)
 y_pred_rules = rulefit.predict(x_train)
 for i in range(len(y_pred_rules)):
@@ -66,6 +71,11 @@ for i in range(len(y_pred_rules)):
         y_pred_rules[i] = 1.0
     else:
         y_pred_rules[i] = 0.0
+
+with open(os.path.join(result_dir, 'pred_train_score.csv'), 'w') as f:
+  for i in range(len(y_pred_score)):
+    f.write(str(y_pred_score[i]) + '\n')
+
 with open(os.path.join(result_dir, 'pred_train.csv'), 'w') as f:
   for i in range(len(y_pred)):
     f.write(str(y_pred[i]) + '\n')
@@ -74,6 +84,7 @@ with open(os.path.join(result_dir, 'pred_train_rules.csv'), 'w') as f:
   for i in range(len(y_pred_rules)):
     f.write(str(y_pred_rules[i]) + '\n')
 
+y_pred_score = predict_proba(rf, x_test)
 y_pred = predict(rf, x_test)
 y_pred_rules = rulefit.predict(x_test)
 for i in range(len(y_pred_rules)):
@@ -81,6 +92,11 @@ for i in range(len(y_pred_rules)):
         y_pred_rules[i] = 1.0
     else:
         y_pred_rules[i] = 0.0
+
+with open(os.path.join(result_dir, 'pred_test_score.csv'), 'w') as f:
+  for i in range(len(y_pred_score)):
+    f.write(str(y_pred_score[i]) + '\n')
+
 with open(os.path.join(result_dir, 'pred_test.csv'), 'w') as f:
   for i in range(len(y_pred)):
     f.write(str(y_pred[i]) + '\n')

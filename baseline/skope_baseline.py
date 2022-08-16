@@ -67,6 +67,24 @@ def predict(model, x):
     assert(list(y_pred_clf) == list(y_pred_reg))
     return y_pred_clf
 
+def predict_proba(model, x):
+    y_pred_clf = [0]*len(x)
+    y_pred_clf = np.array(y_pred_clf)
+    for m in clf.estimators_[:len(clf.estimators_)//2]:
+        y_pred_clf = y_pred_clf + m.predict_proba(x)[:,1]
+    y_pred_clf = y_pred_clf/(len(clf.estimators_)//2)
+
+
+    y_pred_reg = [0]*len(x)
+    y_pred_reg = np.array(y_pred_reg)
+    for m in clf.estimators_[len(clf.estimators_)//2:]:
+        y_pred_reg = y_pred_reg + m.predict(x)
+    y_pred_reg = y_pred_reg/(len(clf.estimators_)//2)
+
+
+    assert(list(y_pred_clf) == list(y_pred_reg))
+    return y_pred_clf
+
 def rule_apply(rules, df):
     coverage = []
     for r in rules:
@@ -87,8 +105,14 @@ with open(os.path.join(result_dir, 'rules.txt'), 'w') as f:
   for r in rules:
     f.write(str(r) + '\n')
 
+y_pred_score = predict_proba(clf, x_train)
 y_pred = predict(clf, x_train)
 y_pred_rules = rule_apply(rules, data_train)
+
+with open(os.path.join(result_dir, 'pred_train_score.csv'), 'w') as f:
+  for i in range(len(y_pred_score)):
+    f.write(str(y_pred_score[i]) + '\n')
+
 with open(os.path.join(result_dir, 'pred_train.csv'), 'w') as f:
   for i in range(len(y_pred)):
     f.write(str(y_pred[i]) + '\n')
@@ -97,8 +121,14 @@ with open(os.path.join(result_dir, 'pred_train_rules.csv'), 'w') as f:
   for i in range(len(y_pred_rules)):
     f.write(str(y_pred_rules[i]) + '\n')
 
+y_pred_score = predict_proba(clf, x_test)
 y_pred = predict(clf, x_test)
 y_pred_rules = rule_apply(rules, data_test)
+
+with open(os.path.join(result_dir, 'pred_test_score.csv'), 'w') as f:
+  for i in range(len(y_pred_score)):
+    f.write(str(y_pred_score[i]) + '\n')
+
 with open(os.path.join(result_dir, 'pred_test.csv'), 'w') as f:
   for i in range(len(y_pred)):
     f.write(str(y_pred[i]) + '\n')

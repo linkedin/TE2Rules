@@ -47,9 +47,12 @@ res_dir = sprintf('%s/intrees', res_dir)
 dir.create(res_dir, showWarnings = FALSE)
 
 y_pred_train <- predict(xgb, as.matrix(X_train))
-y_pred_train <- as.numeric(y_pred_train > 0.5)
-
 y_pred_test <- predict(xgb, as.matrix(X_test))
+
+write.table(y_pred_train, sprintf('%s/pred_train_score.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
+write.table(y_pred_test, sprintf('%s/pred_test_score.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
+
+y_pred_train <- as.numeric(y_pred_train > 0.5)
 y_pred_test <- as.numeric(y_pred_test > 0.5)
 
 write.table(y_pred_train, sprintf('%s/pred_train.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
