@@ -23,7 +23,7 @@ df = df[column_names]
 column_names_categorical = ['job', 'marital', 'education', 'default', 'housing',
                 'loan', 'contact', 'month', 'poutcome',
                 'label']
-
+df = df.replace("admin.", "admin")
 num_rows_train = int(0.8*len(df))
 
 df_train = df[:num_rows_train]
