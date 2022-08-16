@@ -81,8 +81,6 @@ def predict_proba(model, x):
         y_pred_reg = y_pred_reg + m.predict(x)
     y_pred_reg = y_pred_reg/(len(clf.estimators_)//2)
 
-
-    assert(list(y_pred_clf) == list(y_pred_reg))
     return y_pred_clf
 
 def rule_apply(rules, df):
