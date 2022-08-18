@@ -36,7 +36,7 @@ class Trainer:
     def evaluate_model(self):
         accuracy = self.model.score(self.x_test, self.y_test)
 
-        y_pred = self.model.predict(self.x_test)
+        y_pred = self.model.predict_proba(self.x_test)[:, 1]
         fpr, tpr, thresholds = metrics.roc_curve(self.y_test, y_pred)
         auc = metrics.auc(fpr, tpr)
 
