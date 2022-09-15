@@ -1,4 +1,5 @@
 import logging
+import re
 
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from tqdm import tqdm
@@ -36,7 +37,8 @@ class ModelExplainer:
             The trained Tree Ensemble model to be explained.
             The model is expected to be a binary classifier.
         feature_name: List[str]
-            List of feature names used by the `model`
+            List of feature names used by the `model`. Only alphanumeric characters and
+            underscores are allowed in feature names.
         verbose: bool, optional
             Optional boolean value to give more insights on the running of the
             explanation algorithm.
@@ -53,6 +55,10 @@ class ModelExplainer:
             when `model` is not a supported Tree Ensemble Model.
             Currently, only Scikit Learn's GradientBoostingClassifier and
             RandomForestClassifier are supported.
+
+        ValueError:
+            when `feature_name` list contains a name that has any character other
+            than alphanumeric characters or underscore.
 
         Warning
         ------
@@ -79,6 +85,13 @@ class ModelExplainer:
                 + "are supported. But received "
                 + str(type(model))
             )
+        for f in feature_names:
+            if re.search("[^a-zA-Z0-9_]", f):
+                raise ValueError(
+                    "Only alphanumeric characters and underscores are allowed "
+                    + "in feature names. But found feature name: "
+                    + str(f)
+                )
 
     def explain(self, X=None, y=None, num_stages=None, min_precision=0.95):
         """
