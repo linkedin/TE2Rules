@@ -443,18 +443,17 @@ class RuleBuilder:
         )
 
     def deduplicate(self, rules):
-        dedup_rules = []
-        dedup_decision_rules = []
+        rules_map = {}
         for i in range(len(rules)):
-            if rules[i].decision_rule not in dedup_decision_rules:
-                dedup_rules.append(rules[i])
-                dedup_decision_rules.append(rules[i].decision_rule)
+            key = str(rules[i])
+            if key not in rules_map:
+                rules_map[key] = rules[i]
             else:
-                index = dedup_decision_rules.index(rules[i].decision_rule)
-                dedup_rules[index].identity = list(
-                    set(dedup_rules[index].identity).union(set(rules[i].identity))
+                rules_map[key].identity = list(
+                    set(rules_map[key].identity).union(set(rules[i].identity))
                 )
 
+        dedup_rules = [rules_map[r] for r in rules_map]
         for i in range(len(dedup_rules)):
             dedup_rules[i].create_identity_map()
         return dedup_rules
