@@ -99,7 +99,7 @@ class ModelExplainer:
         This method takes in input features used by the model and predicted class
         output by the model.
 
-        Returns a List of te2rules.Rule objects.
+        Returns a List of rule strings.
 
         Parameters
         ----------
@@ -121,9 +121,8 @@ class ModelExplainer:
 
         Returns
         -------
-        rules: List[te2rules.Rule]
-            A List of te2rules.Rule objects. Casting the te2rules.Rule into string
-            gives human readable rules.
+        rules: List[str]
+            A List of human readable rules.
 
         Notes
         -----
@@ -138,7 +137,6 @@ class ModelExplainer:
         >>> from te2rules.explainer import ModelExplainer
         >>> model_explainer = ModelExplainer(model=model, feature_names=feature_names)
         >>> rules = model_explainer.explain(X=x_train, y=y_train_pred)
-        >>> rules = [str(r) for r in rules]
         """
 
         self.rule_builder = RuleBuilder(
@@ -147,6 +145,7 @@ class ModelExplainer:
             min_precision=min_precision,
         )
         rules = self.rule_builder.explain(X, y)
+        rules = [str(r) for r in rules]
         return rules
 
     def _apply(self, df):
