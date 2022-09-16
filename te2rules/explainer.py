@@ -306,19 +306,19 @@ class RuleBuilder:
                     if keep_candidate is True:
                         new_candidates.append(r)
             else:
-                for i in range(len(self.candidate_rules)):
-                    for j in range(i, len(self.candidate_rules)):
-                        r = self.candidate_rules[i].join(
-                            self.candidate_rules[j], support_pruning=self.use_data
+                join_indices = self.get_join_indices(self.candidate_rules)
+                for (i, j) in join_indices:
+                    r = self.candidate_rules[i].join(
+                        self.candidate_rules[j], support_pruning=self.use_data
+                    )
+                    if r is not None:
+                        is_solution, keep_candidate = self.filter_candidates(
+                            r, self.labels
                         )
-                        if r is not None:
-                            is_solution, keep_candidate = self.filter_candidates(
-                                r, self.labels
-                            )
-                            if is_solution is True:
-                                new_solutions.append(r)
-                            if keep_candidate is True:
-                                new_candidates.append(r)
+                        if is_solution is True:
+                            new_solutions.append(r)
+                        if keep_candidate is True:
+                            new_candidates.append(r)
 
             if self.use_data is True:
                 for rule in new_solutions:
@@ -456,6 +456,7 @@ class RuleBuilder:
         dedup_rules = [rules_map[r] for r in rules_map]
         for i in range(len(dedup_rules)):
             dedup_rules[i].create_identity_map()
+
         return dedup_rules
 
     def shorten(self, rules):
@@ -502,3 +503,31 @@ class RuleBuilder:
             y_rules[i] = 1.0
 
         return y_rules
+
+    def get_join_indices(self, rules):
+        left_map = {}
+        right_map = {}
+        for i in range(len(rules)):
+            left_keys = list(rules[i].left_identity_map.keys())
+            for j in range(len(left_keys)):
+                if left_keys[j] not in left_map:
+                    left_map[left_keys[j]] = []
+                left_map[left_keys[j]].append(i)
+
+            right_keys = list(rules[i].right_identity_map.keys())
+            for j in range(len(right_keys)):
+                if right_keys[j] not in right_map:
+                    right_map[right_keys[j]] = []
+                right_map[right_keys[j]].append(i)
+
+        join_keys = list(set(left_map.keys()).intersection(set(right_map.keys())))
+
+        pairs = set()
+        for i in range(len(join_keys)):
+            for j in left_map[join_keys[i]]:
+                for k in right_map[join_keys[i]]:
+                    if j < k:
+                        pairs.add((j, k))
+        pairs = list(pairs)
+        pairs.sort()  # can be removed
+        return pairs
