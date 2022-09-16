@@ -14,9 +14,9 @@ repos:
       - id: flake8
   - repo: local
     hooks:
-      - id: pytest-check
-        name: pytest-check
-        entry: pytest
+      - id: pytest
+        name: pytest
+        entry: python3 -m pytest
         language: system
-        pass_filenames: false
+        files: tests/*
         always_run: true

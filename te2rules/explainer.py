@@ -447,9 +447,6 @@ class RuleBuilder:
                 )
 
         dedup_rules = [rules_map[r] for r in rules_map]
-        for i in range(len(dedup_rules)):
-            dedup_rules[i].create_identity_map()
-
         return dedup_rules
 
     def shorten(self, rules):
@@ -498,6 +495,9 @@ class RuleBuilder:
         return y_rules
 
     def get_join_indices(self, rules):
+        for i in range(len(rules)):
+            rules[i].create_identity_map()
+
         left_map = {}
         right_map = {}
         for i in range(len(rules)):

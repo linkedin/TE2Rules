@@ -4,16 +4,27 @@ class Rule:
         self.decision_support = decision_support
         self.identity = identity
 
+        if len(self.identity) == 0:
+            raise ValueError(
+                "Identity list contains the possible k-tree node combinations "
+                + "that produce this rule. Identity list cannot be empty"
+            )
+
     def __str__(self):
-        """
-        string_rep = "rule: " + str(self.decision_rule) + '\n'
-        string_rep = string_rep + "support: " + str(len(self.decision_support)) + '\n'
-        string_rep = string_rep + "identity: " + str(self.identity) + '\n'
-        """
         string_rep = " & ".join(self.decision_rule)
         return string_rep
 
     def create_identity_map(self):
+        num_nodes = len(self.identity[0].split(","))
+        for i in range(len(self.identity)):
+            node_ids = self.identity[i].split(",")
+            if num_nodes != len(node_ids):
+                raise ValueError(
+                    "Identity list contains the possible k-tree node combinations "
+                    + "that produce this rule. Entries in the list cannot contain "
+                    + "unequal number of contributing tree nodes."
+                )
+
         left_identity_map = {}
         right_identity_map = {}
         for i in range(len(self.identity)):
@@ -33,17 +44,16 @@ class Rule:
         self.right_identity_map = right_identity_map
         return
 
-    def get_num_nodes(self):
-        num_nodes = len(self.identity[0].split(","))
-        """
-    for i in range(len(self.identity)):
-      assert(num_nodes == len(self.identity[i].split(",")))
-    """
-        return num_nodes
-
     def join_identity(self, rule):
+        if not hasattr(self, "left_identity_map") or not hasattr(
+            rule, "right_identity_map"
+        ):
+            raise AttributeError(
+                "left_identity_map and  right_identity_map attributes are not set. "
+                + "Call create_identity_map() on both rules before joining"
+            )
+
         joined_identity = []
-        # This can be sped up instead of brute force join
         left_keys = self.left_identity_map.keys()
         right_keys = rule.right_identity_map.keys()
         keys = list(set(left_keys).intersection(set(right_keys)))
@@ -72,7 +82,6 @@ class Rule:
                         )
                         joined_identity.append(identity)
 
-        # assert(len(list(set(joined_identity))) == len(joined_identity))
         return list(set(joined_identity))
 
     def validate_identity(self, joined_identity):
@@ -98,8 +107,6 @@ class Rule:
             return False
 
     def join(self, rule, support_pruning=False):
-        assert self.get_num_nodes() == rule.get_num_nodes()
-
         decision_rule = self.join_rule(rule)
 
         decision_support = self.join_support(rule)
