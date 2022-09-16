@@ -209,16 +209,17 @@ class RuleBuilder:
         self.solution_rules = []
         log.info(str(len(self.candidate_rules)) + " candidate rules")
 
+        log.info("Deduping")
         self.candidate_rules = self.deduplicate(self.candidate_rules)
         self.solution_rules = self.deduplicate(self.solution_rules)
-
-        log.info("Deduping...")
         log.info(str(len(self.candidate_rules)) + " candidate rules")
 
         self.generate_solutions()
 
+        log.info("Simplifying Solutions")
         self.solution_rules = self.shorten(self.solution_rules)
         self.solution_rules = self.deduplicate(self.solution_rules)
+        log.info(str(len(self.solution_rules)) + " solutions")
 
         if self.use_data is True:
             log.info("")
@@ -299,7 +300,8 @@ class RuleBuilder:
             new_candidates = []
             new_solutions = []
             if stage == 0:
-                for r in self.candidate_rules:
+                for i in range(len(self.candidate_rules)):
+                    r = self.candidate_rules[i]
                     is_solution, keep_candidate = self.filter_candidates(r, self.labels)
                     if is_solution is True:
                         new_solutions.append(r)
@@ -320,6 +322,11 @@ class RuleBuilder:
                         if keep_candidate is True:
                             new_candidates.append(r)
 
+            self.candidate_rules = new_candidates
+            self.solution_rules = self.solution_rules + new_solutions
+            log.info(str(len(self.candidate_rules)) + " candidates")
+            log.info(str(len(self.solution_rules)) + " solutions")
+
             if self.use_data is True:
                 for rule in new_solutions:
                     positives_to_explain = list(
@@ -329,29 +336,15 @@ class RuleBuilder:
                 log.info("Unexplained Positives")
                 log.info(len(positives_to_explain))
 
-                pruned_candidates = []
-                for rule in new_candidates:
-                    decision_support_positive = list(
-                        set(positives_to_explain).intersection(
-                            set(rule.decision_support)
-                        )
-                    )
+                log.info("Pruning Candidates")
+                self.candidate_rules = self.prune(
+                    self.candidate_rules, positives_to_explain
+                )
+                log.info(str(len(self.candidate_rules)) + " candidates")
 
-                    if len(decision_support_positive) > 0:
-                        pruned_candidates.append(rule)
-                self.candidate_rules = pruned_candidates
-            else:
-                self.candidate_rules = new_candidates
-            self.solution_rules = self.solution_rules + new_solutions
-
-            log.info("Pruning Candidates")
-            log.info(str(len(self.candidate_rules)) + " candidates")
-            log.info(str(len(self.solution_rules)) + " solutions")
-
+            log.info("Deduping")
             self.candidate_rules = self.deduplicate(self.candidate_rules)
             self.solution_rules = self.deduplicate(self.solution_rules)
-
-            log.info("Deduping...")
             log.info(str(len(self.candidate_rules)) + " candidates")
             log.info(str(len(self.solution_rules)) + " solutions")
 
@@ -531,3 +524,15 @@ class RuleBuilder:
         pairs = list(pairs)
         pairs.sort()  # can be removed
         return pairs
+
+    def prune(self, rules, positives):
+        pruned_rules = []
+        for i in range(len(rules)):
+            decision_support_positive = list(
+                set(set(rules[i].decision_support).intersection(positives))
+            )
+
+            if len(decision_support_positive) > 0:
+                pruned_rules.append(rules[i])
+
+        return pruned_rules
