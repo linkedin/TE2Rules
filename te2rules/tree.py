@@ -44,8 +44,6 @@ class DecisionTree:
         indentation = "|   " * num_indent + "|---"
         if self.node.is_leaf is True:
             string_rep = indentation + self.node.get_leaf_clause()
-            if 100 in self.decision_support:
-                string_rep = string_rep + "-----100 here-----"
         else:
             string_rep = indentation + self.node.get_left_clause() + "\n"
             string_rep += self.left.__str__(num_indent=num_indent + 1) + "\n"
