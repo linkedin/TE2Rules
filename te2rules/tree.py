@@ -178,8 +178,11 @@ class RandomForest:
         for i in scores.keys():
             scores[i] = scores[i] * self.weight + self.bias
             scores[i] = self.activation_function(scores[i])
+
+        assert set(range(max(scores.keys()) + 1)) == set(scores.keys())
+
         scores_list = []
-        for i in range(max(scores.keys())):
+        for i in range(max(scores.keys()) + 1):
             scores_list.append(scores[i])
 
         return scores_list
