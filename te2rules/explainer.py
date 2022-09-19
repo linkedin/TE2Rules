@@ -105,7 +105,7 @@ class ModelExplainer:
     def explain(
         self,
         X: List[List[float]],
-        y: List[float],
+        y: List[int],
         num_stages: int = None,
         min_precision: float = 0.95,
     ) -> List[str]:
@@ -207,7 +207,7 @@ class RuleBuilder:
             self.num_stages = self.random_forest.get_num_trees()
         self.min_precision = min_precision
 
-    def explain(self, X: List[List[float]], y: List[float]) -> List[Rule]:
+    def explain(self, X: List[List[float]], y: List[int]) -> List[Rule]:
         self.data = X
         self.labels = y
 
@@ -372,7 +372,7 @@ class RuleBuilder:
             )
             log.info("")
 
-    def score_rule_using_data(self, rule: Rule, labels: List[float]) -> List[float]:
+    def score_rule_using_data(self, rule: Rule, labels: List[int]) -> List[int]:
         decision_value = []
         for data_index in rule.decision_support:
             decision_value.append(labels[data_index])
@@ -384,7 +384,7 @@ class RuleBuilder:
         return min_score, max_score
     """
 
-    def filter_candidates(self, rule: Rule, labels: List[float]) -> Tuple[bool, bool]:
+    def filter_candidates(self, rule: Rule, labels: List[int]) -> Tuple[bool, bool]:
         scores = self.score_rule_using_data(rule, labels)
         max_score = max(scores)
         avg_score = sum(scores) / len(scores)
