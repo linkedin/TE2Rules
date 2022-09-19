@@ -84,14 +84,14 @@ tree_2_str = [
 
 feature_names = ["f0", "f1", "f2", "f3"]
 data = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 1],
-    [0, 0, 1, 0],
-    [0, 0, 1, 1],
-    [0, 1, 0, 0],
-    [0, 1, 1, 1],
-    [1, 0, 0, 0],
-    [1, 1, 1, 1],
+    [0.0, 0.0, 0.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 1.0, 1.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 1.0, 1.0, 1.0],
+    [1.0, 0.0, 0.0, 0.0],
+    [1.0, 1.0, 1.0, 1.0],
 ]
 
 tree_ensemble_weights = 0.8
@@ -108,7 +108,7 @@ rules = forest.get_rules(data)
 scores = forest.get_scores()
 
 
-def test_str_rep():
+def test_str_rep() -> None:
     forest_str = (
         "Tree 0\n"
         + "\n".join(tree_0_str)
@@ -123,11 +123,11 @@ def test_str_rep():
     assert str(forest) == forest_str
 
 
-def test_num():
+def test_num() -> None:
     assert forest.get_num_trees() == 3
 
 
-def test_rules():
+def test_rules() -> None:
     rules_str = [
         "",
         "f0 <= 0.5",
@@ -156,7 +156,7 @@ def test_rules():
         assert str(rules[i]) == str(rules_str[i])
 
 
-def test_scores():
+def test_scores() -> None:
     forest_scores_on_data = [
         1.0 + 0.017 + 0.93,
         1.0 + -0.067 + 0.93,

@@ -6,30 +6,30 @@ from te2rules.adapter import ScikitGradientBoostingClassifierAdapter
 np.random.seed(42)
 
 x_train = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 1],
-    [0, 1, 1, 1],
-    [1, 1, 1, 1],
-    [0, 0, 0, 0],
-    [0, 0, 0, 1],
-    [0, 1, 1, 1],
-    [1, 1, 1, 1],
-    [0, 0, 0, 0],
-    [0, 0, 0, 1],
-    [0, 1, 1, 1],
-    [1, 1, 1, 1],
-    [0, 0, 1, 0],
-    [0, 0, 1, 1],
-    [0, 1, 0, 0],
-    [0, 1, 0, 1],
-    [0, 1, 1, 0],
-    [1, 0, 0, 0],
-    [1, 0, 0, 1],
-    [1, 0, 1, 0],
-    [1, 0, 1, 1],
-    [1, 1, 0, 0],
-    [1, 1, 0, 1],
-    [1, 1, 1, 0],
+    [0.0, 0.0, 0.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0],
+    [0.0, 1.0, 1.0, 1.0],
+    [1.0, 1.0, 1.0, 1.0],
+    [0.0, 0.0, 0.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0],
+    [0.0, 1.0, 1.0, 1.0],
+    [1.0, 1.0, 1.0, 1.0],
+    [0.0, 0.0, 0.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0],
+    [0.0, 1.0, 1.0, 1.0],
+    [1.0, 1.0, 1.0, 1.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 1.0, 1.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0, 1.0],
+    [0.0, 1.0, 1.0, 0.0],
+    [1.0, 0.0, 0.0, 0.0],
+    [1.0, 0.0, 0.0, 1.0],
+    [1.0, 0.0, 1.0, 0.0],
+    [1.0, 0.0, 1.0, 1.0],
+    [1.0, 1.0, 0.0, 0.0],
+    [1.0, 1.0, 0.0, 1.0],
+    [1.0, 1.0, 1.0, 0.0],
 ]
 y_train = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 feature_names = ["f0", "f1", "f2", "f3"]
@@ -53,22 +53,22 @@ rules = adapted_model.get_rules(x_train)
 adapted_model_scores = adapted_model.get_scores()
 
 
-def test_num():
+def test_num() -> None:
     assert adapted_model.get_num_trees() == num_trees
 
 
-def test_weights_and_bias():
+def test_weights_and_bias() -> None:
     weight = adapted_model.weight
     bias = adapted_model.bias
     assert weight == learning_rate
     assert bias == np.log(num_positive / num_negative)
 
 
-def test_activation():
+def test_activation() -> None:
     assert adapted_model.activation == "sigmoid"
 
 
-def test_scores():
+def test_scores() -> None:
     assert len(model_scores) == len(adapted_model_scores)
     for i in range(len(model_scores)):
         assert abs(model_scores[i] - adapted_model_scores[i]) < 10 ** (-6)

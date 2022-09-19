@@ -16,21 +16,20 @@ tree = DecisionTree(
 
 feature_names = ["f0", "f1", "f2", "f3"]
 data = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 1],
-    [0, 0, 1, 0],
-    [0, 0, 1, 1],
-    [0, 1, 0, 0],
-    [0, 1, 1, 1],
-    [1, 0, 0, 0],
-    [1, 1, 1, 1],
+    [0.0, 0.0, 0.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 1.0, 1.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 1.0, 1.0, 1.0],
+    [1.0, 0.0, 0.0, 0.0],
+    [1.0, 1.0, 1.0, 1.0],
 ]
 rules = tree.get_rules(data, feature_names, tree_id=0)
-scores = {}
-scores = tree.get_scores(scores)
+scores = tree.get_scores(scores={})
 
 
-def test_str_rep():
+def test_str_rep() -> None:
     tree_str = [
         "|---f3 <= 0.5",
         "|   |---f2 <= 0.5",
@@ -46,7 +45,7 @@ def test_str_rep():
     assert str(tree) == "\n".join(tree_str)
 
 
-def test_rules():
+def test_rules() -> None:
     rules_str = [
         "",
         "f3 <= 0.5",
@@ -61,7 +60,7 @@ def test_rules():
         assert str(rules[i]) == str(rules_str[i])
 
 
-def test_scores():
+def test_scores() -> None:
     tree_scores_on_data = {
         0: 0.017,
         1: -0.067,
