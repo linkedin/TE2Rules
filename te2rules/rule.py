@@ -113,13 +113,12 @@ class Rule:
         else:
             return False
 
-    def join(self, rule: Rule, support_pruning: bool = False) -> Optional[Rule]:
+    def join(self, rule: Rule) -> Optional[Rule]:
         decision_rule = self.join_rule(rule)
 
         decision_support = self.join_support(rule)
-        if support_pruning is True:
-            if self.validate_support(decision_support) is False:
-                return None
+        if self.validate_support(decision_support) is False:
+            return None
 
         identity = self.join_identity(rule)
         if self.validate_identity(identity) is False:

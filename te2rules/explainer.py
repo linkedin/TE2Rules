@@ -210,17 +210,13 @@ class RuleBuilder:
     def explain(self, X: List[List[float]], y: List[float]) -> List[Rule]:
         self.data = X
         self.labels = y
-        if self.labels is not None:
-            self.use_data = True
-            self.positives = []
-            for i in range(len(self.labels)):
-                if self.labels[i] == 1:
-                    self.positives.append(i)
-            log.info("")
-            log.info("Positives: " + str(len(self.positives)))
-        else:
-            self.use_data = False
-            self.positives = []
+
+        self.positives = []
+        for i in range(len(self.labels)):
+            if self.labels[i] == 1:
+                self.positives.append(i)
+        log.info("")
+        log.info("Positives: " + str(len(self.positives)))
 
         log.info("")
         log.info("Rules from trees")
@@ -240,16 +236,15 @@ class RuleBuilder:
         self.solution_rules = self.deduplicate(self.solution_rules)
         log.info(str(len(self.solution_rules)) + " solutions")
 
-        if self.use_data is True:
-            log.info("")
-            log.info("Set Cover")
-            total_support: List[int] = []
-            for r in self.solution_rules:
-                total_support = list(set(total_support).union(set(r.decision_support)))
-            self.rules_to_cover_positives(
-                list(set(total_support).intersection(set(self.positives)))
-            )
-            log.info(str(len(self.solution_rules)) + " rules found")
+        log.info("")
+        log.info("Set Cover")
+        total_support: List[int] = []
+        for r in self.solution_rules:
+            total_support = list(set(total_support).union(set(r.decision_support)))
+        self.rules_to_cover_positives(
+            list(set(total_support).intersection(set(self.positives)))
+        )
+        log.info(str(len(self.solution_rules)) + " rules found")
 
         return self.solution_rules
 
@@ -310,9 +305,8 @@ class RuleBuilder:
         ):
             log.info("")
 
-            if self.use_data is True:
-                if len(positives_to_explain) == 0:
-                    continue
+            if len(positives_to_explain) == 0:
+                continue
 
             log.info("Rules from " + str(stage + 1) + " trees")
 
@@ -329,9 +323,7 @@ class RuleBuilder:
             else:
                 join_indices = self.get_join_indices(self.candidate_rules)
                 for (i, j) in join_indices:
-                    joined_rule = self.candidate_rules[i].join(
-                        self.candidate_rules[j], support_pruning=self.use_data
-                    )
+                    joined_rule = self.candidate_rules[i].join(self.candidate_rules[j])
                     if joined_rule is not None:
                         is_solution, keep_candidate = self.filter_candidates(
                             joined_rule, self.labels
@@ -346,20 +338,19 @@ class RuleBuilder:
             log.info(str(len(self.candidate_rules)) + " candidates")
             log.info(str(len(self.solution_rules)) + " solutions")
 
-            if self.use_data is True:
-                for rule in new_solutions:
-                    positives_to_explain = list(
-                        set(positives_to_explain).difference(set(rule.decision_support))
-                    )
-
-                log.info("Unexplained Positives")
-                log.info(len(positives_to_explain))
-
-                log.info("Pruning Candidates")
-                self.candidate_rules = self.prune(
-                    self.candidate_rules, positives_to_explain
+            for rule in new_solutions:
+                positives_to_explain = list(
+                    set(positives_to_explain).difference(set(rule.decision_support))
                 )
-                log.info(str(len(self.candidate_rules)) + " candidates")
+
+            log.info("Unexplained Positives")
+            log.info(len(positives_to_explain))
+
+            log.info("Pruning Candidates")
+            self.candidate_rules = self.prune(
+                self.candidate_rules, positives_to_explain
+            )
+            log.info(str(len(self.candidate_rules)) + " candidates")
 
             log.info("Deduping")
             self.candidate_rules = self.deduplicate(self.candidate_rules)
@@ -367,19 +358,18 @@ class RuleBuilder:
             log.info(str(len(self.candidate_rules)) + " candidates")
             log.info(str(len(self.solution_rules)) + " solutions")
 
-            if self.use_data is True:
-                fidelity, fidelity_positives, fidelity_negatives = self.get_fidelity()
-                self.fidelities = (fidelity, fidelity_positives, fidelity_negatives)
+            fidelity, fidelity_positives, fidelity_negatives = self.get_fidelity()
+            self.fidelities = (fidelity, fidelity_positives, fidelity_negatives)
 
-                log.info("Fidelity")
-                log.info(
-                    "Total: "
-                    + str(fidelity)
-                    + ", Positive: "
-                    + str(fidelity_positives)
-                    + ", Negative: "
-                    + str(fidelity_negatives)
-                )
+            log.info("Fidelity")
+            log.info(
+                "Total: "
+                + str(fidelity)
+                + ", Positive: "
+                + str(fidelity_positives)
+                + ", Negative: "
+                + str(fidelity_negatives)
+            )
             log.info("")
 
     def score_rule_using_data(self, rule: Rule, labels: List[float]) -> List[float]:
@@ -388,28 +378,18 @@ class RuleBuilder:
             decision_value.append(labels[data_index])
         return decision_value
 
+    """
     def score_rule_using_model(self, rule: Rule) -> Tuple[float, float]:
         min_score, max_score = self.random_forest.get_rule_score(rule.decision_rule)
         return min_score, max_score
+    """
 
-    def filter_candidates(
-        self, rule: Rule, labels: List[float] = None
-    ) -> Tuple[bool, bool]:
-        if labels is not None:
-            scores = self.score_rule_using_data(rule, labels)
-            min_score = min(scores)
-            max_score = max(scores)
-            avg_score = sum(scores) / len(scores)
+    def filter_candidates(self, rule: Rule, labels: List[float]) -> Tuple[bool, bool]:
+        scores = self.score_rule_using_data(rule, labels)
+        max_score = max(scores)
+        avg_score = sum(scores) / len(scores)
 
-            min_precision = avg_score
-
-        else:
-            min_score, max_score = self.score_rule_using_model(rule)
-
-            if min_score == 1.0:
-                min_precision = 1.00
-            else:
-                min_precision = 0.00
+        min_precision = avg_score
 
         if min_precision >= self.min_precision:
             # solution, throw candidate: it is already a solution

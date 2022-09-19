@@ -70,7 +70,9 @@ class DecisionTree:
 
     def propagate_decision_rule(self, decision_rule: List[str] = []) -> None:
         self.decision_rule = decision_rule
-        if isinstance(self.node, TreeNode):
+        if isinstance(self.node, LeafNode):
+            pass
+        elif isinstance(self.node, TreeNode):
             if (self.left is None) or (self.right is None):
                 raise ValueError("TreeNode cannot have None as children")
             else:
@@ -78,7 +80,10 @@ class DecisionTree:
                 self.left.propagate_decision_rule(left_decision_rule)
                 right_decision_rule = decision_rule + [self.node.get_right_clause()]
                 self.right.propagate_decision_rule(right_decision_rule)
+        else:
+            raise ValueError("Node has to be LeafNode or TreeNode")
 
+    """
     def aggregate_min_decision_value(self) -> None:
         if isinstance(self.node, LeafNode):
             self.min_decision_value = self.node.value
@@ -93,7 +98,8 @@ class DecisionTree:
                 )
         else:
             raise ValueError("Node has to be LeafNode or TreeNode")
-
+    """
+    """
     def aggregate_max_decision_value(self) -> None:
         if isinstance(self.node, LeafNode):
             self.max_decision_value = self.node.value
@@ -108,6 +114,7 @@ class DecisionTree:
                 )
         else:
             raise ValueError("Node has to be LeafNode or TreeNode")
+    """
 
     def propagate_decision_support(
         self,
@@ -115,13 +122,12 @@ class DecisionTree:
         feature_names: List[str],
         decision_support: List[int] = None,
     ) -> None:
-        if data is None:
-            data = []
         if decision_support is None:
             decision_support = [i for i in range(len(data))]
         self.decision_support = decision_support
-
-        if isinstance(self.node, TreeNode):
+        if isinstance(self.node, LeafNode):
+            pass
+        elif isinstance(self.node, TreeNode):
             if (self.left is None) or (self.right is None):
                 raise ValueError("TreeNode cannot have None as children")
             else:
@@ -139,12 +145,14 @@ class DecisionTree:
                 self.right.propagate_decision_support(
                     data, feature_names, right_decision_support
                 )
+        else:
+            raise ValueError("Node has to be LeafNode or TreeNode")
 
     def get_rules(
         self, data: List[List[float]], feature_names: List[str], tree_id: int
     ) -> List[Rule]:
-        self.aggregate_min_decision_value()
-        self.aggregate_max_decision_value()
+        # self.aggregate_min_decision_value()
+        # self.aggregate_max_decision_value()
         self.propagate_decision_rule()
         self.propagate_decision_support(data, feature_names)
         rules = self.collect_rules(tree_id=tree_id, node_id=0, rules=[])
@@ -160,12 +168,16 @@ class DecisionTree:
                 identity=[str(tree_id) + "_" + str(node_id)],
             )
         ]
-        if isinstance(self.node, TreeNode):
+        if isinstance(self.node, LeafNode):
+            pass
+        elif isinstance(self.node, TreeNode):
             if (self.left is None) or (self.right is None):
                 raise ValueError("TreeNode cannot have None as children")
             else:
                 rules = self.left.collect_rules(tree_id, 2 * node_id + 1, rules)
                 rules = self.right.collect_rules(tree_id, 2 * node_id + 2, rules)
+        else:
+            raise ValueError("Node has to be LeafNode or TreeNode")
         return rules
 
     def get_scores(self, scores: Dict[int, float]) -> Dict[int, float]:
@@ -185,6 +197,7 @@ class DecisionTree:
             raise ValueError("Node has to be LeafNode or TreeNode")
         return scores
 
+    """
     def get_rule_score(self, rule: List[str]) -> List[float]:
         if isinstance(self.node, TreeNode):
             if (self.left is None) or (self.right is None):
@@ -196,6 +209,7 @@ class DecisionTree:
                 if self.node.get_right_clause() in rule:
                     return self.right.get_rule_score(rule)
         return [self.min_decision_value, self.max_decision_value]
+    """
 
 
 class RandomForest:
@@ -244,6 +258,7 @@ class RandomForest:
 
         return scores_list
 
+    """
     def get_rule_score(self, rule: List[str]) -> List[float]:
         min_score = self.bias
         max_score = self.bias
@@ -256,13 +271,16 @@ class RandomForest:
         max_score = self.activation_function(max_score)
         max_score = self.thresholding_function(max_score)
         return [min_score, max_score]
+    """
 
     def activation_function(self, value: float) -> float:
-        if self.activation not in ["sigmoid", "linear"]:
+        if self.activation == "linear":
+            transformed_value = value
+        elif self.activation == "sigmoid":
+            transformed_value = 1 / (1 + 2.71828 ** (-value))
+        else:
             raise ValueError("activation of forest can only be sigmoid or linear")
-        if self.activation == "sigmoid":
-            value = 1 / (1 + 2.71828 ** (-value))
-        return value
+        return transformed_value
 
     def thresholding_function(self, value: float) -> float:
         if value >= 0.5:
