@@ -18,6 +18,7 @@ repos:
         name: mypy
         entry: mypy te2rules
         language: system
+        files: te2rules/*.py
         always_run: true
   - repo: local
     hooks:
