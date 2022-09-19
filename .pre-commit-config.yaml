@@ -14,6 +14,13 @@ repos:
       - id: flake8
   - repo: local
     hooks:
+      - id: mypy
+        name: mypy
+        entry: mypy te2rules
+        language: system
+        always_run: true
+  - repo: local
+    hooks:
       - id: pytest
         name: pytest
         entry: python3 -m pytest
