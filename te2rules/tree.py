@@ -185,7 +185,7 @@ class DecisionTree:
             raise ValueError("Node has to be LeafNode or TreeNode")
         return scores
 
-    def get_rule_score(self, rule: List[Rule]) -> List[float]:
+    def get_rule_score(self, rule: List[str]) -> List[float]:
         if isinstance(self.node, TreeNode):
             if (self.left is None) or (self.right is None):
                 raise ValueError("TreeNode cannot have None as children")
@@ -244,7 +244,7 @@ class RandomForest:
 
         return scores_list
 
-    def get_rule_score(self, rule: List[Rule]) -> List[float]:
+    def get_rule_score(self, rule: List[str]) -> List[float]:
         min_score = self.bias
         max_score = self.bias
         for decision_tree in self.decision_tree_ensemble:

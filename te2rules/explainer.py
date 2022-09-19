@@ -1,6 +1,11 @@
+from __future__ import annotations
+
 import logging
 import re
+from typing import Dict, List, Tuple
 
+import pandas
+import sklearn
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from tqdm import tqdm
 
@@ -8,6 +13,8 @@ from te2rules.adapter import (
     ScikitGradientBoostingClassifierAdapter,
     ScikitRandomForestClassifierAdapter,
 )
+from te2rules.rule import Rule
+from te2rules.tree import RandomForest
 
 log = logging.getLogger()
 
@@ -23,7 +30,9 @@ class ModelExplainer:
     <https://arxiv.org/abs/2206.14359/>`_.
     """
 
-    def __init__(self, model, feature_names, verbose=False):
+    def __init__(
+        self, model: sklearn.ensemble, feature_names: List[str], verbose: bool = False
+    ):
         """
         Initialize the explainer with the trained tree ensemble model
         and feature names used by the model.
@@ -93,7 +102,13 @@ class ModelExplainer:
                     + str(f)
                 )
 
-    def explain(self, X=None, y=None, num_stages=None, min_precision=0.95):
+    def explain(
+        self,
+        X: List[List[float]],
+        y: List[float],
+        num_stages: int = None,
+        min_precision: float = 0.95,
+    ) -> List[str]:
         """
         A method to extract rule list from the tree ensemble model.
         This method takes in input features used by the model and predicted class
@@ -103,10 +118,10 @@ class ModelExplainer:
 
         Parameters
         ----------
-        X: 2d np.array, optional
+        X: 2d np.array
             2 dimensional input data used by the `model`
-        y: 2d np.array, optional
-            2 dimensional label data output from the `model`
+        y: 1d np.array
+            1 dimensional model class predictions (0 or 1) from the `model`
         num_stages: int, optional
             The algorithm runs in stages starting from stage 1, stage 2 to all the way
             till stage n where n is the number of trees in the ensemble.
@@ -126,9 +141,8 @@ class ModelExplainer:
 
         Notes
         -----
-        Though the data parameters X and y are optional, we highly recommend
-        using the data. The data is used for extracting rules with relevant
-        combination of input features. Without data, the algorithm would try
+        The data is used for extracting rules with relevant
+        combination of input features. Without data, explainer would need
         to extract rules for all possible combinations of input features,
         including those combinations which are extremely rare in the data.
 
@@ -145,15 +159,15 @@ class ModelExplainer:
             min_precision=min_precision,
         )
         rules = self.rule_builder.explain(X, y)
-        rules = [str(r) for r in rules]
-        return rules
+        rules_as_str = [str(r) for r in rules]
+        return rules_as_str
 
-    def _apply(self, df):
+    def _apply(self, df: pandas.DataFrame) -> List[float]:
         return self.rule_builder.apply(df)
 
     def get_fidelity(
         self,
-    ):
+    ) -> Tuple[float, float, float]:
         """
         A method to evaluate the rule list extracted by the `explain` method
 
@@ -178,7 +192,12 @@ class ModelExplainer:
 
 
 class RuleBuilder:
-    def __init__(self, random_forest, num_stages=None, min_precision=0.95):
+    def __init__(
+        self,
+        random_forest: RandomForest,
+        num_stages: int = None,
+        min_precision: float = 0.95,
+    ):
         self.random_forest = random_forest
         # if num_stages not set by user, will set it to the number of trees
         # note that we neednum_stages <= num_trees
@@ -188,7 +207,7 @@ class RuleBuilder:
             self.num_stages = self.random_forest.get_num_trees()
         self.min_precision = min_precision
 
-    def explain(self, X=None, y=None):
+    def explain(self, X: List[List[float]], y: List[float]) -> List[Rule]:
         self.data = X
         self.labels = y
         if self.labels is not None:
@@ -201,12 +220,12 @@ class RuleBuilder:
             log.info("Positives: " + str(len(self.positives)))
         else:
             self.use_data = False
-            self.positives = None
+            self.positives = []
 
         log.info("")
         log.info("Rules from trees")
         self.candidate_rules = self.random_forest.get_rules(data=self.data)
-        self.solution_rules = []
+        self.solution_rules: List[Rule] = []
         log.info(str(len(self.candidate_rules)) + " candidate rules")
 
         log.info("Deduping")
@@ -224,7 +243,7 @@ class RuleBuilder:
         if self.use_data is True:
             log.info("")
             log.info("Set Cover")
-            total_support = []
+            total_support: List[int] = []
             for r in self.solution_rules:
                 total_support = list(set(total_support).union(set(r.decision_support)))
             self.rules_to_cover_positives(
@@ -234,7 +253,7 @@ class RuleBuilder:
 
         return self.solution_rules
 
-    def rules_to_cover_positives(self, positives):
+    def rules_to_cover_positives(self, positives: List[int]) -> None:
         original_rules = {}
         positive_coverage = {}
         for r in self.solution_rules:
@@ -243,8 +262,8 @@ class RuleBuilder:
             )
             original_rules[str(r)] = r
 
-        selected_rules = []
-        covered_positives = []
+        selected_rules: List[Rule] = []
+        covered_positives: List[int] = []
 
         while (len(covered_positives) < len(positives)) and (
             len(selected_rules) < len(self.solution_rules)
@@ -279,7 +298,7 @@ class RuleBuilder:
 
         self.solution_rules = selected_rules
 
-    def generate_solutions(self):
+    def generate_solutions(self) -> None:
         log.info("")
         log.info("Running Apriori")
         log.info("")
@@ -310,17 +329,17 @@ class RuleBuilder:
             else:
                 join_indices = self.get_join_indices(self.candidate_rules)
                 for (i, j) in join_indices:
-                    r = self.candidate_rules[i].join(
+                    joined_rule = self.candidate_rules[i].join(
                         self.candidate_rules[j], support_pruning=self.use_data
                     )
-                    if r is not None:
+                    if joined_rule is not None:
                         is_solution, keep_candidate = self.filter_candidates(
-                            r, self.labels
+                            joined_rule, self.labels
                         )
                         if is_solution is True:
-                            new_solutions.append(r)
+                            new_solutions.append(joined_rule)
                         if keep_candidate is True:
-                            new_candidates.append(r)
+                            new_candidates.append(joined_rule)
 
             self.candidate_rules = new_candidates
             self.solution_rules = self.solution_rules + new_solutions
@@ -363,17 +382,19 @@ class RuleBuilder:
                 )
             log.info("")
 
-    def score_rule_using_data(self, rule, labels):
+    def score_rule_using_data(self, rule: Rule, labels: List[float]) -> List[float]:
         decision_value = []
         for data_index in rule.decision_support:
             decision_value.append(labels[data_index])
         return decision_value
 
-    def score_rule_using_model(self, rule):
+    def score_rule_using_model(self, rule: Rule) -> Tuple[float, float]:
         min_score, max_score = self.random_forest.get_rule_score(rule.decision_rule)
         return min_score, max_score
 
-    def filter_candidates(self, rule, labels=None):
+    def filter_candidates(
+        self, rule: Rule, labels: List[float] = None
+    ) -> Tuple[bool, bool]:
         if labels is not None:
             scores = self.score_rule_using_data(rule, labels)
             min_score = min(scores)
@@ -401,11 +422,11 @@ class RuleBuilder:
                 # not solution, keep candidate: it can become a solution
                 return False, True
 
-    def get_fidelity(self, use_top=None):
+    def get_fidelity(self, use_top: int = None) -> Tuple[float, float, float]:
         if use_top is None:
             use_top = len(self.solution_rules)
 
-        support = []
+        support: List[int] = []
         for i in range(use_top):
             r = self.solution_rules[i]
             support = support + r.decision_support
@@ -435,7 +456,7 @@ class RuleBuilder:
             fidelity_negatives / negatives,
         )
 
-    def deduplicate(self, rules):
+    def deduplicate(self, rules: List[Rule]) -> List[Rule]:
         rules_map = {}
         for i in range(len(rules)):
             key = str(rules[i])
@@ -449,7 +470,7 @@ class RuleBuilder:
         dedup_rules = [rules_map[r] for r in rules_map]
         return dedup_rules
 
-    def shorten(self, rules):
+    def shorten(self, rules: List[Rule]) -> List[Rule]:
         for i in range(len(rules)):
             pred_dict = {}
             for pred in rules[i].decision_rule:
@@ -482,24 +503,24 @@ class RuleBuilder:
             rules[i].decision_rule = final_rule
         return rules
 
-    def apply(self, df):
-        coverage = []
+    def apply(self, df: pandas.DataFrame) -> List[float]:
+        coverage: List[int] = []
         for r in self.solution_rules:
             support = df.query(str(r)).index.tolist()
             coverage = list(set(coverage).union(set(support)))
 
-        y_rules = [0.0] * len(df)
+        y_rules: List[float] = [0.0] * len(df)
         for i in coverage:
             y_rules[i] = 1.0
 
         return y_rules
 
-    def get_join_indices(self, rules):
+    def get_join_indices(self, rules: List[Rule]) -> List[Tuple[int, int]]:
         for i in range(len(rules)):
             rules[i].create_identity_map()
 
-        left_map = {}
-        right_map = {}
+        left_map: Dict[str, List[int]] = {}
+        right_map: Dict[str, List[int]] = {}
         for i in range(len(rules)):
             left_keys = list(rules[i].left_identity_map.keys())
             for j in range(len(left_keys)):
@@ -521,11 +542,11 @@ class RuleBuilder:
                 for k in right_map[join_keys[i]]:
                     if j < k:
                         pairs.add((j, k))
-        pairs = list(pairs)
-        pairs.sort()  # can be removed
-        return pairs
+        pairs_list = list(pairs)
+        pairs_list.sort()  # can be removed
+        return pairs_list
 
-    def prune(self, rules, positives):
+    def prune(self, rules: List[Rule], positives: List[int]) -> List[Rule]:
         pruned_rules = []
         for i in range(len(rules)):
             decision_support_positive = list(
