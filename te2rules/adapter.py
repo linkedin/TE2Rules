@@ -1,3 +1,7 @@
+from __future__ import annotations
+
+from typing import List
+
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, _tree
@@ -6,9 +10,9 @@ from te2rules.tree import DecisionTree, LeafNode, RandomForest, TreeNode
 
 
 class ScikitGradientBoostingClassifierAdapter:
-    def __init__(self, scikit_forest, feature_names):
-        assert type(scikit_forest) == GradientBoostingClassifier
-
+    def __init__(
+        self, scikit_forest: GradientBoostingClassifier, feature_names: List[str]
+    ):
         self.feature_names = feature_names
 
         n0, n1 = scikit_forest.init_.class_prior_
@@ -24,7 +28,7 @@ class ScikitGradientBoostingClassifierAdapter:
 
         self.random_forest = self.convert()
 
-    def convert(self):
+    def convert(self) -> RandomForest:
         decision_tree_ensemble = []
         for scikit_tree in list(self.scikit_tree_ensemble):
             decision_tree = ScikitDecisionTreeRegressorAdapter(
@@ -42,9 +46,7 @@ class ScikitGradientBoostingClassifierAdapter:
 
 
 class ScikitRandomForestClassifierAdapter:
-    def __init__(self, scikit_forest, feature_names):
-        assert type(scikit_forest) == RandomForestClassifier
-
+    def __init__(self, scikit_forest: RandomForestClassifier, feature_names: List[str]):
         self.feature_names = feature_names
 
         self.bias = 0.0
@@ -55,7 +57,7 @@ class ScikitRandomForestClassifierAdapter:
 
         self.random_forest = self.convert()
 
-    def convert(self):
+    def convert(self) -> RandomForest:
         decision_tree_ensemble = []
         for scikit_tree in list(self.scikit_tree_ensemble):
             decision_tree = ScikitDecisionTreeClassifierAdapter(
@@ -73,9 +75,7 @@ class ScikitRandomForestClassifierAdapter:
 
 
 class ScikitDecisionTreeRegressorAdapter:
-    def __init__(self, scikit_tree, feature_names):
-        assert type(scikit_tree) == DecisionTreeRegressor
-
+    def __init__(self, scikit_tree: DecisionTreeRegressor, feature_names: List[str]):
         self.feature_names = feature_names
 
         self.feature_indices = scikit_tree.tree_.feature
@@ -92,8 +92,8 @@ class ScikitDecisionTreeRegressorAdapter:
 
         self.decision_tree = self.convert()
 
-    def convert(self):
-        nodes = []
+    def convert(self) -> DecisionTree:
+        nodes: List[DecisionTree] = []
 
         # Create Tree Nodes
         for i in range(len(self.feature_indices)):
@@ -123,9 +123,7 @@ class ScikitDecisionTreeRegressorAdapter:
 
 
 class ScikitDecisionTreeClassifierAdapter:
-    def __init__(self, scikit_tree, feature_names):
-        assert type(scikit_tree) == DecisionTreeClassifier
-
+    def __init__(self, scikit_tree: DecisionTreeClassifier, feature_names: List[str]):
         self.feature_names = feature_names
 
         self.feature_indices = scikit_tree.tree_.feature
@@ -146,8 +144,8 @@ class ScikitDecisionTreeClassifierAdapter:
 
         self.decision_tree = self.convert()
 
-    def convert(self):
-        nodes = []
+    def convert(self) -> DecisionTree:
+        nodes: List[DecisionTree] = []
 
         # Create Tree Nodes
         for i in range(len(self.feature_indices)):
