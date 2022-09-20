@@ -120,10 +120,8 @@ class DecisionTree:
         self,
         data: List[List[float]],
         feature_names: List[str],
-        decision_support: List[int] = None,
+        decision_support: List[int],
     ) -> None:
-        if decision_support is None:
-            decision_support = [i for i in range(len(data))]
         self.decision_support = decision_support
         if isinstance(self.node, LeafNode):
             pass
@@ -151,10 +149,11 @@ class DecisionTree:
     def get_rules(
         self, data: List[List[float]], feature_names: List[str], tree_id: int
     ) -> List[Rule]:
+        support = [i for i in range(len(data))]
         # self.aggregate_min_decision_value()
         # self.aggregate_max_decision_value()
         self.propagate_decision_rule()
-        self.propagate_decision_support(data, feature_names)
+        self.propagate_decision_support(data, feature_names, support)
         rules = self.collect_rules(tree_id=tree_id, node_id=0, rules=[])
         return rules
 
