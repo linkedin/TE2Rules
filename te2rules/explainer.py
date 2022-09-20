@@ -139,6 +139,15 @@ class ModelExplainer:
         rules: List[str]
             A List of human readable rules.
 
+        Raises
+        ------
+        ValueError:
+            when `X` and `y` are of different length.
+
+        ValueError:
+            when entries in `y` are other than 0 and 1. Only binary
+            classification is supported.
+
         Notes
         -----
         The data is used for extracting rules with relevant
@@ -158,6 +167,11 @@ class ModelExplainer:
             num_stages=num_stages,
             min_precision=min_precision,
         )
+        if len(X) != len(y):
+            raise ValueError("X and y should have the same length")
+        for i in range(len(y)):
+            if y[i] not in [0, 1]:
+                raise ValueError("entries y should only be 0 or 1.")
         rules = self.rule_builder.explain(X, y)
         rules_as_str = [str(r) for r in rules]
         return rules_as_str
@@ -299,21 +313,18 @@ class RuleBuilder:
         log.info("")
 
         positives_to_explain = self.positives
-        for stage in tqdm(
-            range(self.num_stages),
-            desc="Merging Trees...",
-        ):
-            log.info("")
-
+        for stage in range(self.num_stages):
             if len(positives_to_explain) == 0:
                 continue
+
+            log.info("")
 
             log.info("Rules from " + str(stage + 1) + " trees")
 
             new_candidates = []
             new_solutions = []
             if stage == 0:
-                for i in range(len(self.candidate_rules)):
+                for i in tqdm(range(len(self.candidate_rules))):
                     r = self.candidate_rules[i]
                     is_solution, keep_candidate = self.filter_candidates(r, self.labels)
                     if is_solution is True:
@@ -322,7 +333,7 @@ class RuleBuilder:
                         new_candidates.append(r)
             else:
                 join_indices = self.get_join_indices(self.candidate_rules)
-                for (i, j) in join_indices:
+                for (i, j) in tqdm(join_indices):
                     joined_rule = self.candidate_rules[i].join(self.candidate_rules[j])
                     if joined_rule is not None:
                         is_solution, keep_candidate = self.filter_candidates(
@@ -359,16 +370,15 @@ class RuleBuilder:
             log.info(str(len(self.solution_rules)) + " solutions")
 
             fidelity, fidelity_positives, fidelity_negatives = self.get_fidelity()
-            self.fidelities = (fidelity, fidelity_positives, fidelity_negatives)
 
             log.info("Fidelity")
             log.info(
                 "Total: "
-                + str(fidelity)
+                + f"{fidelity:.6f}"
                 + ", Positive: "
-                + str(fidelity_positives)
+                + f"{fidelity_positives:.6f}"
                 + ", Negative: "
-                + str(fidelity_negatives)
+                + f"{fidelity_negatives:.6f}"
             )
             log.info("")
 
@@ -530,7 +540,7 @@ class RuleBuilder:
         pruned_rules = []
         for i in range(len(rules)):
             decision_support_positive = list(
-                set(set(rules[i].decision_support).intersection(positives))
+                set(rules[i].decision_support).intersection(set(positives))
             )
 
             if len(decision_support_positive) > 0:
