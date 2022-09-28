@@ -45,9 +45,9 @@ Let us use TE2Rules ```ModelExplainer``` to explain the positive class predicito
 ## For reproducing results in the paper :
 Run the follwing python scripts to generate the results in the [paper](https://arxiv.org/abs/2206.14359):
 ```
-python3 global_baseline_experiment.py
-python3 global_te2rules_experiment.py
-python3 outcome_explanation_experiments.py
+python3 demo/global_baseline_experiment.py
+python3 demo/global_te2rules_experiment.py
+python3 demo/outcome_explanation_experiments.py
 ``` 
 
 ## License
