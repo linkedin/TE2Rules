@@ -1,3 +1,6 @@
+"""
+
+"""
 from te2rules.tree import DecisionTree, LeafNode, RandomForest, TreeNode
 
 tree_0 = DecisionTree(

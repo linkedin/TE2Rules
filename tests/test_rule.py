@@ -1,3 +1,6 @@
+"""
+
+"""
 from te2rules.rule import Rule
 
 rule_1 = Rule(
