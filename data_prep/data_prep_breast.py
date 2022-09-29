@@ -1,9 +1,13 @@
 """
-
+Python script to prepare Breast Cancer dataset from UCI Repository. The script downloads data, 
+cleans missing values and renames labels. The data is split into training and testing data 
+and is saved both in raw and one-hot encoded forms.
 """
 from data_prep import *
-from sklearn.utils import shuffle
 import numpy as np
+import pandas as pd
+from sklearn.utils import shuffle
+import os 
 
 np.random.seed(123)
 

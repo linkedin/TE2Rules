@@ -1,32 +1,37 @@
 """
-
+Python script to prepare Bank dataset from UCI Repository. The script downloads data,
+cleans missing values and renames labels. The data is split into training and testing data
+and is saved both in raw and one-hot encoded forms.
 """
 from data_prep import *
-import requests
-from io import BytesIO
-from zipfile import ZipFile
+import numpy as np
 import pandas as pd
-# from imblearn.over_sampling import SMOTE
+from sklearn.utils import shuffle
+import os
+from zipfile import ZipFile
 
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank.zip"
+np.random.seed(123)
 
-# --NotebookApp.iopub_data_rate_limit = 10000000
-
-with ZipFile(BytesIO(requests.get(url).content), "r") as myzip:
-    with myzip.open("bank-full.csv", "r") as f_in:
-        df = pd.read_csv(f_in, sep=";")
-
-df['label'] = [int(x) for x in (df['y']=='yes')]
-
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00222/"
+download_to = 'data/'
+files = ['bank.zip']
 column_names = ['age', 'job', 'marital', 'education', 'default', 'balance', 'housing',
                 'loan', 'contact', 'day', 'month', 'duration', 'campaign', 'pdays',
-                'previous', 'poutcome',
-                'label']
-df = df[column_names]
+                'previous', 'poutcome', 
+                'y']
 column_names_categorical = ['job', 'marital', 'education', 'default', 'housing',
                 'loan', 'contact', 'month', 'poutcome',
                 'label']
+
+download(url, download_to, files)
+with ZipFile(os.path.join(download_to, 'bank.zip'), 'r') as zip_ref:
+    zip_ref.extractall(download_to)
+
+df = clean_missing(download_to + 'bank-full.csv', column_names, sep = ";")
 df = df.replace("admin.", "admin")
+df = shuffle(df)
+df = rename_label(df, 'y', ['yes', 'no'], ['1', '0'])
+
 num_rows_train = int(0.8*len(df))
 
 df_train = df[:num_rows_train]
@@ -38,15 +43,13 @@ df_test.to_csv('data/bank/test_raw.csv', index = False)
 
 df = pd.get_dummies(data=df, columns=column_names_categorical)
 df = df.drop(columns = ['label_0'])
-df.columns = [x.replace('-', '_').replace(' ', '_') for x in df.columns]
 
 df_train = df[:num_rows_train]
-# X, y = df_train.iloc[:,:-1], df_train.iloc[:,-1]
-# oversample = SMOTE()
-# X, y = oversample.fit_resample(X, y)
-# df_train = X
-# df_train['label_1'] = y
-
 df_test = df[num_rows_train:]
 df_train.to_csv('data/bank/train.csv', index = False)
 df_test.to_csv('data/bank/test.csv', index = False)
+
+os.remove('data/bank.zip')
+os.remove('data/bank-full.csv')
+os.remove('data/bank.csv')
+os.remove('data/bank-names.txt')
