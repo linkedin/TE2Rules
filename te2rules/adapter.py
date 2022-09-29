@@ -1,5 +1,7 @@
 """
-
+This file contains adapters to convert scikit learn tree ensemble models
+into corresponding te2rules tree ensemble models. The tree ensemble models
+of te2rules have the necessary structure for explaining itself using rules.
 """
 from __future__ import annotations
 
@@ -13,6 +15,15 @@ from te2rules.tree import DecisionTree, LeafNode, RandomForest, TreeNode
 
 
 class ScikitGradientBoostingClassifierAdapter:
+    """
+    Class to convert sklearn.ensemble.GradientBoostingClassifier
+    into a te2rules.tree.RandomForest object.
+
+    Usage:
+    adapter = ScikitGradientBoostingClassifierAdapter(model, feature_names)
+    adapted_model = adapter.random_forest
+    """
+
     def __init__(
         self, scikit_forest: GradientBoostingClassifier, feature_names: List[str]
     ):
@@ -29,9 +40,13 @@ class ScikitGradientBoostingClassifierAdapter:
         scikit_tree_ensemble = [dtr[0] for dtr in scikit_tree_ensemble]
         self.scikit_tree_ensemble = scikit_tree_ensemble
 
-        self.random_forest = self.convert()
+        self.random_forest = self._convert()
 
-    def convert(self) -> RandomForest:
+    def _convert(self) -> RandomForest:
+        """
+        Private method to create the te2rules.tree.RandomForest
+        from the sklearn.ensemble.GradientBoostingClassifier object.
+        """
         decision_tree_ensemble = []
         for scikit_tree in list(self.scikit_tree_ensemble):
             decision_tree = ScikitDecisionTreeRegressorAdapter(
@@ -49,6 +64,15 @@ class ScikitGradientBoostingClassifierAdapter:
 
 
 class ScikitRandomForestClassifierAdapter:
+    """
+    Class to convert sklearn.ensemble.RandomForestClassifier
+    into a te2rules.tree.RandomForest object.
+
+    Usage:
+    adapter = ScikitRandomForestClassifierAdapter(model, feature_names)
+    adapted_model = adapter.random_forest
+    """
+
     def __init__(self, scikit_forest: RandomForestClassifier, feature_names: List[str]):
         self.feature_names = feature_names
 
@@ -58,9 +82,13 @@ class ScikitRandomForestClassifierAdapter:
 
         self.scikit_tree_ensemble = scikit_forest.estimators_
 
-        self.random_forest = self.convert()
+        self.random_forest = self._convert()
 
-    def convert(self) -> RandomForest:
+    def _convert(self) -> RandomForest:
+        """
+        Private method to create the te2rules.tree.RandomForest
+        from the sklearn.ensemble.RandomForestClassifier object.
+        """
         decision_tree_ensemble = []
         for scikit_tree in list(self.scikit_tree_ensemble):
             decision_tree = ScikitDecisionTreeClassifierAdapter(
@@ -78,6 +106,15 @@ class ScikitRandomForestClassifierAdapter:
 
 
 class ScikitDecisionTreeRegressorAdapter:
+    """
+    Class to convert sklearn.tree.DecisionTreeRegressor
+    into a te2rules.tree.DecisionTree object.
+
+    Usage:
+    adapter = ScikitDecisionTreeRegressorAdapter(model, feature_names)
+    adapted_model = adapter.decision_tree
+    """
+
     def __init__(self, scikit_tree: DecisionTreeRegressor, feature_names: List[str]):
         self.feature_names = feature_names
 
@@ -93,9 +130,13 @@ class ScikitDecisionTreeRegressorAdapter:
             assert len(scikit_tree.tree_.value[i][0]) == 1  # regressor
         self.value = [val[0][0] for val in self.value]
 
-        self.decision_tree = self.convert()
+        self.decision_tree = self._convert()
 
-    def convert(self) -> DecisionTree:
+    def _convert(self) -> DecisionTree:
+        """
+        Private method to create the te2rules.tree.DecisionTree
+        from the sklearn.tree.DecisionTreeRegressor object.
+        """
         nodes: List[DecisionTree] = []
 
         # Create Tree Nodes
@@ -126,6 +167,15 @@ class ScikitDecisionTreeRegressorAdapter:
 
 
 class ScikitDecisionTreeClassifierAdapter:
+    """
+    Class to convert sklearn.tree.DecisionTreeClassifier
+    into a te2rules.tree.DecisionTree object.
+
+    Usage:
+    adapter = ScikitDecisionTreeClassifierAdapter(model, feature_names)
+    adapted_model = adapter.decision_tree
+    """
+
     def __init__(self, scikit_tree: DecisionTreeClassifier, feature_names: List[str]):
         self.feature_names = feature_names
 
@@ -145,9 +195,13 @@ class ScikitDecisionTreeClassifierAdapter:
             value.append(prob_1 / (prob_0 + prob_1))
         self.value = value
 
-        self.decision_tree = self.convert()
+        self.decision_tree = self._convert()
 
-    def convert(self) -> DecisionTree:
+    def _convert(self) -> DecisionTree:
+        """
+        Private method to create the te2rules.tree.DecisionTree
+        from the sklearn.tree.DecisionTreeClassifier object.
+        """
         nodes: List[DecisionTree] = []
 
         # Create Tree Nodes
