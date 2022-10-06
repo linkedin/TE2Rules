@@ -1,5 +1,5 @@
 """
-
+This file has class to train a tree ensemble model used in TE2Rules experiments in the paper.
 """
 import numpy as np
 import pandas as pd

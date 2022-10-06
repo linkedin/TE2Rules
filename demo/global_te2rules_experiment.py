@@ -1,5 +1,6 @@
 """
-
+This file has script to reproduce global explanation results in the paper
+for TE2Rules.
 """
 import os
 from time import time
