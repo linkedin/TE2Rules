@@ -1,5 +1,5 @@
 """
-
+This file contains unit tests for te2rules.explainer.ModelExplainer.
 """
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
@@ -59,5 +59,8 @@ rules = model_explainer.explain(
 
 
 def test_rules() -> None:
+    """
+    Unit test for te2rules.explainer.ModelExplainer.explain()
+    """
     expected_rules = ["f3 > 0.5", "f0 <= 0.5 & f1 <= 0.5 & f2 <= 0.5 & f3 <= 0.5"]
     assert set(rules) == set(expected_rules)
