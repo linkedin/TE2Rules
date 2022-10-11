@@ -1,3 +1,8 @@
+"""
+This file contains the tree and tree ensemble objects in te2rules.
+The tree ensemble models of te2rules have the necessary structure for
+explaining itself using rules.
+"""
 from __future__ import annotations
 
 from typing import Dict, List, Optional
@@ -6,11 +11,25 @@ from te2rules.rule import Rule
 
 
 class Node:
+    """
+    Base class of nodes in decision trees.
+    These nodes may or may not be leaf nodes.
+    """
+
     def __init__(self, is_leaf: bool):
         self.is_leaf = is_leaf
 
 
 class TreeNode(Node):
+    """
+    Class of internal (non-leaf) nodes in decision trees.
+    Each internal node has a feature name and threshold value
+    on which the split is performed.
+
+    The left split is taken when feature value <= threshold value
+    and the right split is taken when feature value > threshold value.
+    """
+
     def __init__(self, node_name: str, threshold: float):
         super().__init__(is_leaf=False)
         self.node_name = node_name
@@ -27,6 +46,11 @@ class TreeNode(Node):
 
 
 class LeafNode(Node):
+    """
+    Class of terminal (leaf) nodes in decision trees.
+    Each leaf node has a value assigned to data reaching the leaf.
+    """
+
     def __init__(self, value: float):
         super().__init__(is_leaf=True)
         self.value = value
@@ -39,6 +63,18 @@ class LeafNode(Node):
 
 
 class DecisionTree:
+    """
+    Class of decision tree.
+    The decision tree object consists of:
+    1) Node: TreeNode or LeafNode containing information on how the decision
+        is performed at the node.
+    2) Left Sub Tree: A decision tree for the left branch.
+    2) Right Sub Tree: A decision tree for the right branch.
+
+    The node should be either LeafNode or TreeNode only.
+    When the node is a TreeNode, the left and right sub trees cannot be None.
+    """
+
     def __init__(
         self,
         node: Node,
@@ -50,9 +86,9 @@ class DecisionTree:
         self.right = right
 
     def __str__(self) -> str:
-        return self.str_recursive(num_indent=0)
+        return self._str_recursive(num_indent=0)
 
-    def str_recursive(self, num_indent: int) -> str:
+    def _str_recursive(self, num_indent: int) -> str:
         indentation = "|   " * num_indent + "|---"
         if isinstance(self.node, LeafNode):
             string_rep = indentation + self.node.get_leaf_clause()
@@ -61,14 +97,26 @@ class DecisionTree:
                 raise ValueError("TreeNode cannot have None as children")
             else:
                 string_rep = indentation + self.node.get_left_clause() + "\n"
-                string_rep += self.left.str_recursive(num_indent=num_indent + 1) + "\n"
+                string_rep += self.left._str_recursive(num_indent=num_indent + 1) + "\n"
                 string_rep += indentation + self.node.get_right_clause() + "\n"
-                string_rep += self.right.str_recursive(num_indent=num_indent + 1)
+                string_rep += self.right._str_recursive(num_indent=num_indent + 1)
         else:
             raise ValueError("Node has to be LeafNode or TreeNode")
         return string_rep
 
-    def propagate_decision_rule(self, decision_rule: List[str] = []) -> None:
+    def _propagate_decision_rule(self, decision_rule: List[str]) -> None:
+        """
+        Decision rule stands for the list of decisions made to reach the current node.
+        Example:
+        ['f1 < 0.2', 'f3 > 0.5'] can be the decisions made to reach the current node.
+
+        This method sets the decision rule of the current node as the list of decisions
+        given by the user and the decision rule of descendant nodes as the list of
+        decisions made at the current node and the decisions made at each node along
+        the path from the current node to the descendant node.
+
+        This method is private.
+        """
         self.decision_rule = decision_rule
         if isinstance(self.node, LeafNode):
             pass
@@ -77,9 +125,9 @@ class DecisionTree:
                 raise ValueError("TreeNode cannot have None as children")
             else:
                 left_decision_rule = decision_rule + [self.node.get_left_clause()]
-                self.left.propagate_decision_rule(left_decision_rule)
+                self.left._propagate_decision_rule(left_decision_rule)
                 right_decision_rule = decision_rule + [self.node.get_right_clause()]
-                self.right.propagate_decision_rule(right_decision_rule)
+                self.right._propagate_decision_rule(right_decision_rule)
         else:
             raise ValueError("Node has to be LeafNode or TreeNode")
 
@@ -116,12 +164,23 @@ class DecisionTree:
             raise ValueError("Node has to be LeafNode or TreeNode")
     """
 
-    def propagate_decision_support(
+    def _propagate_decision_support(
         self,
         data: List[List[float]],
         feature_names: List[str],
         decision_support: List[int],
     ) -> None:
+        """
+        Support stands for the list of indices of data records that pass through
+        the current node while the decision tree makes a decision.
+
+        This method sets the support of the current node as the list of indices
+        given by the user and the support of descendant nodes as the subset (list) of
+        the given indices that pass through the descendant node  while the decision
+        tree makes a decision.
+
+        This method is private.
+        """
         self.decision_support = decision_support
         if isinstance(self.node, LeafNode):
             pass
@@ -137,10 +196,10 @@ class DecisionTree:
                         left_decision_support.append(index)
                     else:
                         right_decision_support.append(index)
-                self.left.propagate_decision_support(
+                self.left._propagate_decision_support(
                     data, feature_names, left_decision_support
                 )
-                self.right.propagate_decision_support(
+                self.right._propagate_decision_support(
                     data, feature_names, right_decision_support
                 )
         else:
@@ -149,17 +208,41 @@ class DecisionTree:
     def get_rules(
         self, data: List[List[float]], feature_names: List[str], tree_id: int
     ) -> List[Rule]:
+        """
+        This method sets the decision rule and support for all nodes in the
+        decision tree starting from the root node. The decision rule of the
+        root node of the decision tree is set to a empty list and the support
+        of the root node of the decision tree is set to the list of all indices
+        in the data.
+
+        After setting the decision rule and support, it collects the rule objects
+        from all the nodes in the decision tree.
+        """
         support = [i for i in range(len(data))]
         # self.aggregate_min_decision_value()
         # self.aggregate_max_decision_value()
-        self.propagate_decision_rule()
-        self.propagate_decision_support(data, feature_names, support)
-        rules = self.collect_rules(tree_id=tree_id, node_id=0, rules=[])
+        self._propagate_decision_rule(decision_rule=[])
+        self._propagate_decision_support(data, feature_names, support)
+        rules = self._collect_rules(tree_id=tree_id, node_id=0, rules=[])
         return rules
 
-    def collect_rules(
+    def _collect_rules(
         self, tree_id: int, node_id: int, rules: List[Rule]
     ) -> List[Rule]:
+        """
+        This method collects the rule objects from all the nodes in the
+        decision tree and returns the list of rules appended with list
+        supplied by the user.
+        1) The rule object's decision rule and support are taken from the
+        corresponding node.
+        2) The rule objects's identity is set to be [tree_id_node_id].
+        The tree_id of the rule objects is taken from the user. The node_id
+        of the current node is taken from the user.
+        3) The node_ids of the left and right child are set to be 2 * node_id + 1,
+        2 * node_id + 2 given the current node's node_id.
+
+        This method is private.
+        """
         rules = rules + [
             Rule(
                 decision_rule=sorted(self.decision_rule),
@@ -173,14 +256,33 @@ class DecisionTree:
             if (self.left is None) or (self.right is None):
                 raise ValueError("TreeNode cannot have None as children")
             else:
-                rules = self.left.collect_rules(tree_id, 2 * node_id + 1, rules)
-                rules = self.right.collect_rules(tree_id, 2 * node_id + 2, rules)
+                rules = self.left._collect_rules(tree_id, 2 * node_id + 1, rules)
+                rules = self.right._collect_rules(tree_id, 2 * node_id + 2, rules)
         else:
             raise ValueError("Node has to be LeafNode or TreeNode")
         return rules
 
     def get_scores(self, scores: Dict[int, float]) -> Dict[int, float]:
+        """
+        This method (when called with scores = {}) returns a dict
+        that maps the indices of the data to the corresponding score
+        returned by the decision tree.
+
+        When the method is called with some scores dict, the returned
+        scores has scores from the user given dict + score of the
+        decision tree for the corresponding indices.
+
+        The data is contained in the support of nodes in the decision
+        tree. Hence, this method can be called only after calling get_rules().
+        It will raise AttributeError otherwise.
+        """
         if isinstance(self.node, LeafNode):
+            if not hasattr(self, "decision_support"):
+                raise AttributeError(
+                    "Support of nodes in the decision trees not found, "
+                    + "since no data has been supplied to the model. "
+                    + "Call get_rules() with data, before calling get_scores()."
+                )
             for i in self.decision_support:
                 if i not in scores:
                     scores[i] = self.node.value
@@ -212,6 +314,16 @@ class DecisionTree:
 
 
 class RandomForest:
+    """
+    Class of random forest.
+    The random forest object consists of:
+    1) list of decision tree objects,
+    2) weight multiplied to each decision tree score,
+        bias added to the score,
+        activation function applied on the score
+    3) list of feature names in the data
+    """
+
     def __init__(
         self,
         decision_tree_ensemble: List[DecisionTree],
@@ -232,6 +344,10 @@ class RandomForest:
         return len(self.decision_tree_ensemble)
 
     def get_rules(self, data: List[List[float]]) -> List[Rule]:
+        """
+        This method gets rule objects from decision trees in the random forest
+        which have support in the data given by the user.
+        """
         rules_from_tree: List[Rule] = []
         for tree_index, decision_tree in enumerate(self.decision_tree_ensemble):
             rules = decision_tree.get_rules(
@@ -241,13 +357,28 @@ class RandomForest:
         return rules_from_tree
 
     def get_scores(self) -> List[float]:
+        """
+        This method returns a list of scores by the random forest
+        on the data.
+
+        The data is contained in the support of nodes in the random
+        forest. Hence, this method can be called only after calling get_rules().
+        It will raise AttributeError otherwise.
+        """
         scores: Dict[int, float] = {}
         for tree in self.decision_tree_ensemble:
-            scores = tree.get_scores(scores)
+            try:
+                scores = tree.get_scores(scores)
+            except AttributeError:
+                raise AttributeError(
+                    "Support of nodes in the decision trees not found, "
+                    + "since no data has been supplied to the model. "
+                    + "Call get_rules() with data, before calling get_scores()."
+                )
 
         for i in scores.keys():
             scores[i] = scores[i] * self.weight + self.bias
-            scores[i] = self.activation_function(scores[i])
+            scores[i] = self._activation_function(scores[i])
 
         assert set(range(max(scores.keys()) + 1)) == set(scores.keys())
 
@@ -272,7 +403,10 @@ class RandomForest:
         return [min_score, max_score]
     """
 
-    def activation_function(self, value: float) -> float:
+    def _activation_function(self, value: float) -> float:
+        """
+        Method to apply activation function on the value.
+        """
         if self.activation == "linear":
             transformed_value = value
         elif self.activation == "sigmoid":
@@ -281,7 +415,11 @@ class RandomForest:
             raise ValueError("activation of forest can only be sigmoid or linear")
         return transformed_value
 
-    def thresholding_function(self, value: float) -> float:
+    def _thresholding_function(self, value: float) -> float:
+        """
+        Method to apply thresholding function on the score of the model
+        to convert the score to the binary class label.
+        """
         if value >= 0.5:
             thresholded_value = 1.0
         else:

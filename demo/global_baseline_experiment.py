@@ -1,3 +1,7 @@
+"""
+This file has script to reproduce global explanation results in the paper
+for baselines: InTrees, SkopeRules, RuleFit.
+"""
 import os
 from time import time
 

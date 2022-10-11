@@ -1,3 +1,12 @@
+###
+# R script to create a tree ensemble model (with given ntrees, max_depth) and explain
+# it using inTrees. The script reads training and testing data and then writes the output
+# of the tree ensemble model (scores, class_predictions) and rules (extracted rules,
+# class_predictions) on both training and testing data in the results directory.
+
+# Usage: Rscript intrees_baseline.R train_file, test_file, result_dir, n_estimators, max_depth
+###
+
 # args
 train_file = commandArgs(trailingOnly=TRUE)[1]
 test_file = commandArgs(trailingOnly=TRUE)[2]
@@ -6,8 +15,8 @@ ntree = as.integer(commandArgs(trailingOnly=TRUE)[4])
 max_depth = as.integer(commandArgs(trailingOnly=TRUE)[5])
 
 # library
-# install.packages("xgboost", repos = "http://cran.us.r-project.org")
-# install.packages("inTrees", repos = "http://cran.us.r-project.org")
+if (!require(xgboost)) install.packages('xgboost')
+if (!require(inTrees)) install.packages('inTrees')
 library(xgboost)
 library(inTrees)
 set.seed(123)

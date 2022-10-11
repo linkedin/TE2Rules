@@ -1,3 +1,6 @@
+"""
+This file contains unit tests for te2rules.tree.RandomForest.
+"""
 from te2rules.tree import DecisionTree, LeafNode, RandomForest, TreeNode
 
 tree_0 = DecisionTree(
@@ -109,6 +112,9 @@ scores = forest.get_scores()
 
 
 def test_str_rep() -> None:
+    """
+    Unit test for te2rules.tree.RandomForest.__str__()
+    """
     forest_str = (
         "Tree 0\n"
         + "\n".join(tree_0_str)
@@ -124,10 +130,16 @@ def test_str_rep() -> None:
 
 
 def test_num() -> None:
+    """
+    Unit test for te2rules.tree.RandomForest.get_num_trees()
+    """
     assert forest.get_num_trees() == 3
 
 
 def test_rules() -> None:
+    """
+    Unit test for te2rules.tree.RandomForest.get_rules()
+    """
     rules_str = [
         "",
         "f0 <= 0.5",
@@ -157,6 +169,9 @@ def test_rules() -> None:
 
 
 def test_scores() -> None:
+    """
+    Unit test for te2rules.tree.RandomForest.get_scores()
+    """
     forest_scores_on_data = [
         1.0 + 0.017 + 0.93,
         1.0 + -0.067 + 0.93,

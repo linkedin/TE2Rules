@@ -1,3 +1,6 @@
+"""
+This file contains unit tests for te2rules.rule.Rule.
+"""
 from te2rules.rule import Rule
 
 rule_1 = Rule(
@@ -17,11 +20,17 @@ rule_2.create_identity_map()
 
 
 def test_str_rep() -> None:
+    """
+    Unit test for te2rules.rule.Rule.__str__()
+    """
     assert str(rule_1) == "f1 > 0.5"
     assert str(rule_2) == "f2 > 0.5"
 
 
 def test_join() -> None:
+    """
+    Unit test for te2rules.rule.Rule.join()
+    """
     rule_3 = rule_1.join(rule_2)
     assert rule_3 is not None
     if rule_3 is not None:

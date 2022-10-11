@@ -1,3 +1,6 @@
+"""
+This file contains unit tests for te2rules.tree.DecisionTree.
+"""
 from te2rules.tree import DecisionTree, LeafNode, TreeNode
 
 tree = DecisionTree(
@@ -30,6 +33,9 @@ scores = tree.get_scores(scores={})
 
 
 def test_str_rep() -> None:
+    """
+    Unit test for te2rules.tree.DecisionTree.__str__()
+    """
     tree_str = [
         "|---f3 <= 0.5",
         "|   |---f2 <= 0.5",
@@ -46,6 +52,9 @@ def test_str_rep() -> None:
 
 
 def test_rules() -> None:
+    """
+    Unit test for te2rules.tree.DecisionTree.get_rules()
+    """
     rules_str = [
         "",
         "f3 <= 0.5",
@@ -61,6 +70,9 @@ def test_rules() -> None:
 
 
 def test_scores() -> None:
+    """
+    Unit test for te2rules.tree.DecisionTree.get_scores()
+    """
     tree_scores_on_data = {
         0: 0.017,
         1: -0.067,

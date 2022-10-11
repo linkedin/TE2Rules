@@ -1,5 +1,12 @@
+"""
+Python script to prepare Adult Income dataset from UCI Repository. The script downloads data, 
+cleans missing values, renames labels and custom preprocesses some columns in the data. The 
+data is split into training and testing data and is saved both in raw and one-hot encoded forms.
+"""
 from data_prep import *
 import numpy as np
+import pandas as pd
+import os 
 
 np.random.seed(123)
 
@@ -16,6 +23,9 @@ column_names_categorical = [
 	'relationship', 'race', 'sex', 'native_country', 'label'
 ]
 
+# Custom Pre-Processing for preparing Adult Income dataset:
+# 1) Simplifies the categories of marital status, education, native-country.
+# 2) Drops functional-weight, education-number columns 
 def custom_preprocessing(df):
 	df = reduce_categories(df, 'marital_status',
 		['Divorced', 'Married_AF_spouse', 'Married_civ_spouse',

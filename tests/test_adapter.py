@@ -1,3 +1,7 @@
+"""
+This file contains unit tests for
+te2rules.adapter.ScikitGradientBoostingClassifierAdapter.
+"""
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
 
@@ -54,10 +58,16 @@ adapted_model_scores = adapted_model.get_scores()
 
 
 def test_num() -> None:
+    """
+    Unit test for number of trees in the adapted tree ensemble
+    """
     assert adapted_model.get_num_trees() == num_trees
 
 
 def test_weights_and_bias() -> None:
+    """
+    Unit test for weights of trees in the adapted tree ensemble and bias
+    """
     weight = adapted_model.weight
     bias = adapted_model.bias
     assert weight == learning_rate
@@ -65,10 +75,16 @@ def test_weights_and_bias() -> None:
 
 
 def test_activation() -> None:
+    """
+    Unit test for activation function in the adapted tree ensemble
+    """
     assert adapted_model.activation == "sigmoid"
 
 
 def test_scores() -> None:
+    """
+    Unit test for scores by the adapted tree ensemble
+    """
     assert len(model_scores) == len(adapted_model_scores)
     for i in range(len(model_scores)):
         assert abs(model_scores[i] - adapted_model_scores[i]) < 10 ** (-6)

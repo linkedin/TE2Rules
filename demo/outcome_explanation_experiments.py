@@ -1,3 +1,7 @@
+"""
+This file has script to reproduce local outcome explanation results in the paper
+comparing TE2Rules and Anchors.
+"""
 import os
 from time import time
 

@@ -1,3 +1,10 @@
+"""
+This file contains ModelExplainer and RuleBuilder classes that explain a tree ensemble
+model by extracting rules to explain the positive class. This file contains the
+implementation of TE2Rules Algorithm described in the paper:
+"TE2Rules: Extracting Rule Lists from Tree Ensembles"
+(https://arxiv.org/abs/2206.14359/).
+"""
 from __future__ import annotations
 
 import logging
@@ -23,8 +30,8 @@ class ModelExplainer:
     """
     The :mod:`te2rules.explainer.ModelExplainer` module explains
     Tree Ensemble models (TE) like XGBoost, Random Forest, trained
-    on a binary classification task, using a rule list. The algorithm used by TE2Rules
-    is based on Apriori Rule Mining.
+    on a binary classification task, using a rule list. The algorithm
+    used by TE2Rules is based on Apriori Rule Mining.
     For more details on the algorithm, please check out our paper
     `TE2Rules: Extracting Rule Lists from Tree Ensembles
     <https://arxiv.org/abs/2206.14359/>`_.
@@ -75,6 +82,14 @@ class ModelExplainer:
         For now, we are still testing the case when the `model` is scikit learn's
         RandomForestClassifier.
         """
+        for f in feature_names:
+            if re.search("[^a-zA-Z0-9_]", f):
+                raise ValueError(
+                    "Only alphanumeric characters and underscores are allowed "
+                    + "in feature names. But found feature name: "
+                    + str(f)
+                )
+
         if verbose is True:
             logging.basicConfig(format="%(message)s", level=logging.DEBUG)
         else:
@@ -94,13 +109,6 @@ class ModelExplainer:
                 + "are supported. But received "
                 + str(type(model))
             )
-        for f in feature_names:
-            if re.search("[^a-zA-Z0-9_]", f):
-                raise ValueError(
-                    "Only alphanumeric characters and underscores are allowed "
-                    + "in feature names. But found feature name: "
-                    + str(f)
-                )
 
     def explain(
         self,
@@ -118,9 +126,9 @@ class ModelExplainer:
 
         Parameters
         ----------
-        X: 2d np.array
+        X: 2d numpy.array
             2 dimensional input data used by the `model`
-        y: 1d np.array
+        y: 1d numpy.array
             1 dimensional model class predictions (0 or 1) from the `model`
         num_stages: int, optional
             The algorithm runs in stages starting from stage 1, stage 2 to all the way
@@ -162,22 +170,56 @@ class ModelExplainer:
         >>> rules = model_explainer.explain(X=x_train, y=y_train_pred)
         """
 
-        self.rule_builder = RuleBuilder(
-            random_forest=self.random_forest,
-            num_stages=num_stages,
-            min_precision=min_precision,
-        )
         if len(X) != len(y):
             raise ValueError("X and y should have the same length")
         for i in range(len(y)):
             if y[i] not in [0, 1]:
                 raise ValueError("entries y should only be 0 or 1.")
+
+        self.rule_builder = RuleBuilder(
+            random_forest=self.random_forest,
+            num_stages=num_stages,
+            min_precision=min_precision,
+        )
         rules = self.rule_builder.explain(X, y)
         rules_as_str = [str(r) for r in rules]
         return rules_as_str
 
-    def _apply(self, df: pandas.DataFrame) -> List[float]:
-        return self.rule_builder.apply(df)
+    def apply(self, df: pandas.DataFrame) -> List[int]:
+        """
+        A method to apply rules found by the explain() method
+        on a given pandas dataframe. Any data that satisfies at least
+        one rule from the rule list found by the explain() is labelled
+        as belonging to the positive class. All other data is labelled
+        as belonging to the negative class.
+
+        This method can only be called after calling the explain()
+        method. Otherwise, it throws AttributeError.
+
+        Returns a List of class predictions coressponding to the data.
+
+        Parameters
+        ----------
+        df: pandas.DataFrame
+
+        Returns
+        -------
+        class_predictions: List[int]
+            A List of class predictions coressponding to the data.
+
+        Raises
+        ------
+        AttributeError:
+            when called before calling explain()
+        """
+        try:
+            y_rules = self.rule_builder.apply(df)
+        except AttributeError:
+            raise AttributeError(
+                "rules to explain the tree ensemble are not set. "
+                + "Call explain() before calling apply()"
+            )
+        return y_rules
 
     def get_fidelity(
         self,
@@ -206,6 +248,24 @@ class ModelExplainer:
 
 
 class RuleBuilder:
+    """
+    A class to get rules from individual trees in a tree ensemble
+    and combine them together in multiple stages to explain cross-tree
+    interactions within the tree ensemble. RuleBuilder consists of:
+    1) The tree ensemble model, from which to extract rules
+        to explain the positive class.
+    2) number of stages: The rules are combined in stages starting
+        from stage 1, stage 2 to all the way till stage n where n
+        is the number of trees in the ensemble. The rules extracted
+        in stage i, capture rules from i-tree interactions in the
+        tree ensemble.
+    3) minimum precision: minimum precision of extracted rules
+
+    RuleBuilder implements the TE2Rules algorithm. Calling explain()
+    explains the tree ensemble using rules for the postive class
+    prediction.
+    """
+
     def __init__(
         self,
         random_forest: RandomForest,
@@ -222,6 +282,43 @@ class RuleBuilder:
         self.min_precision = min_precision
 
     def explain(self, X: List[List[float]], y: List[int]) -> List[Rule]:
+        """
+        A method to extract rule list for explaining the positive
+        class prediction from the tree ensemble model using input data
+        and class labels predicted by the model.
+
+        TE2Rules Algorithm is implemented here.
+        For more details on the algorithm, please check out our paper
+        "TE2Rules: Extracting Rule Lists from Tree Ensembles"
+        (https://arxiv.org/abs/2206.14359/).
+
+        A rough sketch of the steps:
+        Run in stages 1 to n = num trees in the ensemble
+        or till there is unexplained positive class labels
+        beyond the class labels already explained by
+        the explanations (solutions):
+        1) generate candidate rules from the tree ensemble:
+            a) In stage 1: candidates = rules from individual trees in the ensemble.
+                deduplicate rules generated from multiple source trees and combine
+                the sources into the rule's identity.
+            b) In stage > 1: For generating candidate rules for cross tree interactions
+                beyond rules from a single tree, generate candidates for the next stage
+                by combining rules from k tree combinations to get rules for
+                k + 1 tree combinations.
+        2) generate explanations (solutions) from the candidates:
+            a) Filter candidates to check if it explains any positive class
+                prediction. If a rule does not explain any positive class
+                prediction, it can be discarded.
+            b) Filter the candidates to check if the rules qualifies to be an
+                explanation. Does it have sufficient precision? If it does,
+                it can be promoted to a list of explanations (solutions).
+
+        Post Processing, after all stages:
+        3) Simplify explanations (solutions), by deduplicating them,
+            dropping redundant terms to make the rules shorter. Select rules with
+            high coverage using a greedy set cover on the set of positive class labels
+            explained by each rule. Return the explanations (solutions).
+        """
         self.data = X
         self.labels = y
 
@@ -239,15 +336,15 @@ class RuleBuilder:
         log.info(str(len(self.candidate_rules)) + " candidate rules")
 
         log.info("Deduping")
-        self.candidate_rules = self.deduplicate(self.candidate_rules)
-        self.solution_rules = self.deduplicate(self.solution_rules)
+        self.candidate_rules = self._deduplicate(self.candidate_rules)
+        self.solution_rules = self._deduplicate(self.solution_rules)
         log.info(str(len(self.candidate_rules)) + " candidate rules")
 
-        self.generate_solutions()
+        self._generate_solutions()
 
         log.info("Simplifying Solutions")
-        self.solution_rules = self.shorten(self.solution_rules)
-        self.solution_rules = self.deduplicate(self.solution_rules)
+        self.solution_rules = self._shorten(self.solution_rules)
+        self.solution_rules = self._deduplicate(self.solution_rules)
         log.info(str(len(self.solution_rules)) + " solutions")
 
         log.info("")
@@ -255,14 +352,19 @@ class RuleBuilder:
         total_support: List[int] = []
         for r in self.solution_rules:
             total_support = list(set(total_support).union(set(r.decision_support)))
-        self.rules_to_cover_positives(
+        self._rules_to_cover_positives(
             list(set(total_support).intersection(set(self.positives)))
         )
         log.info(str(len(self.solution_rules)) + " rules found")
 
         return self.solution_rules
 
-    def rules_to_cover_positives(self, positives: List[int]) -> None:
+    def _rules_to_cover_positives(self, positives: List[int]) -> None:
+        """
+        A method to select rules with high coverage using a
+        greedy set cover on the set of positive class labels
+        explained by each rule.
+        """
         original_rules = {}
         positive_coverage = {}
         for r in self.solution_rules:
@@ -307,7 +409,26 @@ class RuleBuilder:
 
         self.solution_rules = selected_rules
 
-    def generate_solutions(self) -> None:
+    def _generate_solutions(self) -> None:
+        """
+        A method to generate explanations (solutions) in
+        stages 1 to n = num trees in the tree ensemble:
+
+        1) In stage 1, candidates = rules from tree in tree ensemble (stage 0)
+            When stage > 1, for generating candidates rules for cross tree
+            interactions beyond rules from a single tree, generate candidates
+            for the next stage by combining rules from k tree combinations
+            to get rules for k + 1 tree combinations.
+        2) Filter candidates to check if it explains any positive class prediction. If
+            a rule does not explain any positive class prediction, it can be discarded.
+        3) Filter the candidates to check if the rules qualifies to be an explanation.
+            Does it have sufficient precision? If it does, it can be promoted to
+            a list of explanations (solutions).
+        4) Prune candidates to keep only those which have unexplained positives
+            in their support
+        5) Deduplicate candidate and solution rules generated from multiple
+            source trees and combine the sources into the rule's identity.
+        """
         log.info("")
         log.info("Running Apriori")
         log.info("")
@@ -326,17 +447,19 @@ class RuleBuilder:
             if stage == 0:
                 for i in tqdm(range(len(self.candidate_rules))):
                     r = self.candidate_rules[i]
-                    is_solution, keep_candidate = self.filter_candidates(r, self.labels)
+                    is_solution, keep_candidate = self._filter_candidates(
+                        r, self.labels
+                    )
                     if is_solution is True:
                         new_solutions.append(r)
                     if keep_candidate is True:
                         new_candidates.append(r)
             else:
-                join_indices = self.get_join_indices(self.candidate_rules)
+                join_indices = self._get_join_indices(self.candidate_rules)
                 for (i, j) in tqdm(join_indices):
                     joined_rule = self.candidate_rules[i].join(self.candidate_rules[j])
                     if joined_rule is not None:
-                        is_solution, keep_candidate = self.filter_candidates(
+                        is_solution, keep_candidate = self._filter_candidates(
                             joined_rule, self.labels
                         )
                         if is_solution is True:
@@ -358,14 +481,14 @@ class RuleBuilder:
             log.info(len(positives_to_explain))
 
             log.info("Pruning Candidates")
-            self.candidate_rules = self.prune(
+            self.candidate_rules = self._prune(
                 self.candidate_rules, positives_to_explain
             )
             log.info(str(len(self.candidate_rules)) + " candidates")
 
             log.info("Deduping")
-            self.candidate_rules = self.deduplicate(self.candidate_rules)
-            self.solution_rules = self.deduplicate(self.solution_rules)
+            self.candidate_rules = self._deduplicate(self.candidate_rules)
+            self.solution_rules = self._deduplicate(self.solution_rules)
             log.info(str(len(self.candidate_rules)) + " candidates")
             log.info(str(len(self.solution_rules)) + " solutions")
 
@@ -382,7 +505,13 @@ class RuleBuilder:
             )
             log.info("")
 
-    def score_rule_using_data(self, rule: Rule, labels: List[int]) -> List[int]:
+    def _score_rule_using_data(self, rule: Rule, labels: List[int]) -> List[int]:
+        """
+        A method to score all rules using the data in their
+        support and their corresponding labels predicted by
+        the tree ensemble model. This method returns list of
+        class labels of the data satisfied by the rule.
+        """
         decision_value = []
         for data_index in rule.decision_support:
             decision_value.append(labels[data_index])
@@ -394,25 +523,50 @@ class RuleBuilder:
         return min_score, max_score
     """
 
-    def filter_candidates(self, rule: Rule, labels: List[int]) -> Tuple[bool, bool]:
-        scores = self.score_rule_using_data(rule, labels)
+    def _filter_candidates(self, rule: Rule, labels: List[int]) -> Tuple[bool, bool]:
+        """
+        A method to filter candidates to check if they are explanations
+        (solutions) with rule precision > min_precision.
+        a) Filter candidates to check if it explains any positive class
+            prediction. If a rule does not explain any positive class
+            prediction, it can be discarded.
+        b) Filter the candidates to check if the rules qualifies to be an
+            explanation. Does it have sufficient precision? If it does,
+            it can be promoted to a list of explanations (solutions).
+        """
+        scores = self._score_rule_using_data(rule, labels)
         max_score = max(scores)
         avg_score = sum(scores) / len(scores)
 
         min_precision = avg_score
 
         if min_precision >= self.min_precision:
-            # solution, throw candidate: it is already a solution
-            return True, False
+            # solution
+            # throw candidate: it is already a solution
+            is_solution = True
+            keep_candidate = False
+            return is_solution, keep_candidate
         else:
+            # not solution
+            is_solution = False
             if max_score == 0:
-                # not solution, throw candidate: it cannot become a solution
-                return False, False
+                # throw candidate: it cannot become a solution
+                keep_candidate = False
+                return is_solution, keep_candidate
             else:
-                # not solution, keep candidate: it can become a solution
-                return False, True
+                # keep candidate: it can become a solution
+                keep_candidate = True
+                return is_solution, keep_candidate
 
     def get_fidelity(self, use_top: int = None) -> Tuple[float, float, float]:
+        """
+        A method to compute fidelity of the rule list.
+        Fidelity is defined as the fraction of data on which the
+        explanation (rule list) agrees with the tree ensemble.
+        This method returns the fidelity on the overall data,
+        data with positive class predictions and negative class
+        predictions, respectively by the tree ensemble model.
+        """
         if use_top is None:
             use_top = len(self.solution_rules)
 
@@ -446,7 +600,11 @@ class RuleBuilder:
             fidelity_negatives / negatives,
         )
 
-    def deduplicate(self, rules: List[Rule]) -> List[Rule]:
+    def _deduplicate(self, rules: List[Rule]) -> List[Rule]:
+        """
+        A method to deduplicate rules generated from multiple
+        source trees and combine the sources into the rule's identity.
+        """
         rules_map = {}
         for i in range(len(rules)):
             key = str(rules[i])
@@ -460,7 +618,13 @@ class RuleBuilder:
         dedup_rules = [rules_map[r] for r in rules_map]
         return dedup_rules
 
-    def shorten(self, rules: List[Rule]) -> List[Rule]:
+    def _shorten(self, rules: List[Rule]) -> List[Rule]:
+        """
+        A method to shorten the rules by dropping redundant
+        terms to make the rules shorter.
+        Example:
+        "f1 < 10 and f1 < 5" is shortened to "f1 < 5"
+        """
         for i in range(len(rules)):
             pred_dict = {}
             for pred in rules[i].decision_rule:
@@ -493,19 +657,56 @@ class RuleBuilder:
             rules[i].decision_rule = final_rule
         return rules
 
-    def apply(self, df: pandas.DataFrame) -> List[float]:
+    def apply(self, df: pandas.DataFrame) -> List[int]:
+        """
+        A method to apply rules found by the explain() method
+        on a given pandas dataframe. Any data that satisfies at least
+        one rule from the rule list found by the explain() is labelled
+        as belonging to the positive class. All other data is labelled
+        as belonging to the negative class.
+
+        This method can only be called after calling the explain()
+        method. Otherwise, it throws AttributeError.
+        """
+        if not hasattr(self, "solution_rules"):
+            raise AttributeError(
+                "rules to explain the tree ensemble are not set. "
+                + "Call explain() before calling apply()"
+            )
         coverage: List[int] = []
         for r in self.solution_rules:
             support = df.query(str(r)).index.tolist()
             coverage = list(set(coverage).union(set(support)))
 
-        y_rules: List[float] = [0.0] * len(df)
+        y_rules: List[int] = [0] * len(df)
         for i in coverage:
-            y_rules[i] = 1.0
+            y_rules[i] = 1
 
         return y_rules
 
-    def get_join_indices(self, rules: List[Rule]) -> List[Tuple[int, int]]:
+    def _get_join_indices(self, rules: List[Rule]) -> List[Tuple[int, int]]:
+        """
+        A method to generate index pairs from a given list of rules such that
+        the rules from coressponding indices can be joined to become candidates
+        for the next stage.
+
+        In each stage, the candidate rules are formed by performing a conjunction
+        of all possible k-tree combinations. The source trees from which the rules
+        are formed is stored in the rule's identity.
+
+        This method finds indices i, j such that conjunction of k-tree rules
+        rule[i] and rule[j] gives a rule from a (k+1)-tree combination
+
+        Example: rules from 3-tree combinations:
+        identity of rule[i]: ["0_1,1_1,2_0", "0_1,1_3,2_1"]
+        identity of rule[j]: ["1_1,2_0,3_0", "1_3,2_1,3_1"]
+        identity of conjunction of rule[i] and rule[j]:
+        ["0_1,1_1,2_0,3_0", 0_1,1_3,2_1,3_1"]
+
+        Note that for a conjunction of k-tree rules to result in a (k+1)-tree
+        rule, suffix of some identity of rule[i] must be same as prefix of
+        some identity of rule[j].
+        """
         for i in range(len(rules)):
             rules[i].create_identity_map()
 
@@ -536,7 +737,10 @@ class RuleBuilder:
         pairs_list.sort()  # can be removed
         return pairs_list
 
-    def prune(self, rules: List[Rule], positives: List[int]) -> List[Rule]:
+    def _prune(self, rules: List[Rule], positives: List[int]) -> List[Rule]:
+        """
+        A method to choose rules which have unexplained positives in their support.
+        """
         pruned_rules = []
         for i in range(len(rules)):
             decision_support_positive = list(
