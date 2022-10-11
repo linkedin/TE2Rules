@@ -15,7 +15,7 @@ Please do not file reports on Github for security issues.  Please
 review the guidelines on at (link to more info).  Reports should be
 encrypted using PGP (link to PGP key) and sent to
 security@linkedin.com preferably with the title "Github
-linkedin/<project> - <short summary>".
+linkedin/TE2Rules - <short summary>".
 
 Tips for Getting Your Pull Request Accepted
 ===========================================
