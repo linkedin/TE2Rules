@@ -82,6 +82,7 @@ class ModelExplainer:
         For now, we are still testing the case when the `model` is scikit learn's
         RandomForestClassifier.
         """
+        self.feature_names = feature_names
         for f in feature_names:
             if re.search("[^a-zA-Z0-9_]", f):
                 raise ValueError(
@@ -222,7 +223,7 @@ class ModelExplainer:
         return y_rules
 
     def get_fidelity(
-        self,
+        self, X: List[List[float]] = None, y: List[int] = None
     ) -> Tuple[float, float, float]:
         """
         A method to evaluate the rule list extracted by the `explain` method
@@ -231,6 +232,13 @@ class ModelExplainer:
 
         Parameters
         ----------
+        X: 2d numpy.array, optional
+            2 dimensional data with feature values used for calculating fidelity.
+            Defaults to data used by the model for rule extraction.
+        y: 1d numpy.array, optional
+            1 dimensional model class predictions (0 or 1) from the `model` on X.
+            Defaults to model class predictions on the data used
+            by the model for rule extraction.
 
         Returns
         -------
@@ -243,6 +251,29 @@ class ModelExplainer:
         --------
         >>> (fidelity, fidelity_pos, fidelity_neg) = model_explainer.get_fidelity()
         """
+        if (X is not None) and (y is not None):
+            df = pandas.DataFrame(X, columns=self.feature_names)
+            y_rules = self.rule_builder.apply(df)
+            fidelity_positives = 0.0
+            fidelity_negatives = 0.0
+            positives = 0.0
+            negatives = 0.0
+            for i in range(len(y)):
+                if y[i] == 1:
+                    positives = positives + 1
+                    if y[i] == y_rules[i]:
+                        fidelity_positives = fidelity_positives + 1
+                if y[i] == 0:
+                    negatives = negatives + 1
+                    if y[i] == y_rules[i]:
+                        fidelity_negatives = fidelity_negatives + 1
+
+            fidelity = (fidelity_positives + fidelity_negatives) / (
+                positives + negatives
+            )
+            fidelity_positives = fidelity_positives / positives
+            fidelity_negatives = fidelity_negatives / negatives
+            return (fidelity, fidelity_positives, fidelity_negatives)
 
         return self.rule_builder.get_fidelity()
 
@@ -535,8 +566,11 @@ class RuleBuilder:
             it can be promoted to a list of explanations (solutions).
         """
         scores = self._score_rule_using_data(rule, labels)
-        max_score = max(scores)
-        avg_score = sum(scores) / len(scores)
+        max_score = 0.0
+        avg_score = 0.0
+        if len(scores) > 0:
+            max_score = max(scores)
+            avg_score = sum(scores) / len(scores)
 
         min_precision = avg_score
 
