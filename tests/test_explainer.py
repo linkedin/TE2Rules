@@ -56,6 +56,7 @@ model_explainer = ModelExplainer(model=model, feature_names=feature_names)
 rules = model_explainer.explain(
     X=data_for_explanation, y=model_pred, min_precision=1.00
 )
+data_for_rule_inference = data_for_explanation[:5]
 
 
 def test_rules() -> None:
@@ -64,3 +65,38 @@ def test_rules() -> None:
     """
     expected_rules = ["f3 > 0.5", "f0 <= 0.5 & f1 <= 0.5 & f2 <= 0.5 & f3 <= 0.5"]
     assert set(rules) == set(expected_rules)
+
+
+def test_predict() -> None:
+    """
+    Unit test for te2rules.explainer.ModelExplainer.predict()
+    """
+    expected_y_rule_inference = [1, 1, 0, 1, 0]
+    assert (
+        model_explainer.predict(X=data_for_rule_inference) == expected_y_rule_inference
+    )
+
+
+def test_fidelity() -> None:
+    """
+    Unit test for te2rules.explainer.ModelExplainer.get_fidelity()
+    """
+    expected_fidelity = (1.0, 1.0, 1.0)
+    fidelity = model_explainer.get_fidelity()
+    fidelity = tuple(round(f, 2) for f in fidelity)
+    assert fidelity == expected_fidelity
+
+
+def test_fidelity_custom_data() -> None:
+    """
+    Unit test for te2rules.explainer.ModelExplainer.get_fidelity()
+    """
+    expected_fidelity = (0.8, 1.0, 0.67)
+    fidelity = model_explainer.get_fidelity(X=x_train[10:15], y=y_train[10:15])
+    fidelity = tuple(round(f, 2) for f in fidelity)
+    assert fidelity == expected_fidelity
+
+    expected_fidelity = (1.0, 1.0, 0.0)
+    fidelity = model_explainer.get_fidelity(X=x_train[0:5], y=y_train[0:5])
+    fidelity = tuple(round(f, 2) for f in fidelity)
+    assert fidelity == expected_fidelity

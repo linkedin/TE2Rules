@@ -11,7 +11,7 @@ import logging
 import re
 from typing import Dict, List, Tuple
 
-import pandas
+import pandas as pd
 import sklearn
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from tqdm import tqdm
@@ -186,10 +186,10 @@ class ModelExplainer:
         rules_as_str = [str(r) for r in rules]
         return rules_as_str
 
-    def apply(self, df: pandas.DataFrame) -> List[int]:
+    def predict(self, X: List[List[float]]) -> List[int]:
         """
         A method to apply rules found by the explain() method
-        on a given pandas dataframe. Any data that satisfies at least
+        on a given input data. Any data that satisfies at least
         one rule from the rule list found by the explain() is labelled
         as belonging to the positive class. All other data is labelled
         as belonging to the negative class.
@@ -201,7 +201,8 @@ class ModelExplainer:
 
         Parameters
         ----------
-        df: pandas.DataFrame
+        X: 2d numpy.array
+            2 dimensional input data to apply the rules extracted by the explainer.
 
         Returns
         -------
@@ -214,6 +215,7 @@ class ModelExplainer:
             when called before calling explain()
         """
         try:
+            df = pd.DataFrame(X, columns=self.feature_names)
             y_rules = self.rule_builder.apply(df)
         except AttributeError:
             raise AttributeError(
@@ -252,12 +254,12 @@ class ModelExplainer:
         >>> (fidelity, fidelity_pos, fidelity_neg) = model_explainer.get_fidelity()
         """
         if (X is not None) and (y is not None):
-            df = pandas.DataFrame(X, columns=self.feature_names)
+            df = pd.DataFrame(X, columns=self.feature_names)
             y_rules = self.rule_builder.apply(df)
             fidelity_positives = 0.0
             fidelity_negatives = 0.0
-            positives = 0.0
-            negatives = 0.0
+            positives = 0.0 + 1e-6
+            negatives = 0.0 + 1e-6
             for i in range(len(y)):
                 if y[i] == 1:
                     positives = positives + 1
@@ -614,10 +616,10 @@ class RuleBuilder:
         for s in support:
             y_pred_rules[s] = 1
 
-        positives = 0
-        fidelity_positives = 0
-        negatives = 0
-        fidelity_negatives = 0
+        fidelity_positives = 0.0
+        fidelity_negatives = 0.0
+        positives = 0.0 + 1e-6
+        negatives = 0.0 + 1e-6
         for i in range(len(self.labels)):
             if self.labels[i] == 1:
                 positives = positives + 1
@@ -691,7 +693,7 @@ class RuleBuilder:
             rules[i].decision_rule = final_rule
         return rules
 
-    def apply(self, df: pandas.DataFrame) -> List[int]:
+    def apply(self, df: pd.DataFrame) -> List[int]:
         """
         A method to apply rules found by the explain() method
         on a given pandas dataframe. Any data that satisfies at least
