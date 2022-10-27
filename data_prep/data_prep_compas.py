@@ -3,7 +3,7 @@ Python script to prepare Compas dataset from ProPublica. The script downloads da
 cleans missing values and renames labels. The data is split into training and testing data
 and is saved both in raw and one-hot encoded forms.
 """
-from data_prep import *
+from data_prep import download, clean_missing, rename_label
 from sklearn.utils import shuffle
 import numpy as np
 import pandas as pd

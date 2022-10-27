@@ -3,4 +3,4 @@ TE2Rules - Python library to explain Tree Ensemble Models.
 
 """
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"

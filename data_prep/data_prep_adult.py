@@ -3,7 +3,7 @@ Python script to prepare Adult Income dataset from UCI Repository. The script do
 cleans missing values, renames labels and custom preprocesses some columns in the data. The 
 data is split into training and testing data and is saved both in raw and one-hot encoded forms.
 """
-from data_prep import *
+from data_prep import download, clean_missing, rename_label, reduce_categories
 import numpy as np
 import pandas as pd
 import os 
