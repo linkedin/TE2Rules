@@ -10,8 +10,8 @@ project = 'TE2Rules'
 copyright = '2022, LinkedIn'
 author = 'G Roshan Lal'
 
-release = "0.0.6"
-version = "0.0.6"
+release = "latest"
+version = "latest"
 
 # -- General configuration
 
