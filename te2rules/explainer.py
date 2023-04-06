@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import logging
 import re
-from typing import Dict, List, Tuple
+from typing import Dict, List, Set, Tuple
 
 import pandas as pd
 import sklearn
@@ -606,11 +606,10 @@ class RuleBuilder:
         if use_top is None:
             use_top = len(self.solution_rules)
 
-        support: List[int] = []
+        support: Set[int] = set()
         for i in range(use_top):
             r = self.solution_rules[i]
-            support = support + r.decision_support
-        support = list(set(support))
+            support = support.union(set(r.decision_support))
 
         y_pred_rules = [0] * len(self.labels)
         for s in support:
@@ -709,10 +708,10 @@ class RuleBuilder:
                 "rules to explain the tree ensemble are not set. "
                 + "Call explain() before calling apply()"
             )
-        coverage: List[int] = []
+        coverage: Set[int] = set()
         for r in self.solution_rules:
             support = df.query(str(r)).index.tolist()
-            coverage = list(set(coverage).union(set(support)))
+            coverage = coverage.union(set(support))
 
         y_rules: List[int] = [0] * len(df)
         for i in coverage:
