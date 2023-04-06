@@ -35,12 +35,20 @@ class Trainer:
     def train_model(self, scikit_model):
         self.model = scikit_model
         self.model.fit(self.x_train, self.y_train)
+        self.y_train_pred = self.model.predict(self.x_train)
+        self.y_test_pred = self.model.predict(self.x_test)
 
-    def evaluate_model(self):
-        accuracy = self.model.score(self.x_test, self.y_test)
+    def get_accuracy(self):
+        train_accuracy = self.model.score(self.x_train, self.y_train)
+        test_accuracy = self.model.score(self.x_test, self.y_test)
+        return [train_accuracy, test_accuracy]
+
+    def get_auc(self):
+        y_pred = self.model.predict_proba(self.x_train)[:, 1]
+        fpr, tpr, thresholds = metrics.roc_curve(self.y_train, y_pred)
+        train_auc = metrics.auc(fpr, tpr)
 
         y_pred = self.model.predict_proba(self.x_test)[:, 1]
         fpr, tpr, thresholds = metrics.roc_curve(self.y_test, y_pred)
-        auc = metrics.auc(fpr, tpr)
-
-        return accuracy, auc
+        test_auc = metrics.auc(fpr, tpr)
+        return [train_auc, test_auc]

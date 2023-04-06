@@ -31,12 +31,15 @@ X_test <- as.matrix(data_test[,1:(ncol(data_test)-1)])
 y_test <- data_test$label_1
 
 # xgb training
-xgb <- xgboost(data = X_train, label = y_train,
+bst <- xgboost(data = X_train, label = y_train,
                nround = ntree, max_depth = max_depth,
                objective = "binary:logistic")
 
+xgb.save(bst, "xgb.model")
+bst<-xgb.load("xgb.model")
+
 # build rules from inTrees
-treeList <- XGB2List(xgb, X_train)
+treeList <- XGB2List(bst, X_train)
 ruleExec <- unique(extractRules(treeList, X_train))
 
 # evaluate on data and use it to prune (optional: pruning gives less fidelity, smaller rules)
@@ -55,8 +58,8 @@ y_pred_test_rules <- as.numeric(y_pred_test_rules > 0.5)
 res_dir = sprintf('%s/intrees', res_dir)
 dir.create(res_dir, showWarnings = FALSE)
 
-y_pred_train <- predict(xgb, as.matrix(X_train))
-y_pred_test <- predict(xgb, as.matrix(X_test))
+y_pred_train <- predict(bst, as.matrix(X_train))
+y_pred_test <- predict(bst, as.matrix(X_test))
 
 write.table(y_pred_train, sprintf('%s/pred_train_score.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
 write.table(y_pred_test, sprintf('%s/pred_test_score.csv', res_dir), quote=F, row.names=F, col.names=F, append=F)
@@ -71,3 +74,4 @@ write.table(y_pred_test_rules, sprintf('%s/pred_test_rules.csv', res_dir), quote
 
 explanation <- presentRules(ruleOrdered,colnames(X_train))
 write.table(explanation, file=sprintf("%s/rules.txt", res_dir), quote=F, sep=", ", row.names=F, append=F)
+

@@ -139,7 +139,7 @@ class ModelExplainer:
             (with quicker run time, but less coverage in data). By default,
             the algorithm explores all stages before terminating.
         min_precision: float, optional
-            This paramter controls the minimum precision of extracted rules.
+            This parameter controls the minimum precision of extracted rules.
             Setting it to a smaller threshold, allows extracting shorter
             (more interpretable, but less faithful) rules.
             By default, the algorithm uses a minimum precision threshold of 0.95.
@@ -194,8 +194,107 @@ class ModelExplainer:
             jaccard_threshold=jaccard_threshold,
         )
         rules = self.rule_builder.explain(X, y)
-        rules_as_str = [str(r) for r in rules]
+        # rules_as_str = [str(r) for r in rules]
+        rules_as_str = self._prune_rules_by_dropping_terms(rules, X, y, min_precision)
         return rules_as_str
+
+    def _prune_rules_by_dropping_terms(
+        self,
+        rules: List[Rule],
+        X: List[List[float]],
+        y: List[int],
+        min_precision: float,
+    ) -> List[str]:
+        """
+        A method to prune rules by dropping terms one by one and checking if the
+        precision of pruned rules on X, y has precision greater than or equal to
+        min_precision. The pruned rule with least number of terms with precision
+        above the min_precision threshold is returned.
+
+        Returns a List of rule strings.
+
+        Parameters
+        ----------
+        rule: List[Rule]
+            List of rules to be pruned
+        X: 2d numpy.array
+            2 dimensional input data used to evaluate the rules
+        y: 1d numpy.array
+            1 dimensional model class predictions (0 or 1) from the `model`
+        min_precision: float, optional
+            minimum precision required for pruned rules.
+
+        Returns
+        -------
+        pruned_rules: List[str]
+            A List of pruned rule strings.
+        """
+
+        def get_precision(
+            query_rule: str, data: List[List[float]], label: List[int]
+        ) -> float:
+            precision = 0.0
+            df = pd.DataFrame(data, columns=self.feature_names)
+            support = df.query(query_rule).index.tolist()
+            y_rule: List[int] = [0] * len(df)
+            for i in support:
+                y_rule[i] = 1
+                if label[i] == 1:
+                    precision = precision + 1
+            precision = precision / len(support)
+            return precision
+
+        def drop_clause(
+            clauses: List[str],
+            data: List[List[float]],
+            label: List[int],
+            min_precision: float,
+        ) -> List[List[str]]:
+            dropped = []
+            for c in clauses:
+                pruned_clauses = clauses[:]
+                pruned_clauses.remove(c)
+                pruned_query_rule = " & ".join(pruned_clauses)
+                if pruned_query_rule != "":
+                    precision = get_precision(pruned_query_rule, data, label)
+                    if precision >= min_precision:
+                        dropped.append(pruned_clauses)
+            return dropped
+
+        pruned_rules_str = []
+        for i in range(len(rules)):
+            shorter_rules = [rules[i].decision_rule]
+            shorter_rules_str = [str(rules[i])]
+
+            while len(shorter_rules) > 0:
+                shorter_rules_backup = shorter_rules
+                shorter_rules_str_backup = shorter_rules_str
+                shorter_rules = []
+                shorter_rules_str = []
+                for c in shorter_rules_backup:
+                    for r in drop_clause(c, X, y, min_precision):
+                        if " & ".join(r) not in shorter_rules_str:
+                            shorter_rules.append(r)
+                            shorter_rules_str.append(" & ".join(r))
+
+            shorter_rules = shorter_rules_backup
+            shorter_rules_str = shorter_rules_str_backup
+            shorter_rules_len = [len(r) for r in shorter_rules]
+            shorter_rules_precision = [
+                get_precision(r, X, y) for r in shorter_rules_str
+            ]
+
+            index = 0
+            for j in range(len(shorter_rules)):
+                if shorter_rules_len[j] < shorter_rules_len[index]:
+                    index = j
+                if shorter_rules_len[j] == shorter_rules_len[index]:
+                    if shorter_rules_precision[j] > shorter_rules_precision[index]:
+                        index = j
+
+            pruned_rules_str.append(shorter_rules_str[index])
+
+        return pruned_rules_str
 
     def predict(self, X: List[List[float]]) -> List[int]:
         """

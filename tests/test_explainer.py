@@ -63,7 +63,7 @@ def test_rules() -> None:
     """
     Unit test for te2rules.explainer.ModelExplainer.explain()
     """
-    expected_rules = ["f3 > 0.5", "f0 <= 0.5 & f1 <= 0.5 & f2 <= 0.5 & f3 <= 0.5"]
+    expected_rules = ["f3 > 0.5", "f0 <= 0.5 & f1 <= 0.5 & f2 <= 0.5"]
     assert set(rules) == set(expected_rules)
 
 
