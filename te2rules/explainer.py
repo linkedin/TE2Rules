@@ -380,6 +380,9 @@ class RuleBuilder:
         log.info("")
         log.info("Rules from trees")
         self.candidate_rules = self.random_forest.get_rules(data=self.data)
+        self.candidate_rules = [
+            r for r in self.candidate_rules if len(r.decision_rule) > 0
+        ]
         self.solution_rules: List[Rule] = []
         log.info(str(len(self.candidate_rules)) + " candidate rules")
 
