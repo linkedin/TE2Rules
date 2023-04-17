@@ -766,10 +766,11 @@ class RuleBuilder:
         for i in range(len(join_keys)):
             for j in left_map[join_keys[i]]:
                 for k in right_map[join_keys[i]]:
-                    if j < k:
+                    if (j != k) and ((j, k) not in pairs):
                         pairs.add((j, k))
+
         pairs_list = list(pairs)
-        pairs_list.sort()  # can be removed
+        # pairs_list.sort()  # can be removed
         return pairs_list
 
     def _prune(self, rules: List[Rule], positives: List[int]) -> List[Rule]:
