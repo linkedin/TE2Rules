@@ -399,6 +399,11 @@ class RuleBuilder:
         log.info(str(len(self.solution_rules)) + " solutions")
 
         log.info("")
+        log.info("Removing subset rules")
+        self._remove_subset_rules()
+        log.info(str(len(self.solution_rules)) + " solutions")
+
+        log.info("")
         log.info("Set Cover")
         total_support: List[int] = []
         for r in self.solution_rules:
@@ -523,6 +528,10 @@ class RuleBuilder:
             log.info(str(len(self.candidate_rules)) + " candidates")
             log.info(str(len(self.solution_rules)) + " solutions")
 
+            log.info("Removing subset rules")
+            self._remove_subset_rules()
+            log.info(str(len(self.solution_rules)) + " solutions")
+
             for rule in new_solutions:
                 self.positives_to_explain = list(
                     set(self.positives_to_explain).difference(
@@ -557,6 +566,33 @@ class RuleBuilder:
                 + f"{fidelity_negatives:.6f}"
             )
             log.info("")
+
+    def _remove_subset_rules(
+        self,
+    ) -> None:
+        """
+        A method to remove rules whose support is fully contained
+        in the support of another rule.
+        """
+        for runs in range(2):
+            invalid = [True] * len(self.solution_rules)
+            for i in range(len(self.solution_rules)):
+                rule_i = self.solution_rules[i]
+                for j in range(i + 1, len(self.solution_rules)):
+                    rule_j = self.solution_rules[j]
+                    if set(rule_j.decision_support).issubset(
+                        set(rule_i.decision_support)
+                    ):
+                        invalid[j] = False
+
+            valid_rules = []
+            for i in range(len(self.solution_rules)):
+                if invalid[i] is True:
+                    valid_rules.append(self.solution_rules[i])
+
+            valid_rules.reverse()
+            self.solution_rules = valid_rules
+        return
 
     def _score_rule_using_data(self, rule: Rule, labels: List[int]) -> List[int]:
         """
