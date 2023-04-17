@@ -117,6 +117,7 @@ class ModelExplainer:
         y: List[int],
         num_stages: int = None,
         min_precision: float = 0.95,
+        jaccard_threshold: float = 0.20,
     ) -> List[str]:
         """
         A method to extract rule list from the tree ensemble model.
@@ -139,9 +140,18 @@ class ModelExplainer:
             the algorithm explores all stages before terminating.
         min_precision: float, optional
             This paramter controls the minimum precision of extracted rules.
-            Setting it to a smaller threhsold, allows extracting shorter
+            Setting it to a smaller threshold, allows extracting shorter
             (more interpretable, but less faithful) rules.
             By default, the algorithm uses a minimum precision threshold of 0.95.
+        jaccard_threshold: float, optional
+            This parameter (between 0 and 1) controls how rules from different node
+            combinations are combined. Setting it to a smaller threshold, ensures that
+            only rules that are very different from one another are combined, speeding
+            up the algorithm at the cost of missing some rules that can potentially
+            explain the model. Combining similar rules that cover very similar set of
+            instances do not provide any new information for the explainer algorithm.
+            By default, the algorithm uses a jaccard threshold of 0.20.
+
 
         Returns
         -------
@@ -181,6 +191,7 @@ class ModelExplainer:
             random_forest=self.random_forest,
             num_stages=num_stages,
             min_precision=min_precision,
+            jaccard_threshold=jaccard_threshold,
         )
         rules = self.rule_builder.explain(X, y)
         rules_as_str = [str(r) for r in rules]
@@ -293,6 +304,8 @@ class RuleBuilder:
         in stage i, capture rules from i-tree interactions in the
         tree ensemble.
     3) minimum precision: minimum precision of extracted rules
+    4) jaccard threshold: minimum similarity score (between 0 and 1)
+        of rules to be combined in each stage.
 
     RuleBuilder implements the TE2Rules algorithm. Calling explain()
     explains the tree ensemble using rules for the postive class
@@ -304,6 +317,7 @@ class RuleBuilder:
         random_forest: RandomForest,
         num_stages: int = None,
         min_precision: float = 0.95,
+        jaccard_threshold: float = 0.20,
     ):
         self.random_forest = random_forest
         # if num_stages not set by user, will set it to the number of trees
@@ -313,6 +327,7 @@ class RuleBuilder:
         else:
             self.num_stages = self.random_forest.get_num_trees()
         self.min_precision = min_precision
+        self.jaccard_threshold = jaccard_threshold
 
     def explain(self, X: List[List[float]], y: List[int]) -> List[Rule]:
         """
@@ -466,9 +481,9 @@ class RuleBuilder:
         log.info("Running Apriori")
         log.info("")
 
-        positives_to_explain = self.positives
+        self.positives_to_explain = self.positives
         for stage in range(self.num_stages):
-            if len(positives_to_explain) == 0:
+            if len(self.positives_to_explain) == 0:
                 continue
 
             log.info("")
@@ -506,16 +521,18 @@ class RuleBuilder:
             log.info(str(len(self.solution_rules)) + " solutions")
 
             for rule in new_solutions:
-                positives_to_explain = list(
-                    set(positives_to_explain).difference(set(rule.decision_support))
+                self.positives_to_explain = list(
+                    set(self.positives_to_explain).difference(
+                        set(rule.decision_support)
+                    )
                 )
 
             log.info("Unexplained Positives")
-            log.info(len(positives_to_explain))
+            log.info(len(self.positives_to_explain))
 
             log.info("Pruning Candidates")
             self.candidate_rules = self._prune(
-                self.candidate_rules, positives_to_explain
+                self.candidate_rules, self.positives_to_explain
             )
             log.info(str(len(self.candidate_rules)) + " candidates")
 
@@ -763,6 +780,8 @@ class RuleBuilder:
         join_keys = list(set(left_map.keys()).intersection(set(right_map.keys())))
 
         pairs = set()
+        count_all = 0
+        count_valid = 0
         for i in range(len(join_keys)):
             for j in left_map[join_keys[i]]:
                 for k in right_map[join_keys[i]]:
@@ -784,7 +803,29 @@ class RuleBuilder:
                             join_status = False
 
                     if (j != k) and ((j, k) not in pairs) and (join_status is True):
-                        pairs.add((j, k))
+                        count_all = count_all + 1
+
+                        support_j = set(self.candidate_rules[j].decision_support)
+                        support_k = set(self.candidate_rules[k].decision_support)
+                        support_intersection_jk = support_j.intersection(support_k)
+                        pos_support_intersection_jk = (
+                            support_intersection_jk.intersection(
+                                set(self.positives_to_explain)
+                            )
+                        )
+                        support_union_jk = support_j.union(support_k)
+                        jaccard_similarity_score = len(support_intersection_jk) / len(
+                            support_union_jk
+                        )
+                        if len(pos_support_intersection_jk) > 0:
+                            if (jaccard_similarity_score > 0) and (
+                                jaccard_similarity_score <= self.jaccard_threshold
+                            ):
+                                pairs.add((j, k))
+                                count_valid = count_valid + 1
+
+        log.info("Using only " + str(int(count_valid / count_all * 100)) + "% pairs")
+        log.info("Using only " + str(int(len(pairs) / count_all * 100)) + "% pairs")
 
         pairs_list = list(pairs)
         # pairs_list.sort()  # can be removed
