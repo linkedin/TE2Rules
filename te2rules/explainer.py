@@ -766,7 +766,24 @@ class RuleBuilder:
         for i in range(len(join_keys)):
             for j in left_map[join_keys[i]]:
                 for k in right_map[join_keys[i]]:
-                    if (j != k) and ((j, k) not in pairs):
+                    join_status = True
+
+                    # Joins in stage 2
+                    if join_keys[i] == "":
+                        identity_left = [
+                            int(x.split("_")[0])
+                            for x in self.candidate_rules[j].identity
+                        ]
+                        identity_right = [
+                            int(x.split("_")[0])
+                            for x in self.candidate_rules[k].identity
+                        ]
+                        if min(identity_left) < max(identity_right):
+                            join_status = True
+                        else:
+                            join_status = False
+
+                    if (j != k) and ((j, k) not in pairs) and (join_status is True):
                         pairs.add((j, k))
 
         pairs_list = list(pairs)
