@@ -11,8 +11,9 @@
 train_file = commandArgs(trailingOnly=TRUE)[1]
 test_file = commandArgs(trailingOnly=TRUE)[2]
 res_dir = commandArgs(trailingOnly=TRUE)[3]
-ntree = as.integer(commandArgs(trailingOnly=TRUE)[4])
+n_tree = as.integer(commandArgs(trailingOnly=TRUE)[4])
 max_depth = as.integer(commandArgs(trailingOnly=TRUE)[5])
+sampling = as.numeric(commandArgs(trailingOnly=TRUE)[6])
 
 # library
 if (!require(xgboost)) install.packages('xgboost')
@@ -23,24 +24,20 @@ set.seed(123)
 
 # data
 data_train <- read.csv(train_file)
-X_train <- as.matrix(data_train[,1:(ncol(data_train)-1)])
-y_train <- data_train$label_1
+num_records <- as.integer(nrow(data_train) * sampling)
+X_train <- as.matrix(data_train[1:num_records,1:(ncol(data_train)-1)])
+y_train <- data_train$label_1[1:num_records]
 
 data_test <- read.csv(test_file)
 X_test <- as.matrix(data_test[,1:(ncol(data_test)-1)])
 y_test <- data_test$label_1
 
 # xgb training
-bst <- xgboost(data = X_train, label = y_train,
-               nround = ntree, max_depth = max_depth,
-               objective = "binary:logistic")
-
-xgb.save(bst, "xgb.model")
-bst<-xgb.load("xgb.model")
+bst<-xgb.load(sprintf('%s/clf.model', res_dir))
 
 # build rules from inTrees
 treeList <- XGB2List(bst, X_train)
-ruleExec <- unique(extractRules(treeList, X_train))
+ruleExec <- unique(extractRules(treeList, X_train, ntree = n_tree, maxdepth = max_depth))
 
 # evaluate on data and use it to prune (optional: pruning gives less fidelity, smaller rules)
 ruleMetric <- getRuleMetric(ruleExec, X_train, y_train)

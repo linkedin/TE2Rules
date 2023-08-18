@@ -50,6 +50,7 @@ Run the follwing python scripts to generate the results in the [paper](https://a
 ```bash
 python3 demo/demo/run_te2rules.py
 python3 demo/demo/run_defrag.py
+python3 demo/demo/run_intrees.py
 ```
 
 ## License
