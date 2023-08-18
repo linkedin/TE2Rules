@@ -51,6 +51,8 @@ Run the follwing python scripts to generate the results in the [paper](https://a
 python3 demo/demo/run_te2rules.py
 python3 demo/demo/run_defrag.py
 python3 demo/demo/run_intrees.py
+python3 plot_performance.py
+python3 plot_scalability.py
 ```
 
 ## License
