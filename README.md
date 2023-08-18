@@ -48,8 +48,8 @@ Let us use TE2Rules ```ModelExplainer``` to explain the positive class predicito
 Run the follwing python scripts to generate the results in the [paper](https://arxiv.org/abs/2206.14359):
 
 ```bash
-python3 demo/global_baseline_experiment.py
 python3 demo/demo/run_te2rules.py
+python3 demo/demo/run_defrag.py
 ```
 
 ## License
