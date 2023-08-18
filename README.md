@@ -49,8 +49,7 @@ Run the follwing python scripts to generate the results in the [paper](https://a
 
 ```bash
 python3 demo/global_baseline_experiment.py
-python3 demo/global_te2rules_experiment.py
-python3 demo/outcome_explanation_experiments.py
+python3 demo/demo/run_te2rules.py
 ```
 
 ## License
