@@ -1,20 +1,9 @@
 # TE2Rules
 
-[![Paper](https://img.shields.io/badge/arxiv-2206.14359-orange.svg)](https://arxiv.org/abs/2206.14359)
-[![PyPI](https://img.shields.io/pypi/v/te2rules?color=blue)](https://pypi.org/project/te2rules/)
-[![PyPI](https://img.shields.io/readthedocs/te2rules)](https://te2rules.readthedocs.io/en/latest/index.html)
-
-TE2Rules is a technique to explain Tree Ensemble models (TE) like XGBoost, Random Forest, trained on a binary classification task, using a rule list. The extracted rule list (RL) captures the necessary and sufficient conditions for classification by the Tree Ensemble. The algorithm used by TE2Rules is based on Apriori Rule Mining. For more details on the algorithm, please check out our [paper](https://arxiv.org/abs/2206.14359).
+TE2Rules is a technique to explain Tree Ensemble models (TE) like XGBoost trained on a binary classification task, using a rule list. The extracted rule list (RL) captures the necessary and sufficient conditions for classification by the Tree Ensemble. The algorithm used by TE2Rules is based on Apriori Rule Mining. For more details on the algorithm, please check out our paper.
 
 TE2Rules provides a ```ModelExplainer``` which takes a trained TE model and training data to extract rules. The training data is used for extracting rules with relevant combination of input features. Without data, an explainer would have to extract rules for all possible combinations of input features, including those combinations which are extremely rare in the data.
 
-## Installation
-
-TE2Rules package is available on PyPI and can be installed with pip:
-
-```bash
-pip install te2rules
-```
 
 ## Documentation
 
@@ -45,7 +34,7 @@ Let us use TE2Rules ```ModelExplainer``` to explain the positive class predicito
 
 ## For reproducing results in the paper
 
-Run the follwing python scripts to generate the results in the [paper](https://arxiv.org/abs/2206.14359):
+Run the follwing python scripts to generate the results in the paper:
 
 ```bash
 python3 demo/demo/run_te2rules.py
@@ -59,16 +48,3 @@ python3 plot_scalability.py
 
 Creative Commons Attribution-NonCommercial 4.0 International Public
 License, see [LICENSE](https://github.com/linkedin/TE2Rules/blob/main/LICENSE) for more details.
-
-## Citation
-
-Please cite [TE2Rules](https://arxiv.org/abs/2206.14359) in your publications if it helps your research:
-
-```bash
-@article{te2rules2022,
-  title={TE2Rules: Extracting Rule Lists from Tree Ensembles},
-  author={Lal, G Roshan and Chen, Xiaotong and Mithal, Varun},
-  journal={arXiv preprint arXiv:2206.14359},
-  year={2022}
-}
-```
