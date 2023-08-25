@@ -1,0 +1,2105 @@
+len, freq, err, condition, pred
+2, 0.002, 0, age<=21.5 & sex_Male<=0.5, 1
+3, 0.012, 0.138888888888889, age<=22.5 & age>21.5 & sex_Male<=0.5, 0.166666666666667
+2, 0.002, 0, age<=20.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.016, 0.109375, age<=20.5 & days_b_screening_arrest>-2.5, 0.875
+1, 0.099, 0.232403165347772, age<=22.5, 0.63265306122449
+1, 0.901, 0.245125192760328, age>22.5, 0.43018018018018
+3, 0.105, 0.155325443786982, age>22.5 & priors_count<=1.5 & sex_Female>0.5, 0.192307692307692
+2, 0.44, 0.204081632653061, age>22.5 & priors_count<=1.5, 0.285714285714286
+1, 0.014, 0, days_b_screening_arrest>0.5, 1
+2, 0.014, 0.122448979591837, age<=21.5 & priors_count>1.5, 0.857142857142857
+1, 0.596, 0.249710768661206, age<=33.5, 0.482993197278912
+2, 0.018, 0, age<=26.5 & priors_count>7.5, 1
+1, 0.71, 0.242155102040816, age>26.5, 0.411428571428571
+2, 0.008, 0, age<=33.5 & priors_count>15.5, 1
+1, 0.404, 0.240397969748239, age>33.5, 0.402010050251256
+2, 0.079, 0.111768573307035, priors_count<=0.5 & sex_Male<=0.5, 0.128205128205128
+1, 0.146, 0.245177469135802, age<=23.5, 0.569444444444444
+2, 0.006, 0, age<=20.5 & priors_count>0.5, 1
+2, 0.071, 0.204081632653061, age<=23.5 & priors_count>0.5, 0.714285714285714
+2, 0.511, 0.215214789619552, age>23.5 & priors_count<=2.5, 0.313492063492063
+1, 0.854, 0.245090018675137, age>23.5, 0.429928741092637
+2, 0.002, 0, priors_count<=0.5 & days_b_screening_arrest<=-6, 1
+2, 0.055, 0.150891632373114, age>52.5 & priors_count<=2.5, 0.185185185185185
+1, 0.641, 0.230612081397212, priors_count<=2.5, 0.360759493670886
+3, 0.018, 0, age>32.5 & priors_count<=2.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.061, 0.09, age<=27.5 & priors_count>2.5 & c_charge_degree_F>0.5, 0.9
+1, 0.13, 0.208740234375, priors_count>7.5, 0.703125
+2, 0.008, 0, age>55.5 & days_b_screening_arrest<=-13.5, 0
+2, 0.053, 0.130177514792899, age>55.5 & priors_count<=8.5, 0.153846153846154
+3, 0.002, 0, age>52.5 & priors_count>8.5 & priors_count<=10.5, 1
+5, 0.002, 0, age<=22.5 & age>20.5 & priors_count<=1.5 & days_b_screening_arrest<=-1.5 & sex_Male>0.5, 1
+2, 0.12, 0.162022407354209, priors_count<=1.5 & sex_Male<=0.5, 0.203389830508475
+3, 0.002, 0, age<=33.5 & priors_count>5.5 & days_b_screening_arrest<=-16, 1
+2, 0.278, 0.231765144653418, age<=33.5 & priors_count>1.5, 0.635036496350365
+2, 0.323, 0.231715517582374, age>33.5 & priors_count<=5.5, 0.364779874213836
+2, 0.006, 0, priors_count>12.5 & days_b_screening_arrest<=-5, 0
+2, 0.049, 0.164930555555556, priors_count>12.5 & days_b_screening_arrest>-5, 0.791666666666667
+3, 0.071, 0.0783673469387755, priors_count<=1.5 & c_charge_degree_F<=0.5 & sex_Female>0.5, 0.0857142857142857
+2, 0.051, 0.1344, age>52.5 & priors_count<=1.5, 0.16
+3, 0.083, 0.124925639500297, age<=27.5 & priors_count>1.5 & race_African_American>0.5, 0.853658536585366
+5, 0.006, 0, age<=33.5 & age>27.5 & priors_count>1.5 & priors_count<=5.5 & days_b_screening_arrest<=-4.5, 0
+1, 0.181, 0.219669233682616, priors_count>5.5, 0.674157303370786
+2, 0.099, 0.174094127446897, age<=33.5 & priors_count>5.5, 0.775510204081633
+2, 0.079, 0.111768573307035, priors_count<=0.5 & sex_Female>0.5, 0.128205128205128
+5, 0.006, 0, age>23.5 & age<=28.5 & priors_count<=2.5 & priors_count>0.5 & days_b_screening_arrest<=-1.5, 0
+4, 0.004, 0, age<=27.5 & priors_count>2.5 & priors_count<=6.5 & days_b_screening_arrest<=-3.5, 0
+1, 0.359, 0.23786268313703, priors_count>2.5, 0.610169491525424
+1, 0.671, 0.249614370076943, age<=36.5, 0.48036253776435
+2, 0.008, 0, age<=36.5 & priors_count>15.5, 1
+1, 0.329, 0.237654320987654, age>36.5, 0.388888888888889
+1, 0.014, 0, days_b_screening_arrest>6.5, 1
+1, 0.002, 0, priors_count>27.5, 1
+2, 0.002, 0, age<=22.5 & days_b_screening_arrest<=-19.5, 0
+4, 0.028, 0.122448979591837, age>22.5 & age<=35.5 & priors_count<=1.5 & race_Hispanic>0.5, 0.142857142857143
+2, 0.12, 0.162022407354209, priors_count<=1.5 & sex_Female>0.5, 0.203389830508475
+3, 0.156, 0.185866081969978, age<=35.5 & age>26.5 & priors_count<=1.5, 0.246753246753247
+4, 0.037, 0.0987654320987654, age>35.5 & priors_count<=1.5 & days_b_screening_arrest<=0.5 & days_b_screening_arrest>-0.5, 0.111111111111111
+3, 0.012, 0, age<=21.5 & priors_count>1.5 & race_Caucasian<=0.5, 1
+3, 0.002, 0, age<=21.5 & priors_count>1.5 & race_Caucasian>0.5, 0
+3, 0.004, 0, age<=31.5 & priors_count>1.5 & days_b_screening_arrest<=-17, 1
+1, 0.529, 0.248939387266775, age<=31.5, 0.467432950191571
+2, 0.002, 0, priors_count>7.5 & days_b_screening_arrest<=-16, 1
+2, 0.057, 0.146683673469388, age<=31.5 & priors_count>7.5, 0.821428571428571
+2, 0.004, 0, age<=38.5 & days_b_screening_arrest<=-28, 0
+1, 0.471, 0.245243757431629, age>31.5, 0.431034482758621
+3, 0.024, 0.0763888888888889, age>23.5 & priors_count<=2.5 & days_b_screening_arrest<=-8.5, 0.0833333333333333
+2, 0.227, 0.221221301020408, age<=36.5 & priors_count>2.5, 0.669642857142857
+2, 0.008, 0, age<=20.5 & c_charge_degree_F<=0.5, 1
+3, 0.01, 0, age<=23.5 & priors_count>0.5 & days_b_screening_arrest>-0.5, 1
+4, 0.002, 0, age<=27.5 & priors_count>2.5 & priors_count<=8.5 & days_b_screening_arrest<=-11.5, 0
+2, 0.006, 0, age<=36.5 & days_b_screening_arrest<=-24, 0
+2, 0.02, 0, age<=27.5 & priors_count>8.5, 1
+1, 0.116, 0.209295167743921, priors_count>8.5, 0.701754385964912
+2, 0.004, 0, age<=51.5 & priors_count>21.5, 1
+2, 0.002, 0, age<=22.5 & days_b_screening_arrest<=-21.5, 0
+4, 0.002, 0, age<=22.5 & priors_count<=1.5 & days_b_screening_arrest<=-5.5 & days_b_screening_arrest>-21.5, 1
+2, 0.014, 0.204081632653061, age<=22.5 & sex_Female>0.5, 0.285714285714286
+3, 0.016, 0, age>52.5 & age<=65.5 & days_b_screening_arrest<=-3.5, 0
+1, 0.002, 0, age>76.5, 1
+4, 0.024, 0.138888888888889, priors_count>1.5 & priors_count<=4.5 & days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-3.5, 0.166666666666667
+3, 0.006, 0, age>33.5 & priors_count>1.5 & race_Other>0.5, 1
+1, 0.018, 0.172839506172839, age<=20.5, 0.777777777777778
+3, 0.008, 0, age<=22.5 & priors_count<=2.5 & priors_count>1.5, 1
+1, 0.351, 0.210230879748739, priors_count<=0.5, 0.300578034682081
+2, 0.069, 0.163494809688581, age>50.5 & priors_count<=2.5, 0.205882352941176
+2, 0.002, 0, age<=36.5 & days_b_screening_arrest<=-28.5, 0
+3, 0.006, 0, age>36.5 & priors_count>8.5 & days_b_screening_arrest<=-9, 0
+3, 0.004, 0, age>36.5 & priors_count>8.5 & sex_Female>0.5, 0
+3, 0.008, 0, age<=22.5 & priors_count>0.5 & days_b_screening_arrest>-0.5, 1
+3, 0.008, 0, age>38.5 & priors_count<=1.5 & days_b_screening_arrest<=-8.5, 0
+2, 0.006, 0, age<=33.5 & days_b_screening_arrest<=-22.5, 0
+2, 0.01, 0, age<=59.5 & priors_count>20.5, 1
+1, 0.034, 0.145328719723183, age>59.5, 0.176470588235294
+4, 0.006, 0, age<=22.5 & priors_count<=1.5 & days_b_screening_arrest<=-1.5 & c_charge_degree_F<=0.5, 1
+2, 0.075, 0.219138056975895, days_b_screening_arrest<=-1.5 & c_charge_degree_F>0.5, 0.324324324324324
+3, 0.006, 0, age<=22.5 & days_b_screening_arrest>-1.5 & sex_Female>0.5, 0
+1, 0.01, 0, days_b_screening_arrest>12.5, 1
+1, 0.11, 0.208504801097394, age>52.5, 0.296296296296296
+3, 0.002, 0, age<=22.5 & priors_count>1.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.018, 0, age<=22.5 & priors_count>1.5 & days_b_screening_arrest>-5.5, 1
+1, 0.343, 0.249571093449109, age<=27.5, 0.520710059171598
+2, 0.061, 0.16, age<=27.5 & priors_count>3.5, 0.8
+1, 0.657, 0.242531626276482, age>27.5, 0.41358024691358
+1, 0.014, 0, days_b_screening_arrest>1, 1
+3, 0.002, 0, age>51.5 & priors_count>1.5 & race_Other>0.5, 1
+1, 0.404, 0.249993687028105, age<=28.5, 0.49748743718593
+3, 0.059, 0.118906064209275, age<=28.5 & age>26.5 & priors_count<=2.5, 0.137931034482759
+2, 0.095, 0.19013128112268, age<=24.5 & priors_count>0.5, 0.74468085106383
+4, 0.006, 0, age>28.5 & priors_count<=2.5 & days_b_screening_arrest<=-19 & c_charge_degree_F<=0.5, 0
+3, 0.002, 0, age>28.5 & days_b_screening_arrest>-19 & days_b_screening_arrest<=-14.5, 0
+1, 0.596, 0.243336109954186, age>28.5, 0.418367346938776
+1, 0.006, 0, days_b_screening_arrest>21.5, 1
+2, 0.004, 0, priors_count>11.5 & sex_Male<=0.5, 0
+3, 0.022, 0.0826446280991736, age<=36.5 & priors_count>11.5 & sex_Male>0.5, 0.909090909090909
+2, 0.002, 0, age>36.5 & days_b_screening_arrest<=-29.5, 1
+2, 0.014, 0.204081632653061, age<=22.5 & sex_Male<=0.5, 0.285714285714286
+4, 0.008, 0, age>38.5 & priors_count<=1.5 & priors_count>0.5 & days_b_screening_arrest<=-1.5, 0
+4, 0.002, 0, age>59.5 & priors_count<=1.5 & priors_count>0.5 & days_b_screening_arrest>-1.5, 1
+2, 0.002, 0, age<=27.5 & race_Native_American>0.5, 0
+1, 0.069, 0.207612456747405, days_b_screening_arrest<=-4.5, 0.294117647058824
+4, 0.004, 0, priors_count>1.5 & priors_count<=5.5 & days_b_screening_arrest<=-5.5 & sex_Female>0.5, 0
+2, 0.008, 0, age<=20.5 & c_charge_degree_M>0.5, 1
+3, 0.008, 0, age>52.5 & priors_count<=2.5 & c_charge_degree_F>0.5, 0
+2, 0.034, 0.145328719723183, age>36.5 & days_b_screening_arrest<=-3.5, 0.176470588235294
+3, 0.018, 0.0987654320987654, age>36.5 & race_African_American>0.5 & sex_Male<=0.5, 0.111111111111111
+3, 0.006, 0, priors_count<=1.5 & days_b_screening_arrest<=-8.5 & race_Hispanic>0.5, 0
+1, 0.014, 0, days_b_screening_arrest>3.5, 1
+3, 0.099, 0.174094127446897, age<=27.5 & priors_count>1.5 & days_b_screening_arrest<=-0.5, 0.775510204081633
+2, 0.095, 0.217292892711634, race_African_American>0.5 & sex_Male<=0.5, 0.319148936170213
+1, 0.083, 0.224866151100535, days_b_screening_arrest<=-3.5, 0.341463414634146
+4, 0.016, 0.1875, age<=28.5 & priors_count<=3.5 & priors_count>1.5 & sex_Male<=0.5, 0.75
+3, 0.008, 0, age>28.5 & days_b_screening_arrest<=-10.5 & race_Hispanic>0.5, 0
+1, 0.01, 0, days_b_screening_arrest>8, 1
+1, 0.746, 0.248936672967864, age<=39.5, 0.467391304347826
+2, 0.012, 0, age<=39.5 & priors_count>14.5, 1
+2, 0.01, 0, age<=39.5 & priors_count>15.5, 1
+2, 0.018, 0, age>39.5 & days_b_screening_arrest<=-7.5, 0
+1, 0.254, 0.24, age>39.5, 0.4
+3, 0.002, 0, age>39.5 & priors_count<=21.5 & priors_count>19.5, 0
+2, 0.006, 0, age<=60 & priors_count>21.5, 1
+2, 0.002, 0, age>60 & priors_count>21.5, 0
+4, 0.006, 0, age<=23.5 & priors_count<=1.5 & days_b_screening_arrest>-0.5 & sex_Male<=0.5, 0
+2, 0.006, 0, priors_count<=0.5 & days_b_screening_arrest<=-3.5, 1
+2, 0.416, 0.204973230220107, age>23.5 & priors_count<=1.5, 0.28780487804878
+4, 0.008, 0, age>23.5 & priors_count<=1.5 & days_b_screening_arrest<=-8.5 & c_charge_degree_F<=0.5, 0
+1, 0.519, 0.220458984375, priors_count<=1.5, 0.328125
+4, 0.002, 0, age>59.5 & priors_count<=1.5 & priors_count>0.5 & days_b_screening_arrest>-8.5, 1
+3, 0.01, 0, age<=21.5 & priors_count>1.5 & race_African_American>0.5, 1
+1, 0.059, 0.199762187871581, days_b_screening_arrest<=-8.5, 0.275862068965517
+2, 0.002, 0, age<=21.5 & sex_Female>0.5, 1
+4, 0.014, 0, age<=28.5 & age>27.5 & priors_count<=3.5 & sex_Female>0.5, 0
+2, 0.408, 0.226974579837133, age>28.5 & priors_count<=3.5, 0.348258706467662
+1, 0.874, 0.249158865423851, age<=51.5, 0.470997679814385
+2, 0.034, 0.145328719723183, age<=51.5 & priors_count>12.5, 0.823529411764706
+1, 0.126, 0.212539021852237, age>51.5, 0.306451612903226
+4, 0.006, 0, age>51.5 & priors_count>3.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5, 0
+1, 0.647, 0.249290003046354, age<=35.5, 0.473354231974922
+4, 0.002, 0, age<=35.5 & age>33.5 & priors_count<=0.5 & days_b_screening_arrest<=-1.5, 0
+4, 0.008, 0, age<=35.5 & age>33.5 & priors_count<=0.5 & c_charge_degree_F<=0.5, 0
+1, 0.353, 0.241544457656229, age>35.5, 0.408045977011494
+2, 0.037, 0.138888888888889, age>52.5 & priors_count<=0.5, 0.166666666666667
+4, 0.006, 0, age>35.5 & age<=38.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5, 0
+2, 0.101, 0.1716, priors_count<=0.5 & days_b_screening_arrest>-0.5, 0.22
+3, 0.012, 0, age>49.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5, 0
+2, 0.002, 0, age<=31.5 & race_Native_American>0.5, 0
+1, 0.008, 0, days_b_screening_arrest>17.5, 1
+2, 0.006, 0, priors_count>12.5 & days_b_screening_arrest<=-8.5, 0
+2, 0.049, 0.164930555555556, priors_count>12.5 & days_b_screening_arrest>-8.5, 0.791666666666667
+1, 0.004, 0, days_b_screening_arrest>27.5, 1
+4, 0.008, 0, age>28.5 & age<=39.5 & priors_count>0.5 & race_Other>0.5, 1
+3, 0.004, 0, age>39.5 & age<=48.5 & race_Other>0.5, 0
+3, 0.006, 0, age>39.5 & priors_count<=3.5 & race_Other>0.5, 0
+1, 0.966, 0.248406715627427, age<=59.5, 0.460084033613445
+3, 0.002, 0, age<=59.5 & age>57.5 & priors_count>3.5, 1
+3, 0.012, 0, age>59.5 & age<=65.5 & priors_count<=12.5, 0
+1, 0.89, 0.249054332428744, age<=52.5, 0.469248291571754
+1, 0.01, 0, days_b_screening_arrest>14.5, 1
+2, 0.006, 0, age>52.5 & days_b_screening_arrest<=-18, 0
+3, 0.002, 0, age>65.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-18, 1
+3, 0.004, 0, age>52.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.002, 0, age<=21.5 & priors_count>1.5 & days_b_screening_arrest<=-5.5, 0
+1, 0.935, 0.245331049637448, age>21.5, 0.431670281995662
+3, 0.205, 0.158807960003921, age>23.5 & priors_count<=1.5 & c_charge_degree_M>0.5, 0.198019801980198
+3, 0.039, 0.132963988919668, age<=27.5 & days_b_screening_arrest>-0.5 & race_African_American<=0.5, 0.157894736842105
+2, 0.028, 0.0663265306122449, age<=27.5 & priors_count>7.5, 0.928571428571429
+2, 0.095, 0.217292892711634, race_African_American>0.5 & sex_Female>0.5, 0.319148936170213
+1, 0.959, 0.248470247486915, age<=58.5, 0.460887949260042
+3, 0.032, 0.05859375, age>35.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5, 0.0625
+2, 0.002, 0, priors_count<=0.5 & days_b_screening_arrest<=-5.5, 1
+3, 0.02, 0, age>58.5 & priors_count<=0.5 & days_b_screening_arrest>-5.5, 0
+1, 0.728, 0.249299741622117, age<=38.5, 0.473537604456825
+4, 0.01, 0, age<=38.5 & age>37.5 & priors_count>0.5 & c_charge_degree_F>0.5, 1
+2, 0.041, 0.1275, age>38.5 & days_b_screening_arrest<=-2.5, 0.15
+4, 0.016, 0, age>38.5 & priors_count>0.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-12.5, 0
+1, 0.272, 0.23746936957006, age>38.5, 0.388059701492537
+3, 0.059, 0.183115338882283, priors_count<=3.5 & days_b_screening_arrest<=-1.5 & race_African_American<=0.5, 0.241379310344828
+1, 0.982, 0.246888019943993, age>20.5, 0.444214876033058
+3, 0.006, 0, priors_count<=3.5 & days_b_screening_arrest<=-19.5 & c_charge_degree_F<=0.5, 0
+2, 0.087, 0.151433207138994, c_charge_degree_F<=0.5 & sex_Female>0.5, 0.186046511627907
+2, 0.002, 0, race_Other>0.5 & sex_Female>0.5, 0
+3, 0.008, 0, age<=33.5 & priors_count>11.5 & priors_count<=13.5, 1
+3, 0.004, 0, age<=33.5 & priors_count>13.5 & priors_count<=14.5, 0
+2, 0.01, 0, age<=33.5 & priors_count>14.5, 1
+1, 0.72, 0.235667526284467, priors_count<=3.5, 0.380281690140845
+1, 0.819, 0.248799137339477, age<=45.5, 0.465346534653465
+4, 0.002, 0, age>35.5 & priors_count>3.5 & priors_count<=4.5 & days_b_screening_arrest<=-8.5, 1
+2, 0.014, 0, age>45.5 & days_b_screening_arrest<=-8.5, 0
+2, 0.006, 0, age<=23.5 & priors_count>3.5, 1
+1, 0.055, 0.208504801097394, priors_count>12.5, 0.703703703703704
+1, 0.838, 0.248591479108162, age<=47.5, 0.462469733656174
+3, 0.016, 0, age>47.5 & priors_count>0.5 & days_b_screening_arrest<=-4.5, 0
+2, 0.004, 0, priors_count>7.5 & days_b_screening_arrest<=-14.5, 1
+1, 0.649, 0.2490234375, priors_count>0.5, 0.53125
+4, 0.002, 0, priors_count>1.5 & days_b_screening_arrest<=-4.5 & days_b_screening_arrest>-14.5 & sex_Male<=0.5, 0
+2, 0.032, 0.1875, days_b_screening_arrest<=-4.5 & days_b_screening_arrest>-14.5, 0.25
+1, 0.998, 0.247418038204772, age<=77.5, 0.449186991869919
+1, 0.002, 0, age>77.5, 1
+4, 0.022, 0, age>38.5 & age<=40.5 & priors_count<=3.5 & sex_Female<=0.5, 0
+4, 0.004, 0, age>38.5 & age<=40.5 & priors_count<=5.5 & priors_count>3.5, 1
+2, 0.004, 0, days_b_screening_arrest<=-26.5 & sex_Female>0.5, 0
+1, 0.819, 0.240197039505931, priors_count<=5.5, 0.400990099009901
+1, 0.197, 0.247847805292805, age<=24.5, 0.54639175257732
+1, 0.803, 0.244637026833997, age>24.5, 0.426767676767677
+3, 0.002, 0, age<=30.5 & priors_count>5.5 & days_b_screening_arrest<=-16, 1
+3, 0.004, 0, age<=30.5 & priors_count>5.5 & days_b_screening_arrest<=-2.5, 1
+2, 0.071, 0.16, age<=30.5 & priors_count>5.5, 0.8
+1, 0.507, 0.244816, age>30.5, 0.428
+2, 0.002, 0, priors_count<=20.5 & priors_count>19.5, 0
+2, 0.01, 0, age<=60 & priors_count>20.5, 1
+2, 0.002, 0, age>60 & priors_count>20.5, 0
+2, 0.002, 0, priors_count<=2.5 & race_Native_American>0.5, 0
+3, 0.002, 0, priors_count>2.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 1
+3, 0.01, 0, age>49.5 & priors_count>2.5 & sex_Female>0.5, 0
+2, 0.01, 0, age>59.5 & age<=61.5, 0
+2, 0.002, 0, age>61.5 & priors_count>2.5, 1
+2, 0.004, 0, age<=38.5 & days_b_screening_arrest<=-27.5, 0
+3, 0.002, 0, age>38.5 & priors_count<=8.5 & priors_count>7.5, 0
+1, 0.992, 0.24769049978881, age<=69.5, 0.451942740286299
+2, 0.002, 0, age>61.5 & priors_count>8.5, 1
+3, 0.002, 0, age<=21.5 & priors_count<=0.5 & days_b_screening_arrest<=-2.5, 0
+1, 0.065, 0.2021484375, age<=21.5, 0.71875
+1, 0.866, 0.24914303264977, age<=50.5, 0.470725995316159
+4, 0.002, 0, age<=50.5 & age>48.5 & priors_count<=0.5 & race_African_American>0.5, 0
+1, 0.134, 0.216942148760331, age>50.5, 0.318181818181818
+3, 0.004, 0, age>55.5 & priors_count<=0.5 & race_African_American>0.5, 0
+1, 0.29, 0.247933884297521, age<=26.5, 0.545454545454545
+3, 0.105, 0.177514792899408, age<=26.5 & priors_count>0.5 & race_African_American>0.5, 0.769230769230769
+2, 0.012, 0.138888888888889, days_b_screening_arrest<=-19.5 & race_Caucasian>0.5, 0.166666666666667
+1, 0.004, 0, days_b_screening_arrest>22.5, 1
+1, 0.968, 0.24832878446264, age<=60.5, 0.459119496855346
+3, 0.008, 0, age>52.5 & priors_count<=0.5 & sex_Female>0.5, 0
+3, 0.006, 0, age>60.5 & age<=62.5 & priors_count<=0.5, 0
+2, 0.004, 0, age>62.5 & age<=63.5, 0
+3, 0.016, 0, age>60.5 & priors_count<=0.5 & days_b_screening_arrest>-3.5, 0
+1, 0.243, 0.248263888888889, age<=25.5, 0.541666666666667
+2, 0.128, 0.204081632653061, age<=25.5 & priors_count>0.5, 0.714285714285714
+1, 0.757, 0.243745013620453, age>25.5, 0.420911528150134
+3, 0.018, 0, age<=58.5 & age>46.5 & days_b_screening_arrest<=-1.5, 0
+2, 0.004, 0, age>58.5 & days_b_screening_arrest<=-18.5, 0
+4, 0.002, 0, age>58.5 & priors_count<=8.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-18.5, 1
+1, 0.931, 0.249002045746888, age<=55.5, 0.468409586056645
+2, 0.004, 0, race_Native_American>0.5 & sex_Female<=0.5, 0
+1, 0.069, 0.163494809688581, age>55.5, 0.205882352941176
+3, 0.081, 0.1275, priors_count<=8.5 & c_charge_degree_M>0.5 & sex_Female>0.5, 0.15
+2, 0.087, 0.151433207138994, c_charge_degree_M>0.5 & sex_Female>0.5, 0.186046511627907
+2, 0.008, 0, age<=61.5 & age>60.5, 0
+1, 1, 0.247530333389563, age>19.5, 0.450304259634888
+3, 0.004, 0, priors_count<=7.5 & priors_count>5.5 & days_b_screening_arrest<=-14.5, 0
+3, 0.004, 0, age<=49.5 & priors_count>7.5 & days_b_screening_arrest<=-4.5, 1
+2, 0.006, 0, priors_count>12 & days_b_screening_arrest<=-4.5, 0
+1, 0.337, 0.223544781535782, race_Caucasian>0.5, 0.337349397590361
+3, 0.002, 0, age>51.5 & days_b_screening_arrest<=-4.5 & sex_Male<=0.5, 0
+3, 0.014, 0, age>51.5 & race_Caucasian>0.5 & sex_Male<=0.5, 0
+2, 0.049, 0.164930555555556, age>26.5 & days_b_screening_arrest<=-8.5, 0.208333333333333
+2, 0.004, 0, race_Native_American>0.5 & sex_Male>0.5, 0
+2, 0.181, 0.174220426713799, priors_count<=0.5 & c_charge_degree_F<=0.5, 0.224719101123595
+2, 0.014, 0, age<=24.5 & priors_count>4.5, 1
+3, 0.024, 0.138888888888889, age<=24.5 & age>23.5 & priors_count>0.5, 0.833333333333333
+4, 0.01, 0, age>21.5 & age<=23.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 0
+2, 0.087, 0.151433207138994, c_charge_degree_F<=0.5 & sex_Male<=0.5, 0.186046511627907
+1, 0.87, 0.242359039561837, priors_count<=7.5, 0.412587412587413
+2, 0.002, 0, race_Other>0.5 & sex_Male<=0.5, 0
+3, 0.006, 0, age<=30.5 & priors_count>7.5 & sex_Male<=0.5, 1
+4, 0.004, 0, age<=35.5 & priors_count>7.5 & race_African_American<=0.5 & sex_Male<=0.5, 1
+4, 0.006, 0, age>30.5 & priors_count>7.5 & race_African_American>0.5 & sex_Male<=0.5, 0
+3, 0.006, 0, age>35.5 & priors_count>7.5 & days_b_screening_arrest<=-9, 0
+3, 0.004, 0, age>35.5 & priors_count>7.5 & sex_Male<=0.5, 0
+1, 0.83, 0.248743132812453, age<=46.5, 0.464547677261614
+2, 0.008, 0, age>46.5 & days_b_screening_arrest<=-14.5, 0
+3, 0.018, 0, age<=58.5 & age>45.5 & days_b_screening_arrest<=-1.5, 0
+1, 0.041, 0.16, age>58.5, 0.2
+3, 0.288, 0.216474905772664, age<=55.5 & priors_count>2.5 & days_b_screening_arrest>-1.5, 0.683098591549296
+3, 0.002, 0, age>55.5 & age<=57.5 & priors_count>19.5, 1
+4, 0.002, 0, age>57.5 & age<=59.5 & days_b_screening_arrest>-1.5 & sex_Male>0.5, 1
+1, 0.199, 0.223344439816743, sex_Male<=0.5, 0.336734693877551
+2, 0.004, 0, days_b_screening_arrest>-14.5 & days_b_screening_arrest<=-13.5, 0
+2, 0.002, 0, priors_count<=3.5 & days_b_screening_arrest<=-26.5, 0
+3, 0.006, 0, age>59.5 & age<=62.5 & priors_count<=0.5, 0
+3, 0.016, 0, age>59.5 & priors_count<=0.5 & days_b_screening_arrest>-3.5, 0
+2, 0.002, 0, days_b_screening_arrest<=-28.5 & race_Caucasian>0.5, 0
+3, 0.002, 0, days_b_screening_arrest<=-19.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 0
+4, 0.002, 0, priors_count>7.5 & priors_count<=12.5 & days_b_screening_arrest<=-1.5 & sex_Male>0.5, 1
+2, 0.008, 0, priors_count>12.5 & days_b_screening_arrest<=-1.5, 0
+2, 0.012, 0.138888888888889, age>39.5 & age<=40.5, 0.166666666666667
+3, 0.002, 0, age>39.5 & age<=40.5 & priors_count>7, 0
+2, 0.018, 0, age>39.5 & days_b_screening_arrest<=-8.5, 0
+2, 0.004, 0, priors_count<=20.5 & priors_count>18.5, 0
+1, 0.771, 0.236592797783934, priors_count<=4.5, 0.384210526315789
+3, 0.026, 0.177514792899408, priors_count<=4.5 & days_b_screening_arrest<=-6.5 & c_charge_degree_M<=0.5, 0.230769230769231
+2, 0.006, 0, age<=23.5 & priors_count>4.5, 1
+2, 0.006, 0, days_b_screening_arrest<=-20.5 & c_charge_degree_M>0.5, 0
+3, 0.002, 0, age<=30.5 & days_b_screening_arrest<=-14.5 & c_charge_degree_M>0.5, 1
+1, 0.998, 0.247418038204772, priors_count<=27.5, 0.449186991869919
+3, 0.002, 0, age>39.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-5.5, 1
+1, 0.627, 0.249683183041652, age<=34.5, 0.482200647249191
+2, 0.641, 0.234768066015062, age>25.5 & priors_count<=7.5, 0.376582278481013
+1, 0.373, 0.239337192816635, age>34.5, 0.396739130434783
+2, 0.063, 0.206035379812695, age>34.5 & days_b_screening_arrest<=-1.5, 0.290322580645161
+4, 0.002, 0, age<=42 & priors_count>7.5 & days_b_screening_arrest<=-1.5 & sex_Female<=0.5, 1
+3, 0.014, 0, age>42 & age<=54.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.008, 0, age>42 & priors_count>7.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.006, 0, age<=28.5 & days_b_screening_arrest<=-15 & sex_Female>0.5, 0
+4, 0.002, 0, age>28.5 & days_b_screening_arrest<=-5.5 & race_Caucasian<=0.5 & sex_Female>0.5, 0
+2, 0.002, 0, race_Native_American>0.5 & sex_Female>0.5, 1
+3, 0.01, 0, age>51.5 & priors_count<=1.5 & sex_Female>0.5, 0
+3, 0.014, 0, age>51.5 & race_Caucasian>0.5 & sex_Female>0.5, 0
+3, 0.004, 0, age<=48.5 & priors_count>7.5 & days_b_screening_arrest<=-7, 1
+3, 0.006, 0, age>48.5 & priors_count>7.5 & days_b_screening_arrest<=-7, 0
+4, 0.002, 0, priors_count>7.5 & days_b_screening_arrest>-7 & race_Caucasian>0.5 & sex_Female>0.5, 1
+2, 0.002, 0, priors_count<=0.5 & days_b_screening_arrest<=-4.5, 1
+2, 0.316, 0.196745562130178, age>21.5 & priors_count<=0.5, 0.269230769230769
+2, 0.049, 0.1875, age>35.5 & days_b_screening_arrest<=-2.5, 0.25
+2, 0.002, 0, days_b_screening_arrest<=-28.5 & race_Other<=0.5, 0
+2, 0.002, 0, days_b_screening_arrest<=-28.5 & race_Other>0.5, 1
+2, 0.002, 0, days_b_screening_arrest>-28.5 & days_b_screening_arrest<=-26.5, 0
+2, 0.006, 0, days_b_screening_arrest>-28.5 & days_b_screening_arrest<=-24.5, 0
+1, 0.943, 0.245697768528154, priors_count<=11.5, 0.434408602150538
+1, 0.057, 0.204081632653061, priors_count>11.5, 0.714285714285714
+3, 0.008, 0, age>39.5 & age<=40.5 & days_b_screening_arrest<=-0.5, 0
+3, 0.004, 0, age<=22.5 & days_b_screening_arrest>-0.5 & sex_Female>0.5, 0
+3, 0.012, 0.138888888888889, age<=31.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0.166666666666667
+3, 0.006, 0, age<=33.5 & priors_count>3.5 & race_Hispanic>0.5, 1
+2, 0.002, 0, priors_count>5 & days_b_screening_arrest<=-24.5, 0
+1, 0.986, 0.247760334637335, age<=64.5, 0.452674897119342
+3, 0.024, 0, age<=64.5 & age>45.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.002, 0, age>64.5 & age<=71 & days_b_screening_arrest<=-1.5, 1
+2, 0.002, 0, age>71 & days_b_screening_arrest<=-1.5, 0
+2, 0.002, 0, days_b_screening_arrest<=-1.5 & race_Other>0.5, 1
+1, 0.98, 0.246989785202046, priors_count<=16.5, 0.445134575569358
+3, 0.002, 0, age>51.5 & days_b_screening_arrest<=-4.5 & sex_Female>0.5, 0
+2, 0.002, 0, days_b_screening_arrest<=-28.5 & race_Caucasian<=0.5, 1
+1, 0.181, 0.2360813028658, age>45.5, 0.382022471910112
+2, 0.087, 0.219578150351541, age<=22.5 & race_Hispanic<=0.5, 0.674418604651163
+4, 0.018, 0.0987654320987654, priors_count<=3.5 & days_b_screening_arrest>-0.5 & days_b_screening_arrest<=1 & race_Hispanic>0.5, 0.111111111111111
+3, 0.002, 0, age>48.5 & age<=53.5 & race_Other>0.5, 1
+2, 0.002, 0, age>53.5 & race_Other>0.5, 0
+1, 0.996, 0.24751017292943, days_b_screening_arrest>-28.5, 0.45010183299389
+4, 0.01, 0, age>21.5 & age<=23.5 & c_charge_degree_M>0.5 & sex_Male<=0.5, 0
+2, 0.087, 0.151433207138994, c_charge_degree_M>0.5 & sex_Male<=0.5, 0.186046511627907
+4, 0.002, 0, priors_count>9.5 & priors_count<=11.5 & days_b_screening_arrest<=-1.5 & sex_Male>0.5, 1
+2, 0.008, 0, priors_count>11.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.004, 0, age<=23.5 & age>21 & race_Other>0.5, 0
+2, 0.053, 0.177514792899408, age>23.5 & days_b_screening_arrest<=-8.5, 0.230769230769231
+2, 0.014, 0, age>48.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.002, 0, age>23.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-7.5, 1
+2, 0.037, 0.172839506172839, priors_count>6.5 & days_b_screening_arrest>-0.5, 0.777777777777778
+1, 0.093, 0.2117202268431, priors_count>9.5, 0.695652173913043
+3, 0.004, 0, priors_count>11.5 & priors_count<=14.5 & days_b_screening_arrest>-0.5, 1
+1, 0.957, 0.248545676529733, age<=57.5, 0.461864406779661
+3, 0.008, 0, age<=57.5 & age>56.5 & priors_count<=19.5, 0
+3, 0.002, 0, age<=57.5 & age>56.5 & priors_count>19.5, 1
+1, 0.043, 0.154195011337868, age>57.5, 0.19047619047619
+2, 0.002, 0, age>57.5 & priors_count>24.5, 0
+2, 0.004, 0, priors_count<=18.5 & priors_count>16.5, 1
+2, 0.008, 0, age<=39.5 & priors_count>18.5, 1
+3, 0.006, 0, age>39.5 & priors_count<=27.5 & priors_count>18.5, 0
+2, 0.006, 0, days_b_screening_arrest<=-20.5 & c_charge_degree_F<=0.5, 0
+1, 0.996, 0.247302773756538, days_b_screening_arrest<=22.5, 0.44806517311609
+1, 0.925, 0.245378385657125, priors_count<=10.5, 0.432017543859649
+1, 0.075, 0.219138056975895, priors_count>10.5, 0.675675675675676
+1, 0.154, 0.225069252077562, priors_count>6.5, 0.657894736842105
+3, 0.018, 0.0987654320987654, priors_count<=0.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0.111111111111111
+3, 0.006, 0, priors_count>0.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 1
+1, 1, 0.247530333389563, age<=89.5, 0.450304259634888
+1, 0.992, 0.247280665437164, priors_count<=21.5, 0.447852760736196
+1, 0.008, 0.1875, priors_count>21.5, 0.75
+4, 0.002, 0, age>23.5 & age<=24.5 & priors_count<=3 & days_b_screening_arrest<=-8.5, 0
+2, 0.014, 0, age<=24.5 & priors_count>3, 1
+2, 0.002, 0, days_b_screening_arrest>-0.5 & race_Native_American>0.5, 0
+3, 0.004, 0, age<=30.5 & priors_count>11.5 & days_b_screening_arrest>-0.5, 1
+2, 0.002, 0, age<=30.5 & priors_count>19, 1
+2, 0.002, 0, age>70.5 & age<=72.5, 0
+2, 0.006, 0, age>70.5 & age<=77.5, 0
+1, 0.01, 0, days_b_screening_arrest>12, 1
+2, 0.002, 0, age<=31.5 & days_b_screening_arrest<=-26.5, 0
+1, 0.702, 0.249323398710281, age<=37.5, 0.473988439306358
+2, 0.01, 0, age<=37.5 & priors_count>15.5, 1
+1, 0.298, 0.238881947336758, age>37.5, 0.394557823129252
+1, 0.067, 0.211202938475666, days_b_screening_arrest<=-5.5, 0.303030303030303
+1, 0.945, 0.245855514008363, priors_count<=12.5, 0.435622317596566
+1, 0.84, 0.24868725057761, age<=48.5, 0.463768115942029
+3, 0.004, 0, age>48.5 & priors_count<=10.5 & priors_count>8.5, 1
+2, 0.045, 0.148760330578512, age<=42 & priors_count>10.5, 0.818181818181818
+4, 0.002, 0, age<=42 & age>38.5 & priors_count<=12.5 & priors_count>10.5, 1
+3, 0.006, 0, age>42 & priors_count<=12.5 & priors_count>10.5, 0
+2, 0.004, 0, priors_count>12.5 & days_b_screening_arrest<=-10.5, 0
+3, 0.01, 0, age<=54 & priors_count>12.5 & priors_count<=13.5, 1
+3, 0.014, 0, priors_count>12.5 & priors_count<=13.5 & days_b_screening_arrest>-10.5, 1
+2, 0.006, 0, age<=27.5 & priors_count>12.5, 1
+3, 0.014, 0, age>57.5 & age<=65.5 & priors_count<=1.5, 0
+3, 0.008, 0, age>57.5 & priors_count>0.5 & days_b_screening_arrest<=-6.5, 0
+4, 0.002, 0, age>57.5 & priors_count>0.5 & priors_count<=1.5 & days_b_screening_arrest>-6.5, 1
+2, 0.002, 0, age>69.5 & age<=72.5, 0
+1, 0.008, 0.1875, age>69.5, 0.25
+3, 0.002, 0, age<=43.5 & age>42.5 & priors_count>8.5, 0
+3, 0.004, 0, age>43.5 & priors_count<=10.5 & priors_count>8.5, 1
+3, 0.002, 0, age<=33.5 & priors_count>10.5 & days_b_screening_arrest<=-1.5, 1
+3, 0.004, 0, age<=59.5 & age>58.5 & priors_count<=1.5, 0
+3, 0.002, 0, age<=59.5 & age>58.5 & priors_count>1.5, 1
+3, 0.004, 0, age<=37 & days_b_screening_arrest>-0.5 & race_Other>0.5, 1
+3, 0.002, 0, age>37 & days_b_screening_arrest>-0.5 & race_Other>0.5, 0
+1, 0.992, 0.24769049978881, age<=70.5, 0.451942740286299
+2, 0.01, 0, age<=38.5 & priors_count>15.5, 1
+2, 0.053, 0.236686390532544, age>38.5 & age<=42.5, 0.384615384615385
+2, 0.01, 0.16, age>42.5 & age<=43.5, 0.2
+2, 0.006, 0, age>70.5 & age<=76.5, 0
+3, 0.02, 0, age>58.5 & priors_count<=0.5 & days_b_screening_arrest>-3.5, 0
+3, 0.024, 0.1875, age<=50.5 & age>46.5 & priors_count>0.5, 0.75
+2, 0.004, 0, age>57.5 & priors_count>14.5, 0
+2, 0.043, 0.18140589569161, age<=23.5 & priors_count>1.5, 0.761904761904762
+2, 0.049, 0.164930555555556, age>24.5 & days_b_screening_arrest<=-8.5, 0.208333333333333
+2, 0.091, 0.172839506172839, days_b_screening_arrest>-0.5 & c_charge_degree_M>0.5, 0.222222222222222
+3, 0.004, 0, age<=33.5 & days_b_screening_arrest>-0.5 & race_Other>0.5, 1
+3, 0.002, 0, age>33.5 & days_b_screening_arrest>-0.5 & race_Other>0.5, 0
+3, 0.002, 0, age>39.5 & age<=44 & priors_count>18.5, 0
+3, 0.004, 0, age>39.5 & priors_count<=21.5 & priors_count>18.5, 0
+3, 0.002, 0, age>39.5 & age<=41.5 & sex_Female>0.5, 0
+3, 0.012, 0, age<=64.5 & age>48.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.002, 0, age<=69.5 & age>64.5 & days_b_screening_arrest<=-5.5, 1
+2, 0.006, 0, age>69.5 & age<=77.5, 0
+2, 0.061, 0.232222222222222, age>27.5 & age<=28.5, 0.366666666666667
+2, 0.15, 0.231738495252009, age>27.5 & age<=30.5, 0.364864864864865
+2, 0.002, 0, age<=55 & priors_count>24.5, 1
+3, 0.002, 0, age>55 & priors_count<=27.5 & priors_count>24.5, 0
+4, 0.039, 0.193905817174515, age>28.5 & age<=31.5 & race_African_American<=0.5 & sex_Male>0.5, 0.263157894736842
+3, 0.002, 0, priors_count>1.5 & days_b_screening_arrest<=-19.5 & race_African_American>0.5, 1
+2, 0.002, 0, age<=26 & days_b_screening_arrest<=-26.5, 0
+2, 0.006, 0, age<=77.5 & age>70.5, 0
+3, 0.02, 0.16, age>39.5 & priors_count>3.5 & c_charge_degree_F<=0.5, 0.2
+1, 0.976, 0.248002040101832, age<=61.5, 0.455301455301455
+3, 0.006, 0, age<=34.5 & priors_count>12.5 & priors_count<=13.5, 1
+2, 0.006, 0, priors_count>12.5 & days_b_screening_arrest<=-7, 0
+3, 0.014, 0, priors_count>12.5 & priors_count<=13.5 & days_b_screening_arrest>-7, 1
+1, 0.791, 0.248711374095989, age<=43.5, 0.464102564102564
+1, 0.209, 0.2396078801018, age>43.5, 0.398058252427184
+3, 0.014, 0, age>58.5 & age<=67.5 & priors_count<=0.5, 0
+4, 0.002, 0, age<=56.5 & age>54.5 & priors_count>0.5 & race_Hispanic>0.5, 1
+2, 0.045, 0.148760330578512, age<=44.5 & priors_count>10.5, 0.818181818181818
+3, 0.006, 0, age>44.5 & priors_count<=11.5 & priors_count>10.5, 0
+2, 0.002, 0, priors_count<=24.5 & priors_count>21.5, 1
+2, 0.006, 0, age<=22.5 & priors_count>4.5, 1
+2, 0.004, 0, priors_count>20.5 & days_b_screening_arrest>-0.5, 1
+3, 0.002, 0, age<=21.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0
+4, 0.018, 0.0987654320987654, priors_count<=2.5 & days_b_screening_arrest<=0.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0.111111111111111
+3, 0.002, 0, age<=34.5 & age>33.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.01, 0, age>34.5 & days_b_screening_arrest<=-10.5 & days_b_screening_arrest>-17.5, 0
+3, 0.008, 0, age>48.5 & age<=55.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.022, 0, age>48.5 & age<=65.5 & days_b_screening_arrest<=-2.5, 0
+1, 0.16, 0.235539176414036, age>48.5, 0.379746835443038
+3, 0.008, 0, age>48.5 & days_b_screening_arrest<=-2.5 & race_African_American>0.5, 0
+1, 0.17, 0.235827664399093, age>46.5, 0.380952380952381
+3, 0.01, 0, age>46.5 & priors_count>2.5 & sex_Male<=0.5, 0
+3, 0.004, 0, age>46.5 & age<=47.5 & priors_count<=2.5, 0
+2, 0.081, 0.174375, age<=43.5 & priors_count>8.5, 0.775
+4, 0.004, 0, age<=43.5 & age>39.5 & priors_count<=10.5 & priors_count>8.5, 0
+1, 0.89, 0.249054332428744, age<=52, 0.469248291571754
+3, 0.004, 0, age>52 & priors_count<=12.5 & priors_count>10.5, 0
+2, 0.008, 0, priors_count>12.5 & c_charge_degree_F<=0.5, 1
+1, 0.986, 0.247760334637335, age<=63, 0.452674897119342
+3, 0.006, 0, age<=63 & age>57.5 & days_b_screening_arrest<=-5.5, 0
+4, 0.002, 0, age>57.5 & priors_count>12.5 & priors_count<=24.5 & days_b_screening_arrest>-5.5, 1
+1, 0.984, 0.24723562546498, priors_count<=18.5, 0.447422680412371
+3, 0.002, 0, age>39.5 & age<=46 & priors_count>18.5, 0
+2, 0.002, 0, age>57.5 & priors_count>18.5, 0
+2, 0.002, 0, age<=22.5 & days_b_screening_arrest<=-13.5, 0
+3, 0.002, 0, age<=23.5 & days_b_screening_arrest<=-13.5 & days_b_screening_arrest>-19.5, 1
+3, 0.002, 0, age<=23.5 & days_b_screening_arrest>-13.5 & days_b_screening_arrest<=-8.5, 1
+3, 0.01, 0.16, age>23.5 & age<=24.5 & race_Caucasian>0.5, 0.2
+2, 0.002, 0, age<=32.5 & race_Native_American>0.5, 0
+2, 0.002, 0, age<=60.5 & age>59.5, 0
+1, 0.032, 0.15234375, age>60.5, 0.1875
+2, 0.006, 0, age>60.5 & days_b_screening_arrest>-0.5, 0
+2, 0.061, 0.21, priors_count<=10.5 & days_b_screening_arrest<=-4.5, 0.3
+2, 0.053, 0.155325443786982, age<=52 & priors_count>10.5, 0.807692307692308
+3, 0.004, 0, age>52 & priors_count<=11.5 & priors_count>10.5, 0
+3, 0.01, 0, age<=36.5 & priors_count>11.5 & priors_count<=13.5, 1
+3, 0.002, 0, age>36.5 & age<=38.5 & priors_count>11.5, 1
+2, 0.004, 0, priors_count>18.5 & priors_count<=20.5, 0
+2, 0.01, 0, age<=57.5 & priors_count>20.5, 1
+2, 0.006, 0, age<=27.5 & priors_count>11.5, 1
+2, 0.01, 0, age<=28.5 & priors_count>11.5, 1
+3, 0.01, 0, age<=64.5 & age>60.5 & priors_count<=3.5, 0
+2, 0.006, 0, age<=77.5 & age>69.5, 0
+3, 0.006, 0, age<=31.5 & priors_count<=11.5 & priors_count>10.5, 1
+4, 0.002, 0, age<=32.5 & age>31.5 & priors_count<=11.5 & priors_count>10.5, 0
+4, 0.004, 0, age<=44.5 & age>32.5 & priors_count<=11.5 & priors_count>10.5, 1
+3, 0.004, 0, age<=36.5 & priors_count>13.5 & priors_count<=14.5, 0
+2, 0.01, 0, age<=36.5 & priors_count>14.5, 1
+2, 0.314, 0.235754422476587, age>36.5 & priors_count<=15.5, 0.380645161290323
+1, 0.018, 0.172839506172839, age>62.5, 0.222222222222222
+2, 0.006, 0, age<=26.5 & priors_count>10.5, 1
+3, 0.006, 0, age<=30.5 & priors_count<=11.5 & priors_count>10.5, 1
+3, 0.004, 0, age<=33.5 & priors_count>11.5 & days_b_screening_arrest>-0.5, 1
+2, 0.032, 0.15234375, age<=43.5 & priors_count>11.5, 0.8125
+2, 0.059, 0.214030915576694, priors_count<=10.5 & days_b_screening_arrest<=-5.5, 0.310344827586207
+3, 0.002, 0, priors_count<=12.5 & priors_count>10.5 & days_b_screening_arrest<=-1.5, 1
+3, 0.004, 0, priors_count<=12.5 & priors_count>10.5 & days_b_screening_arrest>-0.5, 1
+2, 0.008, 0, age>58 & days_b_screening_arrest<=-8.5, 0
+2, 0.047, 0.170132325141777, age<=57.5 & priors_count>12.5, 0.782608695652174
+4, 0.004, 0, age<=57.5 & age>54.5 & priors_count>12.5 & days_b_screening_arrest>-8.5, 1
+2, 0.002, 0, age>61 & priors_count>12.5, 1
+2, 0.004, 0, age>57.5 & priors_count>13.5, 0
+3, 0.002, 0, age<=23.5 & age>22.5 & days_b_screening_arrest<=-8.5, 1
+3, 0.002, 0, age<=23.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.059, 0.164090368608799, age>23.5 & age<=27.5 & race_Caucasian>0.5, 0.206896551724138
+2, 0.004, 0, priors_count>4 & race_Other>0.5, 1
+2, 0.008, 0, priors_count>3.5 & race_Other>0.5, 1
+3, 0.002, 0, age<=38.5 & age>35.5 & days_b_screening_arrest<=-20.5, 0
+4, 0.006, 0, age<=38.5 & age>35.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-20.5, 1
+2, 0.114, 0.196109693877551, age>35.5 & priors_count<=0.5, 0.267857142857143
+4, 0.002, 0, age>38.5 & age<=42.5 & priors_count<=9.5 & priors_count>8.5, 0
+4, 0.006, 0, age>38.5 & age<=42.5 & priors_count>9.5 & priors_count<=15.5, 1
+3, 0.002, 0, age>42.5 & age<=43.5 & days_b_screening_arrest>-0.5, 0
+3, 0.002, 0, age>42.5 & age<=43.5 & priors_count>6.5, 0
+2, 0.004, 0, priors_count>4.5 & race_Other>0.5, 1
+3, 0.002, 0, age>35.5 & days_b_screening_arrest<=-7.5 & days_b_screening_arrest>-8.5, 1
+3, 0.008, 0, age>38.5 & priors_count>4.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.01, 0, age>38.5 & priors_count<=2 & days_b_screening_arrest<=-8.5, 0
+3, 0.002, 0, age>38.5 & priors_count>2 & race_Hispanic>0.5, 0
+3, 0.006, 0, age>38.5 & days_b_screening_arrest<=-8.5 & days_b_screening_arrest>-12.5, 0
+2, 0.014, 0, age>53 & days_b_screening_arrest<=-8.5, 0
+2, 0.063, 0.228928199791883, age>38.5 & age<=43.5, 0.354838709677419
+3, 0.02, 0.16, days_b_screening_arrest<=0.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0.2
+2, 0.004, 0, age<=30.5 & days_b_screening_arrest<=-21.5, 0
+1, 0.493, 0.249284492540094, age<=30.5, 0.473251028806584
+3, 0.01, 0.16, age>30.5 & age<=31.5 & race_Caucasian>0.5, 0.2
+2, 0.014, 0.204081632653061, age<=57.5 & priors_count>18.5, 0.714285714285714
+3, 0.002, 0, age>51.5 & age<=54.5 & priors_count>18.5, 0
+3, 0.002, 0, age<=57.5 & age>54.5 & priors_count>18.5, 1
+4, 0.006, 0, age<=38.5 & age>35.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5, 0
+3, 0.014, 0, age>38.5 & days_b_screening_arrest<=-8.5 & days_b_screening_arrest>-21.5, 0
+2, 0.014, 0, days_b_screening_arrest>-28.5 & days_b_screening_arrest<=-22.5, 0
+2, 0.008, 0, priors_count>12.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.004, 0, priors_count>12.5 & sex_Male<=0.5, 0
+3, 0.03, 0.115555555555556, age<=48.5 & priors_count>12.5 & sex_Male>0.5, 0.866666666666667
+2, 0.012, 0, age<=40.5 & priors_count>14.5, 1
+3, 0.01, 0, priors_count<=18.5 & priors_count>14.5 & sex_Male>0.5, 1
+3, 0.004, 0, age>39.5 & priors_count>18.5 & days_b_screening_arrest<=-0.5, 0
+3, 0.002, 0, age>44 & priors_count>18.5 & days_b_screening_arrest>-0.5, 1
+1, 0.982, 0.247933884297521, age<=62.5, 0.454545454545455
+3, 0.008, 0, age<=62.5 & age>58.5 & race_African_American<=0.5, 0
+3, 0.006, 0, age<=62.5 & age>60.5 & priors_count<=3.5, 0
+2, 0.004, 0, age>60.5 & priors_count>14.5, 0
+2, 0.004, 0, age>62.5 & age<=64.5, 0
+4, 0.004, 0, age<=38.5 & age>34.5 & priors_count<=1.5 & days_b_screening_arrest<=-3.5, 1
+4, 0.01, 0, age>34.5 & priors_count>1.5 & priors_count<=3.5 & days_b_screening_arrest<=-3.5, 0
+4, 0.004, 0, age<=38.5 & age>30.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.012, 0, age>38.5 & priors_count<=3.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.008, 0, age>38.5 & priors_count>5 & days_b_screening_arrest<=-8.5, 0
+3, 0.01, 0, age>38.5 & priors_count<=1.5 & race_Other>0.5, 0
+3, 0.002, 0, age>38.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-5.5, 1
+3, 0.012, 0, age>46.5 & days_b_screening_arrest>-5.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.041, 0.16, age>51.5 & priors_count<=0.5, 0.2
+2, 0.093, 0.192816635160681, age>51.5 & priors_count<=4.5, 0.260869565217391
+1, 0.998, 0.247418038204772, age<=76.5, 0.449186991869919
+2, 0.004, 0, age<=64.5 & age>62.5, 0
+2, 0.006, 0, age<=76.5 & age>69.5, 0
+2, 0.039, 0.193905817174515, priors_count<=18.5 & priors_count>12.5, 0.736842105263158
+2, 0.004, 0, priors_count>12.5 & sex_Female>0.5, 0
+2, 0.002, 0, age<=29 & priors_count>18.5, 1
+1, 0.012, 0.138888888888889, priors_count>20.5, 0.833333333333333
+1, 0.004, 0, days_b_screening_arrest>26.5, 1
+2, 0.006, 0, age>47.5 & days_b_screening_arrest<=-16.5, 0
+2, 0.002, 0, days_b_screening_arrest>-16.5 & days_b_screening_arrest<=-15.5, 0
+2, 0.002, 0, days_b_screening_arrest>-28.5 & days_b_screening_arrest<=-27.5, 0
+2, 0.004, 0, age<=30 & days_b_screening_arrest<=-21.5, 0
+1, 0.02, 0.16, days_b_screening_arrest<=-21.5, 0.2
+4, 0.002, 0, age>39.5 & age<=40.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M<=0.5, 1
+3, 0.008, 0, age>39.5 & age<=40.5 & priors_count<=3, 0
+2, 0.02, 0.09, age>39.5 & days_b_screening_arrest<=-6.5, 0.1
+3, 0.008, 0, age>39.5 & priors_count>3.5 & days_b_screening_arrest<=-6.5, 0
+2, 0.004, 0, age<=25.5 & days_b_screening_arrest<=-22.5, 0
+3, 0.01, 0, age<=25.5 & age>24.5 & race_Caucasian>0.5, 0
+3, 0.006, 0, priors_count<=4.5 & days_b_screening_arrest<=-19.5 & c_charge_degree_M>0.5, 0
+1, 0.852, 0.248888888888889, age<=49, 0.466666666666667
+1, 0.229, 0.220220847364711, priors_count>4.5, 0.672566371681416
+1, 0.809, 0.248679342466442, age<=44.5, 0.463659147869674
+2, 0.028, 0.0663265306122449, age>46.5 & days_b_screening_arrest<=-2.5, 0.0714285714285714
+2, 0.004, 0, age>62.5 & days_b_screening_arrest<=-12, 0
+3, 0.03, 0.0622222222222222, priors_count<=0.5 & race_African_American>0.5 & sex_Male<=0.5, 0.0666666666666667
+1, 0.988, 0.247671491636765, age<=67.5, 0.451745379876797
+2, 0.004, 0, priors_count>5.5 & race_Other>0.5, 1
+2, 0.213, 0.16562358276644, c_charge_degree_M>0.5 & race_African_American<=0.5, 0.20952380952381
+5, 0.006, 0, age<=25.5 & age>24.5 & priors_count<=0.5 & days_b_screening_arrest<=-0.5 & c_charge_degree_M>0.5, 0
+4, 0.01, 0.16, age>25.5 & age<=26.5 & c_charge_degree_M>0.5 & race_Caucasian<=0.5, 0.8
+4, 0.004, 0, age>25.5 & age<=26.5 & c_charge_degree_M>0.5 & race_Caucasian>0.5, 0
+1, 0.377, 0.223985431841831, c_charge_degree_M>0.5, 0.338709677419355
+2, 0.002, 0, days_b_screening_arrest<=-24.5 & days_b_screening_arrest>-25.5, 0
+2, 0.004, 0, days_b_screening_arrest<=-21.5 & c_charge_degree_F<=0.5, 0
+5, 0.002, 0, age>30.5 & age<=46.5 & days_b_screening_arrest<=-21.5 & days_b_screening_arrest>-24.5 & c_charge_degree_F>0.5, 1
+2, 0.006, 0, age>46.5 & days_b_screening_arrest<=-21.5, 0
+2, 0.004, 0, days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-20.5, 0
+1, 0.045, 0.198347107438017, days_b_screening_arrest<=-12.5, 0.272727272727273
+2, 0.002, 0, age<=31.5 & days_b_screening_arrest<=-25.5, 0
+2, 0.002, 0, age>45 & days_b_screening_arrest<=-25.5, 0
+2, 0.006, 0, age<=36.5 & days_b_screening_arrest<=-24.5, 0
+2, 0.018, 0.172839506172839, priors_count<=10.5 & priors_count>9.5, 0.777777777777778
+2, 0.006, 0, age<=33.5 & priors_count>18.5, 1
+1, 0.546, 0.244192313539061, age>29, 0.423791821561338
+2, 0.008, 0, age<=40.5 & priors_count>18.5, 1
+3, 0.002, 0, age<=48.5 & age>40.5 & priors_count>18.5, 0
+3, 0.002, 0, age>48.5 & priors_count>18.5 & days_b_screening_arrest>-0.5, 1
+2, 0.002, 0, age>50.5 & days_b_screening_arrest<=-25.5, 0
+3, 0.004, 0, age<=46.5 & age>45.5 & days_b_screening_arrest<=-0.5, 0
+3, 0.004, 0, age<=46.5 & age>45.5 & race_African_American<=0.5, 0
+4, 0.004, 0, age<=46.5 & age>45.5 & days_b_screening_arrest>-0.5 & c_charge_degree_F>0.5, 1
+3, 0.002, 0, age>46.5 & age<=48.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.006, 0, age>46.5 & days_b_screening_arrest<=-2.5 & sex_Male<=0.5, 0
+3, 0.014, 0, age>46.5 & priors_count>3.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.024, 0, age>46.5 & age<=68.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.089, 0.208161157024793, age>46.5 & priors_count<=2.5, 0.295454545454545
+4, 0.002, 0, age>46.5 & priors_count<=2.5 & priors_count>1.5 & sex_Male<=0.5, 1
+3, 0.294, 0.219072532699168, age<=55.5 & priors_count>2.5 & days_b_screening_arrest>-2.5, 0.675862068965517
+3, 0.002, 0, age<=23.5 & days_b_screening_arrest<=-8.5 & days_b_screening_arrest>-11.5, 1
+3, 0.002, 0, age<=23.5 & priors_count>2 & days_b_screening_arrest<=-5.5, 0
+2, 0.12, 0.218328066647515, priors_count>6.5 & c_charge_degree_M<=0.5, 0.677966101694915
+3, 0.004, 0, age>37.5 & priors_count>7.5 & sex_Female>0.5, 0
+4, 0.008, 0, age>30.5 & age<=31.5 & priors_count<=7.5 & c_charge_degree_M>0.5, 0
+4, 0.004, 0, age>30.5 & age<=31.5 & priors_count>7.5 & c_charge_degree_M>0.5, 1
+2, 0.004, 0, age<=31.5 & priors_count>20, 1
+3, 0.039, 0.0941828254847645, age>30.5 & c_charge_degree_M>0.5 & sex_Female>0.5, 0.105263157894737
+4, 0.01, 0, age<=44.5 & age>32.5 & priors_count<=18.5 & priors_count>10.5, 1
+3, 0.002, 0, age>50.5 & age<=54.5 & priors_count>18.5, 0
+4, 0.004, 0, age>23.5 & priors_count<=1.5 & days_b_screening_arrest<=-9.5 & days_b_screening_arrest>-17.5, 0
+1, 0.057, 0.204081632653061, days_b_screening_arrest<=-9.5, 0.285714285714286
+3, 0.004, 0, age<=30.5 & days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-18.5, 1
+5, 0.002, 0, age>30.5 & age<=46.5 & days_b_screening_arrest<=-21.5 & days_b_screening_arrest>-24.5 & c_charge_degree_M<=0.5, 1
+2, 0.004, 0, days_b_screening_arrest<=-21.5 & c_charge_degree_M>0.5, 0
+3, 0.004, 0, age<=38.5 & priors_count>7.5 & days_b_screening_arrest<=-3.5, 1
+3, 0.004, 0, priors_count>2.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.03, 0.16, age>38.5 & age<=40.5, 0.2
+3, 0.008, 0, age<=42.5 & age>40.5 & race_Caucasian>0.5, 1
+5, 0.006, 0, age>38.5 & age<=42.5 & priors_count<=6.5 & days_b_screening_arrest>-0.5 & race_Caucasian<=0.5, 0
+4, 0.004, 0, age>38.5 & age<=42.5 & days_b_screening_arrest>-0.5 & race_Caucasian>0.5, 1
+3, 0.004, 0, age<=42.5 & age>41.5 & days_b_screening_arrest>-0.5, 1
+3, 0.002, 0, age>42.5 & age<=43.5 & priors_count>8.5, 0
+3, 0.002, 0, age>39.5 & age<=42.5 & sex_Female>0.5, 0
+2, 0.004, 0, days_b_screening_arrest>-28.5 & days_b_screening_arrest<=-25.5, 0
+2, 0.002, 0, age<=34 & days_b_screening_arrest<=-25.5, 0
+1, 0.556, 0.249520485907614, age<=32.5, 0.478102189781022
+1, 0.444, 0.242863993661517, age>32.5, 0.415525114155251
+2, 0.081, 0.144375, age<=39.5 & priors_count>7.5, 0.825
+3, 0.002, 0, age>39.5 & priors_count<=8.5 & priors_count>7.5, 0
+3, 0.002, 0, age>31.5 & age<=33.5 & priors_count>11.5, 1
+5, 0.028, 0, age<=30.5 & age>27.5 & priors_count<=5.5 & race_Hispanic<=0.5 & sex_Male<=0.5, 0
+3, 0.002, 0, age<=30.5 & days_b_screening_arrest<=-18.5 & race_Hispanic>0.5, 1
+5, 0.004, 0, age<=30.5 & priors_count<=5.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-18.5 & race_Hispanic>0.5, 0
+1, 0.101, 0.2244, race_Hispanic>0.5, 0.34
+3, 0.004, 0, age<=30.5 & priors_count>5.5 & days_b_screening_arrest<=-9, 1
+2, 0.02, 0, age<=25.5 & priors_count>5.5, 1
+3, 0.008, 0, age<=30.5 & priors_count>5.5 & sex_Female>0.5, 1
+4, 0.002, 0, age>30.5 & days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-14.5 & c_charge_degree_M<=0.5, 0
+4, 0.018, 0.0987654320987654, age>30.5 & age<=33.5 & priors_count<=3.5 & c_charge_degree_M>0.5, 0.111111111111111
+4, 0.004, 0, age>31.5 & age<=33.5 & priors_count>3.5 & c_charge_degree_M>0.5, 1
+2, 0.002, 0, age<=23.5 & days_b_screening_arrest<=-19.5, 0
+4, 0.004, 0, age<=46.5 & age>45.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M<=0.5, 1
+3, 0.022, 0, age>46.5 & priors_count>0.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.01, 0, age>46.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-4.5, 0
+3, 0.006, 0, age>46.5 & days_b_screening_arrest<=-2.5 & sex_Female>0.5, 0
+3, 0.01, 0, age>46.5 & priors_count<=0.5 & sex_Female>0.5, 0
+3, 0.01, 0, age>46.5 & priors_count>2.5 & sex_Female>0.5, 0
+2, 0.004, 0, age<=29.5 & days_b_screening_arrest<=-21.5, 0
+3, 0.002, 0, age<=29.5 & days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-18.5, 1
+1, 0.454, 0.24968112244898, age<=29.5, 0.482142857142857
+1, 0.546, 0.244192313539061, age>29.5, 0.423791821561338
+2, 0.402, 0.228548107335986, age>29.5 & priors_count<=4.5, 0.353535353535354
+3, 0.008, 0, age<=43.5 & priors_count>10.5 & c_charge_degree_F<=0.5, 1
+4, 0.004, 0, age>29.5 & priors_count<=0.5 & days_b_screening_arrest<=-2.5 & c_charge_degree_F>0.5, 1
+3, 0.004, 0, age<=46.5 & priors_count>7.5 & days_b_screening_arrest<=-3.5, 1
+3, 0.002, 0, age<=27.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-4.5, 1
+3, 0.01, 0.16, age<=46.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-4.5, 0.8
+3, 0.002, 0, age>46.5 & age<=50.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.01, 0, age>46.5 & age<=55.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.026, 0.130177514792899, age>46.5 & sex_Male<=0.5, 0.153846153846154
+4, 0.01, 0.16, age>23.5 & age<=28.5 & race_Other>0.5 & sex_Male>0.5, 0.8
+2, 0.016, 0, age<=25.5 & priors_count>6.5, 1
+3, 0.002, 0, age>42.5 & priors_count>6.5 & days_b_screening_arrest>-0.5, 1
+1, 0.852, 0.248888888888889, age<=49.5, 0.466666666666667
+3, 0.012, 0.138888888888889, age>27.5 & days_b_screening_arrest>-2.5 & days_b_screening_arrest<=-1.5, 0.166666666666667
+1, 0.148, 0.229311315443798, age>49.5, 0.356164383561644
+3, 0.002, 0, age>49.5 & age<=50.5 & c_charge_degree_M>0.5, 1
+3, 0.008, 0, age>49.5 & age<=50.5 & race_African_American<=0.5, 1
+3, 0.006, 0, age>49.5 & race_African_American>0.5 & sex_Female>0.5, 0
+3, 0.055, 0.150891632373114, age>50.5 & priors_count<=2.5 & race_African_American<=0.5, 0.185185185185185
+1, 0.503, 0.228928199791883, race_African_American<=0.5, 0.354838709677419
+3, 0.002, 0, age>50.5 & age<=51.5 & race_African_American>0.5, 1
+2, 0.057, 0.204081632653061, priors_count<=8.5 & days_b_screening_arrest<=-5.5, 0.285714285714286
+1, 0.884, 0.243182392054541, priors_count<=8.5, 0.41743119266055
+3, 0.002, 0, days_b_screening_arrest<=-5.5 & days_b_screening_arrest>-7.5 & race_Caucasian<=0.5, 0
+3, 0.002, 0, age>35 & days_b_screening_arrest<=-5.5 & days_b_screening_arrest>-7.5, 1
+2, 0.008, 0, age<=25.5 & priors_count>8.5, 1
+3, 0.004, 0, priors_count>8.5 & priors_count<=12.5 & days_b_screening_arrest<=-5.5, 1
+3, 0.006, 0, age>33.5 & priors_count>8.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.008, 0, age<=42.5 & days_b_screening_arrest>-5.5 & days_b_screening_arrest<=-3.5, 1
+3, 0.006, 0, age<=45.5 & age>42.5 & days_b_screening_arrest<=-3.5, 0
+3, 0.006, 0, age>45.5 & age<=56.5 & days_b_screening_arrest<=-3.5, 0
+3, 0.014, 0, age>45.5 & priors_count>1.5 & days_b_screening_arrest<=-3.5, 0
+3, 0.01, 0, days_b_screening_arrest>-5.5 & days_b_screening_arrest<=-2.5 & sex_Male<=0.5, 0
+3, 0.01, 0, age<=62.5 & age>57.5 & priors_count<=1.5, 0
+3, 0.002, 0, age>62.5 & days_b_screening_arrest>-12 & days_b_screening_arrest<=-3.5, 1
+2, 0.012, 0.138888888888889, age>62.5 & days_b_screening_arrest>-3.5, 0.166666666666667
+2, 0.004, 0, age>62.5 & race_Caucasian<=0.5, 0
+3, 0.03, 0.115555555555556, age<=55.5 & priors_count<=18.5 & priors_count>12.5, 0.866666666666667
+3, 0.002, 0, age<=56.5 & age>55.5 & priors_count>12.5, 0
+1, 0.053, 0.155325443786982, age>56.5, 0.192307692307692
+2, 0.002, 0, priors_count>18.5 & priors_count<=19.5, 0
+2, 0.008, 0, age<=52 & priors_count>19.5, 1
+3, 0.002, 0, age<=54.5 & age>52 & priors_count>18.5, 0
+1, 0.083, 0.184414039262344, age>54.5, 0.24390243902439
+1, 0.986, 0.246680722789548, days_b_screening_arrest<=0.5, 0.44238683127572
+4, 0.006, 0, age<=33.5 & priors_count<=4.5 & priors_count>3.5 & c_charge_degree_M>0.5, 1
+2, 0.162, 0.19359375, age>33.5 & c_charge_degree_M>0.5, 0.2625
+3, 0.006, 0, priors_count<=3.5 & days_b_screening_arrest<=-17.5 & race_African_American>0.5, 0
+2, 0.002, 0, days_b_screening_arrest>-17.5 & days_b_screening_arrest<=-15.5, 0
+3, 0.045, 0.148760330578512, age<=27.5 & priors_count>3.5 & days_b_screening_arrest<=-0.5, 0.818181818181818
+3, 0.008, 0, age<=62.5 & age>60.5 & priors_count<=12.5, 0
+3, 0.002, 0, age>60.5 & priors_count>12.5 & priors_count<=13.5, 1
+2, 0.004, 0, age>60.5 & priors_count>13.5, 0
+1, 0.986, 0.247760334637335, age<=65.5, 0.452674897119342
+3, 0.022, 0, age<=65.5 & age>49.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.002, 0, age>65.5 & age<=70.5 & days_b_screening_arrest<=-3.5, 1
+2, 0.002, 0, age>70.5 & days_b_screening_arrest<=-3.5, 0
+2, 0.002, 0, age>65.5 & age<=66.5, 0
+1, 0.014, 0.204081632653061, age>65.5, 0.285714285714286
+3, 0.002, 0, age<=29.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-6.5, 0
+2, 0.053, 0.10207100591716, age<=28.5 & priors_count>5.5, 0.884615384615385
+4, 0.004, 0, age>29.5 & age<=32.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-7, 0
+5, 0.006, 0, age>29.5 & age<=32.5 & priors_count<=0.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5, 0
+5, 0.002, 0, age>29.5 & age<=32.5 & priors_count<=0.5 & c_charge_degree_F>0.5 & race_Caucasian>0.5, 1
+2, 0.205, 0.195863150671503, age>29.5 & c_charge_degree_M>0.5, 0.267326732673267
+4, 0.016, 0, age>29.5 & c_charge_degree_M>0.5 & race_African_American>0.5 & sex_Female>0.5, 0
+1, 0.28, 0.232986767485822, priors_count>3.5, 0.630434782608696
+3, 0.024, 0, age<=65.5 & age>46.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.002, 0, age<=20.5 & days_b_screening_arrest<=-1.5 & c_charge_degree_F>0.5, 0
+3, 0.006, 0, age<=20.5 & days_b_screening_arrest>-1.5 & race_African_American<=0.5, 1
+3, 0.002, 0, age<=20.5 & c_charge_degree_F>0.5 & race_African_American>0.5, 0
+3, 0.002, 0, age<=23.5 & days_b_screening_arrest<=-13.5 & sex_Female<=0.5, 1
+3, 0.002, 0, age<=23.5 & days_b_screening_arrest<=-13.5 & sex_Female>0.5, 0
+1, 0.03, 0.222222222222222, days_b_screening_arrest<=-16.5, 0.333333333333333
+2, 0.002, 0, race_Native_American>0.5 & sex_Male<=0.5, 1
+3, 0.012, 0.138888888888889, age>37.5 & priors_count<=3.5 & race_Other>0.5, 0.166666666666667
+2, 0.01, 0, priors_count>2.5 & race_Other>0.5, 1
+1, 0.229, 0.239642885112382, age>41.5, 0.398230088495575
+2, 0.01, 0, age<=40 & priors_count>15.5, 1
+3, 0.004, 0, age<=59.5 & age>58.5 & priors_count<=0.5, 0
+3, 0.004, 0, age<=59.5 & age>58.5 & priors_count<=9, 0
+3, 0.002, 0, age<=59.5 & age>58.5 & priors_count>9, 1
+3, 0.006, 0, age>59.5 & age<=62.5 & priors_count<=1.5, 0
+4, 0.004, 0, age<=51.5 & age>49.5 & days_b_screening_arrest>-0.5 & race_African_American<=0.5, 1
+3, 0.006, 0, age>49.5 & race_African_American>0.5 & sex_Male<=0.5, 0
+3, 0.004, 0, age<=51.5 & age>49.5 & priors_count>6, 1
+3, 0.002, 0, age>51.5 & age<=52.5 & priors_count>6.5, 1
+3, 0.002, 0, priors_count>9.5 & c_charge_degree_F<=0.5 & race_African_American<=0.5, 0
+3, 0.024, 0.222222222222222, age>51.5 & c_charge_degree_M<=0.5 & race_African_American>0.5, 0.333333333333333
+5, 0.01, 0.16, age>51.5 & age<=55.5 & days_b_screening_arrest<=-0.5 & c_charge_degree_M>0.5 & race_African_American>0.5, 0.8
+3, 0.002, 0, age>51.5 & age<=55.5 & days_b_screening_arrest>-0.5, 0
+3, 0.01, 0, age>55.5 & priors_count<=9.5 & race_African_American>0.5, 0
+3, 0.006, 0, age<=49.5 & age>48.5 & days_b_screening_arrest<=-0.0017913332, 1
+4, 0.002, 0, age>51.5 & age<=52.5 & priors_count<=0.5 & race_African_American<=0.5, 1
+4, 0.004, 0, age>51.5 & age<=52.5 & priors_count>0.5 & c_charge_degree_M>0.5, 0
+2, 0.065, 0.15234375, age>51.5 & priors_count<=2.5, 0.1875
+3, 0.002, 0, age>58.5 & age<=59.5 & race_African_American<=0.5, 0
+3, 0.002, 0, age>51.5 & age<=52.5 & days_b_screening_arrest<=-3, 0
+3, 0.004, 0, age>51.5 & age<=52.5 & race_African_American>0.5, 0
+3, 0.004, 0, age>51.5 & race_African_American>0.5 & sex_Male<=0.5, 0
+3, 0.008, 0, age<=38.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-4.5, 1
+2, 0.01, 0, age<=38.5 & days_b_screening_arrest<=-23, 0
+4, 0.006, 0, age<=38.5 & age>35.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-23, 1
+3, 0.002, 0, age<=38.5 & age>36.5 & days_b_screening_arrest<=-3.5, 1
+2, 0.081, 0.144375, age<=38.5 & priors_count>7.5, 0.825
+4, 0.004, 0, age>38.5 & age<=49 & priors_count<=9.5 & priors_count>8.5, 0
+3, 0.002, 0, age>49 & priors_count<=9.5 & priors_count>8.5, 1
+3, 0.002, 0, age>38.5 & priors_count>9.5 & priors_count<=10.5, 1
+3, 0.008, 0.1875, age>38.5 & priors_count>10.5 & priors_count<=11.5, 0.25
+2, 0.002, 0, age<=51.5 & priors_count>24.5, 1
+3, 0.006, 0, age<=51.5 & age>49.5 & priors_count>5.5, 1
+4, 0.004, 0, age>51.5 & age<=52.5 & priors_count>0.5 & c_charge_degree_F<=0.5, 0
+5, 0.01, 0.16, age>51.5 & age<=55.5 & days_b_screening_arrest<=-0.5 & c_charge_degree_F<=0.5 & race_African_American>0.5, 0.8
+3, 0.024, 0.222222222222222, age>51.5 & c_charge_degree_F>0.5 & race_African_American>0.5, 0.333333333333333
+3, 0.004, 0, days_b_screening_arrest<=-16.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5, 0
+2, 0.006, 0, days_b_screening_arrest<=-16.5 & days_b_screening_arrest>-20.5, 1
+3, 0.002, 0, age<=25.5 & days_b_screening_arrest<=-5.5 & race_Caucasian>0.5, 0
+3, 0.002, 0, age>25.5 & age<=27.5 & days_b_screening_arrest<=-5.5, 0
+4, 0.004, 0, age<=26.5 & age>21.5 & days_b_screening_arrest<=-5.5 & race_Hispanic<=0.5, 0
+3, 0.006, 0, age>26.5 & age<=29.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.01, 0.16, age<=44.5 & days_b_screening_arrest>-5.5 & days_b_screening_arrest<=-3.5, 0.8
+3, 0.006, 0, age>44.5 & days_b_screening_arrest>-5.5 & days_b_screening_arrest<=-3.5, 0
+2, 0.598, 0.23020970985349, priors_count<=2.5 & days_b_screening_arrest>-3.5, 0.359322033898305
+3, 0.004, 0, age<=21.5 & priors_count>2.5 & days_b_screening_arrest>-5.5, 1
+2, 0.002, 0, age<=21.5 & priors_count>3.5, 1
+3, 0.006, 0, age>21.5 & age<=22.5 & priors_count>2.5, 1
+2, 0.022, 0.148760330578512, age<=32.5 & priors_count>11.5, 0.818181818181818
+3, 0.03, 0.16, priors_count<=18.5 & priors_count>11.5 & race_African_American>0.5, 0.8
+4, 0.004, 0, age<=21.5 & priors_count<=1.5 & priors_count>0.5 & race_African_American<=0.5, 1
+2, 0.043, 0.18140589569161, age<=21.5 & race_African_American>0.5, 0.761904761904762
+3, 0.012, 0, age<=21.5 & priors_count>1.5 & days_b_screening_arrest>-5.5, 1
+2, 0.095, 0.217292892711634, priors_count<=6.5 & race_Hispanic>0.5, 0.319148936170213
+4, 0.002, 0, age<=21.5 & days_b_screening_arrest>-0.5 & c_charge_degree_F<=0.5 & race_Hispanic<=0.5, 1
+4, 0.002, 0, age<=22.5 & age>21.5 & days_b_screening_arrest>-0.5 & c_charge_degree_F<=0.5, 0
+1, 0.377, 0.223985431841831, c_charge_degree_F<=0.5, 0.338709677419355
+3, 0.002, 0, days_b_screening_arrest>-0.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 0
+1, 0.481, 0.24323025156225, priors_count>1.5, 0.582278481012658
+4, 0.081, 0.21, age>21.5 & age<=31.5 & priors_count<=3.5 & days_b_screening_arrest>-0.5, 0.3
+3, 0.002, 0, priors_count>3.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 1
+1, 0.994, 0.247396917950854, priors_count<=24.5, 0.448979591836735
+2, 0.004, 0, age<=45 & priors_count>21.5, 1
+2, 0.004, 0, age<=59 & priors_count>24.5, 1
+2, 0.002, 0, age>59 & priors_count>24.5, 0
+3, 0.008, 0, age<=20.5 & days_b_screening_arrest>-2.5 & race_African_American<=0.5, 1
+3, 0.002, 0, age<=21.5 & priors_count<=1.5 & days_b_screening_arrest<=-3.5, 1
+3, 0.002, 0, age<=21.5 & priors_count>1.5 & days_b_screening_arrest>-0.5, 1
+3, 0.004, 0, age<=35.5 & days_b_screening_arrest<=-5.5 & days_b_screening_arrest>-8.5, 0
+3, 0.004, 0, age>35.5 & days_b_screening_arrest<=-5.5 & days_b_screening_arrest>-8.5, 1
+3, 0.008, 0, age>39.5 & priors_count>3.5 & days_b_screening_arrest<=-5.5, 0
+4, 0.008, 0, age<=45.5 & days_b_screening_arrest>-5.5 & days_b_screening_arrest<=-3.5 & race_African_American>0.5, 1
+3, 0.014, 0, age>45.5 & age<=60 & days_b_screening_arrest<=-3.5, 0
+2, 0.142, 0.204081632653061, age<=46.5 & priors_count>5.5, 0.714285714285714
+2, 0.193, 0.198781163434903, age>30.5 & c_charge_degree_F<=0.5, 0.273684210526316
+2, 0.077, 0.193905817174515, age>46.5 & priors_count<=1.5, 0.263157894736842
+2, 0.004, 0, age>57.5 & days_b_screening_arrest<=-13.5, 0
+2, 0.006, 0, priors_count<=18.5 & priors_count>15.5, 1
+2, 0.004, 0, age<=44 & priors_count>21.5, 1
+1, 0.191, 0.238682661837936, age>44, 0.393617021276596
+2, 0.008, 0, age>57.5 & days_b_screening_arrest<=-7.5, 0
+3, 0.002, 0, age<=23.5 & days_b_screening_arrest>-26.5 & days_b_screening_arrest<=-13.5, 1
+2, 0.016, 0.109375, days_b_screening_arrest>-28.5 & days_b_screening_arrest<=-21.5, 0.125
+2, 0.004, 0, days_b_screening_arrest>-13.5 & days_b_screening_arrest<=-12.5, 0
+2, 0.006, 0, days_b_screening_arrest>-13.5 & days_b_screening_arrest<=-11.5, 0
+1, 0.911, 0.24880828964142, age<=53.5, 0.465478841870824
+3, 0.004, 0, age>53.5 & age<=55.5 & sex_Male<=0.5, 0
+1, 0.089, 0.208161157024793, age>53.5, 0.295454545454545
+3, 0.012, 0.138888888888889, age>53.5 & age<=55.5 & priors_count>2.5, 0.833333333333333
+2, 0.006, 0, age>53.5 & days_b_screening_arrest<=-18.5, 0
+3, 0.012, 0, age>55.5 & priors_count>2.5 & priors_count<=6.5, 0
+2, 0.004, 0, age<=20.5 & race_Other>0.5, 1
+2, 0.043, 0.122448979591837, age>53.5 & priors_count<=1.5, 0.142857142857143
+3, 0.002, 0, age>46.5 & priors_count>1.5 & race_Other>0.5, 1
+3, 0.004, 0, age<=29.5 & priors_count>2.5 & race_Hispanic>0.5, 1
+4, 0.008, 0, age>29.5 & priors_count>2.5 & days_b_screening_arrest<=-0.5 & race_Hispanic>0.5, 0
+3, 0.093, 0.143667296786389, age<=27.5 & priors_count>1.5 & c_charge_degree_F>0.5, 0.826086956521739
+3, 0.047, 0.143667296786389, priors_count<=3.5 & days_b_screening_arrest<=-2.5 & race_African_American<=0.5, 0.173913043478261
+4, 0.002, 0, age<=46.5 & age>45.5 & priors_count<=1 & race_African_American>0.5, 1
+4, 0.002, 0, age<=46.5 & age>45.5 & priors_count>1 & days_b_screening_arrest>-0.5, 1
+1, 0.781, 0.24894585933547, age<=42.5, 0.467532467532468
+3, 0.002, 0, age<=42.5 & age>39.5 & days_b_screening_arrest<=-2.5, 1
+5, 0.008, 0, age<=42.5 & age>39.5 & days_b_screening_arrest<=-0.5 & days_b_screening_arrest>-2.5 & race_Caucasian<=0.5, 0
+3, 0.006, 0, age>42.5 & age<=43.5 & race_African_American<=0.5, 0
+4, 0.002, 0, age>42.5 & age<=43.5 & priors_count<=8.5 & race_African_American>0.5, 1
+1, 0.219, 0.237654320987654, age>42.5, 0.388888888888889
+4, 0.006, 0, age<=22.5 & age>21.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5, 0
+3, 0.01, 0.16, age<=38.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-2.5, 0.2
+4, 0.002, 0, age<=46.5 & age>38.5 & priors_count<=1.5 & days_b_screening_arrest<=-5.5, 0
+5, 0.002, 0, age<=46.5 & age>38.5 & priors_count<=1.5 & days_b_screening_arrest>-5.5 & days_b_screening_arrest<=-2.5, 1
+3, 0.008, 0, age>38.5 & age<=40.5 & race_Hispanic>0.5, 0
+2, 0.008, 0.1875, age<=47.5 & age>46.5, 0.25
+2, 0.014, 0.204081632653061, age<=49.5 & age>47.5, 0.714285714285714
+3, 0.002, 0, age>49.5 & age<=50.5 & c_charge_degree_F<=0.5, 1
+4, 0.004, 0, age>49.5 & age<=50.5 & priors_count<=11.5 & race_African_American>0.5, 0
+3, 0.002, 0, age>49.5 & age<=50.5 & priors_count>11.5, 1
+4, 0.004, 0, age>49.5 & age<=55.5 & days_b_screening_arrest>-0.5 & race_African_American<=0.5, 1
+3, 0.006, 0, age>55.5 & days_b_screening_arrest>-0.5 & race_African_American<=0.5, 0
+2, 0.002, 0, age<=49.5 & priors_count>24.5, 1
+4, 0.004, 0, age>49.5 & age<=50.5 & priors_count<=3.5 & race_African_American>0.5, 0
+3, 0.004, 0, age>49.5 & age<=50.5 & priors_count>3.5, 1
+3, 0.004, 0, age<=57.5 & days_b_screening_arrest<=-4.5 & days_b_screening_arrest>-7.5, 0
+3, 0.004, 0, priors_count>8.5 & priors_count<=11.5 & days_b_screening_arrest<=-4.5, 1
+3, 0.006, 0, age>33.5 & priors_count>8.5 & days_b_screening_arrest<=-4.5, 0
+3, 0.01, 0.16, days_b_screening_arrest>-4.5 & days_b_screening_arrest<=-3.5 & race_Caucasian<=0.5, 0.8
+3, 0.004, 0, days_b_screening_arrest>-4.5 & days_b_screening_arrest<=-3.5 & race_Caucasian>0.5, 0
+3, 0.02, 0, age>57.5 & priors_count<=0.5 & days_b_screening_arrest>-5.5, 0
+3, 0.01, 0, age>57.5 & priors_count>0.5 & days_b_screening_arrest<=-2.5, 0
+4, 0.002, 0, age>57.5 & priors_count<=5.5 & priors_count>0.5 & days_b_screening_arrest>-2.5, 1
+3, 0.002, 0, age>54.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M<=0.5, 1
+2, 0.097, 0.176649305555556, age<=46.5 & priors_count>7.5, 0.770833333333333
+3, 0.026, 0.130177514792899, age>38.5 & age<=41.5 & priors_count<=1.5, 0.153846153846154
+2, 0.012, 0, age>46.5 & days_b_screening_arrest<=-12.5, 0
+4, 0.002, 0, age>46.5 & priors_count<=2.5 & priors_count>1.5 & sex_Female>0.5, 1
+2, 0.077, 0.193905817174515, age>49.5 & priors_count<=2.5, 0.263157894736842
+2, 0.024, 0.138888888888889, age>49.5 & sex_Female>0.5, 0.166666666666667
+3, 0.002, 0, age>49.5 & priors_count>4.5 & sex_Female>0.5, 0
+2, 0.004, 0, days_b_screening_arrest<=-13.5 & days_b_screening_arrest>-14.5, 0
+3, 0.006, 0, age>57.5 & age<=59.5 & priors_count<=4.5, 0
+3, 0.014, 0, age>57.5 & age<=64.5 & priors_count<=1.5, 0
+2, 0.095, 0.179266636487098, age<=32.5 & priors_count>5.5, 0.765957446808511
+3, 0.037, 0.0987654320987654, age>32.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 0.111111111111111
+2, 0.03, 0.115555555555556, age<=76.5 & age>60.5, 0.133333333333333
+3, 0.002, 0, age<=76.5 & age>65.5 & priors_count>0.5, 0
+1, 0.972, 0.246703945676666, priors_count<=14.5, 0.44258872651357
+2, 0.024, 0.138888888888889, age<=57.5 & priors_count>14.5, 0.833333333333333
+3, 0.002, 0, age<=57.5 & age>53.5 & priors_count>14.5, 1
+3, 0.002, 0, age<=20.5 & c_charge_degree_M<=0.5 & race_African_American>0.5, 0
+2, 0.006, 0, age<=59.5 & priors_count>21.5, 1
+2, 0.002, 0, age>59.5 & priors_count>21.5, 0
+2, 0.012, 0.138888888888889, age<=76.5 & age>65.5, 0.166666666666667
+2, 0.002, 0, priors_count<=1.5 & days_b_screening_arrest<=-27.5, 0
+3, 0.006, 0, age>21.5 & age<=22.5 & priors_count>1.5, 1
+2, 0.018, 0.0987654320987654, age<=65.5 & age>60.5, 0.111111111111111
+2, 0.004, 0, age<=32.5 & days_b_screening_arrest<=-22.5, 0
+3, 0.006, 0, age<=32.5 & days_b_screening_arrest>-22.5 & days_b_screening_arrest<=-18.5, 1
+2, 0.071, 0.215510204081633, age>32.5 & sex_Male<=0.5, 0.314285714285714
+2, 0.213, 0.233469387755102, age>39.5 & priors_count<=9.5, 0.371428571428571
+3, 0.008, 0, age<=36.5 & age>34.5 & priors_count<=0.5, 0
+3, 0.004, 0, age<=36.5 & age>34.5 & days_b_screening_arrest<=-21.5, 0
+3, 0.002, 0, age<=36.5 & age>35.5 & days_b_screening_arrest>-0.5, 1
+4, 0.006, 0, age<=36.5 & age>35.5 & priors_count>1.5 & priors_count<=4.5, 1
+2, 0.053, 0.196745562130178, age>36.5 & sex_Female>0.5, 0.269230769230769
+3, 0.004, 0, age>36.5 & priors_count>7.5 & sex_Female>0.5, 0
+4, 0.008, 0, age>36.5 & age<=38.5 & priors_count<=0.5 & race_Caucasian>0.5, 0
+3, 0.004, 0, age<=49 & priors_count>8.5 & days_b_screening_arrest<=-5.5, 1
+2, 0.006, 0, priors_count>12.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.006, 0, priors_count<=2.5 & days_b_screening_arrest>-5.5 & days_b_screening_arrest<=-3.5, 1
+3, 0.016, 0, age>42.5 & priors_count>2.5 & days_b_screening_arrest<=-3.5, 0
+3, 0.004, 0, age<=46.5 & age>39.5 & days_b_screening_arrest<=-4.5, 0
+2, 0.03, 0.16, age<=32.5 & priors_count>10.5, 0.8
+3, 0.03, 0.115555555555556, age<=48.5 & priors_count>12.5 & sex_Female<=0.5, 0.866666666666667
+2, 0.004, 0, age<=28.5 & days_b_screening_arrest<=-21.5, 0
+4, 0.004, 0, age<=27.5 & priors_count<=3.5 & days_b_screening_arrest<=-10.5 & days_b_screening_arrest>-21.5, 1
+3, 0.006, 0, age<=28.5 & days_b_screening_arrest>-10.5 & days_b_screening_arrest<=-5.5, 0
+4, 0.014, 0, age<=28.5 & age>27.5 & priors_count<=3.5 & sex_Male<=0.5, 0
+2, 0.061, 0.232222222222222, age<=28.5 & age>27.5, 0.366666666666667
+4, 0.012, 0, age<=28.5 & age>27.5 & priors_count<=3.5 & priors_count>0.5, 0
+3, 0.004, 0, age<=28.5 & priors_count>5.5 & sex_Female>0.5, 1
+4, 0.002, 0, age>41.5 & age<=44.5 & priors_count>3.5 & race_African_American<=0.5, 0
+3, 0.14, 0.199537912203319, age<=38.5 & priors_count>3.5 & race_African_American>0.5, 0.72463768115942
+3, 0.002, 0, age<=27.5 & age>25.5 & days_b_screening_arrest<=-3.5, 0
+3, 0.008, 0, age<=39.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-4.5, 1
+3, 0.002, 0, age>39.5 & priors_count>9.5 & priors_count<=10.5, 1
+4, 0.006, 0, age>39.5 & age<=60 & priors_count<=15.5 & priors_count>13.5, 1
+2, 0.004, 0, age>60 & priors_count>13.5, 0
+2, 0.006, 0, priors_count>15.5 & priors_count<=18.5, 1
+3, 0.002, 0, age>39.5 & age<=44 & priors_count>15.5, 0
+4, 0.006, 0, age<=33.5 & priors_count<=4.5 & priors_count>3.5 & c_charge_degree_F<=0.5, 1
+4, 0.004, 0, age>33.5 & age<=35.5 & priors_count<=4.5 & priors_count>3.5, 0
+2, 0.006, 0, age>47.5 & days_b_screening_arrest<=-17.5, 0
+3, 0.008, 0, priors_count<=4.5 & days_b_screening_arrest>-17.5 & days_b_screening_arrest<=-13.5, 0
+2, 0.176, 0.209538908706566, priors_count>4.5 & c_charge_degree_F>0.5, 0.701149425287356
+1, 0.191, 0.238682661837936, age>44.5, 0.393617021276596
+2, 0.01, 0, age<=38.5 & days_b_screening_arrest<=-22.5, 0
+4, 0.002, 0, age<=38.5 & days_b_screening_arrest<=-20.5 & days_b_screening_arrest>-22.5 & c_charge_degree_M<=0.5, 1
+2, 0.006, 0, days_b_screening_arrest>-20.5 & days_b_screening_arrest<=-16.5, 1
+3, 0.004, 0, age<=35.5 & age>33.5 & race_Hispanic>0.5, 0
+2, 0.028, 0.204081632653061, priors_count>0.5 & race_Other>0.5, 0.714285714285714
+2, 0.053, 0.196745562130178, age>36.5 & sex_Male<=0.5, 0.269230769230769
+3, 0.004, 0, age>36.5 & priors_count>7.5 & sex_Male<=0.5, 0
+4, 0.006, 0, age>36.5 & age<=45.5 & priors_count>11.5 & days_b_screening_arrest<=-0.5, 1
+3, 0.002, 0, age>36.5 & age<=37.5 & days_b_screening_arrest>-0.5, 0
+3, 0.008, 0, age>45.5 & age<=47.5 & race_Caucasian>0.5, 0
+4, 0.014, 0, age>36.5 & priors_count<=1.5 & days_b_screening_arrest>-0.5 & race_Caucasian>0.5, 0
+4, 0.002, 0, age>45.5 & priors_count>1.5 & days_b_screening_arrest>-0.5 & race_Caucasian>0.5, 1
+4, 0.004, 0, age>48.5 & priors_count<=0.5 & c_charge_degree_M<=0.5 & race_Caucasian<=0.5, 0
+2, 0.249, 0.200013219644392, age>24.5 & priors_count<=0.5, 0.276422764227642
+5, 0.004, 0, age<=25.5 & age>24.5 & priors_count<=4.5 & priors_count>0.5 & c_charge_degree_M>0.5, 1
+2, 0.515, 0.21999193998388, age>26.5 & priors_count<=4.5, 0.326771653543307
+3, 0.006, 0, age<=39.5 & age>37.5 & priors_count>4.5, 1
+4, 0.002, 0, age>45.5 & age<=46.5 & priors_count>4.5 & c_charge_degree_M<=0.5, 1
+3, 0.002, 0, age>46.5 & priors_count>4.5 & priors_count<=5.5, 0
+3, 0.29, 0.201476844833488, age>23.5 & priors_count<=5.5 & c_charge_degree_M>0.5, 0.27972027972028
+4, 0.004, 0, age>32 & priors_count>4.5 & priors_count<=5.5 & c_charge_degree_M>0.5, 1
+1, 0.947, 0.248751656433841, age<=56.5, 0.464668094218415
+3, 0.026, 0.130177514792899, age<=33.5 & priors_count>5.5 & c_charge_degree_M>0.5, 0.846153846153846
+1, 0.917, 0.249040645312867, age<=54.5, 0.469026548672566
+3, 0.01, 0, priors_count<=4.5 & priors_count>3.5 & sex_Female>0.5, 0
+3, 0.014, 0, age>54.5 & priors_count<=4.5 & c_charge_degree_M<=0.5, 0
+3, 0.051, 0.0384, priors_count<=0.5 & c_charge_degree_M>0.5 & sex_Female>0.5, 0.04
+3, 0.047, 0.0793950850661626, age>26.5 & priors_count<=0.5 & sex_Female>0.5, 0.0869565217391304
+2, 0.154, 0.158414127423823, c_charge_degree_M>0.5 & race_Caucasian>0.5, 0.197368421052632
+4, 0.002, 0, age<=44.5 & age>39.5 & priors_count>4.5 & priors_count<=5.5, 1
+4, 0.002, 0, age>51.5 & priors_count>4.5 & c_charge_degree_M>0.5 & race_Caucasian<=0.5, 1
+4, 0.004, 0, age>51.5 & priors_count>4.5 & c_charge_degree_M>0.5 & race_Caucasian>0.5, 0
+2, 0.002, 0, priors_count>8.5 & days_b_screening_arrest<=-16.5, 1
+3, 0.006, 0, days_b_screening_arrest<=-16.5 & race_African_American>0.5 & sex_Male<=0.5, 0
+3, 0.002, 0, days_b_screening_arrest<=-16.5 & race_African_American>0.5 & sex_Male>0.5, 1
+3, 0.002, 0, days_b_screening_arrest>-16.5 & days_b_screening_arrest<=-14.5 & c_charge_degree_F<=0.5, 0
+3, 0.002, 0, age<=28 & days_b_screening_arrest>-15.5 & days_b_screening_arrest<=-14.5, 1
+2, 0.008, 0, days_b_screening_arrest>-14.5 & days_b_screening_arrest<=-12.5, 0
+1, 0.97, 0.247881689746328, days_b_screening_arrest>-16.5, 0.45397489539749
+3, 0.002, 0, days_b_screening_arrest<=-16.5 & race_African_American>0.5 & sex_Female<=0.5, 1
+3, 0.006, 0, days_b_screening_arrest<=-16.5 & race_African_American>0.5 & sex_Female>0.5, 0
+1, 0.124, 0.220370868046224, days_b_screening_arrest<=-1.5, 0.327868852459016
+4, 0.004, 0, age<=36.5 & age>35.5 & priors_count>1.5 & priors_count<=3.5, 1
+4, 0.006, 0, age<=36.5 & age>35.5 & priors_count>1.5 & c_charge_degree_F<=0.5, 1
+5, 0.004, 0, age<=36.5 & age>35.5 & priors_count>1.5 & c_charge_degree_F>0.5 & race_African_American<=0.5, 0
+4, 0.008, 0, age<=36.5 & age>35.5 & priors_count>1.5 & race_African_American>0.5, 1
+3, 0.018, 0, age>36.5 & age<=38.5 & c_charge_degree_F<=0.5, 0
+3, 0.006, 0, priors_count<=4.5 & days_b_screening_arrest<=-19.5 & c_charge_degree_F<=0.5, 0
+3, 0.004, 0, age<=34.5 & days_b_screening_arrest<=-19.5 & c_charge_degree_F<=0.5, 0
+4, 0.014, 0.204081632653061, age>43.5 & age<=46.5 & priors_count<=4.5 & priors_count>0.5, 0.285714285714286
+4, 0.004, 0, priors_count>4.5 & priors_count<=5.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M<=0.5, 1
+3, 0.051, 0.0384, priors_count<=0.5 & c_charge_degree_F<=0.5 & sex_Female>0.5, 0.04
+1, 0.931, 0.249002045746888, age<=55, 0.468409586056645
+4, 0.002, 0, age>55 & priors_count>0.5 & c_charge_degree_F<=0.5 & sex_Female>0.5, 1
+3, 0.008, 0, priors_count<=0.5 & days_b_screening_arrest<=-2.5 & sex_Female>0.5, 0
+4, 0.014, 0, age<=59.5 & age>55.5 & priors_count<=4.5 & sex_Female<=0.5, 0
+4, 0.002, 0, age<=57.5 & age>55.5 & priors_count<=2.5 & sex_Female>0.5, 1
+3, 0.006, 0, age>55.5 & priors_count>2.5 & sex_Female>0.5, 0
+3, 0.002, 0, age<=59.5 & age>57.5 & priors_count>9, 1
+3, 0.004, 0, age<=59.5 & age>57.5 & race_Caucasian>0.5, 0
+3, 0.004, 0, age<=59.5 & age>57.5 & priors_count<=0.5, 0
+1, 0.771, 0.248829639889197, age<=41.5, 0.465789473684211
+4, 0.002, 0, age<=27.5 & priors_count<=4.5 & priors_count>3.5 & days_b_screening_arrest>-0.5, 1
+2, 0.004, 0, priors_count>4.5 & days_b_screening_arrest<=-21.5, 0
+4, 0.002, 0, age<=47 & priors_count>4.5 & days_b_screening_arrest>-11.5 & days_b_screening_arrest<=-3.5, 1
+3, 0.008, 0, age>47 & priors_count>4.5 & days_b_screening_arrest<=-3.5, 0
+3, 0.002, 0, age<=23.5 & priors_count<=0.5 & race_Other>0.5, 0
+4, 0.004, 0, age<=23.5 & priors_count<=1.5 & priors_count>0.5 & race_Other>0.5, 1
+3, 0.002, 0, age>48.5 & age<=54 & race_Other>0.5, 1
+4, 0.002, 0, age<=23.5 & age>22.5 & days_b_screening_arrest<=-1.5 & c_charge_degree_M<=0.5, 1
+4, 0.004, 0, age<=23.5 & priors_count>1.5 & days_b_screening_arrest>-1.5 & race_Caucasian>0.5, 1
+3, 0.02, 0.09, age>23.5 & age<=25.5 & race_Caucasian>0.5, 0.1
+3, 0.004, 0, age<=59.5 & days_b_screening_arrest<=-4.5 & days_b_screening_arrest>-7.5, 0
+2, 0.006, 0, age>57.5 & sex_Male<=0.5, 0
+4, 0.002, 0, age<=59.5 & age>57.5 & race_Caucasian<=0.5 & sex_Male>0.5, 1
+4, 0.012, 0, age<=23.5 & age>22.5 & priors_count<=1.5 & c_charge_degree_F<=0.5, 0
+4, 0.004, 0, age<=23.5 & priors_count>1.5 & days_b_screening_arrest>-1.5 & c_charge_degree_F<=0.5, 0
+4, 0.01, 0.16, age<=23.5 & age>22.5 & c_charge_degree_F>0.5 & sex_Female>0.5, 0.8
+3, 0.006, 0, age>39.5 & priors_count<=4.5 & race_Other>0.5, 0
+4, 0.006, 0, priors_count<=4.5 & days_b_screening_arrest<=-12.5 & days_b_screening_arrest>-21.5 & race_Hispanic<=0.5, 0
+3, 0.002, 0, age<=23.5 & days_b_screening_arrest<=-12.5 & race_Hispanic>0.5, 1
+4, 0.008, 0, age>23.5 & priors_count<=4.5 & days_b_screening_arrest<=-12.5 & race_Hispanic>0.5, 0
+4, 0.004, 0, priors_count<=4.5 & priors_count>1.5 & days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-5.5, 0
+4, 0.004, 0, age<=26.5 & priors_count>4.5 & priors_count<=7.5 & c_charge_degree_F<=0.5, 0
+4, 0.002, 0, age<=26.5 & age>25.5 & priors_count>4.5 & c_charge_degree_F<=0.5, 0
+4, 0.002, 0, age>51.5 & priors_count>4.5 & c_charge_degree_F<=0.5 & race_Caucasian<=0.5, 1
+4, 0.004, 0, age>51.5 & priors_count>4.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5, 0
+2, 0.004, 0, age<=24.5 & days_b_screening_arrest<=-21.5, 0
+5, 0.002, 0, age<=46.5 & age>24.5 & priors_count<=2.5 & days_b_screening_arrest<=-21.5 & c_charge_degree_F>0.5, 1
+3, 0.002, 0, age<=35.5 & days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-19.5, 0
+4, 0.002, 0, age<=37 & age>35.5 & days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-19.5, 1
+3, 0.002, 0, age>37 & days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-19.5, 0
+2, 0.004, 0, days_b_screening_arrest>-19.5 & days_b_screening_arrest<=-18.5, 1
+3, 0.016, 0, age>46.5 & priors_count>1.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.091, 0.16, age<=42.5 & priors_count>7.5, 0.8
+3, 0.01, 0, age<=42.5 & age>39.5 & c_charge_degree_M>0.5, 0
+3, 0.004, 0, age<=60 & priors_count<=15.5 & priors_count>14.5, 1
+2, 0.002, 0, priors_count>14.5 & race_Caucasian>0.5, 0
+3, 0.002, 0, age>42.5 & age<=50.5 & priors_count>15.5, 1
+4, 0.004, 0, age<=24.5 & priors_count>1.5 & c_charge_degree_M>0.5 & race_African_American>0.5, 1
+3, 0.01, 0, age>24.5 & age<=25.5 & race_Caucasian>0.5, 0
+4, 0.006, 0, age>24.5 & age<=25.5 & c_charge_degree_M>0.5 & race_African_American<=0.5, 0
+2, 0.379, 0.205381909691441, age>24.5 & priors_count<=1.5, 0.288770053475936
+3, 0.016, 0, age<=40.5 & age>38.5 & priors_count<=0.5, 0
+3, 0.002, 0, age<=48.5 & age>40.5 & race_Other>0.5, 0
+3, 0.002, 0, age<=22.5 & days_b_screening_arrest<=-5.5 & sex_Female<=0.5, 0
+4, 0.002, 0, age<=22.5 & days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-5.5 & sex_Female>0.5, 1
+2, 0.037, 0.0987654320987654, age>56.5 & priors_count<=4.5, 0.111111111111111
+2, 0.006, 0, age>56.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age<=24.5 & age>23.5 & priors_count<=4.5 & days_b_screening_arrest<=-11.5, 0
+3, 0.008, 0, age>24.5 & days_b_screening_arrest<=-11.5 & race_Hispanic>0.5, 0
+4, 0.004, 0, priors_count<=4.5 & priors_count>1.5 & days_b_screening_arrest>-11.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.012, 0, age>56.5 & priors_count<=4.5 & race_Caucasian<=0.5, 0
+3, 0.037, 0.222222222222222, age<=32 & priors_count>4.5 & c_charge_degree_F<=0.5, 0.666666666666667
+5, 0.002, 0, age<=32 & age>29 & priors_count>4.5 & priors_count<=5.5 & c_charge_degree_F<=0.5, 0
+4, 0.004, 0, age>32 & priors_count>4.5 & priors_count<=5.5 & c_charge_degree_F<=0.5, 1
+3, 0.144, 0.19599285855981, age<=47.5 & priors_count>4.5 & c_charge_degree_F>0.5, 0.732394366197183
+3, 0.002, 0, age<=47.5 & age>46.5 & priors_count>4.5, 0
+2, 0.085, 0.18140589569161, age<=29.5 & priors_count>4.5, 0.761904761904762
+3, 0.008, 0, age<=42.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-4.5, 1
+4, 0.002, 0, age<=42.5 & age>39.5 & days_b_screening_arrest<=-0.5 & race_African_American>0.5, 0
+4, 0.004, 0, age<=42.5 & age>39.5 & days_b_screening_arrest>-0.5 & race_Caucasian>0.5, 1
+3, 0.002, 0, age<=42.5 & age>39.5 & sex_Female>0.5, 0
+2, 0.002, 0, priors_count>14.5 & sex_Female>0.5, 0
+3, 0.002, 0, age>42.5 & priors_count<=10.5 & priors_count>9.5, 1
+3, 0.002, 0, age>32.5 & age<=33.5 & priors_count>10.5, 1
+2, 0.002, 0, days_b_screening_arrest<=-21.5 & days_b_screening_arrest>-22.5, 1
+3, 0.002, 0, days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-19.5 & race_African_American<=0.5, 0
+3, 0.008, 0, age>46.5 & days_b_screening_arrest<=-2.5 & race_African_American>0.5, 0
+2, 0.03, 0.115555555555556, age>56.5 & priors_count<=1.5, 0.133333333333333
+4, 0.006, 0, age>23.5 & age<=24.5 & priors_count<=10.5 & days_b_screening_arrest<=-1.5, 0
+2, 0.028, 0.122448979591837, age>58.5 & priors_count<=7.5, 0.142857142857143
+3, 0.002, 0, age>58.5 & priors_count<=10.5 & priors_count>7.5, 1
+4, 0.004, 0, age<=42.5 & age>32.5 & priors_count<=11.5 & priors_count>10.5, 1
+3, 0.006, 0, age>42.5 & priors_count<=11.5 & priors_count>10.5, 0
+2, 0.008, 0, priors_count>11.5 & c_charge_degree_M>0.5, 1
+2, 0.073, 0.222222222222222, age>53.5 & sex_Female<=0.5, 0.333333333333333
+3, 0.004, 0, age>53.5 & age<=55.5 & sex_Female>0.5, 0
+2, 0.02, 0.09, age>53.5 & days_b_screening_arrest<=-1.5, 0.1
+3, 0.004, 0, age>20.5 & age<=23.5 & race_Other>0.5, 0
+3, 0.008, 0, age>23.5 & age<=27.5 & race_Other>0.5, 1
+2, 0.014, 0, age<=24.5 & priors_count>5.5, 1
+4, 0.022, 0.198347107438017, age>24.5 & age<=26.5 & c_charge_degree_F<=0.5 & race_Caucasian<=0.5, 0.727272727272727
+4, 0.01, 0, age>24.5 & age<=26.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5, 0
+2, 0.239, 0.233840850330365, age>26.5 & age<=31.5, 0.372881355932203
+3, 0.01, 0, age<=22.5 & priors_count>2.5 & race_Caucasian<=0.5, 1
+3, 0.006, 0, age<=22.5 & age>21.5 & priors_count>2.5, 1
+2, 0.02, 0, age<=26.5 & priors_count>6.5, 1
+4, 0.016, 0, age<=28.5 & age>26.5 & race_Caucasian<=0.5 & sex_Female>0.5, 0
+4, 0.012, 0, age<=28.5 & age>26.5 & race_African_American>0.5 & sex_Female>0.5, 0
+4, 0.004, 0, age>28.5 & age<=29.5 & race_Caucasian<=0.5 & sex_Female>0.5, 1
+4, 0.004, 0, age>28.5 & days_b_screening_arrest<=-2.5 & race_Caucasian<=0.5 & sex_Female>0.5, 0
+2, 0.308, 0.218447022160665, age>23.5 & race_Caucasian>0.5, 0.322368421052632
+3, 0.065, 0.1318359375, age>26.5 & age<=28.5 & priors_count<=3.5, 0.15625
+3, 0.002, 0, age<=22.5 & priors_count>2.5 & days_b_screening_arrest<=-4.5, 0
+4, 0.006, 0, age>39.5 & age<=44.5 & priors_count>3.5 & c_charge_degree_F<=0.5, 0
+3, 0.162, 0.21, age<=44.5 & priors_count>3.5 & c_charge_degree_F>0.5, 0.7
+4, 0.006, 0, age<=31.5 & age>28.5 & priors_count>7.5 & priors_count<=9.5, 1
+2, 0.026, 0.21301775147929, age>31.5 & age<=32.5, 0.692307692307692
+3, 0.002, 0, age>48.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 0
+3, 0.01, 0.16, age<=25.5 & c_charge_degree_F>0.5 & race_Other>0.5, 0.8
+3, 0.002, 0, age<=34.5 & age>33.5 & days_b_screening_arrest<=-3.5, 0
+4, 0.004, 0, age<=36.5 & age>34.5 & days_b_screening_arrest<=-3.5 & c_charge_degree_F<=0.5, 1
+2, 0.045, 0.198347107438017, days_b_screening_arrest<=-5.5 & c_charge_degree_F>0.5, 0.272727272727273
+3, 0.008, 0, age<=36.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-5.5, 1
+3, 0.028, 0.168367346938775, age>23.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-1.5, 0.214285714285714
+4, 0.002, 0, age<=36.5 & age>35.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.004, 0, age>36.5 & age<=37.5 & sex_Female>0.5, 0
+5, 0.006, 0, age>36.5 & age<=45.5 & c_charge_degree_F>0.5 & race_Caucasian>0.5 & sex_Male<=0.5, 1
+3, 0.004, 0, age>45.5 & age<=49.5 & sex_Male<=0.5, 0
+3, 0.016, 0, age>45.5 & race_Caucasian>0.5 & sex_Male<=0.5, 0
+4, 0.012, 0, age>36.5 & age<=39.5 & priors_count<=0.5 & race_Caucasian>0.5, 0
+3, 0.002, 0, age<=22.5 & priors_count>1.5 & c_charge_degree_F<=0.5, 0
+2, 0.213, 0.16562358276644, c_charge_degree_F<=0.5 & race_African_American<=0.5, 0.20952380952381
+3, 0.002, 0, age<=24.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 0
+4, 0.004, 0, age<=24.5 & priors_count>1.5 & c_charge_degree_F<=0.5 & race_African_American>0.5, 1
+4, 0.002, 0, age>25.5 & age<=26.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M>0.5, 0
+4, 0.006, 0, age>24.5 & days_b_screening_arrest<=-2.5 & race_African_American>0.5 & sex_Male<=0.5, 0
+2, 0.03, 0.195555555555556, priors_count<=0.5 & race_Other>0.5, 0.266666666666667
+3, 0.026, 0.236686390532544, age>31.5 & days_b_screening_arrest<=-0.5 & race_Other>0.5, 0.384615384615385
+1, 0.759, 0.248598758900741, age<=40.5, 0.462566844919786
+3, 0.004, 0, age<=40.5 & days_b_screening_arrest>-0.5 & race_Other>0.5, 1
+3, 0.002, 0, age>40.5 & age<=48.5 & race_Other>0.5, 0
+3, 0.004, 0, age>40.5 & priors_count<=5 & race_Other>0.5, 0
+2, 0.004, 0, priors_count>5 & race_Other>0.5, 1
+2, 0.122, 0.21, age>51.5 & race_Other<=0.5, 0.3
+3, 0.012, 0.138888888888889, age>21.5 & age<=22.5 & race_African_American<=0.5, 0.166666666666667
+3, 0.002, 0, age<=20.5 & days_b_screening_arrest>-2.5 & race_Caucasian>0.5, 1
+2, 0.002, 0, priors_count<=0.5 & days_b_screening_arrest<=-6.5, 1
+3, 0.024, 0.138888888888889, age>23.5 & age<=24.5 & priors_count>0.5, 0.833333333333333
+2, 0.002, 0, age<=67.5 & age>65.5, 0
+2, 0.01, 0.16, age<=76.5 & age>67.5, 0.2
+2, 0.008, 0, days_b_screening_arrest<=-12.5 & days_b_screening_arrest>-14.5, 0
+4, 0.006, 0, priors_count<=5.5 & days_b_screening_arrest<=-8.5 & days_b_screening_arrest>-12.5 & sex_Female<=0.5, 0
+4, 0.002, 0, age<=36.5 & days_b_screening_arrest<=-8.5 & days_b_screening_arrest>-12.5 & sex_Female>0.5, 1
+4, 0.002, 0, age<=36.5 & priors_count>5.5 & days_b_screening_arrest<=-8.5 & days_b_screening_arrest>-12.5, 1
+3, 0.006, 0, priors_count>5.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.004, 0, priors_count>6.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.008, 0, age>36.5 & age<=37.5 & c_charge_degree_F<=0.5, 0
+3, 0.006, 0, age>36.5 & age<=37.5 & race_African_American>0.5, 1
+2, 0.166, 0.201814396192742, age>36.5 & priors_count<=1.5, 0.280487804878049
+3, 0.008, 0, age>37.5 & age<=40.5 & race_Hispanic>0.5, 0
+3, 0.008, 0, age>36.5 & age<=37.5 & c_charge_degree_M>0.5, 0
+4, 0.012, 0.138888888888889, age>37.5 & age<=39.5 & priors_count>1.5 & c_charge_degree_M<=0.5, 0.833333333333333
+4, 0.006, 0, age>36.5 & age<=39.5 & priors_count>1.5 & c_charge_degree_M>0.5, 0
+2, 0.006, 0, age<=24.5 & priors_count>8.5, 1
+4, 0.006, 0, age<=30.5 & age>25.5 & priors_count<=7.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.002, 0, age<=31.5 & age>30.5 & days_b_screening_arrest<=-8.5, 1
+3, 0.002, 0, age<=31.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-6.5, 0
+3, 0.026, 0.21301775147929, age<=31.5 & age>30.5 & priors_count<=7.5, 0.307692307692308
+3, 0.026, 0, age<=28.5 & priors_count>7.5 & days_b_screening_arrest<=-0.5, 1
+3, 0.008, 0, age>31.5 & age<=33.5 & sex_Male<=0.5, 1
+4, 0.002, 0, age>31.5 & age<=33.5 & priors_count<=7.5 & priors_count>5.5, 1
+4, 0.002, 0, age>31.5 & age<=33.5 & priors_count<=7.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age>31.5 & age<=39.5 & priors_count>7.5 & priors_count<=8.5, 1
+5, 0.004, 0, age<=36.5 & age>35.5 & priors_count>1.5 & c_charge_degree_M<=0.5 & race_African_American<=0.5, 0
+4, 0.006, 0, age<=36.5 & age>35.5 & priors_count>1.5 & c_charge_degree_M>0.5, 1
+4, 0.006, 0, age>36.5 & age<=39.5 & priors_count>1.5 & c_charge_degree_F<=0.5, 0
+4, 0.008, 0, age>37.5 & age<=38.5 & priors_count>1.5 & c_charge_degree_F>0.5, 1
+2, 0.02, 0.09, age>53.5 & days_b_screening_arrest<=-2.5, 0.1
+3, 0.004, 0, age>53.5 & days_b_screening_arrest<=-2.5 & race_Hispanic>0.5, 0
+3, 0.002, 0, age>53.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-3.5, 0
+4, 0.002, 0, age>22 & age<=24.5 & priors_count<=7 & race_Other>0.5, 0
+1, 0.901, 0.245125192760328, age>22, 0.43018018018018
+3, 0.002, 0, age<=24.5 & priors_count<=0.5 & race_Other>0.5, 0
+4, 0.006, 0, age<=24.5 & priors_count>0.5 & c_charge_degree_F>0.5 & race_Other>0.5, 1
+5, 0.004, 0, age>24.5 & age<=28.5 & c_charge_degree_F>0.5 & race_Other>0.5 & sex_Female<=0.5, 1
+3, 0.045, 0.117768595041322, age<=31.5 & priors_count<=13.5 & priors_count>7.5, 0.863636363636364
+3, 0.002, 0, age<=31.5 & priors_count>13.5 & days_b_screening_arrest>-0.5, 1
+2, 0.006, 0, age<=31.5 & priors_count>15.5, 1
+3, 0.012, 0, age>31.5 & days_b_screening_arrest<=-21.5 & race_Other<=0.5, 0
+2, 0.039, 0.132963988919668, age>31.5 & days_b_screening_arrest<=-8.5, 0.157894736842105
+3, 0.002, 0, age>31.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-7.5, 1
+3, 0.01, 0.16, age<=25.5 & c_charge_degree_M<=0.5 & race_Other>0.5, 0.8
+1, 0.911, 0.24880828964142, age<=53, 0.465478841870824
+3, 0.004, 0, age>37.5 & c_charge_degree_M>0.5 & race_Other>0.5, 0
+3, 0.002, 0, age>48.5 & priors_count<=7 & race_Other>0.5, 0
+2, 0.002, 0, days_b_screening_arrest<=-8.5 & days_b_screening_arrest>-9.5, 0
+3, 0.004, 0, age<=31.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-5.5, 0
+4, 0.002, 0, age>31.5 & age<=32.5 & priors_count<=4.5 & priors_count>3.5, 1
+2, 0.01, 0, age<=32.5 & priors_count>14.5, 1
+2, 0.032, 0.109375, age>31.5 & days_b_screening_arrest<=-10.5, 0.125
+3, 0.002, 0, age>31.5 & days_b_screening_arrest<=-10.5 & days_b_screening_arrest>-12.5, 0
+3, 0.002, 0, age<=51.5 & age>50.5 & priors_count>4.5, 1
+3, 0.01, 0.16, age<=35.5 & c_charge_degree_M>0.5 & race_Other>0.5, 0.2
+4, 0.002, 0, age<=37.5 & age>35.5 & c_charge_degree_M>0.5 & race_Other>0.5, 1
+3, 0.002, 0, age>48.5 & priors_count<=0.5 & race_Other>0.5, 0
+2, 0.01, 0, age<=24.5 & priors_count>7.5, 1
+5, 0.006, 0, age>24.5 & age<=25.5 & priors_count<=0.5 & days_b_screening_arrest<=-0.5 & c_charge_degree_M>0.5, 0
+2, 0.128, 0.18946837994457, age<=27.5 & priors_count>1.5, 0.746031746031746
+3, 0.026, 0.130177514792899, age>23.5 & age<=24.5 & priors_count<=0.5, 0.153846153846154
+4, 0.004, 0, age<=43.5 & age>40.5 & priors_count>0.5 & priors_count<=1.5, 0
+3, 0.002, 0, age>43.5 & priors_count>0.5 & race_Other>0.5, 1
+4, 0.006, 0, age<=24.5 & age>23.5 & priors_count<=2.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.057, 0.146683673469388, age<=24.5 & priors_count>1.5, 0.821428571428571
+3, 0.014, 0, age<=24.5 & age>23.5 & priors_count>1.5, 1
+4, 0.002, 0, age<=24.5 & priors_count>2.5 & days_b_screening_arrest<=-2.5 & c_charge_degree_F<=0.5, 0
+2, 0.028, 0.122448979591837, age<=24.5 & priors_count>2.5, 0.857142857142857
+4, 0.002, 0, age<=24.5 & priors_count>2.5 & days_b_screening_arrest<=-8 & c_charge_degree_F>0.5, 1
+2, 0.14, 0.199537912203319, priors_count<=2.5 & sex_Male<=0.5, 0.27536231884058
+2, 0.473, 0.21514487281033, age>24.5 & priors_count<=2.5, 0.313304721030043
+4, 0.002, 0, age>32.5 & priors_count<=2.5 & priors_count>1.5 & sex_Male<=0.5, 1
+4, 0.004, 0, age<=36.5 & age>33.5 & priors_count<=0.5 & sex_Male<=0.5, 0
+3, 0.039, 0.166204986149584, age<=35.5 & age>33.5 & priors_count<=4.5, 0.210526315789474
+3, 0.012, 0.138888888888889, age<=35.5 & age>33.5 & priors_count>4.5, 0.833333333333333
+4, 0.006, 0, age<=36.5 & age>35.5 & priors_count>1.5 & days_b_screening_arrest>-1.5, 1
+3, 0.045, 0.148760330578512, age>37.5 & age<=42.5 & priors_count<=1.5, 0.181818181818182
+4, 0.002, 0, age>36.5 & age<=37.5 & priors_count>2.5 & priors_count<=3.5, 0
+3, 0.004, 0, age<=36.5 & priors_count>8.5 & days_b_screening_arrest<=-3.5, 1
+2, 0.045, 0.198347107438017, days_b_screening_arrest<=-5.5 & c_charge_degree_M<=0.5, 0.272727272727273
+4, 0.004, 0, age<=36.5 & age>34.5 & days_b_screening_arrest<=-3.5 & c_charge_degree_M>0.5, 1
+3, 0.016, 0.109375, age<=23.5 & days_b_screening_arrest>-1.5 & race_Hispanic>0.5, 0.125
+3, 0.006, 0, age>36.5 & days_b_screening_arrest<=-8.5 & race_Hispanic>0.5, 0
+2, 0.014, 0, age>51.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.006, 0, age>36.5 & days_b_screening_arrest<=-8.5 & days_b_screening_arrest>-12.5, 0
+3, 0.002, 0, age>36.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-7.5, 1
+3, 0.004, 0, age>36.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-6.5, 1
+1, 0.004, 0, days_b_screening_arrest>28.5, 1
+2, 0.002, 0, age<=34.5 & days_b_screening_arrest<=-26.5, 0
+3, 0.02, 0, age>36.5 & days_b_screening_arrest>-28.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.002, 0, age>53.5 & priors_count>15.5 & days_b_screening_arrest<=-0.5, 0
+2, 0.016, 0.1875, c_charge_degree_F<=0.5 & race_Other>0.5, 0.25
+4, 0.002, 0, age>35.5 & age<=36.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 1
+3, 0.004, 0, age>36.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 0
+3, 0.002, 0, age<=25.5 & priors_count<=0.5 & race_Other>0.5, 0
+4, 0.008, 0, age<=28.5 & priors_count>0.5 & c_charge_degree_F>0.5 & race_Other>0.5, 1
+4, 0.004, 0, age>28.5 & age<=31.5 & priors_count<=0.5 & race_Other>0.5, 0
+4, 0.002, 0, age>28.5 & age<=31.5 & priors_count>0.5 & race_Other>0.5, 1
+3, 0.069, 0.207612456747405, age>31.5 & age<=34.5 & c_charge_degree_F>0.5, 0.705882352941177
+2, 0.203, 0.2331, age>26.5 & age<=30.5, 0.37
+4, 0.01, 0, age<=26.5 & priors_count>2.5 & c_charge_degree_M<=0.5 & race_African_American<=0.5, 1
+4, 0.004, 0, age<=26.5 & priors_count>2.5 & c_charge_degree_M>0.5 & race_African_American<=0.5, 0
+2, 0.41, 0.210788158023723, priors_count<=3.5 & race_African_American<=0.5, 0.301980198019802
+3, 0.037, 0.0987654320987654, age<=24.5 & priors_count>1.5 & race_African_American>0.5, 0.888888888888889
+3, 0.01, 0, age<=22.5 & priors_count>2.5 & race_African_American>0.5, 1
+5, 0.008, 0, age>28.5 & age<=43.5 & priors_count<=3.5 & priors_count>2.5 & race_African_American>0.5, 1
+3, 0.02, 0, age<=27.5 & priors_count>7.5 & days_b_screening_arrest<=-0.5, 1
+2, 0.016, 0, age<=27.5 & priors_count>9.5, 1
+4, 0.012, 0, age>27.5 & age<=28.5 & priors_count>3.5 & c_charge_degree_F<=0.5, 1
+4, 0.006, 0, age>27.5 & age<=28.5 & days_b_screening_arrest>-0.5 & c_charge_degree_F>0.5, 0
+3, 0.002, 0, age<=46.5 & age>39.5 & priors_count>18.5, 0
+3, 0.01, 0.16, age<=43.5 & age>37.5 & race_Hispanic>0.5, 0.2
+3, 0.002, 0, age<=46.5 & age>43.5 & race_Hispanic>0.5, 1
+3, 0.002, 0, age>46.5 & age<=47.5 & priors_count>4.5, 0
+2, 0.002, 0, age>47.5 & age<=48.5, 1
+2, 0.069, 0.145328719723183, age<=38.5 & priors_count>8.5, 0.823529411764706
+2, 0.01, 0, age<=26.5 & priors_count>9.5, 1
+5, 0.002, 0, age>34.5 & age<=51.5 & priors_count<=11.5 & priors_count>9.5 & race_Caucasian<=0.5, 0
+4, 0.004, 0, age>34.5 & age<=51.5 & priors_count>9.5 & race_Caucasian>0.5, 1
+2, 0.049, 0.164930555555556, age<=57.5 & priors_count>11.5, 0.791666666666667
+3, 0.002, 0, age<=57.5 & age>56.5 & priors_count>11.5, 1
+3, 0.01, 0.16, age<=31.5 & age>30.5 & race_Caucasian>0.5, 0.2
+2, 0.006, 0, age>46.5 & days_b_screening_arrest<=-16.5, 0
+3, 0.008, 0, age>46.5 & age<=54.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.002, 0, age>46.5 & age<=47.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.014, 0, age<=34.5 & priors_count<=9.5 & priors_count>8.5, 1
+4, 0.002, 0, age<=38.5 & age>34.5 & priors_count<=11.5 & priors_count>8.5, 0
+2, 0.012, 0, age<=29.5 & priors_count>11.5, 1
+4, 0.006, 0, age<=59.5 & age>53.5 & priors_count<=1.5 & race_Caucasian>0.5, 0
+2, 0.002, 0, age>59.5 & age<=60.5, 0
+3, 0.006, 0, age>59.5 & priors_count<=5.5 & race_Caucasian<=0.5, 0
+2, 0.004, 0, age>59.5 & priors_count>14.5, 0
+3, 0.002, 0, age>34.5 & priors_count>9.5 & priors_count<=10.5, 1
+4, 0.002, 0, age>34.5 & priors_count<=11.5 & priors_count>9.5 & c_charge_degree_M>0.5, 0
+1, 0.012, 0.222222222222222, age>67.5, 0.333333333333333
+3, 0.002, 0, age<=76.5 & age>67.5 & priors_count>0.5, 0
+3, 0.002, 0, age<=56.5 & age>55.5 & race_Hispanic>0.5, 1
+3, 0.008, 0, age<=59.5 & age>56.5 & priors_count<=2.5, 0
+3, 0.008, 0, age<=59.5 & age>56.5 & priors_count<=2, 0
+4, 0.004, 0, age<=38.5 & priors_count<=9.5 & priors_count>8.5 & sex_Female>0.5, 1
+4, 0.002, 0, age>38.5 & age<=41.5 & priors_count<=9.5 & priors_count>8.5, 0
+2, 0.008, 0, priors_count>11.5 & c_charge_degree_F<=0.5, 1
+2, 0.006, 0, age<=36.5 & priors_count>17.5, 1
+3, 0.028, 0.168367346938776, age<=57.5 & priors_count>11.5 & priors_count<=15.5, 0.785714285714286
+1, 0.231, 0.246229609110496, days_b_screening_arrest>-0.5, 0.43859649122807
+3, 0.002, 0, age>49 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 1
+2, 0.049, 0.164930555555556, age<=34.5 & priors_count>9.5, 0.791666666666667
+1, 0.988, 0.247039031239327, priors_count<=20.5, 0.445585215605749
+2, 0.002, 0, age<=29 & priors_count>20.5, 1
+2, 0.014, 0, age<=24.5 & priors_count>4, 1
+2, 0.002, 0, age<=36 & days_b_screening_arrest<=-28.5, 0
+3, 0.051, 0.0384, priors_count<=0.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 0.04
+3, 0.043, 0.0453514739229025, age>27.5 & priors_count<=0.5 & sex_Male<=0.5, 0.0476190476190476
+4, 0.006, 0, age<=55 & c_charge_degree_F<=0.5 & race_Hispanic>0.5 & sex_Male<=0.5, 0
+4, 0.002, 0, age>55 & age<=56.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 1
+2, 0.203, 0.1971, age>27.5 & priors_count<=0.5, 0.27
+4, 0.002, 0, age>36.5 & priors_count<=0.5 & days_b_screening_arrest<=-2.5 & c_charge_degree_F>0.5, 1
+2, 0.124, 0.208008599838753, age<=51.5 & priors_count>6.5, 0.704918032786885
+2, 0.128, 0.197026958931721, age>37.5 & c_charge_degree_M>0.5, 0.26984126984127
+2, 0.008, 0, priors_count>12.5 & c_charge_degree_M>0.5, 1
+4, 0.004, 0, age<=51.5 & age>49.5 & priors_count<=5.5 & priors_count>2.5, 0
+3, 0.004, 0, age>51.5 & age<=56.5 & days_b_screening_arrest>-0.5, 0
+3, 0.004, 0, age>56.5 & age<=57.5 & priors_count<=3.5, 0
+4, 0.01, 0.16, age>51.5 & age<=55.5 & priors_count<=3.5 & priors_count>2.5, 0.8
+3, 0.004, 0, age>55.5 & priors_count<=3.5 & priors_count>2.5, 0
+2, 0.114, 0.218112244897959, age>51.5 & days_b_screening_arrest<=-0.5, 0.321428571428571
+3, 0.002, 0, age>51.5 & priors_count>3.5 & days_b_screening_arrest>-0.5, 1
+4, 0.006, 0, age>51.5 & priors_count>3.5 & c_charge_degree_M>0.5 & race_Caucasian>0.5, 0
+3, 0.008, 0, age<=51.5 & age>42.5 & days_b_screening_arrest<=-2.5, 0
+4, 0.004, 0, age<=51.5 & age>49.5 & priors_count<=3.5 & priors_count>2.5, 0
+3, 0.006, 0, age<=51.5 & age>49.5 & priors_count>3.5, 1
+3, 0.012, 0, age>51.5 & priors_count<=2.5 & c_charge_degree_F>0.5, 0
+2, 0.006, 0, age>51.5 & days_b_screening_arrest<=-18.5, 0
+3, 0.008, 0, age<=50.5 & priors_count>10.5 & c_charge_degree_M>0.5, 1
+3, 0.008, 0, age<=50.5 & age>49.5 & race_African_American<=0.5, 1
+3, 0.002, 0, age<=50.5 & age>49.5 & c_charge_degree_F<=0.5, 1
+4, 0.004, 0, age<=50.5 & age>49.5 & priors_count<=3.5 & race_African_American>0.5, 0
+3, 0.004, 0, age<=50.5 & age>49.5 & priors_count>3.5, 1
+3, 0.008, 0, age>50.5 & age<=55.5 & days_b_screening_arrest<=-2.5, 0
+4, 0.004, 0, age<=51.5 & age>49.5 & days_b_screening_arrest<=-0.5 & race_Caucasian<=0.5, 1
+4, 0.004, 0, age>51.5 & age<=52.5 & priors_count>3.5 & c_charge_degree_M<=0.5, 1
+3, 0.002, 0, age>51.5 & age<=52.5 & priors_count>5.5, 1
+2, 0.097, 0.197482638888889, age>51.5 & priors_count<=7.5, 0.270833333333333
+3, 0.004, 0, age<=59.5 & priors_count>14.5 & priors_count<=15.5, 1
+3, 0.006, 0, age<=59.5 & age>57.5 & priors_count<=9, 0
+3, 0.002, 0, age<=59.5 & age>57.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.002, 0, age<=20.5 & days_b_screening_arrest>-2.5 & days_b_screening_arrest<=-1.5, 1
+3, 0.002, 0, age<=21.5 & priors_count<=2.5 & days_b_screening_arrest<=-3.5, 1
+3, 0.002, 0, age<=21.5 & priors_count>2.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.008, 0, age<=50.5 & age>49.5 & days_b_screening_arrest<=-0.5, 1
+3, 0.004, 0, age>50.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-3.5, 0
+3, 0.008, 0, age>50.5 & priors_count>6.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.043, 0.154195011337868, age>50.5 & priors_count<=0.5, 0.19047619047619
+4, 0.002, 0, age<=59.5 & age>57.5 & priors_count>0.5 & days_b_screening_arrest>-1.5, 1
+3, 0.002, 0, age<=24.5 & days_b_screening_arrest<=-18.5 & c_charge_degree_F<=0.5, 1
+5, 0.002, 0, age<=24.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-18.5 & c_charge_degree_F<=0.5 & race_African_American<=0.5, 0
+5, 0.014, 0, age<=24.5 & age>22.5 & days_b_screening_arrest>-2.5 & c_charge_degree_F<=0.5 & race_African_American<=0.5, 0
+4, 0.006, 0, age>24.5 & age<=25.5 & c_charge_degree_M<=0.5 & sex_Female>0.5, 1
+3, 0.002, 0, age>24.5 & age<=27.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.022, 0.0826446280991735, age>24.5 & priors_count<=2.5 & days_b_screening_arrest<=-8.5, 0.0909090909090909
+3, 0.002, 0, age>24.5 & days_b_screening_arrest>-8.5 & days_b_screening_arrest<=-7.5, 1
+2, 0.002, 0, age<=25.5 & days_b_screening_arrest<=-23.5, 0
+1, 0.01, 0.16, days_b_screening_arrest<=-23.5, 0.2
+2, 0.01, 0, priors_count<=2.5 & days_b_screening_arrest<=-22.5, 0
+2, 0.008, 0, days_b_screening_arrest>-23.5 & days_b_screening_arrest<=-22.5, 0
+2, 0.002, 0, days_b_screening_arrest>-22.5 & days_b_screening_arrest<=-21.5, 1
+3, 0.002, 0, priors_count<=1.5 & days_b_screening_arrest>-21.5 & days_b_screening_arrest<=-16.5, 0
+2, 0.012, 0.222222222222222, days_b_screening_arrest>-22.5 & days_b_screening_arrest<=-16.5, 0.666666666666667
+1, 0.99, 0.24777865493147, days_b_screening_arrest>-23.5, 0.452868852459016
+2, 0.081, 0.21, age<=40 & race_Hispanic>0.5, 0.3
+3, 0.006, 0, age<=51.5 & age>40 & race_Hispanic>0.5, 1
+3, 0.002, 0, priors_count>5 & days_b_screening_arrest<=-2.5 & race_Hispanic>0.5, 1
+3, 0.012, 0.138888888888889, age>23.5 & days_b_screening_arrest>-2.5 & days_b_screening_arrest<=-1.5, 0.166666666666667
+3, 0.016, 0, age>51.5 & age<=59.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.002, 0, age>59.5 & priors_count<=0.5 & days_b_screening_arrest<=-1.5, 1
+3, 0.02, 0, age>58.5 & priors_count<=0.5 & days_b_screening_arrest>-1.5, 0
+3, 0.022, 0, age>51.5 & priors_count>0.5 & days_b_screening_arrest<=-1.5, 0
+4, 0.01, 0, age>51.5 & age<=58.5 & priors_count>0.5 & priors_count<=1.5, 0
+4, 0.002, 0, age>58.5 & priors_count>0.5 & priors_count<=1.5 & days_b_screening_arrest>-1.5, 1
+3, 0.006, 0, age<=76.5 & age>67.5 & days_b_screening_arrest>-3.5, 0
+2, 0.022, 0.198347107438017, priors_count<=4.5 & days_b_screening_arrest<=-17.5, 0.272727272727273
+2, 0.004, 0, days_b_screening_arrest<=-17.5 & days_b_screening_arrest>-19.5, 1
+3, 0.004, 0, priors_count>4.5 & days_b_screening_arrest<=-17.5 & days_b_screening_arrest>-21.5, 1
+3, 0.008, 0, age>51.5 & age<=55.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.016, 0, age>51.5 & priors_count>1.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.008, 0, age>51.5 & days_b_screening_arrest<=-2.5 & race_African_American>0.5, 0
+3, 0.02, 0, age>57.5 & priors_count<=0.5 & days_b_screening_arrest>-2.5, 0
+2, 0.057, 0.146683673469388, age>51.5 & priors_count<=1.5, 0.178571428571429
+4, 0.002, 0, age<=59.5 & age>57.5 & race_Caucasian<=0.5 & sex_Female<=0.5, 1
+2, 0.006, 0, age>57.5 & sex_Female>0.5, 0
+3, 0.004, 0, age<=35.5 & priors_count>4.5 & days_b_screening_arrest<=-12.5, 1
+4, 0.006, 0, age<=39.5 & priors_count>4.5 & days_b_screening_arrest<=-12.5 & days_b_screening_arrest>-21.5, 1
+2, 0.012, 0, age>39.5 & days_b_screening_arrest<=-12.5, 0
+4, 0.002, 0, age<=22 & priors_count<=1.5 & days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-5.5, 1
+4, 0.004, 0, age>22 & days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-5.5 & sex_Male<=0.5, 0
+3, 0.01, 0, age>39 & priors_count>1.5 & days_b_screening_arrest<=-5.5, 0
+4, 0.006, 0, priors_count<=5.5 & priors_count>1.5 & days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-5.5, 0
+4, 0.002, 0, priors_count>5.5 & days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-5.5 & sex_Male>0.5, 1
+3, 0.004, 0, age>32.5 & age<=33.5 & sex_Male<=0.5, 1
+1, 0.846, 0.242338503298081, priors_count<=6.5, 0.412470023980815
+2, 0.002, 0, priors_count>6.5 & days_b_screening_arrest<=-16, 1
+3, 0.002, 0, days_b_screening_arrest<=-17.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 0
+4, 0.004, 0, days_b_screening_arrest<=-17.5 & c_charge_degree_F<=0.5 & race_Caucasian<=0.5 & sex_Male>0.5, 1
+3, 0.004, 0, days_b_screening_arrest<=-17.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5, 0
+1, 0.041, 0.21, days_b_screening_arrest<=-13.5, 0.3
+3, 0.016, 0, age>50.5 & age<=58.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.022, 0.231404958677686, days_b_screening_arrest>-2.5 & days_b_screening_arrest<=-1.5, 0.363636363636364
+3, 0.002, 0, age<=51.5 & age>46.5 & race_Hispanic>0.5, 1
+4, 0.004, 0, age>51.5 & age<=52.5 & priors_count>3.5 & c_charge_degree_F>0.5, 1
+2, 0.045, 0.148760330578512, age<=43.5 & priors_count>10.5, 0.818181818181818
+2, 0.01, 0, age<=33 & priors_count>14.5, 1
+2, 0.004, 0, age<=30.5 & priors_count>15.5, 1
+1, 0.022, 0.198347107438017, priors_count>15.5, 0.727272727272727
+3, 0.006, 0, age<=43.5 & age>42.5 & race_Caucasian>0.5, 0
+3, 0.002, 0, age<=43.5 & age>42.5 & days_b_screening_arrest>-0.5, 0
+3, 0.004, 0, age>43.5 & age<=44.5 & race_Caucasian<=0.5, 0
+3, 0.004, 0, age>44.5 & age<=45.5 & priors_count<=0.5, 1
+3, 0.002, 0, age>43.5 & age<=45.5 & days_b_screening_arrest<=-4.5, 0
+4, 0.004, 0, age>45.5 & age<=50.5 & days_b_screening_arrest>-0.5 & race_Caucasian>0.5, 0
+4, 0.002, 0, age<=47.5 & age>46.5 & priors_count<=4.5 & c_charge_degree_M<=0.5, 1
+3, 0.004, 0, age<=47.5 & age>46.5 & c_charge_degree_M>0.5, 0
+4, 0.004, 0, age>47.5 & age<=51.5 & priors_count<=0.5 & c_charge_degree_F<=0.5, 0
+4, 0.006, 0, age>47.5 & age<=51.5 & priors_count>0.5 & c_charge_degree_F<=0.5, 1
+1, 0.162, 0.23734375, age>47.5, 0.3875
+3, 0.012, 0, age>47.5 & age<=65.5 & days_b_screening_arrest<=-6.5, 0
+3, 0.01, 0, age>47.5 & days_b_screening_arrest>-6.5 & days_b_screening_arrest<=-1.5, 0
+2, 0.209, 0.210387406918654, priors_count>4.5 & days_b_screening_arrest>-6.5, 0.699029126213592
+3, 0.028, 0.122448979591837, priors_count<=4.5 & days_b_screening_arrest<=-11.5 & race_Other<=0.5, 0.142857142857143
+4, 0.008, 0, age<=25.5 & priors_count>0.5 & c_charge_degree_M<=0.5 & race_Other>0.5, 1
+3, 0.004, 0, age>25.5 & age<=27.5 & race_Other>0.5, 1
+3, 0.002, 0, age>46.5 & priors_count>0.5 & race_Other>0.5, 1
+3, 0.002, 0, age<=24.5 & c_charge_degree_M>0.5 & race_Other>0.5, 0
+3, 0.024, 0.0763888888888889, age<=24.5 & priors_count>2.5 & c_charge_degree_F>0.5, 0.916666666666667
+5, 0.006, 0, age>24.5 & age<=25.5 & priors_count<=0.5 & days_b_screening_arrest<=-0.5 & c_charge_degree_F<=0.5, 0
+3, 0.002, 0, age<=48.5 & age>46.5 & days_b_screening_arrest>-0.5, 1
+3, 0.004, 0, age<=48.5 & age>46.5 & priors_count<=1.5, 0
+2, 0.026, 0.0710059171597633, age>48.5 & days_b_screening_arrest<=-2.5, 0.0769230769230769
+3, 0.01, 0, age>48.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-6.5, 0
+3, 0.004, 0, age>37.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 0
+3, 0.008, 0, age>48.5 & age<=52.5 & priors_count>4.5, 1
+2, 0.002, 0, age>52.5 & race_Other>0.5, 0
+4, 0.01, 0, age>24.5 & age<=25.5 & priors_count>2.5 & c_charge_degree_M<=0.5, 1
+4, 0.008, 0, age>24.5 & priors_count<=1.5 & days_b_screening_arrest<=-8.5 & race_Caucasian<=0.5, 0
+3, 0.002, 0, age<=22.5 & days_b_screening_arrest<=-5.5 & sex_Male>0.5, 0
+3, 0.024, 0.0763888888888889, age<=24.5 & priors_count>2.5 & days_b_screening_arrest>-5.5, 0.916666666666667
+4, 0.002, 0, priors_count>5.5 & days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-5.5 & sex_Female<=0.5, 1
+4, 0.004, 0, age>22 & days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-5.5 & sex_Female>0.5, 0
+3, 0.008, 0, age>48.5 & priors_count>1.5 & days_b_screening_arrest<=-5.5, 0
+1, 0.051, 0.2016, days_b_screening_arrest<=-10.5, 0.28
+3, 0.008, 0, age>25.5 & days_b_screening_arrest<=-10.5 & race_Hispanic>0.5, 0
+4, 0.008, 0, age>51.5 & age<=56.5 & priors_count<=1.5 & priors_count>0.5, 0
+3, 0.004, 0, age>56.5 & priors_count<=3.5 & c_charge_degree_F>0.5, 0
+3, 0.008, 0, age>55.5 & priors_count<=3.5 & c_charge_degree_M<=0.5, 0
+1, 0.028, 0.204081632653061, priors_count>14.5, 0.714285714285714
+3, 0.004, 0, age>39.5 & age<=54.5 & priors_count>18.5, 0
+2, 0.006, 0, age<=59 & priors_count>21.5, 1
+2, 0.002, 0, age>59 & priors_count>21.5, 0
+3, 0.002, 0, age<=24.5 & days_b_screening_arrest>-17.5 & days_b_screening_arrest<=-13.5, 1
+3, 0.008, 0, age>24.5 & days_b_screening_arrest>-17.5 & days_b_screening_arrest<=-13.5, 0
+3, 0.004, 0, age>47.5 & priors_count<=11.5 & priors_count>10.5, 0
+3, 0.002, 0, age>47.5 & age<=50.5 & race_Hispanic>0.5, 1
+3, 0.004, 0, age>50.5 & c_charge_degree_M<=0.5 & race_Hispanic>0.5, 0
+3, 0.004, 0, age>47.5 & priors_count<=12.5 & priors_count>10.5, 0
+2, 0.006, 0, priors_count>14.5 & c_charge_degree_F<=0.5, 1
+2, 0.008, 0, age<=51.5 & priors_count>19.5, 1
+3, 0.002, 0, age<=54.5 & age>51.5 & priors_count>18.5, 0
+3, 0.01, 0, priors_count<=4.5 & priors_count>3.5 & sex_Male<=0.5, 0
+4, 0.004, 0, age<=51.5 & age>50.5 & priors_count<=4.5 & race_African_American<=0.5, 0
+3, 0.002, 0, age<=51.5 & age>50.5 & race_African_American>0.5, 1
+4, 0.002, 0, age<=51.5 & age>50.5 & priors_count<=4.5 & priors_count>1.5, 0
+3, 0.004, 0, age<=25.5 & priors_count>4.5 & sex_Male<=0.5, 1
+3, 0.012, 0, age<=30.5 & priors_count>4.5 & sex_Male<=0.5, 1
+3, 0.006, 0, age<=51.5 & age>48.5 & priors_count>4.5, 1
+3, 0.012, 0, age>56.5 & priors_count<=3.5 & race_Caucasian<=0.5, 0
+3, 0.047, 0.143667296786389, age<=47.5 & age>37.5 & c_charge_degree_F<=0.5, 0.173913043478261
+2, 0.012, 0, age>47.5 & days_b_screening_arrest<=-12.5, 0
+2, 0.014, 0, age>47.5 & days_b_screening_arrest<=-8.5, 0
+1, 0.935, 0.245331049637448, age>21, 0.431670281995662
+2, 0.002, 0, age>44.5 & days_b_screening_arrest<=-25.5, 0
+2, 0.002, 0, days_b_screening_arrest>-25.5 & days_b_screening_arrest<=-24.5, 0
+2, 0.01, 0, days_b_screening_arrest>-25.5 & days_b_screening_arrest<=-22.5, 0
+1, 0.992, 0.24769049978881, days_b_screening_arrest>-25.5, 0.451942740286299
+3, 0.002, 0, age<=32.5 & days_b_screening_arrest<=-10.5 & days_b_screening_arrest>-11.5, 1
+3, 0.004, 0, age<=32.5 & age>28.5 & days_b_screening_arrest<=-10.5, 1
+3, 0.002, 0, age<=32.5 & age>30.5 & days_b_screening_arrest<=-10.5, 1
+3, 0.002, 0, age<=32.5 & days_b_screening_arrest>-10.5 & days_b_screening_arrest<=-8.5, 0
+3, 0.004, 0, age<=32.5 & days_b_screening_arrest>-10.5 & days_b_screening_arrest<=-7.5, 0
+2, 0.379, 0.236781149017701, age>32.5 & priors_count<=7.5, 0.385026737967914
+3, 0.004, 0, age>32.5 & age<=33.5 & priors_count>7.5, 1
+3, 0.006, 0, age>32.5 & age<=39.5 & priors_count>10.5, 1
+3, 0.002, 0, age>39.5 & age<=40.5 & priors_count>7.5, 0
+4, 0.004, 0, age<=35.5 & age>33.5 & priors_count<=0.5 & sex_Male<=0.5, 0
+3, 0.006, 0, age<=35.5 & age>34.5 & priors_count<=0.5, 0
+3, 0.002, 0, age>35.5 & age<=36.5 & priors_count<=0.5, 0
+3, 0.01, 0, age>38.5 & age<=39.5 & priors_count<=0.5, 0
+5, 0.016, 0.109375, age>35.5 & age<=36.5 & priors_count>0.5 & race_Caucasian<=0.5 & sex_Male>0.5, 0.875
+3, 0.002, 0, age>35.5 & age<=36.5 & race_Caucasian>0.5, 0
+4, 0.016, 0.109375, age>35.5 & age<=42.5 & priors_count>0.5 & days_b_screening_arrest>-0.5, 0.875
+4, 0.002, 0, age>53.5 & priors_count>0.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 1
+3, 0.12, 0.140764148233266, priors_count<=2.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5, 0.169491525423729
+4, 0.002, 0, priors_count>2.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5 & sex_Male<=0.5, 1
+3, 0.008, 0, priors_count<=0.5 & days_b_screening_arrest<=-2.5 & sex_Male<=0.5, 0
+3, 0.012, 0.222222222222222, priors_count>0.5 & race_Hispanic>0.5 & sex_Male<=0.5, 0.666666666666667
+5, 0.004, 0, age>28.5 & age<=31.5 & priors_count<=6.5 & priors_count>2.5 & sex_Male<=0.5, 0
+2, 0.02, 0, age<=26 & priors_count>6.5, 1
+4, 0.006, 0, age<=42.5 & priors_count>6.5 & priors_count<=9.5 & sex_Male<=0.5, 1
+3, 0.006, 0, age>42.5 & priors_count>6.5 & sex_Male<=0.5, 0
+1, 0.71, 0.242155102040816, age>26, 0.411428571428571
+3, 0.002, 0, age>35.5 & priors_count>9.5 & sex_Male<=0.5, 0
+3, 0.012, 0.138888888888889, age>23.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-2.5, 0.166666666666667
+5, 0.002, 0, age<=23.5 & priors_count<=1.5 & priors_count>0.5 & c_charge_degree_F<=0.5 & sex_Female<=0.5, 1
+2, 0.097, 0.234375, age<=23.5 & c_charge_degree_M<=0.5, 0.625
+4, 0.002, 0, age<=23.5 & age>22.5 & c_charge_degree_M<=0.5 & race_Hispanic>0.5, 1
+3, 0.043, 0.0453514739229025, age>27.5 & priors_count<=0.5 & sex_Female>0.5, 0.0476190476190476
+4, 0.002, 0, age>53.5 & priors_count>0.5 & c_charge_degree_M>0.5 & sex_Female>0.5, 1
+4, 0.01, 0, age<=42.5 & age>32.5 & priors_count<=15.5 & priors_count>10.5, 1
+2, 0.002, 0, priors_count>15.5 & priors_count<=17.5, 1
+2, 0.008, 0, age<=42.5 & priors_count>20, 1
+3, 0.002, 0, age<=42.5 & priors_count>17.5 & priors_count<=20.5, 0
+2, 0.008, 0, age<=42.5 & priors_count>20.5, 1
+3, 0.004, 0, age>42.5 & age<=43.5 & c_charge_degree_F<=0.5, 0
+4, 0.002, 0, age>42.5 & age<=43.5 & c_charge_degree_F>0.5 & race_Caucasian<=0.5, 1
+3, 0.002, 0, age>42.5 & age<=43.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.006, 0, age>42.5 & age<=43.5 & race_Caucasian>0.5, 0
+3, 0.002, 0, age>42.5 & age<=46.5 & race_Hispanic>0.5, 1
+3, 0.002, 0, age>42.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 1
+3, 0.004, 0, age<=24.5 & priors_count>2.5 & sex_Male<=0.5, 1
+3, 0.03, 0.0622222222222222, age>27.5 & age<=28.5 & priors_count<=3.5, 0.0666666666666667
+2, 0.016, 0.109375, age>53.5 & sex_Female>0.5, 0.125
+2, 0.112, 0.231404958677686, age>27.5 & age<=29.5, 0.363636363636364
+3, 0.004, 0, age<=22.5 & days_b_screening_arrest>-0.5 & sex_Male<=0.5, 0
+3, 0.047, 0.170132325141777, age<=37.5 & priors_count<=1.5 & race_Hispanic>0.5, 0.217391304347826
+3, 0.004, 0, age>37.5 & age<=39.5 & race_Hispanic>0.5, 0
+2, 0.03, 0.16, priors_count<=4.5 & days_b_screening_arrest<=-12.5, 0.2
+4, 0.002, 0, age>24.5 & age<=25.5 & priors_count<=1.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age>24.5 & age<=25.5 & priors_count>1.5 & race_Hispanic>0.5, 1
+2, 0.002, 0, priors_count<=1 & race_Native_American>0.5, 0
+4, 0.002, 0, age<=24.5 & priors_count>2.5 & days_b_screening_arrest<=-2.5 & race_Hispanic<=0.5, 0
+3, 0.024, 0.0763888888888889, age<=24.5 & priors_count>2.5 & days_b_screening_arrest>-2.5, 0.916666666666667
+3, 0.008, 0, age<=24.5 & priors_count>2.5 & days_b_screening_arrest>-0.5, 1
+2, 0.069, 0.194636678200692, priors_count<=1.5 & race_Hispanic>0.5, 0.264705882352941
+2, 0.03, 0.222222222222222, age<=37.5 & age>36.5, 0.333333333333333
+3, 0.002, 0, age>36.5 & priors_count>8.5 & race_Hispanic>0.5, 0
+3, 0.014, 0, age>39.5 & age<=43.5 & c_charge_degree_F<=0.5, 0
+4, 0.002, 0, age>39.5 & age<=43.5 & c_charge_degree_F>0.5 & race_Hispanic>0.5, 1
+3, 0.002, 0, age>43.5 & age<=46.5 & race_Hispanic>0.5, 1
+3, 0.004, 0, age<=22.5 & days_b_screening_arrest<=-2.5 & race_African_American<=0.5, 0
+4, 0.004, 0, age<=22.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-2.5 & race_African_American<=0.5, 1
+4, 0.002, 0, age<=23.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-3.5 & race_African_American>0.5, 0
+3, 0.002, 0, age<=23.5 & age>22.5 & days_b_screening_arrest<=-3.5, 1
+4, 0.016, 0, age<=23.5 & age>22.5 & days_b_screening_arrest>-3.5 & c_charge_degree_M>0.5, 0
+4, 0.006, 0, age>23.5 & age<=24.5 & priors_count<=2.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.012, 0, age>23.5 & age<=24.5 & priors_count>2.5, 1
+3, 0.002, 0, age>24.5 & age<=26.5 & days_b_screening_arrest<=-1.5, 1
+2, 0.02, 0.21, age<=53.5 & age>52.5, 0.3
+2, 0.059, 0.164090368608799, age>55.5 & days_b_screening_arrest<=-0.5, 0.206896551724138
+3, 0.008, 0, age>55.5 & priors_count<=2.5 & days_b_screening_arrest>-0.5, 0
+3, 0.01, 0, age>55.5 & priors_count<=5.5 & race_African_American>0.5, 0
+3, 0.008, 0, age>55.5 & priors_count<=8.5 & days_b_screening_arrest>-0.5, 0
+3, 0.002, 0, age>55.5 & priors_count>8.5 & days_b_screening_arrest>-0.5, 1
+3, 0.002, 0, age<=22.5 & days_b_screening_arrest<=-4.5 & race_African_American<=0.5, 0
+4, 0.016, 0, age<=23.5 & age>22.5 & days_b_screening_arrest>-3.5 & c_charge_degree_F<=0.5, 0
+4, 0.002, 0, age<=23.5 & age>22.5 & days_b_screening_arrest<=-1.5 & c_charge_degree_F>0.5, 1
+4, 0.002, 0, age>55.5 & priors_count>4.5 & days_b_screening_arrest>-1.5 & race_African_American<=0.5, 1
+3, 0.002, 0, age<=22.5 & days_b_screening_arrest<=-3.5 & race_African_American<=0.5, 0
+2, 0.308, 0.222948407202216, priors_count>2.5 & days_b_screening_arrest>-1.5, 0.664473684210526
+3, 0.002, 0, age<=22.5 & priors_count>2.5 & race_African_American<=0.5, 0
+2, 0.006, 0, age<=22.5 & priors_count>3.5, 1
+3, 0.004, 0, priors_count<=3.5 & priors_count>2.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age<=28.5 & priors_count>3.5 & race_African_American<=0.5 & sex_Female>0.5, 1
+2, 0.002, 0, days_b_screening_arrest<=-4.5 & days_b_screening_arrest>-5.5, 0
+3, 0.002, 0, age<=41.5 & age>39.5 & sex_Male<=0.5, 0
+4, 0.008, 0, age>41.5 & priors_count>2.5 & race_Caucasian<=0.5 & sex_Male<=0.5, 0
+4, 0.004, 0, age>41.5 & age<=44.5 & race_Caucasian>0.5 & sex_Male<=0.5, 1
+3, 0.018, 0, age>44.5 & race_Caucasian>0.5 & sex_Male<=0.5, 0
+3, 0.034, 0.103806228373702, age<=23.5 & priors_count>1.5 & c_charge_degree_M<=0.5, 0.882352941176471
+4, 0.004, 0, age<=23.5 & priors_count>1.5 & days_b_screening_arrest>-1.5 & c_charge_degree_M>0.5, 0
+4, 0.014, 0.122448979591837, age<=23.5 & days_b_screening_arrest>-1.5 & days_b_screening_arrest<=-0.5 & race_Caucasian>0.5, 0.857142857142857
+3, 0.006, 0, age<=23.5 & days_b_screening_arrest>-0.5 & race_Caucasian>0.5, 0
+4, 0.01, 0, age>23.5 & age<=24.5 & priors_count<=0.5 & c_charge_degree_M>0.5, 0
+4, 0.018, 0, age>23.5 & age<=24.5 & priors_count>0.5 & days_b_screening_arrest>-1.5, 1
+3, 0.004, 0, days_b_screening_arrest<=-19.5 & c_charge_degree_F<=0.5 & race_African_American<=0.5, 0
+2, 0.211, 0.226331360946746, priors_count>3.5 & c_charge_degree_F>0.5, 0.653846153846154
+2, 0.006, 0, days_b_screening_arrest<=-20.5 & race_African_American>0.5, 0
+2, 0.002, 0, days_b_screening_arrest<=-19.5 & days_b_screening_arrest>-20.5, 1
+3, 0.004, 0, age<=32.5 & priors_count>1.5 & days_b_screening_arrest<=-18.5, 1
+1, 0.974, 0.2480859375, days_b_screening_arrest>-19.5, 0.45625
+3, 0.002, 0, days_b_screening_arrest>-18.5 & days_b_screening_arrest<=-14.5 & c_charge_degree_M>0.5, 0
+3, 0.002, 0, age>22.5 & age<=23.5 & days_b_screening_arrest<=-3.5, 1
+5, 0.002, 0, age>22.5 & age<=23.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-3.5 & sex_Female<=0.5, 0
+4, 0.002, 0, age>22.5 & age<=23.5 & days_b_screening_arrest<=-1.5 & sex_Female>0.5, 1
+4, 0.004, 0, age>22.5 & age<=23.5 & priors_count<=1.5 & race_Hispanic>0.5, 0
+4, 0.006, 0, age>22.5 & age<=23.5 & days_b_screening_arrest>-1.5 & race_Hispanic>0.5, 0
+3, 0.049, 0.138888888888889, age>22.5 & age<=24.5 & priors_count<=0.5, 0.166666666666667
+2, 0.004, 0, age<=31.5 & days_b_screening_arrest<=-22.5, 0
+2, 0.01, 0, days_b_screening_arrest<=-22.5 & days_b_screening_arrest>-25.5, 0
+2, 0.008, 0, days_b_screening_arrest<=-22.5 & days_b_screening_arrest>-24.5, 0
+2, 0.006, 0, age>46.5 & days_b_screening_arrest<=-22.5, 0
+4, 0.004, 0, age>30.5 & age<=33.5 & priors_count>5.5 & priors_count<=6.5, 1
+4, 0.004, 0, age>22.5 & age<=23.5 & priors_count>0.5 & days_b_screening_arrest<=-1.5, 1
+2, 0.014, 0, age<=24.5 & priors_count>3.5, 1
+2, 0.028, 0.122448979591837, age<=30.5 & priors_count>9.5, 0.857142857142857
+3, 0.006, 0, age<=30.5 & priors_count>9.5 & c_charge_degree_M>0.5, 1
+3, 0.002, 0, age<=29 & days_b_screening_arrest>-22.5 & days_b_screening_arrest<=-18.5, 1
+3, 0.01, 0, age>26.5 & days_b_screening_arrest<=-3.5 & race_Hispanic>0.5, 0
+4, 0.004, 0, age<=36.5 & age>28.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-2.5, 0
+4, 0.018, 0, age>36.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5 & race_African_American<=0.5, 0
+3, 0.008, 0, age>55.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5, 0
+4, 0.022, 0, age>36.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M>0.5, 0
+4, 0.004, 0, priors_count>0.5 & priors_count<=2.5 & days_b_screening_arrest>-0.5 & sex_Male<=0.5, 1
+3, 0.039, 0.193905817174515, age>36.5 & priors_count>0.5 & days_b_screening_arrest>-0.5, 0.736842105263158
+4, 0.014, 0.122448979591837, age>36.5 & age<=42.5 & priors_count>0.5 & days_b_screening_arrest>-0.5, 0.857142857142857
+2, 0.063, 0.135275754422477, age<=29.5 & priors_count>5.5, 0.838709677419355
+4, 0.002, 0, age>30.5 & age<=32.5 & priors_count<=4.5 & priors_count>3.5, 1
+5, 0.004, 0, age>30.5 & age<=32.5 & priors_count>4.5 & priors_count<=7.5 & c_charge_degree_F<=0.5, 0
+5, 0.004, 0, age>30.5 & age<=32.5 & priors_count>4.5 & priors_count<=7.5 & c_charge_degree_F>0.5, 1
+4, 0.006, 0, age>30.5 & age<=32.5 & priors_count>7.5 & c_charge_degree_F<=0.5, 1
+3, 0.018, 0, age>32.5 & age<=34.5 & priors_count>4.5, 1
+2, 0.006, 0, age>55 & days_b_screening_arrest<=-19.5, 0
+1, 0.024, 0.138888888888889, days_b_screening_arrest<=-20.5, 0.166666666666667
+3, 0.006, 0, age<=34.5 & days_b_screening_arrest<=-19.5 & race_African_American>0.5, 0
+3, 0.002, 0, age<=34.5 & days_b_screening_arrest<=-19.5 & days_b_screening_arrest>-21.5, 0
+3, 0.002, 0, age>34.5 & days_b_screening_arrest<=-19.5 & race_African_American>0.5, 1
+3, 0.004, 0, age<=32.5 & age>24.5 & days_b_screening_arrest<=-18.5, 1
+3, 0.002, 0, days_b_screening_arrest>-18.5 & days_b_screening_arrest<=-14.5 & c_charge_degree_F<=0.5, 0
+3, 0.03, 0.0622222222222222, age<=28.5 & age>27.5 & priors_count<=3.5, 0.0666666666666667
+4, 0.014, 0.122448979591837, age<=30.5 & age>28.5 & priors_count<=4.5 & days_b_screening_arrest>-0.5, 0.142857142857143
+5, 0.002, 0, age<=30.5 & age>28.5 & priors_count<=4.5 & priors_count>1.5 & days_b_screening_arrest>-0.5, 0
+2, 0.075, 0.169466764061359, age<=28.5 & priors_count>4.5, 0.783783783783784
+4, 0.004, 0, age<=30.5 & age>28.5 & priors_count>4.5 & priors_count<=6.5, 1
+3, 0.012, 0, age<=30.5 & priors_count>4.5 & sex_Female>0.5, 1
+3, 0.008, 0, age<=55.5 & age>48.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.008, 0, age>33.5 & priors_count>10.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.002, 0, priors_count>10.5 & days_b_screening_arrest<=-1.5 & sex_Female>0.5, 0
+2, 0.069, 0.228373702422145, age>53.5 & days_b_screening_arrest>-1.5, 0.352941176470588
+4, 0.008, 0, age>55.5 & age<=56.5 & priors_count<=6.5 & sex_Female<=0.5, 0
+4, 0.002, 0, age>55.5 & age<=56.5 & priors_count>6.5 & days_b_screening_arrest>-1.5, 1
+2, 0.049, 0.109375, age>55.5 & priors_count<=5.5, 0.125
+4, 0.002, 0, age<=41.5 & age>40.5 & priors_count<=6.5 & days_b_screening_arrest>-1.5, 0
+4, 0.008, 0, age>41.5 & priors_count>2.5 & race_Caucasian<=0.5 & sex_Female>0.5, 0
+4, 0.004, 0, age>41.5 & age<=44.5 & race_Caucasian>0.5 & sex_Female>0.5, 1
+3, 0.018, 0, age>44.5 & race_Caucasian>0.5 & sex_Female>0.5, 0
+3, 0.016, 0.234375, age<=33.5 & days_b_screening_arrest>-22.5 & days_b_screening_arrest<=-10.5, 0.625
+4, 0.002, 0, age<=34.5 & age>33.5 & race_Caucasian<=0.5 & sex_Female>0.5, 0
+4, 0.004, 0, age>34.5 & age<=35.5 & priors_count>1.5 & race_Caucasian<=0.5, 0
+3, 0.002, 0, age<=22.5 & priors_count>2.5 & race_Caucasian>0.5, 0
+2, 0.172, 0.231695501730104, age>42.5 & priors_count<=5.5, 0.364705882352941
+5, 0.012, 0.138888888888889, age<=39.5 & age>31.5 & priors_count<=2.5 & race_Caucasian<=0.5 & sex_Male<=0.5, 0.166666666666667
+4, 0.006, 0, age>39.5 & age<=41.5 & priors_count<=2.5 & race_Hispanic<=0.5, 0
+3, 0.028, 0.204081632653061, age>39.5 & age<=44.5 & race_Caucasian<=0.5, 0.285714285714286
+4, 0.004, 0, age<=26.5 & age>25.5 & c_charge_degree_F<=0.5 & race_Caucasian>0.5, 0
+2, 0.412, 0.210196801669538, age>26.5 & priors_count<=2.5, 0.300492610837438
+4, 0.012, 0, age>40.5 & priors_count>2.5 & days_b_screening_arrest<=-0.5 & sex_Male<=0.5, 0
+5, 0.002, 0, priors_count>2.5 & priors_count<=3.5 & days_b_screening_arrest>-0.5 & race_Caucasian<=0.5 & sex_Male<=0.5, 0
+3, 0.004, 0, priors_count>3.5 & days_b_screening_arrest>-0.5 & sex_Male<=0.5, 1
+4, 0.034, 0.207612456747405, priors_count>2.5 & priors_count<=3.5 & days_b_screening_arrest<=-0.5 & race_Caucasian<=0.5, 0.705882352941177
+2, 0.116, 0.193905817174515, age<=28.5 & priors_count>2.5, 0.736842105263158
+2, 0.083, 0.171326591314694, age<=27.5 & priors_count>2.5, 0.780487804878049
+2, 0.061, 0.138888888888889, age<=26.5 & priors_count>2.5, 0.833333333333333
+2, 0.024, 0, age<=26.5 & priors_count>5.5, 1
+3, 0.14, 0.205839109430792, age>26.5 & age<=29.5 & priors_count<=7.5, 0.289855072463768
+2, 0.049, 0.222222222222222, priors_count<=5.5 & priors_count>4.5, 0.666666666666667
+4, 0.004, 0, age<=29.5 & priors_count<=7.5 & priors_count>5.5 & c_charge_degree_M>0.5, 1
+4, 0.004, 0, age>26.5 & age<=28.5 & priors_count>7.5 & days_b_screening_arrest>-0.5, 0
+3, 0.045, 0.117768595041322, age<=31.5 & priors_count>7.5 & priors_count<=13.5, 0.863636363636364
+3, 0.032, 0.05859375, age>38.5 & priors_count>0.5 & days_b_screening_arrest<=-1.5, 0.0625
+1, 0.702, 0.249323398710281, age<=37, 0.473988439306358
+4, 0.002, 0, age>37 & priors_count>0.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-2.5, 1
+3, 0.002, 0, priors_count>10.5 & days_b_screening_arrest<=-1.5 & sex_Male<=0.5, 0
+2, 0.002, 0, priors_count>10.5 & days_b_screening_arrest<=-14, 1
+3, 0.008, 0, priors_count>10.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-14, 0
+3, 0.006, 0, age<=55.5 & age>53.5 & race_African_American>0.5, 1
+4, 0.008, 0, age>55.5 & age<=56.5 & priors_count<=4.5 & sex_Female<=0.5, 0
+4, 0.002, 0, age>55.5 & age<=56.5 & priors_count>4.5 & days_b_screening_arrest>-1.5, 1
+3, 0.002, 0, age<=39.5 & age>38.5 & sex_Female>0.5, 1
+3, 0.002, 0, age<=41.5 & age>39.5 & sex_Female>0.5, 0
+3, 0.004, 0, age<=34.5 & age>33.5 & priors_count>8.5, 1
+2, 0.339, 0.233425364839184, age>34.5 & priors_count<=11.5, 0.37125748502994
+4, 0.006, 0, age>30.5 & age<=31.5 & priors_count>9.5 & sex_Female<=0.5, 1
+4, 0.004, 0, age>30.5 & age<=33 & priors_count>9.5 & sex_Female>0.5, 0
+4, 0.002, 0, age>33 & priors_count<=11.5 & priors_count>9.5 & sex_Female>0.5, 1
+2, 0.006, 0, priors_count>11.5 & days_b_screening_arrest<=-5.5, 0
+3, 0.016, 0, priors_count>11.5 & priors_count<=13.5 & days_b_screening_arrest>-5.5, 1
+2, 0.004, 0, days_b_screening_arrest<=-16.5 & days_b_screening_arrest>-19.5, 1
+3, 0.002, 0, days_b_screening_arrest>-16.5 & days_b_screening_arrest<=-14.5 & sex_Male<=0.5, 0
+4, 0.002, 0, days_b_screening_arrest>-16.5 & days_b_screening_arrest<=-14.5 & c_charge_degree_M<=0.5 & sex_Male>0.5, 1
+3, 0.002, 0, days_b_screening_arrest>-16.5 & days_b_screening_arrest<=-14.5 & c_charge_degree_M>0.5, 0
+2, 0.01, 0, days_b_screening_arrest>-14.5 & days_b_screening_arrest<=-11.5, 0
+5, 0.012, 0.138888888888889, age<=39.5 & age>31.5 & priors_count<=2.5 & race_Caucasian<=0.5 & sex_Female>0.5, 0.166666666666667
+3, 0.002, 0, age<=26.5 & priors_count>2.5 & race_Hispanic>0.5, 1
+3, 0.012, 0.138888888888889, age>31.5 & age<=32.5 & priors_count>2.5, 0.833333333333333
+4, 0.01, 0, age>32.5 & age<=33.5 & priors_count>2.5 & days_b_screening_arrest<=-0.5, 1
+3, 0.028, 0.122448979591837, age>26.5 & age<=27.5 & priors_count<=1.5, 0.142857142857143
+3, 0.004, 0, age>26.5 & age<=27.5 & race_Other>0.5, 1
+4, 0.002, 0, age>26.5 & age<=27.5 & c_charge_degree_M<=0.5 & sex_Female>0.5, 0
+3, 0.053, 0.177514792899408, age>26.5 & age<=31.5 & sex_Female>0.5, 0.230769230769231
+3, 0.047, 0.0793950850661626, age<=26.5 & priors_count>2.5 & c_charge_degree_F>0.5, 0.91304347826087
+4, 0.002, 0, age>26.5 & age<=27.5 & c_charge_degree_M<=0.5 & sex_Male<=0.5, 0
+2, 0.128, 0.210632401108592, age>26.5 & sex_Male<=0.5, 0.301587301587302
+3, 0.126, 0.191467221644121, age>26.5 & age<=29.5 & priors_count<=5.5, 0.258064516129032
+4, 0.006, 0, age<=29.5 & priors_count<=5.5 & priors_count>4.5 & race_African_American<=0.5, 0
+4, 0.061, 0.195555555555556, age>26.5 & age<=29.5 & priors_count<=5.5 & race_African_American>0.5, 0.266666666666667
+4, 0.002, 0, age>29.5 & age<=30.5 & priors_count<=5.5 & priors_count>4.5, 1
+2, 0.554, 0.227991788431349, age>26.5 & priors_count<=5.5, 0.351648351648352
+3, 0.01, 0, age>26.5 & age<=28.5 & days_b_screening_arrest<=-1.5, 0
+4, 0.014, 0, age<=28.5 & priors_count>5.5 & priors_count<=7.5 & days_b_screening_arrest>-1.5, 1
+3, 0.026, 0.130177514792899, age<=24.5 & age>23.5 & priors_count<=0.5, 0.153846153846154
+2, 0.631, 0.226672594369372, age>23.5 & priors_count<=4.5, 0.347266881028939
+2, 0.746, 0.240954336011342, age>24.5 & priors_count<=11.5, 0.404891304347826
+2, 0.002, 0, priors_count>7.5 & days_b_screening_arrest<=-16.5, 1
+2, 0.018, 0, age>40.5 & days_b_screening_arrest<=-8.5, 0
+2, 0.14, 0.199537912203319, priors_count<=2.5 & sex_Female>0.5, 0.27536231884058
+4, 0.002, 0, age>32.5 & priors_count<=2.5 & priors_count>1.5 & sex_Female>0.5, 1
+4, 0.004, 0, age>24.5 & age<=25.5 & priors_count>2.5 & priors_count<=3.5, 1
+2, 0.045, 0.117768595041322, age<=25.5 & priors_count>2.5, 0.863636363636364
+5, 0.016, 0, age>24.5 & priors_count>2.5 & priors_count<=4.5 & days_b_screening_arrest<=-0.5 & sex_Female>0.5, 0
+3, 0.004, 0, priors_count>3.5 & days_b_screening_arrest>-0.5 & sex_Female>0.5, 1
+4, 0.002, 0, age<=22.5 & priors_count>0.5 & race_African_American<=0.5 & sex_Male<=0.5, 0
+4, 0.002, 0, age<=22.5 & priors_count>1.5 & race_African_American<=0.5 & race_Hispanic<=0.5, 0
+3, 0.002, 0, age<=22.5 & priors_count>1.5 & race_Hispanic>0.5, 1
+2, 0.03, 0.115555555555556, age<=21.5 & priors_count>0.5, 0.866666666666667
+4, 0.002, 0, age>22.5 & age<=23.5 & days_b_screening_arrest<=-1.5 & sex_Male<=0.5, 1
+5, 0.002, 0, age>22.5 & age<=23.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-3.5 & sex_Male>0.5, 0
+4, 0.014, 0, age>22.5 & age<=23.5 & days_b_screening_arrest>-1.5 & c_charge_degree_M>0.5, 0
+4, 0.002, 0, days_b_screening_arrest>-16.5 & days_b_screening_arrest<=-14.5 & c_charge_degree_F>0.5 & sex_Female<=0.5, 1
+3, 0.002, 0, days_b_screening_arrest>-16.5 & days_b_screening_arrest<=-14.5 & sex_Female>0.5, 0
+3, 0.016, 0.1875, age<=21.5 & priors_count<=0.5 & c_charge_degree_F<=0.5, 0.75
+5, 0.004, 0, age<=22.5 & age>21.5 & priors_count<=0.5 & days_b_screening_arrest<=-0.5 & c_charge_degree_F<=0.5, 1
+3, 0.004, 0, age<=22.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0
+5, 0.006, 0, age>22.5 & age<=23.5 & priors_count>0.5 & c_charge_degree_M<=0.5 & sex_Male<=0.5, 1
+3, 0.018, 0.0987654320987654, age>22.5 & age<=23.5 & c_charge_degree_M>0.5, 0.111111111111111
+3, 0.002, 0, age>22.5 & age<=23.5 & race_Other>0.5, 0
+4, 0.006, 0, age>22.5 & age<=23.5 & c_charge_degree_M>0.5 & sex_Female>0.5, 0
+3, 0.004, 0, days_b_screening_arrest>-14.5 & days_b_screening_arrest<=-7.5 & race_Hispanic>0.5, 0
+2, 0.339, 0.233425364839184, age>34.5 & priors_count<=12.5, 0.37125748502994
+4, 0.008, 0, age>34.5 & age<=42.5 & priors_count<=18.5 & priors_count>9.5, 1
+3, 0.002, 0, age<=48.5 & age>41.5 & priors_count>12.5, 1
+3, 0.002, 0, age>39.5 & age<=45.5 & priors_count>18.5, 0
+3, 0.002, 0, age<=22.5 & age>21.5 & days_b_screening_arrest<=-4.5, 0
+4, 0.002, 0, age<=28.5 & priors_count>3.5 & race_African_American<=0.5 & sex_Male<=0.5, 1
+5, 0.008, 0, age>22.5 & age<=34.5 & priors_count>0.5 & days_b_screening_arrest<=-1.5 & race_African_American>0.5, 0
+3, 0.049, 0.109375, priors_count<=1.5 & race_African_American>0.5 & sex_Male<=0.5, 0.125
+3, 0.047, 0.0793950850661626, age<=26.5 & priors_count>2.5 & c_charge_degree_M<=0.5, 0.91304347826087
+4, 0.002, 0, age>26.5 & age<=27.5 & c_charge_degree_F>0.5 & sex_Male<=0.5, 0
+4, 0.002, 0, age>27.5 & age<=33.5 & race_Hispanic>0.5 & sex_Male<=0.5, 1
+3, 0.059, 0.14268727705113, age>26.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 0.172413793103448
+4, 0.002, 0, age<=45.5 & age>44.5 & priors_count<=1.5 & c_charge_degree_M<=0.5, 1
+3, 0.016, 0, age>56.5 & age<=64.5 & priors_count<=1.5, 0
+3, 0.061, 0.16, age<=27.5 & priors_count>2.5 & days_b_screening_arrest<=-0.5, 0.8
+4, 0.016, 0, age<=27.5 & priors_count>2.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M<=0.5, 1
+3, 0.002, 0, age<=22.5 & priors_count>1.5 & days_b_screening_arrest<=-1.5, 0
+4, 0.006, 0, age<=23.5 & priors_count<=1.5 & days_b_screening_arrest>-0.5 & sex_Female>0.5, 0
+3, 0.018, 0, age<=22.5 & priors_count>1.5 & c_charge_degree_M<=0.5, 1
+3, 0.006, 0, age<=22.5 & age>21.5 & priors_count>1.5, 1
+3, 0.061, 0.09, age<=27.5 & priors_count>2.5 & c_charge_degree_M<=0.5, 0.9
+3, 0.105, 0.116494082840237, priors_count<=1.5 & c_charge_degree_M>0.5 & race_Caucasian>0.5, 0.134615384615385
+4, 0.002, 0, priors_count>1.5 & c_charge_degree_M>0.5 & race_Caucasian>0.5 & sex_Female>0.5, 1
+3, 0.004, 0, age<=51.5 & priors_count<=15.5 & priors_count>14.5, 1
+2, 0.002, 0, priors_count>15.5 & priors_count<=16.5, 1
+3, 0.004, 0, age<=51.5 & age>41.5 & priors_count>12.5, 1
+4, 0.008, 0, age<=51.5 & age>46.5 & priors_count<=0.5 & c_charge_degree_F<=0.5, 0
+4, 0.006, 0, age<=51.5 & age>46.5 & priors_count>0.5 & priors_count<=1.5, 1
+4, 0.006, 0, age<=51.5 & age>46.5 & priors_count>0.5 & c_charge_degree_F<=0.5, 1
+3, 0.02, 0, age>57.5 & priors_count<=0.5 & days_b_screening_arrest>-1.5, 0
+4, 0.006, 0, age>51.5 & age<=53.5 & priors_count<=1.5 & priors_count>0.5, 0
+3, 0.016, 0, age>51.5 & priors_count>1.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.081, 0.144375, age>22.5 & c_charge_degree_F<=0.5 & sex_Female>0.5, 0.175
+4, 0.004, 0, age<=25.5 & days_b_screening_arrest<=-4.5 & c_charge_degree_F>0.5 & race_Hispanic<=0.5, 0
+4, 0.008, 0.1875, age>25.5 & age<=26.5 & days_b_screening_arrest>-0.5 & c_charge_degree_F>0.5, 0.75
+3, 0.006, 0, age<=34.5 & priors_count>3.5 & race_Hispanic>0.5, 1
+3, 0.004, 0, age>34.5 & priors_count>3.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age>39.5 & age<=43.5 & c_charge_degree_M<=0.5 & race_Hispanic>0.5, 1
+3, 0.014, 0, age>39.5 & age<=43.5 & c_charge_degree_M>0.5, 0
+2, 0.002, 0, priors_count<=12.5 & priors_count>11.5, 1
+3, 0.004, 0, age<=51.5 & age>49.5 & priors_count>8.5, 1
+3, 0.01, 0, age>51.5 & priors_count<=1.5 & c_charge_degree_F>0.5, 0
+3, 0.002, 0, age>56.5 & age<=58.5 & priors_count<=1.5, 0
+2, 0.112, 0.213553719008264, age>51.5 & race_Hispanic<=0.5, 0.309090909090909
+4, 0.002, 0, age>51.5 & age<=55 & priors_count>1.5 & race_Hispanic>0.5, 0
+3, 0.002, 0, age>55 & priors_count>1.5 & race_Hispanic>0.5, 1
+3, 0.022, 0, age>51.5 & priors_count>0.5 & days_b_screening_arrest<=-2.5, 0
+3, 0.01, 0, age>51.5 & age<=56 & days_b_screening_arrest<=-2.5, 0
+3, 0.004, 0, age>51.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-3.5, 0
+3, 0.02, 0, age>58.5 & priors_count<=0.5 & days_b_screening_arrest>-2.5, 0
+4, 0.002, 0, age<=51.5 & age>49.5 & c_charge_degree_F<=0.5 & race_Caucasian<=0.5, 1
+3, 0.002, 0, age>51.5 & priors_count<=5 & race_Other>0.5, 0
+2, 0.041, 0.1875, priors_count<=18.5 & priors_count>11.5, 0.75
+3, 0.004, 0, priors_count<=18.5 & priors_count>11.5 & days_b_screening_arrest>-0.5, 1
+2, 0.026, 0.0710059171597633, age>51.5 & days_b_screening_arrest<=-2.5, 0.0769230769230769
+4, 0.004, 0, age<=25.5 & days_b_screening_arrest<=-4.5 & c_charge_degree_M<=0.5 & race_Hispanic<=0.5, 0
+4, 0.008, 0.1875, age>25.5 & age<=26.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M<=0.5, 0.75
+2, 0.308, 0.205678670360111, priors_count<=3.5 & c_charge_degree_M>0.5, 0.289473684210526
+3, 0.01, 0, age>50.5 & priors_count<=2.5 & days_b_screening_arrest>-0.5, 0
+3, 0.028, 0.122448979591837, age<=35.5 & priors_count<=0.5 & race_Hispanic>0.5, 0.142857142857143
+3, 0.002, 0, age<=21.5 & priors_count>0.5 & race_Hispanic>0.5, 1
+4, 0.006, 0, age>29.5 & age<=33 & days_b_screening_arrest<=-0.5 & race_Hispanic>0.5, 0
+3, 0.006, 0, age>33 & priors_count>2.5 & race_Hispanic>0.5, 0
+3, 0.01, 0, age<=27.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age<=31.5 & age>27.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 1
+4, 0.006, 0, age>31.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0
+3, 0.034, 0.179930795847751, age<=24.5 & age>22.5 & c_charge_degree_M>0.5, 0.235294117647059
+3, 0.002, 0, age>25.5 & age<=26.5 & days_b_screening_arrest<=-2.5, 1
+4, 0.002, 0, age>25.5 & age<=27.5 & priors_count<=0.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age>25.5 & age<=27.5 & priors_count>0.5 & race_Hispanic>0.5, 1
+2, 0.619, 0.234883095941951, age>25.5 & priors_count<=6.5, 0.377049180327869
+4, 0.002, 0, age>37.5 & age<=46 & priors_count<=0.5 & days_b_screening_arrest<=-2.5, 1
+4, 0.03, 0.115555555555556, age>37.5 & age<=43.5 & priors_count<=0.5 & days_b_screening_arrest>-2.5, 0.133333333333333
+3, 0.01, 0, age>37.5 & age<=38.5 & c_charge_degree_F<=0.5, 0
+4, 0.01, 0, age>37.5 & age<=38.5 & priors_count>0.5 & c_charge_degree_F>0.5, 1
+4, 0.008, 0, age<=28.5 & priors_count>0.5 & c_charge_degree_M<=0.5 & race_Other>0.5, 1
+5, 0.002, 0, age<=28.5 & age>25.5 & c_charge_degree_M<=0.5 & race_Other>0.5 & sex_Female<=0.5, 1
+3, 0.002, 0, age<=25.5 & c_charge_degree_M>0.5 & race_Other>0.5, 0
+4, 0.002, 0, age>28.5 & age<=29.5 & priors_count<=1 & race_Other>0.5, 0
+3, 0.01, 0, age>28.5 & priors_count>1 & race_Other>0.5, 1
+3, 0.002, 0, age>29.5 & age<=30.5 & race_Other>0.5, 0
+5, 0.002, 0, age<=27.5 & age>26.5 & priors_count<=4.5 & priors_count>2.5 & c_charge_degree_F<=0.5, 0
+5, 0.008, 0, age<=30.5 & age>27.5 & priors_count<=4.5 & priors_count>3.5 & c_charge_degree_F>0.5, 0
+2, 0.122, 0.203055555555556, age<=32.5 & priors_count>4.5, 0.716666666666667
+2, 0.166, 0.196311719214753, age<=40.5 & priors_count>4.5, 0.731707317073171
+4, 0.01, 0, age<=25.5 & age>24.5 & priors_count>2.5 & c_charge_degree_M<=0.5, 1
+4, 0.004, 0, age<=25.5 & priors_count<=0.5 & c_charge_degree_M<=0.5 & race_Hispanic>0.5, 0
+2, 0.359, 0.207475501931118, age>25.5 & priors_count<=1.5, 0.293785310734463
+4, 0.006, 0, age>43.5 & age<=44.5 & c_charge_degree_M<=0.5 & sex_Female<=0.5, 0
+4, 0.004, 0, priors_count<=2.5 & priors_count>0.5 & days_b_screening_arrest>-0.5 & sex_Female>0.5, 1
+3, 0.024, 0.138888888888889, priors_count<=4.5 & priors_count>2.5 & sex_Female>0.5, 0.166666666666667
+5, 0.006, 0, age>35.5 & priors_count<=4.5 & priors_count>2.5 & days_b_screening_arrest<=-0.5 & sex_Female>0.5, 0
+3, 0.077, 0.114265927977839, priors_count<=4.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 0.131578947368421
+5, 0.01, 0, age>28.5 & priors_count<=4.5 & priors_count>2.5 & days_b_screening_arrest<=-0.5 & sex_Male<=0.5, 0
+1, 0.874, 0.249158865423851, age<=51, 0.470997679814385
+4, 0.01, 0, priors_count<=4.5 & priors_count>2.5 & days_b_screening_arrest>-0.5 & c_charge_degree_F<=0.5, 0
+4, 0.012, 0.138888888888889, age<=49.5 & age>46.5 & priors_count<=4.5 & c_charge_degree_F>0.5, 0.833333333333333
+3, 0.004, 0, age>57.5 & priors_count<=4.5 & c_charge_degree_F>0.5, 0
+4, 0.02, 0, age<=42.5 & priors_count>4.5 & priors_count<=9.5 & sex_Male<=0.5, 1
+3, 0.006, 0, age>42.5 & priors_count>4.5 & sex_Male<=0.5, 0
+3, 0.002, 0, age>50.5 & priors_count>4.5 & sex_Male<=0.5, 0
+5, 0.002, 0, age>42.5 & age<=46.5 & priors_count>4.5 & priors_count<=10.5 & sex_Male>0.5, 1
+3, 0.006, 0, age>42.5 & priors_count>10.5 & priors_count<=11.5, 0
+4, 0.002, 0, age<=43.5 & age>40.5 & priors_count<=0.5 & days_b_screening_arrest<=-1.5, 1
+3, 0.028, 0, age>40.5 & priors_count>0.5 & days_b_screening_arrest<=-1.5, 0
+2, 0.116, 0.222222222222222, age>43.5 & priors_count<=2.5, 0.333333333333333
+4, 0.004, 0, age>43.5 & priors_count<=2.5 & priors_count>1.5 & days_b_screening_arrest>-0.5, 1
+4, 0.002, 0, age>43.5 & age<=44.5 & priors_count>2.5 & sex_Male<=0.5, 1
+4, 0.002, 0, age>43.5 & age<=44.5 & priors_count>2.5 & sex_Male>0.5, 0
+3, 0.002, 0, age>36.5 & age<=38.5 & race_Other>0.5, 1
+4, 0.002, 0, age>38.5 & age<=39.5 & priors_count>0.5 & race_Other>0.5, 1
+3, 0.002, 0, age<=40.5 & age>39.5 & race_Other>0.5, 0
+3, 0.002, 0, age>48.5 & days_b_screening_arrest<=-0.5 & race_Other>0.5, 1
+3, 0.002, 0, age>40.5 & days_b_screening_arrest>-0.5 & race_Other>0.5, 0
+2, 0.024, 0.138888888888889, age<=59.5 & priors_count>14.5, 0.833333333333333
+3, 0.002, 0, age<=59.5 & age>53.5 & priors_count>14.5, 1
+3, 0.006, 0, age>24.5 & age<=27.5 & race_Other>0.5, 1
+3, 0.012, 0.138888888888889, age>27.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 0.166666666666667
+3, 0.008, 0.1875, age<=24.5 & c_charge_degree_F>0.5 & race_Other>0.5, 0.75
+3, 0.002, 0, age>46.5 & c_charge_degree_F>0.5 & race_Other>0.5, 1
+3, 0.018, 0.0987654320987654, age<=35.5 & age>33.5 & c_charge_degree_M>0.5, 0.111111111111111
+4, 0.002, 0, age<=36.5 & age>35.5 & priors_count<=1.5 & c_charge_degree_F<=0.5, 0
+4, 0.002, 0, age<=36.5 & age>35.5 & c_charge_degree_F>0.5 & sex_Female>0.5, 1
+4, 0.006, 0, age>36.5 & age<=38.5 & priors_count<=1.5 & sex_Male<=0.5, 0
+2, 0.018, 0.172839506172839, age>38.5 & age<=39.5, 0.222222222222222
+4, 0.006, 0, age<=36.5 & age>33.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M>0.5, 0
+3, 0.002, 0, age>37.5 & priors_count<=10.5 & priors_count>9.5, 1
+2, 0.012, 0, age<=27.5 & priors_count>10.5, 1
+3, 0.01, 0.16, age<=35.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 0.2
+4, 0.002, 0, age<=37.5 & age>35.5 & c_charge_degree_F<=0.5 & race_Other>0.5, 1
+3, 0.004, 0, age<=34.5 & days_b_screening_arrest>-0.5 & race_Other>0.5, 1
+4, 0.002, 0, age>34.5 & age<=36.5 & c_charge_degree_F>0.5 & race_Other>0.5, 0
+2, 0.01, 0.16, age<=43.5 & age>42.5, 0.2
+3, 0.006, 0, age<=59.5 & age>56.5 & priors_count<=1.5, 0
+3, 0.002, 0, age>59.5 & priors_count<=12.5 & priors_count>9.5, 0
+2, 0.002, 0, age>59.5 & priors_count>17, 0
+3, 0.002, 0, age<=23.5 & priors_count>1.5 & race_Other>0.5, 0
+4, 0.01, 0.16, age<=28.5 & age>23.5 & race_Other>0.5 & sex_Female<=0.5, 0.8
+3, 0.051, 0.0384, priors_count<=0.5 & c_charge_degree_M>0.5 & sex_Male<=0.5, 0.04
+3, 0.018, 0.0987654320987654, age<=35.5 & age>33.5 & c_charge_degree_F<=0.5, 0.111111111111111
+3, 0.008, 0, age>45.5 & age<=48.5 & race_African_American<=0.5, 0
+2, 0.189, 0.228928199791883, priors_count<=5.5 & days_b_screening_arrest>-0.5, 0.354838709677419
+2, 0.043, 0.154195011337868, priors_count>5.5 & days_b_screening_arrest>-0.5, 0.80952380952381
+3, 0.004, 0, age>42.5 & priors_count>5.5 & days_b_screening_arrest>-0.5, 1
+2, 0.355, 0.223477551020408, days_b_screening_arrest>-5.5 & c_charge_degree_M>0.5, 0.337142857142857
+3, 0.006, 0, age>42.5 & age<=45.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.037, 0.0987654320987654, age>39.5 & days_b_screening_arrest<=-2.5, 0.111111111111111
+2, 0.061, 0.16, age>55.5 & race_Hispanic<=0.5, 0.2
+2, 0.331, 0.237118446309609, age<=37.5 & priors_count>1.5, 0.613496932515337
+4, 0.008, 0, age<=37.5 & age>34.5 & priors_count>1.5 & race_Hispanic>0.5, 0
+3, 0.03, 0.16, days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-1.5 & race_Hispanic<=0.5, 0.2
+4, 0.002, 0, age<=37.5 & age>36.5 & priors_count>2.5 & priors_count<=3.5, 0
+4, 0.002, 0, age<=37.5 & age>36.5 & priors_count>3.5 & race_Hispanic<=0.5, 1
+3, 0.016, 0.1875, age>37.5 & age<=38.5 & c_charge_degree_M<=0.5, 0.75
+3, 0.01, 0, age>37.5 & age<=38.5 & c_charge_degree_M>0.5, 0
+3, 0.01, 0, age>37.5 & priors_count>5.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.006, 0, age>54.5 & age<=58.5 & days_b_screening_arrest<=-4.5, 0
+3, 0.008, 0, age>54.5 & priors_count<=1.5 & race_Hispanic>0.5, 0
+3, 0.008, 0, age>54.5 & priors_count<=1.5 & c_charge_degree_M<=0.5, 0
+2, 0.004, 0, age>58.5 & race_Hispanic>0.5, 0
+3, 0.002, 0, age>54.5 & priors_count>1.5 & race_Hispanic>0.5, 1
+4, 0.004, 0, age>39.5 & age<=41.5 & priors_count<=2.5 & days_b_screening_arrest>-0.5, 0
+4, 0.002, 0, age<=38.5 & age>36.5 & priors_count>2.5 & priors_count<=4.5, 0
+2, 0.174, 0.195916711736074, age<=41.5 & priors_count>4.5, 0.732558139534884
+4, 0.002, 0, age<=41.5 & age>38.5 & priors_count>8.5 & priors_count<=9.5, 0
+4, 0.004, 0, age>41.5 & age<=44.5 & race_African_American<=0.5 & sex_Female>0.5, 1
+4, 0.006, 0, age>41.5 & age<=44.5 & priors_count>2.5 & days_b_screening_arrest<=-0.5, 0
+5, 0.002, 0, age>41.5 & age<=44.5 & priors_count>2.5 & days_b_screening_arrest>-0.5 & race_African_American>0.5, 1
+3, 0.081, 0.234375, priors_count>2.5 & days_b_screening_arrest>-0.5 & sex_Female<=0.5, 0.625
+3, 0.012, 0, age>44.5 & priors_count>2.5 & sex_Female>0.5, 0
+3, 0.006, 0, age>59.5 & priors_count<=2.5 & race_Caucasian<=0.5, 0
+4, 0.01, 0.16, age<=55.5 & age>52.5 & priors_count>2.5 & priors_count<=3.5, 0.8
+3, 0.01, 0, age>55.5 & priors_count>2.5 & priors_count<=4.5, 0
+3, 0.002, 0, age>55.5 & priors_count>2.5 & days_b_screening_arrest>-0.5, 1
+2, 0.002, 0, age<=50.5 & priors_count>24.5, 1
+4, 0.004, 0, age>50.5 & age<=51.5 & priors_count<=5.5 & race_African_American<=0.5, 0
+4, 0.002, 0, age>50.5 & age<=51.5 & priors_count<=5.5 & priors_count>1.5, 0
+2, 0.099, 0.194918783840067, age>50.5 & priors_count<=5.5, 0.26530612244898
+3, 0.002, 0, age>50.5 & age<=51.5 & priors_count>5.5, 1
+3, 0.004, 0, age>50.5 & priors_count>5.5 & days_b_screening_arrest>-0.5, 1
+3, 0.002, 0, age>50.5 & priors_count>5.5 & sex_Female>0.5, 0
+3, 0.002, 0, age<=50.5 & age>49.5 & c_charge_degree_M>0.5, 1
+4, 0.002, 0, age>50.5 & age<=54.5 & priors_count<=1.5 & race_Hispanic>0.5, 1
+4, 0.002, 0, age>50.5 & age<=54.5 & priors_count>1.5 & race_Hispanic>0.5, 0
+3, 0.002, 0, age<=59.5 & age>53.5 & priors_count>15.5, 1
+3, 0.002, 0, age>48.5 & days_b_screening_arrest>-0.5 & race_Other>0.5, 0
+3, 0.004, 0, age<=50.5 & age>49.5 & priors_count>7.5, 1
+3, 0.004, 0, age>50.5 & days_b_screening_arrest>-0.5 & c_charge_degree_M<=0.5, 1
+3, 0.006, 0, age>38.5 & priors_count<=0.5 & race_Other>0.5, 0
+2, 0.211, 0.226331360946746, priors_count>3.5 & c_charge_degree_M<=0.5, 0.653846153846154
+3, 0.004, 0, age<=27.5 & days_b_screening_arrest>-19.5 & days_b_screening_arrest<=-12.5, 1
+3, 0.012, 0, age>27.5 & days_b_screening_arrest>-18.5 & days_b_screening_arrest<=-12.5, 0
+3, 0.008, 0, priors_count<=5 & days_b_screening_arrest>-18.5 & days_b_screening_arrest<=-12.5, 0
+3, 0.004, 0, days_b_screening_arrest>-18.5 & days_b_screening_arrest<=-12.5 & race_Caucasian>0.5, 0
+1, 1, 0.247530333389563, priors_count<=35, 0.450304259634888
+2, 0.004, 0, priors_count>19.5 & days_b_screening_arrest>-0.5, 1
+3, 0.004, 0, days_b_screening_arrest<=-19.5 & c_charge_degree_M>0.5 & race_African_American<=0.5, 0
+3, 0.002, 0, age<=24.5 & priors_count>1.5 & days_b_screening_arrest<=-18.5, 1
+2, 0.002, 0, priors_count>8 & days_b_screening_arrest<=-18.5, 1
+3, 0.002, 0, priors_count<=1.5 & days_b_screening_arrest>-19.5 & days_b_screening_arrest<=-14.5, 0
+4, 0.006, 0, priors_count>1.5 & priors_count<=4.5 & days_b_screening_arrest>-18.5 & days_b_screening_arrest<=-10.5, 0
+3, 0.002, 0, days_b_screening_arrest>-10.5 & days_b_screening_arrest<=-5.5 & sex_Male<=0.5, 0
+3, 0.002, 0, age>48.5 & c_charge_degree_M>0.5 & race_Other>0.5, 0
+2, 0.004, 0, age<=38 & priors_count>21.5, 1
+3, 0.01, 0.16, age>27.5 & age<=31.5 & race_Other>0.5, 0.2
+2, 0.002, 0, age<=21.5 & days_b_screening_arrest<=-10.5, 1
+4, 0.004, 0, age>21.5 & priors_count<=1.5 & days_b_screening_arrest>-19.5 & days_b_screening_arrest<=-10.5, 0
+2, 0.014, 0, days_b_screening_arrest<=-22.5 & days_b_screening_arrest>-28.5, 0
+3, 0.002, 0, age<=31.5 & days_b_screening_arrest<=-10.5 & days_b_screening_arrest>-11.5, 1
+3, 0.002, 0, age<=31.5 & age>30.5 & days_b_screening_arrest<=-10.5, 1
+3, 0.01, 0, age>31.5 & age<=35.5 & days_b_screening_arrest<=-10.5, 0
+3, 0.01, 0, age>37.5 & days_b_screening_arrest>-22.5 & days_b_screening_arrest<=-10.5, 0
+2, 0.053, 0.177514792899408, priors_count>11.5 & days_b_screening_arrest>-10.5, 0.769230769230769
+3, 0.004, 0, age<=27.5 & days_b_screening_arrest>-22.5 & days_b_screening_arrest<=-12.5, 1
+4, 0.006, 0, age>27.5 & age<=35.5 & days_b_screening_arrest<=-12.5 & race_Caucasian<=0.5, 0
+2, 0.002, 0, days_b_screening_arrest>-12.5 & days_b_screening_arrest<=-11.5, 0
+1, 0.982, 0.24811744416365, days_b_screening_arrest>-22.5, 0.456611570247934
+4, 0.004, 0, age<=50.5 & age>45.5 & days_b_screening_arrest>-0.5 & race_Caucasian>0.5, 0
+3, 0.01, 0, age>50.5 & priors_count<=5.5 & days_b_screening_arrest>-0.5, 0
+3, 0.002, 0, age>50.5 & priors_count>5.5 & sex_Male<=0.5, 0
+3, 0.004, 0, priors_count<=10.5 & priors_count>9.5 & race_Caucasian>0.5, 1
+3, 0.002, 0, age<=30.5 & priors_count>10.5 & sex_Male<=0.5, 1
+3, 0.004, 0, age>30.5 & priors_count>10.5 & sex_Male<=0.5, 0
+2, 0.037, 0.138888888888889, age<=37.5 & priors_count>10.5, 0.833333333333333
+3, 0.006, 0, age<=37.5 & age>32.5 & priors_count>10.5, 1
+3, 0.049, 0.222222222222222, age>37.5 & age<=42.5 & race_Caucasian<=0.5, 0.333333333333333
+2, 0.11, 0.222222222222222, days_b_screening_arrest>-0.5 & race_African_American<=0.5, 0.333333333333333
+3, 0.002, 0, age<=53.5 & age>48.5 & race_Other>0.5, 1
+3, 0.002, 0, age>37.5 & days_b_screening_arrest>-0.5 & race_Other>0.5, 0
+3, 0.008, 0, age>37.5 & age<=39.5 & priors_count>3.5, 1
+1, 0.99, 0.246938826928245, days_b_screening_arrest<=14.5, 0.444672131147541
+3, 0.002, 0, age>45.5 & priors_count>18.5 & days_b_screening_arrest>-0.5, 1
+2, 0.039, 0.0941828254847645, age>39.5 & days_b_screening_arrest<=-1.5, 0.105263157894737
+3, 0.006, 0, age<=61.5 & age>58.5 & priors_count<=0.5, 0
+2, 0.01, 0, age<=61.5 & age>59.5, 0
+3, 0.004, 0, age>61.5 & age<=62.5 & priors_count<=8.5, 0
+1, 0.024, 0.1875, age>61.5, 0.25
+3, 0.008, 0, age<=50.5 & priors_count>12.5 & priors_count<=13.5, 1
+4, 0.004, 0, age<=50.5 & age>49.5 & priors_count<=6 & race_African_American>0.5, 0
+4, 0.002, 0, age<=50.5 & age>49.5 & priors_count>1.5 & priors_count<=2.5, 1
+4, 0.002, 0, age<=50.5 & age>49.5 & priors_count<=6 & priors_count>2.5, 0
+3, 0.004, 0, age<=50.5 & age>49.5 & priors_count>6, 1
+3, 0.01, 0, age>50.5 & age<=56.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.004, 0, age>59.5 & priors_count>14, 0
+3, 0.014, 0, priors_count>12.5 & priors_count<=13.5 & days_b_screening_arrest>-5.5, 1
+2, 0.004, 0, age>59.5 & priors_count>13.5, 0
+4, 0.014, 0, age>27.5 & age<=28.5 & priors_count<=3.5 & sex_Female>0.5, 0
+2, 0.002, 0, age<=66.5 & age>65.5, 0
+3, 0.014, 0.122448979591837, days_b_screening_arrest<=-19.5 & race_African_American<=0.5 & sex_Female<=0.5, 0.142857142857143
+2, 0.004, 0, days_b_screening_arrest>-19.5 & days_b_screening_arrest<=-17.5, 1
+2, 0.014, 0.122448979591837, days_b_screening_arrest>-17.5 & days_b_screening_arrest<=-12.5, 0.142857142857143
+3, 0.03, 0.222222222222222, age<=50.5 & age>45.5 & priors_count>0.5, 0.666666666666667
+4, 0.006, 0, age>45.5 & priors_count>0.5 & priors_count<=2.5 & days_b_screening_arrest>-0.5, 1
+3, 0.004, 0, age>50.5 & priors_count<=12.5 & priors_count>10.5, 0
+3, 0.004, 0, age<=44.5 & age>43.5 & race_Caucasian<=0.5, 0
+4, 0.006, 0, age>44.5 & age<=47.5 & priors_count<=2.5 & race_Caucasian<=0.5, 1
+3, 0.03, 0.16, age>26.5 & age<=27.5 & priors_count<=2.5, 0.2
+4, 0.004, 0, age>37.5 & priors_count<=3.5 & priors_count>0.5 & race_Other>0.5, 0
+3, 0.008, 0, age<=27 & age>23 & race_Other>0.5, 1
+2, 0.197, 0.213625252417898, age>36.5 & priors_count<=2.5, 0.309278350515464
+3, 0.026, 0.130177514792899, age<=41.5 & age>38.5 & priors_count<=2.5, 0.153846153846154
+5, 0.002, 0, age<=41.5 & age>38.5 & priors_count>2.5 & priors_count<=4.5 & race_Hispanic<=0.5, 1
+3, 0.002, 0, age>38.5 & priors_count>2.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age>41.5 & age<=42.5 & priors_count>6.5 & days_b_screening_arrest<=-0.5, 0
+3, 0.004, 0, age>41.5 & age<=42.5 & days_b_screening_arrest>-0.5, 1
+3, 0.004, 0, priors_count<=15.5 & priors_count>14.5 & sex_Female<=0.5, 1
+2, 0.004, 0, age<=30.5 & priors_count>14.5, 1
+2, 0.004, 0, priors_count>17.5 & priors_count<=18.5, 1
+3, 0.008, 0, age<=51.5 & priors_count>17.5 & days_b_screening_arrest<=-0.5, 1
+3, 0.004, 0, age>51.5 & priors_count>18.5 & days_b_screening_arrest<=-0.5, 0
+1, 0.986, 0.247760334637335, age<=64, 0.452674897119342
+2, 0.004, 0, age<=64 & age>62.5, 0
+2, 0.002, 0, age>64 & days_b_screening_arrest>-0.5, 0
+2, 0.037, 0.222222222222222, age<=53.5 & age>51.5, 0.333333333333333
+2, 0.008, 0, age>59.5 & days_b_screening_arrest<=-7.5, 0
+3, 0.002, 0, age>59.5 & days_b_screening_arrest<=-4.5 & days_b_screening_arrest>-7.5, 1
+2, 0.026, 0.130177514792899, age>59.5 & priors_count<=12.5, 0.153846153846154
+3, 0.004, 0, age<=37.5 & days_b_screening_arrest>-0.5 & race_Other>0.5, 1
+2, 0.008, 0, priors_count<=1.5 & days_b_screening_arrest<=-22.5, 0
+2, 0.004, 0, age>59.5 & days_b_screening_arrest<=-22.5, 0
+2, 0.01, 0, priors_count<=3.5 & days_b_screening_arrest<=-22.5, 0
+1, 0.018, 0.0987654320987654, days_b_screening_arrest<=-22.5, 0.111111111111111
+3, 0.002, 0, age<=29 & days_b_screening_arrest>-22.5 & days_b_screening_arrest<=-17.5, 1
+2, 0.002, 0, priors_count>6.5 & days_b_screening_arrest<=-17.5, 1
+3, 0.02, 0, age>56.5 & priors_count<=0.5 & days_b_screening_arrest>-6.5, 0
+3, 0.004, 0, age<=22.5 & priors_count>0.5 & race_Other>0.5, 1
+2, 0.091, 0.172839506172839, days_b_screening_arrest>-0.5 & c_charge_degree_F<=0.5, 0.222222222222222
+3, 0.012, 0, days_b_screening_arrest>-0.5 & c_charge_degree_F<=0.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age<=45.5 & age>42.5 & priors_count<=0.5 & days_b_screening_arrest>-0.5, 0
+4, 0.004, 0, age>45.5 & age<=47.5 & days_b_screening_arrest>-0.5 & c_charge_degree_F>0.5, 1
+3, 0.006, 0, age>45.5 & priors_count>3.5 & days_b_screening_arrest>-0.5, 1
+2, 0.047, 0.170132325141777, age<=59.5 & priors_count>12.5, 0.782608695652174
+3, 0.01, 0, age<=59.5 & age>53.5 & days_b_screening_arrest<=-2.5, 0
+2, 0.016, 0.109375, age>53.5 & sex_Male<=0.5, 0.125
+3, 0.002, 0, age>59.5 & priors_count<=0.5 & race_African_American>0.5, 0
+3, 0.002, 0, age>48.5 & priors_count<=5 & race_Other>0.5, 0
+3, 0.014, 0, priors_count>12.5 & priors_count<=13.5 & days_b_screening_arrest>-4.5, 1
+2, 0.008, 0, age<=52.5 & priors_count>20.5, 1
+4, 0.01, 0, age<=41.5 & age>32.5 & priors_count<=15.5 & priors_count>10.5, 1
+3, 0.008, 0, age<=41.5 & priors_count>15.5 & days_b_screening_arrest<=-0.5, 1
+4, 0.002, 0, age>41.5 & age<=46.5 & priors_count<=10.5 & priors_count>7.5, 0
+3, 0.006, 0, age>41.5 & priors_count>10.5 & priors_count<=11.5, 0
+2, 0.01, 0, age<=40.5 & priors_count>15.5, 1
+3, 0.002, 0, age<=41.5 & age>40.5 & priors_count>15.5, 0
+3, 0.002, 0, age>41.5 & priors_count<=10.5 & priors_count>9.5, 1
+3, 0.002, 0, age>41.5 & priors_count>10.5 & days_b_screening_arrest>-0.5, 1
+3, 0.012, 0, days_b_screening_arrest>-0.5 & c_charge_degree_M>0.5 & race_Hispanic>0.5, 0
+3, 0.004, 0, age<=34.5 & age>33.5 & days_b_screening_arrest<=-1.5, 0
+3, 0.012, 0, priors_count<=6.5 & priors_count>5.5 & race_Caucasian<=0.5, 1
+2, 0.087, 0.178474851270957, age<=34.5 & priors_count>6.5, 0.767441860465116
+4, 0.008, 0, age<=34.5 & age>31.5 & priors_count>6.5 & days_b_screening_arrest>-0.5, 1
+3, 0.01, 0, age<=34.5 & age>32.5 & priors_count>6.5, 1
+3, 0.002, 0, age>34.5 & age<=35.5 & priors_count>6.5, 0
+5, 0.002, 0, age>34.5 & age<=48.5 & priors_count>6.5 & c_charge_degree_M<=0.5 & sex_Female>0.5, 1
+4, 0.006, 0, age>34.5 & age<=48.5 & priors_count>6.5 & c_charge_degree_M>0.5, 0
+3, 0.002, 0, age>48.5 & priors_count>6.5 & sex_Female>0.5, 0
+3, 0.018, 0.0987654320987654, age<=34.5 & priors_count<=6.5 & priors_count>5.5, 0.888888888888889
+3, 0.006, 0, age<=34.5 & age>33.5 & priors_count>6.5, 1
+3, 0.006, 0, age<=34.5 & priors_count<=13.5 & priors_count>12.5, 1
+3, 0.004, 0, age<=34.5 & priors_count>13.5 & priors_count<=14.5, 0
+2, 0.01, 0, age<=34.5 & priors_count>14.5, 1
+3, 0.002, 0, age>49.5 & priors_count>6.5 & sex_Male<=0.5, 0
+3, 0.008, 0, age<=31.5 & priors_count>7.5 & race_African_American<=0.5, 1
+4, 0.02, 0, age<=31.5 & age>28.5 & c_charge_degree_F<=0.5 & race_African_American<=0.5, 0
+3, 0.008, 0, age>31.5 & age<=33.5 & sex_Female>0.5, 1
+3, 0.008, 0, age<=64.5 & age>61.5 & priors_count<=2.5, 0
+2, 0.002, 0, age>64.5 & age<=66.5, 0
+1, 0.014, 0.204081632653061, age>64.5, 0.285714285714286
+2, 0.245, 0.186462673314664, priors_count<=1.5 & c_charge_degree_F<=0.5, 0.247933884297521
+3, 0.01, 0, age<=29.5 & days_b_screening_arrest>-0.5 & race_Hispanic>0.5, 0
+4, 0.002, 0, age>45.5 & age<=47.5 & priors_count<=0.5 & c_charge_degree_F>0.5, 1
+4, 0.002, 0, age>45.5 & age<=47.5 & priors_count>0.5 & days_b_screening_arrest>-0.5, 1
+3, 0.004, 0, priors_count>2.5 & days_b_screening_arrest<=-2.5 & days_b_screening_arrest>-3.5, 0
+2, 0.331, 0.205201550679363, priors_count<=0.5 & days_b_screening_arrest>-2.5, 0.288343558282209
+3, 0.004, 0, age>55.5 & days_b_screening_arrest>-0.5 & race_Caucasian>0.5, 0
+3, 0.077, 0.114265927977839, priors_count<=5.5 & c_charge_degree_F<=0.5 & sex_Female>0.5, 0.131578947368421
+5, 0.004, 0, age<=32.5 & age>28.5 & priors_count<=5.5 & priors_count>2.5 & sex_Female>0.5, 0
+4, 0.016, 0.1875, age>32.5 & age<=44.5 & priors_count>2.5 & sex_Female>0.5, 0.75
+4, 0.002, 0, age>30.5 & priors_count>5.5 & days_b_screening_arrest<=-6 & sex_Female>0.5, 0
+4, 0.004, 0, priors_count>5.5 & days_b_screening_arrest>-6 & race_African_American<=0.5 & sex_Female>0.5, 1
+3, 0.028, 0.0663265306122449, age<=28.5 & age>27.5 & priors_count<=2.5, 0.0714285714285714
+4, 0.004, 0, age<=28.5 & age>27.5 & priors_count<=2.5 & days_b_screening_arrest>-0.5, 0
+5, 0.002, 0, age<=29.5 & age>28.5 & priors_count<=2.5 & priors_count>1.5 & race_African_American<=0.5, 1
+5, 0.002, 0, age<=29.5 & age>28.5 & priors_count<=2.5 & priors_count>1.5 & race_African_American>0.5, 0
+5, 0.004, 0, age<=31.5 & age>28.5 & priors_count>2.5 & priors_count<=6 & sex_Female>0.5, 0
+3, 0.026, 0.0710059171597633, age>31.5 & priors_count>4.5 & days_b_screening_arrest>-0.5, 0.923076923076923
+4, 0.002, 0, age<=33.5 & age>32.5 & priors_count<=1.5 & race_Hispanic>0.5, 0
+3, 0.002, 0, age<=33.5 & age>32.5 & priors_count>10.5, 1
+2, 0.347, 0.234191717109538, age>33.5 & priors_count<=8.5, 0.374269005847953
+3, 0.002, 0, age>33.5 & priors_count>8.5 & race_Hispanic>0.5, 0
+4, 0.022, 0.148760330578512, age<=26.5 & days_b_screening_arrest>-1.5 & race_African_American<=0.5 & sex_Female>0.5, 0.181818181818182
+3, 0.006, 0, age<=26.5 & priors_count>4.5 & sex_Female>0.5, 1
+3, 0.012, 0, age>56.5 & age<=59.5 & priors_count<=5.5, 0
+3, 0.008, 0, age>56.5 & age<=58.5 & priors_count<=5.5, 0
+4, 0.002, 0, age<=56.5 & age>54.5 & priors_count>5.5 & priors_count<=9.5, 1
+3, 0.014, 0, age>56.5 & age<=60.5 & priors_count<=6.5, 0
+3, 0.002, 0, age>56.5 & age<=58.5 & priors_count>6.5, 1
+3, 0.004, 0, age<=36.5 & priors_count>6.5 & days_b_screening_arrest<=-3.5, 1
+3, 0.004, 0, priors_count>6.5 & days_b_screening_arrest<=-1.5 & days_b_screening_arrest>-3.5, 0
+4, 0.002, 0, age<=36.5 & age>32.5 & priors_count>6.5 & priors_count<=7.5, 0
+2, 0.077, 0.132963988919668, age<=36.5 & priors_count>7.5, 0.842105263157895
+3, 0.004, 0, age>42.5 & age<=44.5 & days_b_screening_arrest<=-3.5, 0
+3, 0.008, 0, age>36.5 & days_b_screening_arrest<=-3.5 & days_b_screening_arrest>-5.5, 0
+4, 0.002, 0, age>36.5 & age<=39.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-1.5, 1
+4, 0.006, 0, age>36.5 & days_b_screening_arrest>-3.5 & days_b_screening_arrest<=-1.5 & c_charge_degree_F<=0.5, 0
+3, 0.022, 0.0826446280991735, age>36.5 & age<=39.5 & c_charge_degree_M>0.5, 0.0909090909090909
+4, 0.002, 0, age>38.5 & priors_count<=5.5 & priors_count>4.5 & days_b_screening_arrest<=-0.5, 0
+3, 0.077, 0.114265927977839, priors_count<=5.5 & c_charge_degree_F<=0.5 & sex_Male<=0.5, 0.131578947368421
+3, 0.17, 0.218112244897959, priors_count<=4.5 & days_b_screening_arrest>-0.5 & race_Other<=0.5, 0.321428571428571
+2, 0.176, 0.209538908706566, priors_count>4.5 & c_charge_degree_M<=0.5, 0.701149425287356
+4, 0.002, 0, age<=26.5 & age>25.5 & priors_count>4.5 & c_charge_degree_M>0.5, 0
+2, 0.006, 0, age<=54.5 & age>53.5, 1
+2, 0.059, 0.14268727705113, age>54.5 & priors_count<=5.5, 0.172413793103448
+3, 0.002, 0, age<=56.5 & age>54.5 & days_b_screening_arrest>-0.5, 0
+3, 0.006, 0, age>56.5 & priors_count<=5.5 & c_charge_degree_M<=0.5, 0
+4, 0.002, 0, age<=56.5 & age>54.5 & priors_count>5.5 & priors_count<=7.5, 1
+2, 0.008, 0, age<=38 & priors_count>20.5, 1
+3, 0.047, 0.2117202268431, age<=27.5 & age>26.5 & priors_count<=10.5, 0.304347826086957
+3, 0.187, 0.170132325141777, age>27.5 & priors_count<=2.5 & c_charge_degree_F<=0.5, 0.217391304347826
+4, 0.028, 0.168367346938776, age>27.5 & age<=31.5 & priors_count>2.5 & c_charge_degree_F<=0.5, 0.785714285714286
+2, 0.229, 0.202991620330488, age>28.5 & c_charge_degree_F<=0.5, 0.283185840707965
+4, 0.004, 0, age<=25.5 & age>22.5 & c_charge_degree_F>0.5 & race_Other>0.5, 1
+5, 0.002, 0, age>25.5 & age<=28.5 & c_charge_degree_F>0.5 & race_Other>0.5 & sex_Male>0.5, 1

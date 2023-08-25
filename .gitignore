@@ -1,8 +1,8 @@
 .DS_Store
-*.txt
 __pycache__
 .ipynb_checkpoints
 results/
+plots/
 dist/
 *egg-info/
 docs/source/_build

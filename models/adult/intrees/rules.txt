@@ -1,0 +1,2083 @@
+len, freq, err, condition, pred
+1, 0.527, 0.057413463433431, marital_status_married<=0.5, 0.0611531741409435
+1, 0.958, 0.169255077492891, capital_gain<=7139.5, 0.215843489416292
+2, 0.421, 0.0304017262507326, hours_per_week<=44.5 & marital_status_married<=0.5, 0.0313868613138686
+1, 0.004, 0, capital_loss>2391.5, 1
+1, 0.073, 0, age<=20.5, 0
+1, 0.042, 0.00719386683469859, capital_gain>7139.5, 0.992753623188406
+1, 0.952, 0.167575442247659, capital_gain<=5095.5, 0.212903225806452
+3, 0.021, 0.0911573198907793, capital_loss>1846 & education_HS_grad<=0.5 & marital_status_married>0.5, 0.898550724637681
+1, 0.131, 0.0573078533800613, education_School>0.5, 0.0610328638497653
+4, 0.001, 0, capital_loss>1805 & capital_loss<=1989.5 & education_School>0.5 & marital_status_married>0.5, 1
+2, 0.002, 0, capital_loss>1989.5 & education_School>0.5, 0
+1, 0.048, 0.0369822485207101, capital_gain>5095.5, 0.961538461538462
+1, 0.072, 0.192727737599532, age>60.5, 0.260683760683761
+1, 0.022, 0.013695987654321, capital_gain>10585.5, 0.986111111111111
+2, 0.306, 0.0565588440346114, age<=33.5 & hours_per_week<=44.5, 0.0601805416248746
+2, 0.521, 0.0476061181692773, capital_gain<=7139.5 & marital_status_married<=0.5, 0.0501179245283019
+1, 0.238, 0.0239452089551242, age<=27.5, 0.0245478036175711
+2, 0, 0, capital_gain>5095.5 & occupation_Farming_fishing>0.5, 0
+2, 0.002, 0, capital_loss>2218.5 & education_HS_grad>0.5, 0
+1, 0.479, 0.229930555555556, age>38.5, 0.358333333333333
+1, 0.139, 0.0043955187150661, age<=23.5, 0.00441501103752759
+3, 0.021, 0.0793950850661626, age>23.5 & capital_loss>1793.5 & capital_loss<=1978.5, 0.91304347826087
+2, 0.005, 0.055363321799308, capital_loss>1978.5 & capital_loss<=2212.5, 0.0588235294117647
+2, 0.004, 0.177514792899408, capital_loss>2212.5 & marital_status_married>0.5, 0.769230769230769
+2, 0.305, 0.0558329858426211, age<=33.5 & hours_per_week<=43.5, 0.0593561368209256
+1, 0.447, 0.0979321853673119, age<=35.5, 0.110041265474553
+1, 0.553, 0.230598385564935, age>35.5, 0.360710321864595
+3, 0.038, 0.023608220603538, capital_gain>5095.5 & education_HS_grad<=0.5 & occupation_Farming_fishing<=0.5, 0.975806451612903
+3, 0.009, 0.0322222222222222, age<=70 & capital_gain>5095.5 & education_HS_grad>0.5, 0.966666666666667
+2, 0.006, 0.0475, age>70 & education_HS_grad>0.5, 0.05
+1, 0.405, 0.230007455046986, age>41.5, 0.358605003790751
+2, 0.003, 0, capital_loss>1978.5 & capital_loss<=2168.5, 0
+1, 0.948, 0.167492646614674, capital_gain<=4668.5, 0.212759067357513
+2, 0.003, 0, capital_loss>2218.5 & capital_loss<=2365.5, 0
+2, 0.001, 0, capital_loss>2365.5 & marital_status_married<=0.5, 1
+2, 0.001, 0, capital_gain>4668.5 & capital_gain<=4826, 1
+4, 0.002, 0, capital_gain<=7669.5 & capital_gain>4826 & marital_status_married<=0.5 & relationship_Unmarried<=0.5, 0
+2, 0.001, 0, capital_gain>4668.5 & relationship_Unmarried>0.5, 1
+1, 0.035, 0.00877124285378651, capital_gain>7669.5, 0.991150442477876
+1, 0.389, 0.0838761483344938, age<=33.5, 0.0924170616113744
+1, 0.611, 0.226969268452817, age>33.5, 0.348241206030151
+2, 0.038, 0.030976, capital_gain>5095.5 & education_HS_grad<=0.5, 0.968
+2, 0.007, 0.0433884297520661, age>69.5 & education_HS_grad>0.5, 0.0454545454545455
+2, 0.001, 0, age<=31.5 & education_Doctorate>0.5, 0
+1, 0.658, 0.225197057169279, age>31.5, 0.342510499300047
+1, 0.263, 0.032693897057522, age<=28.5, 0.0338389731621937
+1, 0.737, 0.219568004662218, age>28.5, 0.325552313463943
+1, 0.342, 0.063621223973154, age<=31.5, 0.0682839173405211
+2, 0.317, 0.0547593293672255, age<=32.5 & hours_per_week<=49.5, 0.0581395348837209
+2, 0.204, 0.00597885691672791, age<=27.5 & marital_status_married<=0.5, 0.00601503759398496
+1, 0.762, 0.217128352339909, age>27.5, 0.318694601128122
+2, 0.174, 0.0224794423995614, education_HS_grad>0.5 & marital_status_married<=0.5, 0.0230088495575221
+2, 0.001, 0.1875, capital_gain>4826 & capital_gain<=4997, 0.25
+3, 0.001, 0, capital_gain<=7139.5 & capital_gain>4997 & marital_status_married<=0.5, 0
+1, 0.286, 0.0391503540191587, age<=29.5, 0.0408163265306122
+1, 0.714, 0.221790449762978, age>29.5, 0.332043010752688
+3, 0.321, 0.0532237897992535, age<=34.5 & capital_gain<=4668.5 & hours_per_week<=43.5, 0.0564053537284895
+2, 0.518, 0.0462443547347142, capital_gain<=4668.5 & marital_status_married<=0.5, 0.048606994665086
+2, 0.418, 0.0305744769396305, hours_per_week<=43.5 & marital_status_married<=0.5, 0.0315712187958884
+1, 0.764, 0.170714488666702, age<=48.5, 0.218423169750603
+1, 0.236, 0.226515432619329, age>48.5, 0.346753246753247
+2, 0.021, 0.09, capital_loss>1793.5 & capital_loss<=1978.5, 0.9
+2, 0.008, 0.0356652949245542, capital_loss>1978.5 & capital_loss<=2384.5, 0.037037037037037
+1, 0.004, 0, capital_loss>2384.5, 1
+1, 0.368, 0.0723627503735669, age<=32.5, 0.0785296574770259
+1, 0.632, 0.226817386373474, age>32.5, 0.347741622146673
+1, 0.835, 0.181378361681126, age<=52, 0.238042678440029
+4, 0.001, 0, age>52 & capital_gain<=4668.5 & education_Doctorate>0.5 & marital_status_married<=0.5, 0
+4, 0.002, 0, capital_gain>4826 & capital_gain<=7669.5 & marital_status_married<=0.5 & relationship_Unmarried<=0.5, 0
+1, 0.227, 0.0801223520818116, hours_per_week<=39.5, 0.0878378378378378
+2, 0.291, 0.0481172691175044, age<=32.5 & hours_per_week<=43.5, 0.0506863780359029
+1, 0.471, 0.106055442138133, age<=36.5, 0.120599739243807
+2, 0.679, 0.127658319854221, capital_gain<=5095.5 & hours_per_week<=41.5, 0.150226244343891
+1, 0.529, 0.231217313417534, age>36.5, 0.362950058072009
+1, 0.029, 0.102382271468144, occupation_Farming_fishing>0.5, 0.115789473684211
+3, 0.42, 0.0794213390444923, age<=36.5 & capital_gain<=4668.5 & hours_per_week<=54.5, 0.0869883040935673
+4, 0.001, 0, age<=39.5 & capital_gain<=8296 & capital_gain>4826 & marital_status_married<=0.5, 0
+1, 0.458, 0.229564434034503, age>39.5, 0.357046979865772
+1, 0.025, 0.0119030338220351, capital_gain>8296, 0.987951807228916
+1, 0.679, 0.20198133545913, education_HS_grad<=0.5, 0.280868385345997
+2, 0.211, 0.0573978375698404, hours_per_week<=39.5 & relationship_Wife<=0.5, 0.0611353711790393
+1, 0.945, 0.166847640442978, capital_gain<=4225, 0.211638491547464
+1, 0.029, 0.117078993055556, age>66.5, 0.135416666666667
+3, 0, 0, capital_gain>4225 & capital_gain<=4447 & education_School>0.5, 1
+2, 0.041, 0.0149219467401286, capital_gain>5095.5 & marital_status_married>0.5, 0.984848484848485
+2, 0.001, 0, age>60.5 & capital_loss>2365.5, 1
+4, 0.001, 0, age<=36.5 & capital_gain<=8296 & capital_gain>4826 & marital_status_married<=0.5, 0
+3, 0.021, 0.0561372243261305, capital_loss>1846 & capital_loss<=1989.5 & marital_status_married>0.5, 0.940298507462687
+3, 0.01, 0.0293847566574839, age<=27.5 & hours_per_week<=54.5 & occupation_Exec_managerial>0.5, 0.0303030303030303
+4, 0.001, 0, age<=27.5 & hours_per_week>54.5 & marital_status_married>0.5 & occupation_Exec_managerial>0.5, 1
+2, 0.077, 0.207901461881557, marital_status_married>0.5 & occupation_Exec_managerial>0.5, 0.705179282868526
+2, 0.004, 0, marital_status_married>0.5 & relationship_Unmarried>0.5, 0
+2, 0, 0, workclass_Federal_gov>0.5 & education_Doctorate>0.5, 1
+4, 0.002, 0, capital_gain<=8296 & capital_gain>4826 & marital_status_married<=0.5 & relationship_Unmarried<=0.5, 0
+3, 0.002, 0, age<=29.5 & capital_gain>4164 & marital_status_married>0.5, 1
+2, 0.046, 0.0257883426165519, age>24.5 & capital_gain>5095.5, 0.973509933774834
+1, 0.159, 0.0529464362543913, hours_per_week<=34.5, 0.0560928433268859
+3, 0.001, 0, age>29.5 & capital_gain>4225 & education_School>0.5, 1
+2, 0.151, 0.00606038072575848, hours_per_week<=37 & marital_status_married<=0.5, 0.00609756097560976
+1, 0.052, 0.0813137755102041, capital_gain>4668.5, 0.910714285714286
+3, 0.001, 0, capital_gain<=7669.5 & capital_gain>4997 & marital_status_married<=0.5, 0
+3, 0.02, 0.0433884297520661, capital_loss>1793.5 & capital_loss<=1978.5 & marital_status_married>0.5, 0.954545454545455
+3, 0, 0, age>69.5 & capital_gain>5095.5 & capital_gain<=8076.5, 0
+1, 0.025, 0.0119030338220351, capital_gain>8076.5, 0.987951807228916
+3, 0, 0, age<=33.5 & age>32.5 & education_Prof_school>0.5, 1
+2, 0.003, 0, capital_gain>5119 & capital_gain<=5449.5, 1
+3, 0, 0, age<=33.5 & capital_gain<=7073.5 & capital_gain>5449.5, 0
+1, 0.027, 0, age<=18, 0
+2, 0.048, 0.0312174817898023, age>18 & capital_gain>5119, 0.967741935483871
+1, 0.958, 0.169255077492891, capital_gain<=7073.5, 0.215843489416292
+1, 0.042, 0.00719386683469859, capital_gain>7073.5, 0.992753623188406
+2, 0.196, 0.0614970371753422, education_HS_grad>0.5 & relationship_Husband<=0.5, 0.0658307210031348
+4, 0, 0, age>33.5 & age<=58 & capital_loss>1760 & occupation_Farming_fishing>0.5, 1
+3, 0.532, 0.115950213249541, age<=41.5 & capital_gain<=4668.5 & hours_per_week<=59, 0.133871898442008
+1, 0.595, 0.143711208701351, age<=41.5, 0.173980382034073
+1, 0.473, 0.248243524123282, marital_status_married>0.5, 0.458089668615984
+3, 0.03, 0.0201934318205973, hours_per_week<=28.5 & occupation_Prof_specialty>0.5 & relationship_Wife<=0.5, 0.0206185567010309
+1, 0.118, 0.056171361106426, hours_per_week<=28.5, 0.0597402597402597
+1, 0.882, 0.198978458481936, hours_per_week>28.5, 0.274120515499826
+2, 0.014, 0.129017013232514, age<=29.5 & occupation_Exec_managerial>0.5, 0.152173913043478
+2, 0.004, 0, hours_per_week<=21 & occupation_Exec_managerial>0.5, 0
+1, 0.945, 0.166847640442978, capital_gain<=4147, 0.211638491547464
+3, 0.014, 0.0217283950617284, capital_gain>4147 & marital_status_married>0.5 & occupation_Exec_managerial>0.5, 0.977777777777778
+3, 0.007, 0, capital_loss>1748.5 & occupation_Exec_managerial>0.5 & relationship_Not_in_family<=0.5, 1
+3, 0, 0, capital_loss>1748.5 & marital_status_married>0.5 & relationship_Not_in_family>0.5, 0
+3, 0.003, 0, age<=29.5 & capital_loss>1894.5 & relationship_Wife<=0.5, 0
+2, 0.283, 0.0314792420513737, age<=29.5 & capital_gain<=7073.5, 0.0325379609544469
+2, 0.042, 0, age>18 & capital_gain>7073.5, 1
+2, 0.023, 0.1344, capital_loss>1748 & capital_loss<=1978.5, 0.84
+4, 0, 0, age>29.5 & age<=58 & capital_loss>1760 & occupation_Farming_fishing>0.5, 1
+2, 0.521, 0.0476061181692773, capital_gain<=8028.5 & marital_status_married<=0.5, 0.0501179245283019
+2, 0.025, 0, age>20.5 & capital_gain>8028.5, 1
+2, 0.041, 0.0149219467401286, capital_gain>5119 & marital_status_married>0.5, 0.984848484848485
+1, 0.601, 0.0922009672927096, relationship_Husband<=0.5, 0.102760736196319
+3, 0.076, 0.00404851609491705, education_Bachelors<=0.5 & marital_status_married<=0.5 & occupation_Other_service>0.5, 0.0040650406504065
+2, 0.078, 0.0116262975778547, marital_status_married<=0.5 & occupation_Other_service>0.5, 0.0117647058823529
+1, 0.1, 0.0523171597633136, occupation_Other_service>0.5, 0.0553846153846154
+2, 0.549, 0.0606679378806761, relationship_Husband<=0.5 & relationship_Wife<=0.5, 0.0648769574944072
+4, 0.001, 0, capital_gain>3925 & marital_status_married>0.5 & relationship_Husband<=0.5 & relationship_Wife<=0.5, 1
+1, 0.164, 0.0111303147957154, age<=24.5, 0.0112570356472795
+1, 0.836, 0.208082588048734, age>24.5, 0.295262578038928
+1, 0.701, 0.14512847180349, hours_per_week<=41.5, 0.176161262050833
+2, 0.086, 0.031109693877551, occupation_Other_service>0.5 & relationship_Husband<=0.5, 0.0321428571428571
+1, 0.055, 0.103055555555556, capital_gain>4164, 0.883333333333333
+2, 0.006, 0.0453514739229025, education_Doctorate>0.5 & relationship_Husband>0.5, 0.952380952380952
+1, 0.582, 0.228610551410613, age>34, 0.353748680042239
+2, 0.041, 0.0433884297520661, hours_per_week<=34.5 & hours_per_week>28.5, 0.0454545454545455
+1, 0.841, 0.203835422009322, hours_per_week>34.5, 0.285140562248996
+1, 0.675, 0.159617254380689, age<=44.5, 0.199362767410105
+1, 0.325, 0.227880811177363, age>44.5, 0.351274787535411
+4, 0.004, 0, age>64.5 & capital_gain<=4225 & education_School>0.5 & relationship_Husband>0.5, 0
+3, 0.001, 0, capital_gain>4225 & hours_per_week>34.5 & education_School>0.5, 1
+1, 0.311, 0.0549523980037588, age<=30.5, 0.0583580613254204
+1, 0.689, 0.222616752893091, age>30.5, 0.334521158129176
+2, 0.013, 0, capital_loss<=1820.5 & capital_loss>1571.5, 0
+3, 0.001, 0, age<=29.5 & education_Masters>0.5 & occupation_Exec_managerial>0.5, 0
+3, 0.515, 0.0464796475740886, capital_gain<=7073.5 & capital_loss<=1978.5 & marital_status_married<=0.5, 0.0488676996424315
+3, 0.02, 0.0433884297520661, capital_loss>1820.5 & capital_loss<=1978.5 & marital_status_married>0.5, 0.954545454545455
+2, 0.021, 0.0793950850661626, capital_loss>1820.5 & capital_loss<=1978.5, 0.91304347826087
+3, 0.004, 0, age<=64.5 & capital_loss>1978.5 & capital_loss<=2218.5, 0
+1, 0.04, 0.144746809626479, age>64.5, 0.175572519083969
+2, 0.004, 0, capital_loss>1978.5 & education_HS_grad>0.5, 0
+3, 0.001, 0, age<=25.5 & hours_per_week>67.5 & marital_status_married>0.5, 1
+3, 0.001, 0, age<=28.5 & capital_gain<=5119 & capital_gain>3368, 0
+2, 0.044, 0.0271895936231601, capital_gain>5119 & marital_status_not_married<=0.5, 0.972027972027972
+2, 0.046, 0.0261249493266069, age>27.5 & capital_gain>5119, 0.973154362416107
+2, 0.387, 0.0402636025811872, capital_gain<=7731.5 & marital_status_not_married>0.5, 0.04203013481364
+2, 0.235, 0.00906659831688667, age<=29.5 & marital_status_married<=0.5, 0.00915032679738562
+2, 0, 0, capital_gain>4225 & occupation_Other_service>0.5, 1
+2, 0.46, 0.0911727430075882, age<=36.5 & capital_gain<=5119, 0.101468624833111
+2, 0.055, 0.140133821487186, age>61.5 & capital_gain<=4225, 0.168539325842697
+1, 0.055, 0.103055555555556, capital_gain>4225, 0.883333333333333
+3, 0.422, 0.0364388856147245, education_Bachelors<=0.5 & marital_status_married<=0.5 & occupation_Exec_managerial<=0.5, 0.0378732702112163
+4, 0.001, 0, age>36.5 & capital_loss>782 & workclass_Self_emp_not_inc>0.5 & occupation_Exec_managerial>0.5, 1
+4, 0.001, 0, age>36.5 & hours_per_week<=39 & education_Masters>0.5 & occupation_Exec_managerial>0.5, 0
+2, 0.016, 0.199154171472511, education_Masters>0.5 & occupation_Exec_managerial>0.5, 0.725490196078431
+2, 0.018, 0.117207698937087, capital_gain>753 & occupation_Exec_managerial>0.5, 0.864406779661017
+1, 0.952, 0.167575442247659, capital_gain<=5119, 0.212903225806452
+1, 0.418, 0.0922242275654917, age<=34.5, 0.102790014684288
+1, 0.582, 0.228610551410613, age>34.5, 0.353748680042239
+2, 0.002, 0, capital_gain<=5119 & capital_gain>4973.5, 0
+3, 0.514, 0.0465586099353976, capital_gain<=5119 & capital_loss<=1978.5 & marital_status_married<=0.5, 0.048955223880597
+3, 0.001, 0, capital_gain>5119 & capital_gain<=7139.5 & marital_status_married<=0.5, 0
+1, 0.048, 0.0369822485207101, capital_gain>5119, 0.961538461538462
+2, 0.004, 0, capital_gain>5119 & capital_gain<=6640.5, 1
+2, 0.002, 0, capital_gain>6640.5 & capital_gain<=7032.5, 0
+1, 0.042, 0.00719386683469859, capital_gain>7032.5, 0.992753623188406
+2, 0.013, 0.0227149810708491, occupation_Farming_fishing>0.5 & relationship_Husband<=0.5, 0.0232558139534884
+1, 0.966, 0.178707944658936, capital_loss<=1782.5, 0.232994278448824
+1, 0.649, 0.153229516399793, age<=43.5, 0.188920454545455
+1, 0.351, 0.230193866448237, age>43.5, 0.359265734265734
+2, 0.097, 0, age<=28.5 & hours_per_week<=37.5, 0
+2, 0.087, 0.0173556917928804, age<=28.5 & education_Some_college>0.5, 0.0176678445229682
+2, 0.058, 0, age<=28.5 & hours_per_week<=26.5, 0
+2, 0.044, 0.013790405398797, age<=28.5 & education_School>0.5, 0.013986013986014
+2, 0.003, 0, capital_gain>1087 & education_Prof_school>0.5, 1
+3, 0, 0, age>62.5 & education_Prof_school>0.5 & relationship_Husband<=0.5, 0
+2, 0.012, 0, capital_loss<=1783 & capital_loss>1571.5, 0
+2, 0.008, 0.0384, capital_loss>1783 & occupation_Exec_managerial>0.5, 0.96
+2, 0.043, 0.0208239022181983, age<=36.5 & relationship_Unmarried>0.5, 0.0212765957446809
+1, 0.299, 0.243421357765981, hours_per_week>41.5, 0.418891170431211
+2, 0.005, 0.103806228373702, hours_per_week>41.5 & education_Doctorate>0.5, 0.882352941176471
+1, 0.391, 0.0477473713830484, marital_status_not_married>0.5, 0.0502749410840534
+3, 0, 0, hours_per_week>76 & workclass_Self_emp_not_inc>0.5 & education_Bachelors>0.5, 1
+3, 0.006, 0.172839506172839, hours_per_week>41.5 & workclass_Private<=0.5 & education_Prof_school>0.5, 0.777777777777778
+1, 0.886, 0.184474647747718, age<=56.5, 0.244020797227036
+5, 0.001, 0, age>56.5 & capital_gain<=543 & hours_per_week>41.5 & workclass_Private>0.5 & education_Prof_school>0.5, 0
+2, 0.003, 0, capital_gain>543 & education_Prof_school>0.5, 1
+1, 0.055, 0.249617677350894, education_Masters>0.5, 0.519553072625698
+1, 0.918, 0.177694768514894, hours_per_week<=58, 0.231103678929766
+1, 0.869, 0.200285182734208, education_School<=0.5, 0.277031802120141
+3, 0.063, 0.0191314693634741, education_School>0.5 & relationship_Husband<=0.5 & race_White>0.5, 0.0195121951219512
+3, 0.007, 0, age<=41.5 & hours_per_week<=34.5 & relationship_Husband>0.5, 0
+1, 0.038, 0.0384, occupation_Handlers_cleaners>0.5, 0.04
+1, 0.188, 0.0144896193771626, age<=25.5, 0.0147058823529412
+2, 0.268, 0.0519597076085545, relationship_Wife<=0.5 & sex_Male<=0.5, 0.0549828178694158
+1, 0.061, 0.181658893555619, age>61.5, 0.238578680203046
+1, 0.211, 0.0771954434829638, hours_per_week<=37.5, 0.0843023255813953
+2, 0.001, 0, capital_loss<=1568.5 & capital_loss>1551.5, 1
+2, 0.013, 0, capital_loss<=1820.5 & capital_loss>1568.5, 0
+2, 0.002, 0.122448979591837, capital_loss>2218.5 & education_Bachelors>0.5, 0.857142857142857
+2, 0.041, 0, capital_gain>7073.5 & education_School<=0.5, 1
+2, 0.041, 0.00751836547291093, hours_per_week<=35.5 & education_School>0.5, 0.00757575757575758
+2, 0.031, 0, capital_gain>7073.5 & relationship_Husband>0.5, 1
+2, 0.001, 0, age<=28.5 & capital_loss>2298.5, 0
+1, 0.221, 0.142561728395062, education_Some_college>0.5, 0.172222222222222
+1, 0.321, 0.148150454430988, education_HS_grad>0.5, 0.180861244019139
+3, 0.002, 0, hours_per_week>68.5 & education_School>0.5 & occupation_Transport_moving<=0.5, 0
+2, 0.001, 0, hours_per_week>75.5 & education_School>0.5, 0
+2, 0.002, 0, capital_gain<=5119 & capital_gain>4939, 0
+5, 0.001, 0, age<=33.5 & age>25.5 & hours_per_week<=48.5 & workclass_Private<=0.5 & relationship_Wife>0.5, 1
+3, 0.002, 0, age<=33.5 & capital_loss>742.5 & hours_per_week>48.5, 0
+1, 0.15, 0.0121193872558245, relationship_Own_child>0.5, 0.0122699386503067
+2, 0.005, 0, relationship_Own_child>0.5 & race_Asian_Pac_Islander>0.5, 0
+1, 0.319, 0.110813609467456, sex_Male<=0.5, 0.126923076923077
+5, 0, 0, age>33.5 & capital_loss>742.5 & education_HS_grad<=0.5 & education_School<=0.5 & occupation_Farming_fishing>0.5, 1
+1, 0.945, 0.166847640442978, capital_gain<=4243.5, 0.211638491547464
+2, 0.008, 0, capital_gain<=4243.5 & capital_gain>3120, 0
+1, 0.055, 0.103055555555556, capital_gain>4243.5, 0.883333333333333
+3, 0.001, 0, age>33.5 & capital_gain>4243.5 & education_School>0.5, 1
+2, 0.013, 0, capital_loss<=1846 & capital_loss>1568.5, 0
+3, 0.02, 0.0433884297520661, capital_loss>1846 & capital_loss<=1978.5 & marital_status_married>0.5, 0.954545454545455
+2, 0.021, 0.0793950850661626, capital_loss>1846 & capital_loss<=1978.5, 0.91304347826087
+1, 0.996, 0.18536207257378, capital_loss<=2384.5, 0.245760098674067
+2, 0.108, 0.0302734375, hours_per_week<=41 & education_School>0.5, 0.03125
+1, 0.005, 0, capital_gain>70654.5, 1
+1, 0.989, 0.184157810225718, education_Doctorate<=0.5, 0.243402669978268
+1, 0.998, 0.186572942197093, hours_per_week<=85, 0.248152709359606
+3, 0.001, 0, age>62.5 & capital_gain<=543 & education_Prof_school>0.5, 0
+1, 0.542, 0.132637500336673, age<=39.5, 0.157417893544734
+3, 0.003, 0, capital_loss>1881.5 & hours_per_week<=49 & occupation_Exec_managerial>0.5, 1
+4, 0.001, 0, age<=39.5 & age>36.5 & workclass_State_gov>0.5 & occupation_Exec_managerial>0.5, 0
+3, 0, 0, age<=39.5 & hours_per_week>67.5 & race_Asian_Pac_Islander>0.5, 1
+2, 0.008, 0.0384, capital_loss>1782.5 & occupation_Exec_managerial>0.5, 0.96
+2, 0.001, 0, education_Doctorate>0.5 & occupation_Exec_managerial>0.5, 1
+2, 0.004, 0, hours_per_week<=22 & occupation_Exec_managerial>0.5, 0
+1, 0.83, 0.166498044452937, education_Bachelors<=0.5, 0.211032950758978
+1, 0.377, 0.228668316074577, age>42.5, 0.353946297803092
+2, 0.099, 0.0444137957640523, education_Bachelors<=0.5 & relationship_Unmarried>0.5, 0.046583850931677
+1, 0.928, 0.186419926933351, age<=60.5, 0.247849106551952
+1, 0.801, 0.176973593121938, age<=50.5, 0.229766014576141
+1, 0.113, 0.119380612003781, occupation_Adm_clerical>0.5, 0.138586956521739
+3, 0, 0, hours_per_week<=34.5 & hours_per_week>16 & education_Doctorate>0.5, 1
+1, 0.966, 0.178707944658936, capital_loss<=1794, 0.232994278448824
+2, 0.023, 0.141793628808864, capital_loss>1794 & relationship_Husband>0.5, 0.828947368421053
+2, 0.237, 0.0228012536147406, age<=27.5 & hours_per_week<=77.5, 0.0233463035019455
+3, 0, 0, age<=27.5 & age>24.5 & hours_per_week>77.5, 1
+3, 0, 0, capital_gain>4225 & hours_per_week<=52.5 & occupation_Farming_fishing>0.5, 1
+1, 0.319, 0.110813609467456, sex_Female>0.5, 0.126923076923077
+1, 0.7, 0.145328719723183, hours_per_week<=40.5, 0.176470588235294
+1, 0.862, 0.183521237652292, age<=54.5, 0.242165242165242
+1, 0.138, 0.205974968112245, age>54.5, 0.290178571428571
+3, 0, 0, hours_per_week<=39 & workclass_Federal_gov>0.5 & relationship_Husband>0.5, 0
+2, 0, 0, workclass_Federal_gov>0.5 & race_Amer_Indian_Eskimo>0.5, 0
+3, 0.001, 0, age<=33.5 & workclass_Self_emp_not_inc>0.5 & race_White<=0.5, 0
+1, 0.939, 0.187213631531819, age<=61.5, 0.249427917620137
+4, 0, 0, age>61.5 & capital_gain<=543 & hours_per_week>40.5 & education_Prof_school>0.5, 0
+2, 0.517, 0.0463225213127888, capital_gain<=4243.5 & marital_status_married<=0.5, 0.0486935866983373
+3, 0.002, 0, capital_loss>1782.5 & hours_per_week<=35.5 & marital_status_married>0.5, 1
+4, 0, 0, capital_gain>4243.5 & capital_gain<=4401 & hours_per_week<=35.5 & occupation_Craft_repair<=0.5, 1
+2, 0.015, 0.0199916701374427, hours_per_week<=35.5 & occupation_Craft_repair>0.5, 0.0204081632653061
+2, 0.101, 0.00906268590124926, age<=31.5 & hours_per_week<=35.5, 0.00914634146341463
+2, 0.626, 0.135039740514137, age<=43.5 & capital_gain<=5095.5, 0.160942100098135
+3, 0.393, 0.0411224365234375, age<=43.5 & capital_loss<=1978.5 & marital_status_married<=0.5, 0.04296875
+2, 0.021, 0.09, capital_loss>1805 & capital_loss<=1978.5, 0.9
+3, 0.005, 0, age<=43.5 & capital_loss>1978.5 & capital_loss<=2396, 0
+1, 0.003, 0, capital_loss>2396, 1
+1, 0.109, 0.0581313231501686, relationship_Unmarried>0.5, 0.0619718309859155
+2, 0.268, 0.0519597076085545, relationship_Wife<=0.5 & sex_Female>0.5, 0.0549828178694158
+2, 0.002, 0, hours_per_week>65.5 & sex_Female>0.5, 0
+2, 0.004, 0, capital_gain<=3120 & capital_gain>3048, 1
+1, 0.053, 0.0941828254847645, capital_gain>4401, 0.894736842105263
+1, 0.991, 0.185823268941778, capital_loss<=2101.5, 0.24666873256895
+2, 0.001, 0, capital_loss>2101.5 & occupation_Exec_managerial>0.5, 1
+1, 0.746, 0.167541886573331, age<=47.5, 0.212844792095513
+1, 0.254, 0.228769360562281, age>47.5, 0.354292623941959
+1, 0.883, 0.173631879017013, hours_per_week<=51, 0.223652173913043
+2, 0.003, 0, age<=27.5 & occupation_Protective_serv>0.5, 0
+5, 0, 0, age<=27.5 & hours_per_week>41.5 & hours_per_week<=46.5 & education_Bachelors>0.5 & marital_status_married>0.5, 1
+3, 0.004, 0, hours_per_week<=49 & occupation_Protective_serv>0.5 & race_White<=0.5, 0
+3, 0, 0, hours_per_week>49 & occupation_Protective_serv>0.5 & race_White<=0.5, 1
+2, 0.003, 0, hours_per_week>77.5 & marital_status_married<=0.5, 0
+2, 0.007, 0, capital_gain>3120 & capital_gain<=4082.5, 0
+2, 0.008, 0, capital_loss<=1748 & capital_loss>1622.5, 0
+3, 0.002, 0, capital_loss>1748 & capital_loss<=1978.5 & marital_status_married<=0.5, 0
+3, 0.021, 0.0561372243261305, capital_loss>1748 & capital_loss<=1978.5 & marital_status_married>0.5, 0.940298507462687
+3, 0.002, 0, capital_loss>1748 & capital_loss<=1978.5 & relationship_Not_in_family>0.5, 0
+4, 0.007, 0.0399305555555556, capital_loss>1748 & capital_loss<=1978.5 & hours_per_week>48 & education_HS_grad<=0.5, 0.958333333333333
+2, 0, 0, capital_loss>2168.5 & capital_loss<=2176.5, 1
+2, 0.001, 0, capital_loss>2176.5 & capital_loss<=2190, 0
+1, 0.035, 0.22124763705104, capital_loss>1748, 0.669565217391304
+1, 0.945, 0.187459369414367, age<=62.5, 0.249918752031199
+1, 0.055, 0.176586248868637, age>62.5, 0.229050279329609
+1, 0.17, 0.245434623813002, education_Bachelors>0.5, 0.432432432432432
+2, 0, 0, education_Masters>0.5 & occupation_Other_service>0.5, 0
+1, 0.916, 0.168326292841242, capital_gain<=297, 0.214213878645659
+1, 0.971, 0.188602687870534, age<=66, 0.252215189873418
+3, 0, 0, capital_gain>297 & capital_gain<=4225 & education_Doctorate>0.5, 0
+2, 0.002, 0, capital_gain>4225 & education_Doctorate>0.5, 1
+2, 0.115, 0.00530488888888889, hours_per_week<=34.5 & marital_status_married<=0.5, 0.00533333333333333
+1, 0.052, 0.0813137755102041, capital_gain>4718.5, 0.910714285714286
+2, 0.147, 0.0284308748096147, hours_per_week<=34.5 & relationship_Wife<=0.5, 0.0292887029288703
+3, 0.001, 0, hours_per_week<=34.5 & education_Doctorate>0.5 & marital_status_married>0.5, 1
+1, 0.212, 0.0212665406427221, age<=26.5, 0.0217391304347826
+1, 0.788, 0.213831846273197, age>26.5, 0.309820732657833
+2, 0.018, 0, hours_per_week<=34.5 & race_Black>0.5, 0
+1, 0.149, 0.130946485895772, race_White<=0.5, 0.15495867768595
+1, 0.967, 0.178668402599497, capital_loss<=1846, 0.232920241499841
+3, 0.001, 0, capital_loss>1846 & capital_loss<=1978.5 & marital_status_married<=0.5, 0
+2, 0.005, 0.055363321799308, capital_loss>1978.5 & capital_loss<=2218.5, 0.0588235294117647
+1, 0.033, 0.20738995034088, capital_loss>1846, 0.706422018348624
+1, 0.027, 0.23860623658629, workclass_Federal_gov>0.5, 0.393258426966292
+1, 0.009, 0.0332936979785969, race_Amer_Indian_Eskimo>0.5, 0.0344827586206897
+2, 0, 0, capital_loss>2129.5 & workclass_Federal_gov>0.5, 0
+3, 0.008, 0.1344, age<=39.5 & workclass_Self_emp_inc>0.5 & relationship_Husband>0.5, 0.84
+1, 0.982, 0.182718522527377, education_Prof_school<=0.5, 0.240613266583229
+3, 0.003, 0, age<=44.5 & age>39.5 & education_Prof_school>0.5, 1
+1, 0.123, 0.213311551694265, occupation_Sales>0.5, 0.308457711442786
+4, 0, 0, age>44.5 & workclass_Self_emp_inc>0.5 & occupation_Exec_managerial<=0.5 & race_White<=0.5, 0
+2, 0.009, 0.0927467300832343, capital_gain>1101 & workclass_Self_emp_inc>0.5, 0.896551724137931
+4, 0.001, 0, age>44.5 & workclass_Self_emp_inc>0.5 & occupation_Exec_managerial>0.5 & sex_Male<=0.5, 0
+2, 0.014, 0.2117202268431, workclass_Self_emp_inc>0.5 & occupation_Exec_managerial>0.5, 0.695652173913043
+2, 0.033, 0.215706447187929, workclass_Self_emp_inc>0.5 & sex_Male>0.5, 0.685185185185185
+2, 0.001, 0, age<=26.5 & capital_loss>2298.5, 0
+1, 0.064, 0.112957655325444, occupation_Machine_op_inspct>0.5, 0.129807692307692
+1, 0.912, 0.17685806281092, hours_per_week<=55.5, 0.229552339279704
+3, 0.006, 0.0475, age>26.5 & age<=35 & occupation_Farming_fishing>0.5, 0.05
+1, 0.82, 0.18003568985124, age<=51.5, 0.235492324971921
+1, 0.18, 0.21367229162101, age>51.5, 0.309401709401709
+1, 0.253, 0.223291782870658, workclass_Private<=0.5, 0.336573511543135
+1, 0.747, 0.17107895630856, workclass_Private>0.5, 0.219071105630908
+1, 0.973, 0.184827568879376, workclass_Federal_gov<=0.5, 0.24471108304389
+2, 0.002, 0.109375, workclass_Federal_gov>0.5 & education_Masters>0.5, 0.875
+3, 0.001, 0, capital_gain>753 & workclass_Federal_gov>0.5 & education_Masters>0.5, 1
+2, 0.007, 0.0415879017013233, hours_per_week<=34.5 & occupation_Exec_managerial>0.5, 0.0434782608695652
+3, 0, 0, hours_per_week<=34.5 & education_Masters>0.5 & relationship_Wife>0.5, 1
+1, 0.521, 0.126092679223033, age<=38.5, 0.147995283018868
+3, 0.006, 0.1275, age<=38.5 & workclass_Self_emp_inc>0.5 & relationship_Husband>0.5, 0.85
+1, 0.079, 0.199942466956351, workclass_Self_emp_not_inc>0.5, 0.276264591439689
+1, 0.497, 0.11844238454363, age<=37.5, 0.137291280148423
+3, 0, 0, age<=37.5 & workclass_Federal_gov>0.5 & race_Asian_Pac_Islander>0.5, 0
+1, 0.503, 0.230049945631963, age>37.5, 0.35875533862111
+3, 0.003, 0, age>37.5 & workclass_Federal_gov>0.5 & occupation_Prof_specialty>0.5, 1
+1, 0.876, 0.165712799167534, occupation_Exec_managerial<=0.5, 0.209677419354839
+1, 0.976, 0.185197873517627, hours_per_week<=65.5, 0.245437382001259
+3, 0.002, 0, hours_per_week>65.5 & education_Prof_school<=0.5 & occupation_Prof_specialty>0.5, 0
+1, 0.933, 0.187582263893686, workclass_Local_gov<=0.5, 0.250164581961817
+2, 0.002, 0, education_Voc>0.5 & occupation_Protective_serv>0.5, 0
+1, 0.897, 0.185863830807942, age<=57.5, 0.246748802190281
+3, 0.001, 0, age>57.5 & workclass_Local_gov>0.5 & occupation_Protective_serv>0.5, 0
+2, 0, 0, occupation_Exec_managerial>0.5 & race_Amer_Indian_Eskimo>0.5, 0
+2, 0.209, 0.0144896193771626, age<=26.5 & capital_gain<=3120, 0.0147058823529412
+3, 0.768, 0.142370880516246, capital_gain<=7073.5 & capital_loss<=2232 & hours_per_week<=49.5, 0.171931227508996
+3, 0, 0, capital_loss>2232 & capital_loss<=2396 & race_White<=0.5, 0
+3, 0, 0, capital_loss>742.5 & hours_per_week>49.5 & race_White<=0.5, 1
+4, 0, 0, age<=42.5 & hours_per_week>49.5 & relationship_Wife>0.5 & race_White<=0.5, 1
+4, 0, 0, age>42.5 & hours_per_week>49.5 & relationship_Wife>0.5 & race_White<=0.5, 0
+2, 0, 0, hours_per_week<=18 & workclass_Self_emp_inc>0.5, 0
+1, 0.011, 0.191020408163265, education_Doctorate>0.5, 0.742857142857143
+2, 0, 0, hours_per_week>73.5 & relationship_Wife>0.5, 0
+3, 0.001, 0, age<=35 & hours_per_week>58 & relationship_Wife>0.5, 0
+3, 0.001, 0, hours_per_week>58 & occupation_Adm_clerical>0.5 & relationship_Wife>0.5, 0
+3, 0.137, 0.0469940664057569, capital_loss<=1820.5 & hours_per_week<=31.5 & workclass_Self_emp_not_inc<=0.5, 0.049438202247191
+2, 0.08, 0.047327549507494, hours_per_week<=31.5 & sex_Male>0.5, 0.0498084291187739
+1, 0.152, 0.0532648283038502, hours_per_week<=31.5, 0.0564516129032258
+1, 0.967, 0.178668402599497, capital_loss<=1820.5, 0.232920241499841
+1, 0.082, 0.171683559812876, native_country_Other>0.5, 0.220149253731343
+2, 0, 0, capital_gain<=4973.5 & capital_gain>4932.5, 1
+1, 0.965, 0.178905867605741, capital_loss<=1748, 0.233365170327921
+2, 0, 0, hours_per_week>68 & workclass_Federal_gov>0.5, 1
+2, 0.011, 0, capital_loss<=1748 & capital_loss>1568.5, 0
+2, 0.005, 0, capital_loss>2176.5 & capital_loss<=2384.5, 0
+2, 0.354, 0.0318446275331978, age<=39.5 & marital_status_married<=0.5, 0.0329289428076256
+1, 0.936, 0.167924985163613, capital_gain<=3120, 0.213512627090849
+1, 0.064, 0.17811384162991, capital_gain>3120, 0.768115942028985
+1, 0.849, 0.182475205111687, age<=53.5, 0.240144665461121
+2, 0.012, 0.0249835634451019, workclass_Local_gov>0.5 & relationship_Unmarried>0.5, 0.0256410256410256
+3, 0.001, 0, age>53.5 & workclass_Local_gov>0.5 & occupation_Protective_serv>0.5, 0
+2, 0.001, 0, capital_loss>2218 & capital_loss<=2298.5, 0
+2, 0.005, 0, hours_per_week>51 & relationship_Own_child>0.5, 0
+1, 0.962, 0.178582045184304, workclass_Self_emp_inc<=0.5, 0.232758620689655
+1, 0.122, 0.172839506172839, occupation_Craft_repair>0.5, 0.222222222222222
+1, 0.985, 0.188160856809857, age<=71.5, 0.251325226067976
+1, 0.015, 0.0749687630154103, age>71.5, 0.0816326530612245
+1, 0.999, 0.186845049933335, hours_per_week>1.5, 0.24869351367968
+2, 0.025, 0.0464009518143962, capital_gain<=3649 & relationship_Other_relative>0.5, 0.0487804878048781
+3, 0, 0, capital_gain>3649 & education_Masters>0.5 & relationship_Other_relative>0.5, 1
+2, 0, 0, hours_per_week<=2 & education_Doctorate>0.5, 1
+3, 0, 0, hours_per_week<=19 & hours_per_week>2 & education_Doctorate>0.5, 0
+3, 0, 0, hours_per_week>19 & hours_per_week<=26.5 & education_Doctorate>0.5, 1
+1, 0.949, 0.191714477225836, hours_per_week>19, 0.258576051779935
+3, 0.021, 0.028959679215861, age<=48.5 & hours_per_week<=37.5 & occupation_Sales>0.5, 0.0298507462686567
+1, 0.982, 0.188201584714649, age<=70.5, 0.25140712945591
+4, 0.001, 0, age<=49.5 & hours_per_week<=37.5 & workclass_Self_emp_inc>0.5 & education_Bachelors>0.5, 1
+4, 0, 0, age>49.5 & hours_per_week<=37.5 & workclass_Self_emp_inc>0.5 & education_Bachelors>0.5, 0
+3, 0, 0, age>70.5 & age<=72.5 & workclass_Self_emp_inc>0.5, 1
+1, 0.789, 0.20708261759882, hours_per_week>37.5, 0.292834890965732
+3, 0, 0, hours_per_week>55.5 & hours_per_week<=57.5 & occupation_Other_service>0.5, 0
+2, 0.004, 0, capital_gain>3040 & capital_gain<=3120, 1
+1, 0.067, 0.171139050478514, capital_gain>3040, 0.780821917808219
+2, 0.031, 0.0196, age<=35.5 & occupation_Machine_op_inspct>0.5, 0.02
+3, 0, 0, age>35.5 & workclass_State_gov>0.5 & occupation_Machine_op_inspct>0.5, 1
+1, 0.812, 0.211171327310887, age>25.5, 0.302950075642965
+4, 0, 0, education_Doctorate>0.5 & marital_status_married>0.5 & relationship_Wife<=0.5 & sex_Female>0.5, 0
+1, 0.001, 0, hours_per_week>98.5, 1
+2, 0, 0, occupation_Farming_fishing>0.5 & relationship_Wife>0.5, 0
+3, 0.023, 0.126552227903579, age<=66.5 & capital_loss>1748 & capital_loss<=1978.5, 0.851351351351351
+3, 0, 0, age>66.5 & capital_loss>1748 & capital_loss<=1978.5, 0
+1, 0.991, 0.186098174430978, hours_per_week<=79, 0.247211895910781
+2, 0.001, 0, hours_per_week>79 & race_White<=0.5, 1
+2, 0, 0, hours_per_week>79 & occupation_Adm_clerical>0.5, 1
+2, 0, 0, workclass_Federal_gov>0.5 & occupation_Protective_serv>0.5, 1
+1, 0.987, 0.188004421343382, age<=72.5, 0.251010886469673
+3, 0, 0, age<=32.5 & hours_per_week>77.5 & education_Prof_school>0.5, 0
+1, 0.018, 0.216388888888889, education_Prof_school>0.5, 0.683333333333333
+2, 0.018, 0.201908279470606, age<=72.5 & education_Prof_school>0.5, 0.719298245614035
+2, 0.001, 0, age>72.5 & education_Prof_school>0.5, 0
+1, 0.003, 0, age>79.5, 0
+2, 0, 0, age>70.5 & occupation_Farming_fishing>0.5, 0
+2, 0.062, 0.019409861778257, age<=35 & education_School>0.5, 0.0198019801980198
+2, 0.437, 0.125301183399517, age<=37.5 & occupation_Adm_clerical<=0.5, 0.146872803935348
+3, 0.021, 0.09, capital_loss>1748 & capital_loss<=1978.5 & relationship_Not_in_family<=0.5, 0.9
+2, 0.015, 0.05859375, capital_loss<=1978.5 & capital_loss>1894.5, 0.9375
+1, 0.98, 0.188319919280969, age<=69, 0.251645252272015
+2, 0.108, 0.0486522024983563, hours_per_week<=34.5 & hours_per_week>19, 0.0512820512820513
+1, 0.542, 0.132637500336673, age<=39, 0.157417893544734
+1, 0.458, 0.229564434034503, age>39, 0.357046979865772
+3, 0.004, 0, age>39 & hours_per_week<=34.5 & education_Voc>0.5, 0
+3, 0, 0, age>56 & hours_per_week<=34.5 & occupation_Tech_support>0.5, 0
+2, 0.159, 0.00764772925553439, age<=24.5 & occupation_Transport_moving<=0.5, 0.00770712909441233
+3, 0, 0, capital_gain>4243.5 & capital_gain<=5095.5 & occupation_Machine_op_inspct>0.5, 0
+3, 0.001, 0, capital_gain>457 & capital_gain<=4147 & education_Masters>0.5, 0
+1, 0.055, 0.103055555555556, capital_gain>4147, 0.883333333333333
+3, 0, 0, age<=37.5 & education_Prof_school>0.5 & occupation_Prof_specialty<=0.5, 0
+1, 0.993, 0.187577279745316, age<=75.5, 0.250154607297464
+3, 0, 0, workclass_Local_gov>0.5 & education_Prof_school>0.5 & occupation_Prof_specialty<=0.5, 1
+1, 0.041, 0.209400757406995, workclass_State_gov>0.5, 0.298507462686567
+1, 0.889, 0.174199042254753, hours_per_week<=53.5, 0.224680262703076
+1, 0.111, 0.246491967002861, hours_per_week>53.5, 0.440771349862259
+3, 0.002, 0, hours_per_week>53.5 & marital_status_married>0.5 & race_Black>0.5, 1
+2, 0.006, 0.0475, occupation_Transport_moving>0.5 & race_White<=0.5, 0.05
+3, 0, 0, hours_per_week>49 & occupation_Transport_moving>0.5 & race_White<=0.5, 0
+2, 0.015, 0.0203993055555556, marital_status_married<=0.5 & occupation_Tech_support>0.5, 0.0208333333333333
+2, 0.03, 0.179612661391087, capital_loss>1748 & relationship_Not_in_family<=0.5, 0.76530612244898
+2, 0.001, 0, age>67.5 & capital_loss>1748, 0
+4, 0.007, 0.0433884297520661, hours_per_week<=49 & workclass_Local_gov<=0.5 & education_Bachelors<=0.5 & occupation_Protective_serv>0.5, 0.0454545454545455
+1, 0.202, 0.24676188919156, hours_per_week>49, 0.44309559939302
+2, 0.098, 0.0419610656341821, hours_per_week<=46.5 & relationship_Unmarried>0.5, 0.0438871473354232
+1, 0.067, 0.176752798585978, workclass_Local_gov>0.5, 0.229357798165138
+2, 0.032, 0.0861678004535147, age>65.5 & capital_gain<=4545, 0.0952380952380952
+2, 0.009, 0.0322222222222222, age>65.5 & education_School>0.5, 0.0333333333333333
+1, 0.114, 0.204081632653061, age>56.5, 0.285714285714286
+1, 0.987, 0.186013353990727, hours_per_week<=71, 0.24704418170504
+2, 0.002, 0, hours_per_week>71 & education_School>0.5, 0
+1, 0.921, 0.167671762544834, capital_gain<=1207, 0.213071023674558
+3, 0, 0, hours_per_week<=34.5 & relationship_Wife>0.5 & race_Asian_Pac_Islander>0.5, 1
+2, 0.156, 0.043144807994411, capital_gain<=6155.5 & hours_per_week<=34.5, 0.0451866404715128
+2, 0.003, 0, capital_gain>6155.5 & relationship_Wife>0.5, 1
+2, 0.078, 0.00390618992695117, marital_status_married<=0.5 & occupation_Adm_clerical>0.5, 0.00392156862745098
+3, 0.259, 0.0515318613687923, occupation_Tech_support<=0.5 & relationship_Wife<=0.5 & sex_Female>0.5, 0.0545023696682464
+4, 0.001, 0, hours_per_week>34.5 & marital_status_married>0.5 & occupation_Tech_support>0.5 & sex_Female>0.5, 1
+1, 0.96, 0.1884166144, age<=64.5, 0.25184
+3, 0.001, 0, workclass_Self_emp_inc>0.5 & relationship_Husband<=0.5 & race_White<=0.5, 0
+4, 0, 0, age>44.5 & workclass_Self_emp_inc>0.5 & relationship_Husband>0.5 & race_White<=0.5, 1
+1, 0.018, 0.0927467300832343, age>70.5, 0.103448275862069
+2, 0.002, 0.122448979591837, capital_gain>297 & education_Doctorate>0.5, 0.857142857142857
+2, 0.004, 0, capital_gain>5119 & capital_gain<=6618.5, 1
+2, 0.266, 0.0158868893917564, age<=31 & marital_status_married<=0.5, 0.0161476355247982
+2, 0.002, 0.1875, hours_per_week>58 & relationship_Wife>0.5, 0.25
+1, 0.966, 0.188883356376109, age<=65.5, 0.252782193958665
+1, 0.034, 0.116873630387144, age>65.5, 0.135135135135135
+3, 0.001, 0, age>65.5 & hours_per_week>63 & sex_Male>0.5, 1
+2, 0.029, 0.0206094182825485, age<=26.5 & occupation_Sales>0.5, 0.0210526315789474
+2, 0.008, 0.0356652949245542, age<=31.5 & occupation_Farming_fishing>0.5, 0.037037037037037
+1, 0.117, 0.246195603502318, hours_per_week>51, 0.438320209973753
+3, 0.002, 0, hours_per_week>51 & workclass_Local_gov>0.5 & occupation_Prof_specialty>0.5, 0
+2, 0.037, 0.0478779747192995, workclass_Local_gov>0.5 & marital_status_married<=0.5, 0.0504201680672269
+2, 0.004, 0, workclass_Local_gov>0.5 & occupation_Transport_moving>0.5, 0
+2, 0.009, 0.14268727705113, workclass_Local_gov<=0.5 & occupation_Protective_serv>0.5, 0.172413793103448
+2, 0.001, 0, occupation_Protective_serv>0.5 & native_country_Other>0.5, 0
+2, 0.001, 0, capital_gain>4401 & capital_gain<=4668.5, 0
+1, 0.989, 0.1875, hours_per_week>7, 0.25
+2, 0.001, 0, education_Masters>0.5 & occupation_Adm_clerical>0.5, 0
+1, 0.998, 0.186572942197093, hours_per_week<=87, 0.248152709359606
+2, 0.142, 0.0294465017574734, hours_per_week<=31.5 & relationship_Wife<=0.5, 0.0303687635574837
+2, 0.111, 0.00550947276340728, hours_per_week<=31.5 & marital_status_married<=0.5, 0.00554016620498615
+2, 0.009, 0, hours_per_week<=31.5 & occupation_Craft_repair>0.5, 0
+3, 0, 0, hours_per_week<=31.5 & relationship_Wife>0.5 & race_Asian_Pac_Islander>0.5, 1
+2, 0.006, 0.0453514739229025, hours_per_week<=31.5 & occupation_Exec_managerial>0.5, 0.0476190476190476
+1, 0.848, 0.203055555555556, hours_per_week>31.5, 0.283333333333333
+2, 0.007, 0.0415879017013233, occupation_Handlers_cleaners>0.5 & race_White<=0.5, 0.0434782608695652
+2, 0.031, 0.037677816224529, occupation_Handlers_cleaners>0.5 & race_White>0.5, 0.0392156862745098
+2, 0.035, 0.025406427221172, age<=49.5 & occupation_Handlers_cleaners>0.5, 0.0260869565217391
+3, 0, 0, age>49.5 & education_Voc>0.5 & occupation_Handlers_cleaners>0.5, 1
+1, 0.999, 0.186535656887081, hours_per_week<=98, 0.248078696587765
+2, 0.12, 0.0461201062057476, workclass_Self_emp_not_inc<=0.5 & education_School>0.5, 0.048469387755102
+3, 0, 0, hours_per_week>47.5 & marital_status_married>0.5 & relationship_Own_child>0.5, 1
+3, 0, 0, age>40.5 & marital_status_married>0.5 & relationship_Own_child>0.5, 0
+2, 0.006, 0.200617283950617, hours_per_week>64 & workclass_Self_emp_inc>0.5, 0.722222222222222
+3, 0, 0, workclass_Self_emp_inc>0.5 & education_Bachelors>0.5 & relationship_Wife>0.5, 1
+3, 0, 0, age>70.5 & hours_per_week<=37.5 & workclass_Self_emp_inc>0.5, 1
+2, 0, 0, hours_per_week>65.5 & hours_per_week<=66.5, 0
+1, 0.998, 0.186612528468869, hours_per_week<=90.5, 0.248231313442018
+3, 0, 0, hours_per_week>77.5 & education_Bachelors>0.5 & occupation_Prof_specialty>0.5, 0
+2, 0.001, 0, age<=40.5 & hours_per_week>90.5, 1
+3, 0.11, 0.0426952966511657, age<=34.5 & hours_per_week<=52.5 & education_Some_college>0.5, 0.0446927374301676
+1, 0.783, 0.174094127446897, age<=49.5, 0.224489795918367
+4, 0, 0, age<=49.5 & age>43.5 & hours_per_week>52.5 & occupation_Farming_fishing>0.5, 0
+1, 0.217, 0.223155861980912, age>49.5, 0.336158192090395
+2, 0.036, 0.147271531886916, capital_gain<=5119 & capital_gain>57, 0.179487179487179
+2, 0.004, 0, capital_gain>5119 & capital_gain<=6745, 1
+1, 0.044, 0.0401975646730892, capital_gain>6745, 0.958041958041958
+3, 0.001, 0, capital_gain>5119 & capital_gain<=7669.5 & marital_status_divorced>0.5, 0
+2, 0.003, 0, capital_gain>7669.5 & marital_status_divorced>0.5, 1
+1, 0.798, 0.159676259254147, hours_per_week<=49.5, 0.199460916442049
+4, 0, 0, hours_per_week<=49.5 & hours_per_week>47.5 & workclass_Private<=0.5 & race_White<=0.5, 0
+1, 0.202, 0.24676188919156, hours_per_week>49.5, 0.44309559939302
+3, 0, 0, education_Bachelors>0.5 & occupation_Craft_repair>0.5 & race_White<=0.5, 0
+2, 0.115, 0.105357344952467, workclass_Private>0.5 & race_White<=0.5, 0.11968085106383
+3, 0.002, 0, hours_per_week>77.5 & workclass_Private>0.5 & relationship_Husband>0.5, 1
+2, 0.217, 0.0139442111517678, age<=27.5 & relationship_Husband<=0.5, 0.0141442715700141
+3, 0, 0, age<=27.5 & hours_per_week>79 & occupation_Transport_moving>0.5, 0
+2, 0.668, 0.1492119963007, workclass_Private>0.5 & occupation_Exec_managerial<=0.5, 0.182528735632184
+4, 0, 0, age<=27.5 & age>26.5 & hours_per_week>59 & occupation_Exec_managerial>0.5, 1
+3, 0, 0, age<=36.5 & capital_loss>1446.5 & capital_loss<=1494.5, 1
+4, 0.001, 0, hours_per_week>63.5 & workclass_Private>0.5 & occupation_Exec_managerial>0.5 & relationship_Not_in_family>0.5, 0
+3, 0.01, 0, occupation_Tech_support<=0.5 & relationship_Other_relative>0.5 & sex_Male<=0.5, 0
+3, 0.001, 0, marital_status_married>0.5 & occupation_Tech_support>0.5 & relationship_Other_relative>0.5, 1
+2, 0.002, 0, workclass_State_gov>0.5 & relationship_Wife>0.5, 1
+1, 0.921, 0.185694887069726, workclass_Self_emp_not_inc<=0.5, 0.246415471823941
+2, 0.001, 0, workclass_Self_emp_not_inc>0.5 & occupation_Adm_clerical>0.5, 0
+1, 0.136, 0.083815234153072, marital_status_divorced>0.5, 0.0923423423423423
+3, 0.002, 0, age<=37.5 & workclass_Local_gov>0.5 & native_country_United_States<=0.5, 0
+3, 0.002, 0, workclass_Local_gov>0.5 & sex_Male>0.5 & native_country_United_States<=0.5, 0
+2, 0.48, 0.0427538412229119, marital_status_married<=0.5 & occupation_Exec_managerial<=0.5, 0.0447570332480818
+3, 0.001, 0, age<=41.5 & capital_loss<=1568.5 & capital_loss>1448, 1
+3, 0.001, 0, capital_loss>1820.5 & capital_loss<=1978.5 & marital_status_married<=0.5, 0
+2, 0.006, 0.0475, capital_loss>1978.5 & capital_loss<=2262.5, 0.05
+1, 0.033, 0.20738995034088, capital_loss>1820.5, 0.706422018348624
+3, 0.006, 0.0498614958448753, hours_per_week>1.5 & hours_per_week<=5.5 & relationship_Unmarried<=0.5, 0.0526315789473684
+3, 0, 0, hours_per_week<=5.5 & education_Masters>0.5 & relationship_Unmarried>0.5, 1
+3, 0, 0, age<=37 & education_Masters>0.5 & relationship_Other_relative>0.5, 1
+2, 0.109, 0.0299441358414342, hours_per_week<=28.5 & relationship_Wife<=0.5, 0.0308988764044944
+4, 0, 0, age<=37.5 & hours_per_week<=28.5 & workclass_Self_emp_not_inc>0.5 & relationship_Wife>0.5, 1
+1, 0.952, 0.187661186264308, age<=63.5, 0.250322580645161
+1, 0.048, 0.170447074293228, age>63.5, 0.217948717948718
+3, 0.002, 0, age>66.5 & hours_per_week<=28.5 & workclass_Self_emp_not_inc>0.5, 0
+2, 0.003, 0, capital_loss<=2384.5 & capital_loss>2218.5, 0
+2, 0.002, 0, capital_loss<=2384.5 & capital_loss>2262.5, 0
+1, 0.051, 0.0618740020322253, hours_per_week<=19, 0.0662650602409639
+2, 0.002, 0, occupation_Protective_serv>0.5 & sex_Female>0.5, 0
+3, 0.001, 0, age<=44.5 & hours_per_week>58 & relationship_Wife>0.5, 0
+2, 0.406, 0.0460678246181804, age<=44.5 & marital_status_married<=0.5, 0.048411497730711
+1, 0.049, 0.172448325588848, occupation_Transport_moving>0.5, 0.221518987341772
+3, 0.013, 0.0227149810708491, age<=44.5 & occupation_Transport_moving>0.5 & relationship_Husband<=0.5, 0.0232558139534884
+4, 0, 0, age<=44.5 & age>40.5 & hours_per_week>69 & occupation_Transport_moving>0.5, 0
+4, 0, 0, age>44.5 & age<=54.5 & hours_per_week>56.5 & education_Voc>0.5, 0
+2, 0.002, 0, education_Voc>0.5 & occupation_Transport_moving>0.5, 0
+3, 0.006, 0.0453514739229025, age>54.5 & hours_per_week<=69 & occupation_Machine_op_inspct>0.5, 0.0476190476190476
+2, 0.007, 0.0826446280991735, age>54.5 & occupation_Machine_op_inspct>0.5, 0.0909090909090909
+3, 0.001, 0, age>54.5 & hours_per_week>69 & occupation_Transport_moving>0.5, 0
+3, 0, 0, age>54.5 & hours_per_week>69 & occupation_Sales>0.5, 1
+1, 0.007, 0.241735537190083, capital_loss>2242, 0.590909090909091
+1, 0.151, 0.2089339267715, age>53.5, 0.297352342158859
+1, 0.773, 0.20842679980083, hours_per_week>39.5, 0.29610492845787
+1, 0.026, 0.0559807256235828, relationship_Other_relative>0.5, 0.0595238095238095
+3, 0.001, 0, age>32.5 & education_Bachelors>0.5 & relationship_Other_relative>0.5, 0
+1, 0.987, 0.188004421343382, age<=72, 0.251010886469673
+1, 0.013, 0.0678167757287329, age>72, 0.0731707317073171
+4, 0, 0, age<=34.5 & education_Masters>0.5 & marital_status_not_married<=0.5 & relationship_Not_in_family>0.5, 1
+3, 0.002, 0, workclass_State_gov>0.5 & education_Masters>0.5 & relationship_Not_in_family>0.5, 0
+3, 0.002, 0, hours_per_week>42.5 & workclass_State_gov>0.5 & relationship_Not_in_family>0.5, 0
+2, 0.016, 0, capital_gain>57 & capital_gain<=2962.5, 0
+1, 0.068, 0.176953981008035, capital_gain>2962.5, 0.77027027027027
+2, 0, 0, hours_per_week<=8 & occupation_Transport_moving>0.5, 1
+2, 0.279, 0.0183323270136457, age<=32.5 & marital_status_married<=0.5, 0.0186813186813187
+2, 0.001, 0, hours_per_week>78.5 & education_School>0.5, 0
+1, 0.081, 0.200054522497704, age>59.5, 0.276515151515151
+4, 0.001, 0, hours_per_week>43.5 & workclass_Self_emp_not_inc>0.5 & education_School>0.5 & native_country_Other>0.5, 1
+2, 0.001, 0, age<=31 & capital_loss>2262.5, 0
+3, 0.003, 0.148760330578512, age>44.5 & hours_per_week<=59 & hours_per_week>55.5, 0.818181818181818
+3, 0.001, 0, age>44.5 & hours_per_week>59 & relationship_Unmarried>0.5, 1
+3, 0.001, 0, age>61.5 & workclass_Federal_gov>0.5 & education_HS_grad>0.5, 0
+3, 0, 0, age>61.5 & workclass_Federal_gov>0.5 & education_Voc>0.5, 1
+3, 0.001, 0, age>44.5 & age<=45.5 & workclass_Self_emp_inc>0.5, 1
+3, 0, 0, workclass_Self_emp_inc>0.5 & education_Bachelors>0.5 & occupation_Craft_repair>0.5, 1
+3, 0, 0, age>70.5 & workclass_Self_emp_inc>0.5 & marital_status_not_married<=0.5, 1
+2, 0.097, 0.0422135756152415, hours_per_week<=28.5 & relationship_Husband<=0.5, 0.0441640378548896
+3, 0.02, 0.0440236686390533, age>35.5 & age<=46 & capital_gain>4973.5, 0.953846153846154
+2, 0.003, 0, capital_loss<=1448 & capital_loss>1198, 0
+3, 0.001, 0, capital_loss<=1568.5 & capital_loss>1448 & occupation_Exec_managerial>0.5, 1
+2, 0.001, 0, age>68.5 & capital_loss>1748, 0
+1, 0.782, 0.158010324624966, hours_per_week<=47.5, 0.196702002355713
+1, 0.218, 0.24588158295221, hours_per_week>47.5, 0.435825105782793
+2, 0.007, 0.0763888888888889, occupation_Craft_repair>0.5 & native_country_Other>0.5, 0.0833333333333333
+3, 0.002, 0, workclass_Local_gov>0.5 & relationship_Wife<=0.5 & native_country_Other>0.5, 0
+3, 0, 0, workclass_Local_gov>0.5 & relationship_Wife>0.5 & native_country_Other>0.5, 1
+3, 0, 0, hours_per_week<=39.5 & workclass_State_gov>0.5 & education_Prof_school>0.5, 1
+3, 0, 0, hours_per_week>39.5 & workclass_State_gov>0.5 & education_Prof_school>0.5, 0
+2, 0.001, 0, education_Doctorate>0.5 & occupation_Prof_specialty<=0.5, 1
+1, 0.991, 0.187577471328162, age<=74.5, 0.250154990700558
+1, 0.861, 0.205167263198074, age>23.5, 0.28826257581163
+2, 0.028, 0.0217283950617284, age<=35.5 & occupation_Handlers_cleaners>0.5, 0.0222222222222222
+1, 0.974, 0.189377239210049, relationship_Other_relative<=0.5, 0.253783102143758
+3, 0, 0, age>42.5 & marital_status_married>0.5 & relationship_Own_child>0.5, 0
+2, 0.001, 0, relationship_Husband>0.5 & race_Other>0.5, 0
+3, 0.001, 0, hours_per_week>42.5 & education_Bachelors>0.5 & relationship_Other_relative>0.5, 0
+3, 0, 0, age<=42.5 & education_Masters>0.5 & relationship_Other_relative>0.5, 1
+2, 0.004, 0, age>42.5 & relationship_Other_relative>0.5, 0
+4, 0, 0, age>64.5 & capital_loss>1748 & capital_loss<=2384.5 & hours_per_week>62.5, 0
+2, 0.008, 0, capital_gain>3120 & capital_gain<=4243.5, 0
+3, 0, 0, age>51.5 & workclass_Local_gov>0.5 & education_Masters>0.5, 0
+2, 0.059, 0.151735617063545, workclass_Local_gov>0.5 & occupation_Exec_managerial<=0.5, 0.186528497409326
+4, 0.003, 0, age<=53.5 & hours_per_week>41.5 & workclass_Local_gov>0.5 & occupation_Exec_managerial>0.5, 1
+4, 0.001, 0, age>53.5 & age<=58.5 & hours_per_week>41.5 & workclass_Local_gov>0.5, 0
+1, 0.018, 0.189600689457053, occupation_Protective_serv>0.5, 0.254237288135593
+4, 0, 0, workclass_Local_gov<=0.5 & workclass_Private<=0.5 & marital_status_divorced>0.5 & occupation_Protective_serv>0.5, 1
+3, 0.001, 0, workclass_Private>0.5 & marital_status_divorced>0.5 & occupation_Protective_serv>0.5, 0
+3, 0.044, 0.040468161079151, age>44 & hours_per_week<=45 & marital_status_divorced>0.5, 0.0422535211267606
+2, 0.001, 0, age>61.5 & capital_loss>2364.5, 1
+2, 0, 0, hours_per_week<=8 & education_Prof_school>0.5, 1
+2, 0.017, 0.0181755829903978, education_School>0.5 & occupation_Prof_specialty>0.5, 0.0185185185185185
+1, 0.721, 0.16499270674577, age<=46.5, 0.20843989769821
+4, 0.001, 0, age>46.5 & hours_per_week>77.5 & occupation_Farming_fishing<=0.5 & occupation_Prof_specialty<=0.5, 1
+1, 0.698, 0.162984084672708, age<=45, 0.205015398152222
+3, 0.001, 0, age>45 & hours_per_week>77.5 & occupation_Prof_specialty>0.5, 0
+2, 0, 0, hours_per_week>90.5 & occupation_Farming_fishing<=0.5, 1
+2, 0.106, 0.0468473009871876, hours_per_week<=57.5 & relationship_Unmarried>0.5, 0.0492753623188406
+1, 0.928, 0.184822924433139, education_Voc<=0.5, 0.244701986754967
+1, 0.959, 0.185807074342939, workclass_State_gov<=0.5, 0.246636771300448
+2, 0.281, 0.0696532770160752, relationship_Husband<=0.5 & sex_Male>0.5, 0.0753275109170306
+1, 0.998, 0.187037324219224, hours_per_week>2.5, 0.249076354679803
+2, 0.006, 0, marital_status_married<=0.5 & race_Amer_Indian_Eskimo>0.5, 0
+2, 0.003, 0.0987654320987654, hours_per_week>65.5 & occupation_Prof_specialty>0.5, 0.111111111111111
+1, 0.991, 0.186136899412293, hours_per_week<=76.5, 0.247288503253796
+1, 0.919, 0.185648248269896, age<=59.5, 0.246323529411765
+3, 0.001, 0, age>59.5 & workclass_Local_gov>0.5 & occupation_Protective_serv>0.5, 0
+1, 0.998, 0.186572942197093, hours_per_week<=85.5, 0.248152709359606
+4, 0.003, 0.16, hours_per_week>79 & workclass_Private<=0.5 & occupation_Exec_managerial<=0.5 & race_Black<=0.5, 0.2
+2, 0.001, 0, hours_per_week>79 & race_Black>0.5, 1
+3, 0.003, 0, hours_per_week<=85.5 & hours_per_week>79 & relationship_Husband<=0.5, 0
+3, 0.002, 0, hours_per_week>79 & workclass_Private>0.5 & relationship_Husband>0.5, 1
+4, 0, 0, age<=39.5 & hours_per_week>85.5 & education_Masters>0.5 & occupation_Exec_managerial<=0.5, 1
+4, 0, 0, age<=31.5 & hours_per_week>67.5 & workclass_Private<=0.5 & occupation_Exec_managerial>0.5, 0
+4, 0.001, 0, age<=41.5 & hours_per_week<=38.5 & workclass_Private<=0.5 & occupation_Exec_managerial>0.5, 0
+5, 0, 0, age>61.5 & workclass_Private>0.5 & education_Some_college>0.5 & occupation_Exec_managerial>0.5 & relationship_Not_in_family<=0.5, 1
+1, 0.264, 0.087197133585722, relationship_Not_in_family>0.5, 0.0965116279069767
+2, 0.092, 0.0478019008152786, age<=56.5 & hours_per_week<=28.5, 0.0503355704697987
+3, 0.001, 0, age>61.5 & hours_per_week<=28.5 & occupation_Sales>0.5, 0
+2, 0.041, 0.0433884297520661, hours_per_week>28.5 & hours_per_week<=34.5, 0.0454545454545455
+2, 0.016, 0.196745562130177, age>32.5 & education_Prof_school>0.5, 0.730769230769231
+1, 0.916, 0.168326292841242, capital_gain<=57, 0.214213878645659
+2, 0.004, 0, hours_per_week<=47 & race_Other>0.5, 0
+2, 0.004, 0, education_Bachelors<=0.5 & race_Other>0.5, 0
+2, 0.003, 0, race_Other>0.5 & sex_Female<=0.5, 0
+2, 0.002, 0, marital_status_married>0.5 & race_Other>0.5, 0
+3, 0, 0, education_Bachelors>0.5 & occupation_Sales>0.5 & race_Other>0.5, 1
+2, 0.023, 0.1344, capital_loss<=2001.5 & capital_loss>1846, 0.84
+2, 0.006, 0.0453514739229025, capital_loss<=2384.5 & capital_loss>2001.5, 0.0476190476190476
+1, 0.279, 0.228316628426519, age>46.5, 0.352747252747253
+1, 0.919, 0.177970912629758, hours_per_week<=59, 0.231617647058824
+1, 0.081, 0.246771694214876, hours_per_week>59, 0.443181818181818
+4, 0.001, 0, hours_per_week>51 & workclass_Local_gov>0.5 & education_HS_grad>0.5 & occupation_Protective_serv<=0.5, 0
+5, 0.001, 0, age<=47.5 & age>37.5 & workclass_Local_gov<=0.5 & marital_status_divorced<=0.5 & occupation_Protective_serv>0.5, 0
+3, 0, 0, age>44 & marital_status_divorced>0.5 & occupation_Protective_serv>0.5, 0
+1, 0.998, 0.187114792899408, age<=84.5, 0.249230769230769
+1, 0.002, 0, age>84.5, 0
+2, 0.012, 0, capital_gain<=3048 & capital_gain>1070.5, 0
+2, 0.007, 0, capital_gain<=3048 & capital_gain>2189, 0
+2, 0.005, 0.16, capital_gain>4401 & capital_gain<=5036.5, 0.2
+1, 0.027, 0, age<=18.5, 0
+3, 0.081, 0.0112767280139947, occupation_Other_service>0.5 & relationship_Husband<=0.5 & relationship_Wife<=0.5, 0.0114068441064639
+2, 0.071, 0.0374430764041154, age<=43 & occupation_Other_service>0.5, 0.038961038961039
+3, 0, 0, hours_per_week>55.5 & occupation_Other_service>0.5 & race_White<=0.5, 0
+1, 0.984, 0.18796728808091, hours_per_week>8, 0.250936329588015
+1, 0, 0, workclass_Without_pay>0.5, 0
+1, 0.997, 0.187230230003598, age<=80.5, 0.249461040960887
+3, 0, 0, hours_per_week<=28.5 & education_Prof_school>0.5 & relationship_Wife>0.5, 0
+2, 0.386, 0.0837670224151276, age<=34.5 & hours_per_week<=52.5, 0.0922832140015911
+2, 0.002, 0, education_Voc>0.5 & occupation_Farming_fishing>0.5, 0
+2, 0, 0, education_Prof_school>0.5 & occupation_Farming_fishing>0.5, 1
+2, 0.006, 0.0941828254847645, workclass_Private>0.5 & occupation_Protective_serv>0.5, 0.105263157894737
+2, 0.031, 0.0192233756247597, age<=36 & occupation_Machine_op_inspct>0.5, 0.0196078431372549
+3, 0, 0, age>36 & workclass_State_gov>0.5 & occupation_Machine_op_inspct>0.5, 1
+1, 0.997, 0.187307247608624, age<=79.5, 0.249614791987673
+3, 0.005, 0, age>38.5 & hours_per_week>44 & education_Doctorate>0.5, 1
+2, 0.001, 0, workclass_Self_emp_not_inc>0.5 & education_Doctorate>0.5, 1
+2, 0.03, 0.114069992857872, age<=44.5 & occupation_Transport_moving>0.5, 0.131313131313131
+3, 0, 0, hours_per_week>52 & relationship_Wife>0.5 & race_Black>0.5, 1
+2, 0.108, 0.0486522024983563, capital_gain<=3882 & relationship_Unmarried>0.5, 0.0512820512820513
+2, 0.051, 0.0233783929147693, education_HS_grad>0.5 & marital_status_divorced>0.5, 0.0239520958083832
+2, 0.006, 0, hours_per_week<=28.5 & native_country_Other>0.5, 0
+3, 0, 0, hours_per_week<=28.5 & education_Prof_school>0.5 & occupation_Exec_managerial>0.5, 0
+3, 0.001, 0, hours_per_week<=28.5 & workclass_Self_emp_not_inc>0.5 & education_Prof_school>0.5, 0
+1, 0.98, 0.188319919280969, age<=69.5, 0.251645252272015
+3, 0, 0, age<=69.5 & age>62.5 & education_Prof_school>0.5, 1
+2, 0.018, 0.0763888888888889, age>69.5 & occupation_Sales<=0.5, 0.0833333333333333
+2, 0.001, 0, age>69.5 & relationship_Wife>0.5, 1
+1, 0.02, 0.096094674556213, age>69.5, 0.107692307692308
+3, 0.001, 0, age>35.5 & marital_status_married>0.5 & relationship_Own_child>0.5, 0
+2, 0.004, 0, hours_per_week<=44.5 & race_Other>0.5, 0
+2, 0.004, 0, hours_per_week<=47.5 & race_Other>0.5, 0
+2, 0.001, 0, education_Some_college>0.5 & race_Other>0.5, 0
+1, 0.002, 0.25, hours_per_week>85.5, 0.5
+2, 0.107, 0.0590635544864164, hours_per_week<=47.5 & marital_status_divorced>0.5, 0.0630372492836676
+4, 0, 0, age<=42.5 & hours_per_week>47.5 & workclass_Federal_gov>0.5 & marital_status_divorced>0.5, 0
+3, 0.002, 0, age>42.5 & hours_per_week>47.5 & workclass_Federal_gov>0.5, 1
+3, 0.001, 0, occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5 & native_country_United_States<=0.5, 0
+4, 0, 0, education_Bachelors<=0.5 & education_School<=0.5 & occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5, 1
+3, 0, 0, education_Bachelors>0.5 & occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5, 0
+1, 0.919, 0.177970912629758, hours_per_week<=59.5, 0.231617647058824
+3, 0.001, 0, hours_per_week<=59.5 & hours_per_week>55.5 & workclass_Self_emp_not_inc>0.5, 1
+2, 0.01, 0.0302734375, age>56.5 & occupation_Other_service>0.5, 0.03125
+2, 0.416, 0.0300570114481082, hours_per_week<=42 & marital_status_married<=0.5, 0.0310192023633678
+2, 0.218, 0.00836760490662109, age<=28 & marital_status_married<=0.5, 0.00843881856540084
+1, 0.004, 0, occupation_Priv_house_serv>0.5, 0
+2, 0.007, 0, capital_loss<=1978.5 & capital_loss>1975.5, 1
+2, 0.008, 0.0356652949245542, capital_loss<=2384.5 & capital_loss>1978.5, 0.037037037037037
+2, 0.517, 0.0463225213127888, capital_gain<=4401 & marital_status_married<=0.5, 0.0486935866983373
+2, 0.038, 0.00806398307885518, capital_gain>7073.5 & capital_gain<=70654.5, 0.991869918699187
+1, 0.998, 0.187153260027164, age<=81.5, 0.249307479224377
+1, 0.002, 0, age>81.5, 0
+1, 0.977, 0.188672948597963, age<=68.5, 0.252357008170962
+2, 0, 0, hours_per_week>67.5 & workclass_Federal_gov>0.5, 1
+4, 0.001, 0, workclass_Private<=0.5 & workclass_Self_emp_inc<=0.5 & education_Bachelors>0.5 & occupation_Craft_repair>0.5, 0
+3, 0.019, 0.0467616232195646, age>68.5 & workclass_Self_emp_inc<=0.5 & occupation_Exec_managerial<=0.5, 0.0491803278688525
+1, 0.023, 0.0856464572680789, age>68.5, 0.0945945945945946
+3, 0, 0, age>68.5 & occupation_Exec_managerial>0.5 & race_Asian_Pac_Islander>0.5, 1
+3, 0, 0, age<=70.5 & hours_per_week<=24.5 & workclass_Self_emp_inc>0.5, 0
+2, 0.136, 0.0430159889619349, hours_per_week<=31 & education_Bachelors<=0.5, 0.045045045045045
+3, 0.001, 0, age<=31.5 & workclass_Self_emp_inc>0.5 & education_Bachelors>0.5, 0
+4, 0.001, 0, age>31.5 & age<=33.5 & workclass_Self_emp_inc>0.5 & education_Bachelors>0.5, 1
+3, 0, 0, age>70.5 & hours_per_week>37.5 & workclass_Self_emp_inc>0.5, 0
+3, 0, 0, age>70.5 & hours_per_week<=28 & workclass_Self_emp_inc>0.5, 1
+2, 0.02, 0.168994082840237, workclass_Local_gov>0.5 & occupation_Prof_specialty>0.5, 0.215384615384615
+1, 0.719, 0.148315022532604, hours_per_week<=44.5, 0.181119179837676
+2, 0.097, 0.0395666414714034, hours_per_week<=44.5 & marital_status_divorced>0.5, 0.0412698412698413
+1, 0.497, 0.11844238454363, age<=37, 0.137291280148423
+4, 0, 0, age>37 & hours_per_week>44.5 & workclass_Local_gov<=0.5 & occupation_Protective_serv>0.5, 1
+4, 0.001, 0, age<=46.5 & age>44.5 & workclass_Local_gov>0.5 & occupation_Protective_serv>0.5, 1
+3, 0.001, 0, age>46.5 & hours_per_week>65 & workclass_Local_gov>0.5, 0
+3, 0, 0, hours_per_week<=16.5 & hours_per_week>2 & education_Doctorate>0.5, 0
+1, 0.953, 0.191502427816936, hours_per_week>16.5, 0.258137286496938
+3, 0.002, 0, capital_loss>1748 & capital_loss<=1894.5 & marital_status_married<=0.5, 0
+3, 0.006, 0.0498614958448753, capital_loss>1748 & capital_loss<=1894.5 & marital_status_married>0.5, 0.947368421052632
+3, 0.001, 0, capital_loss>1894.5 & workclass_Local_gov>0.5 & occupation_Craft_repair>0.5, 0
+2, 0, 0, capital_loss>1894.5 & occupation_Transport_moving>0.5, 0
+2, 0.001, 0, capital_gain<=4826 & capital_gain>4668.5, 1
+2, 0.001, 0, capital_gain<=4932.5 & capital_gain>4826, 0
+3, 0.001, 0, hours_per_week<=28.5 & occupation_Tech_support>0.5 & relationship_Wife>0.5, 1
+2, 0.039, 0.0307382212144117, occupation_Machine_op_inspct>0.5 & relationship_Husband<=0.5, 0.0317460317460317
+2, 0.031, 0.0192233756247597, age<=36.5 & occupation_Machine_op_inspct>0.5, 0.0196078431372549
+3, 0.003, 0, education_Some_college>0.5 & occupation_Machine_op_inspct>0.5 & relationship_Husband>0.5, 0
+3, 0.001, 0, age>45.5 & education_Some_college>0.5 & occupation_Machine_op_inspct>0.5, 0
+3, 0.001, 0, age>54.5 & occupation_Machine_op_inspct>0.5 & native_country_United_States<=0.5, 0
+2, 0.505, 0.0479653440387279, education_Masters<=0.5 & marital_status_married<=0.5, 0.0505173463177115
+2, 0.059, 0.00520819056495162, relationship_Own_child>0.5 & sex_Male<=0.5, 0.00523560209424084
+1, 0.883, 0.173631879017013, hours_per_week<=51.5, 0.223652173913043
+1, 0.072, 0.210338264866418, education_Voc>0.5, 0.300847457627119
+1, 0.117, 0.246195603502318, hours_per_week>51.5, 0.438320209973753
+1, 0.996, 0.18734577427207, age<=78, 0.249691738594328
+3, 0, 0, hours_per_week<=54.5 & hours_per_week>53.5 & relationship_Wife>0.5, 1
+2, 0.003, 0.16, hours_per_week>54.5 & relationship_Wife>0.5, 0.2
+1, 0.035, 0.00877124285378651, capital_gain>7512, 0.991150442477876
+1, 0.988, 0.186015212750219, hours_per_week<=72.5, 0.247047855811063
+1, 0.012, 0.238919667590028, hours_per_week>72.5, 0.394736842105263
+4, 0.019, 0.0467616232195646, age<=37.5 & workclass_Local_gov>0.5 & occupation_Protective_serv<=0.5 & relationship_Wife<=0.5, 0.0491803278688525
+3, 0.002, 0, workclass_Local_gov>0.5 & relationship_Wife<=0.5 & native_country_United_States<=0.5, 0
+3, 0, 0, workclass_Local_gov>0.5 & occupation_Other_service>0.5 & native_country_United_States<=0.5, 1
+1, 0.991, 0.186098174430978, hours_per_week<=79.5, 0.247211895910781
+2, 0, 0, hours_per_week>52.5 & race_Other>0.5, 1
+2, 0, 0, workclass_State_gov>0.5 & relationship_Other_relative>0.5, 0
+1, 0.991, 0.186136899412293, hours_per_week<=75.5, 0.247288503253796
+1, 0.009, 0.24256837098692, hours_per_week>75.5, 0.413793103448276
+3, 0.01, 0.135275754422477, age<=50.5 & age>30.5 & education_Prof_school>0.5, 0.838709677419355
+3, 0, 0, age<=50.5 & education_Prof_school>0.5 & occupation_Sales>0.5, 0
+3, 0.001, 0, workclass_Self_emp_not_inc>0.5 & education_Prof_school>0.5 & marital_status_not_married>0.5, 1
+1, 0.199, 0.219415433486625, age>50.5, 0.325115562403698
+3, 0, 0, hours_per_week<=15 & education_Prof_school>0.5 & sex_Female>0.5, 0
+1, 0.888, 0.174284606349385, hours_per_week<=52.5, 0.224835696990661
+3, 0.004, 0.130177514792899, hours_per_week<=52.5 & hours_per_week>45.5 & relationship_Wife>0.5, 0.846153846153846
+3, 0.003, 0.0987654320987654, hours_per_week>52.5 & occupation_Sales<=0.5 & relationship_Wife>0.5, 0.111111111111111
+4, 0.002, 0, hours_per_week>52.5 & education_HS_grad>0.5 & occupation_Sales<=0.5 & relationship_Wife>0.5, 0
+1, 0.3, 0.243140502088901, hours_per_week>40.5, 0.417177914110429
+3, 0.002, 0, hours_per_week>40.5 & workclass_State_gov>0.5 & relationship_Not_in_family>0.5, 0
+2, 0.001, 0, age<=34.5 & education_Doctorate>0.5, 0
+2, 0.01, 0.135275754422477, age>34.5 & education_Doctorate>0.5, 0.838709677419355
+1, 0.104, 0.101809068838593, race_Black>0.5, 0.115044247787611
+1, 0.11, 0.246027822893863, hours_per_week>54.5, 0.436974789915966
+3, 0, 0, hours_per_week>62.5 & occupation_Craft_repair>0.5 & native_country_Other>0.5, 0
+2, 0, 0, occupation_Protective_serv>0.5 & race_Asian_Pac_Islander>0.5, 1
+1, 0.567, 0.138587897258875, age<=40.5, 0.166215484569572
+1, 0.433, 0.229548361163986, age>40.5, 0.356990773598297
+3, 0, 0, hours_per_week<=56.5 & hours_per_week>55.5 & workclass_State_gov>0.5, 1
+2, 0.065, 0.166633604443563, education_HS_grad<=0.5 & native_country_United_States<=0.5, 0.211267605633803
+3, 0.001, 0, hours_per_week>56.5 & education_Bachelors>0.5 & relationship_Unmarried>0.5, 1
+2, 0.043, 0.020969387755102, age<=30.5 & occupation_Other_service>0.5, 0.0214285714285714
+2, 0.021, 0.0793950850661626, capital_loss<=1978.5 & capital_loss>1846, 0.91304347826087
+2, 0.006, 0, hours_per_week<=28.5 & native_country_United_States<=0.5, 0
+2, 0.025, 0, marital_status_married<=0.5 & occupation_Handlers_cleaners>0.5, 0
+4, 0, 0, age<=57.5 & workclass_Self_emp_not_inc>0.5 & marital_status_married>0.5 & occupation_Handlers_cleaners>0.5, 1
+1, 0.005, 0.05859375, race_Other>0.5, 0.0625
+3, 0.001, 0, age>38.5 & marital_status_married>0.5 & relationship_Own_child>0.5, 0
+3, 0.143, 0.0429457698462554, age<=47.5 & hours_per_week<=36.5 & education_Masters<=0.5, 0.0449678800856531
+2, 0.004, 0, age>47.5 & relationship_Other_relative>0.5, 0
+1, 0.793, 0.206375136037185, hours_per_week>36.5, 0.291134339914828
+2, 0, 0, hours_per_week<=63.5 & hours_per_week>61.5, 0
+2, 0.006, 0.200617283950617, hours_per_week>63.5 & workclass_Self_emp_inc>0.5, 0.722222222222222
+2, 0.001, 0, capital_gain<=4668.5 & capital_gain>4401, 0
+2, 0.002, 0, capital_gain<=7073.5 & capital_gain>6618.5, 0
+2, 0.01, 0, workclass_State_gov>0.5 & education_Some_college>0.5, 0
+2, 0, 0, hours_per_week<=79 & hours_per_week>75.5, 0
+3, 0.001, 0, age<=31.5 & hours_per_week<=85.5 & hours_per_week>79, 0
+4, 0.002, 0.204081632653061, age>31.5 & hours_per_week>79 & workclass_Private>0.5 & marital_status_divorced<=0.5, 0.714285714285714
+3, 0, 0, age<=50.5 & age>43.5 & hours_per_week>85.5, 0
+2, 0.031, 0.0384, age>49.5 & marital_status_divorced>0.5, 0.04
+3, 0.001, 0, age>49.5 & hours_per_week>47.5 & workclass_Federal_gov>0.5, 1
+3, 0, 0, hours_per_week>47.5 & workclass_Federal_gov>0.5 & relationship_Unmarried>0.5, 1
+3, 0.001, 0, age>60.5 & workclass_Self_emp_inc>0.5 & relationship_Wife>0.5, 1
+1, 0.883, 0.173631879017013, hours_per_week<=50.5, 0.223652173913043
+1, 0.117, 0.246195603502318, hours_per_week>50.5, 0.438320209973753
+2, 0.065, 0.0815904236383054, education_HS_grad<=0.5 & relationship_Unmarried>0.5, 0.089622641509434
+1, 0.797, 0.15958317307778, hours_per_week<=48.5, 0.199306090979183
+1, 0.203, 0.246705031900037, hours_per_week>48.5, 0.442598187311178
+3, 0.013, 0.0843699296917253, workclass_Local_gov>0.5 & education_HS_grad>0.5 & occupation_Protective_serv<=0.5, 0.0930232558139535
+2, 0.002, 0.122448979591837, age>59.5 & occupation_Protective_serv>0.5, 0.142857142857143
+3, 0.001, 0, hours_per_week>41.5 & hours_per_week<=52.5 & occupation_Protective_serv>0.5, 0
+3, 0, 0, age>48.5 & hours_per_week>41.5 & occupation_Protective_serv>0.5, 0
+1, 0.997, 0.18661143132857, hours_per_week<=84.5, 0.248229134585771
+3, 0.001, 0, age<=31.5 & hours_per_week<=84.5 & hours_per_week>79, 0
+1, 0.003, 0.246913580246914, hours_per_week>84.5, 0.444444444444444
+2, 0, 0, hours_per_week<=8.5 & marital_status_divorced>0.5, 1
+2, 0.029, 0.0105251244907198, hours_per_week<=38.5 & marital_status_divorced>0.5, 0.0106382978723404
+1, 0.623, 0.150776554014636, age<=42.5, 0.185002466699556
+2, 0.131, 0.0770372958336973, workclass_Federal_gov<=0.5 & marital_status_divorced>0.5, 0.0841121495327103
+4, 0.001, 0, hours_per_week>47.5 & workclass_Federal_gov>0.5 & marital_status_divorced>0.5 & occupation_Adm_clerical<=0.5, 1
+2, 0.006, 0, hours_per_week<=28.5 & occupation_Craft_repair>0.5, 0
+3, 0.035, 0.0173858563708983, hours_per_week<=28.5 & education_Some_college>0.5 & relationship_Wife<=0.5, 0.0176991150442478
+2, 0.037, 0.0319650297110853, hours_per_week<=28.5 & education_Some_college>0.5, 0.0330578512396694
+5, 0.001, 0, age>38.5 & hours_per_week<=28.5 & hours_per_week>16.5 & occupation_Adm_clerical>0.5 & relationship_Wife>0.5, 1
+3, 0, 0, age>69.5 & hours_per_week>62.5 & marital_status_not_married<=0.5, 1
+3, 0, 0, age>52.5 & capital_gain<=4973.5 & capital_gain>4668.5, 1
+2, 0.001, 0, capital_gain>4826 & capital_gain<=4932.5, 0
+1, 0.916, 0.177445349325022, hours_per_week<=56.5, 0.230640295005029
+1, 0.084, 0.247178950475654, hours_per_week>56.5, 0.446886446886447
+2, 0.007, 0, age>60.5 & occupation_Other_service>0.5, 0
+2, 0.007, 0.0763888888888889, occupation_Craft_repair>0.5 & native_country_United_States<=0.5, 0.0833333333333333
+1, 0.778, 0.157424613262783, hours_per_week<=45.5, 0.195737963693765
+1, 0.222, 0.245762386722017, hours_per_week>45.5, 0.434903047091413
+2, 0.005, 0, age<=29.5 & occupation_Protective_serv>0.5, 0
+4, 0, 0, age>49.5 & age<=56 & workclass_Private>0.5 & occupation_Protective_serv>0.5, 0
+1, 0.114, 0.204081632653061, age>56, 0.285714285714286
+3, 0.001, 0, age<=32.5 & occupation_Tech_support>0.5 & relationship_Other_relative>0.5, 1
+3, 0.006, 0, workclass_Self_emp_not_inc<=0.5 & education_Some_college>0.5 & relationship_Other_relative>0.5, 0
+3, 0, 0, workclass_Self_emp_not_inc>0.5 & education_Some_college>0.5 & relationship_Other_relative>0.5, 1
+2, 0.135, 0.0200361570247934, education_Some_college>0.5 & marital_status_married<=0.5, 0.0204545454545455
+3, 0, 0, hours_per_week<=65.5 & hours_per_week>63.5 & race_White<=0.5, 0
+1, 0.024, 0.236686390532544, hours_per_week>65.5, 0.384615384615385
+1, 0.835, 0.181378361681126, age<=52.5, 0.238042678440029
+1, 0.165, 0.211180746534736, age>52.5, 0.302973977695167
+4, 0.001, 0, education_Some_college>0.5 & occupation_Prof_specialty>0.5 & relationship_Husband<=0.5 & race_Asian_Pac_Islander>0.5, 0
+4, 0, 0, education_Some_college>0.5 & occupation_Prof_specialty>0.5 & relationship_Husband>0.5 & race_Asian_Pac_Islander>0.5, 1
+3, 0, 0, age<=48.5 & capital_loss>1748 & workclass_Federal_gov>0.5, 1
+3, 0, 0, age>48.5 & capital_loss>1894.5 & workclass_Federal_gov>0.5, 0
+3, 0, 0, age>50.5 & education_Voc>0.5 & occupation_Handlers_cleaners>0.5, 1
+3, 0.001, 0, age>50.5 & capital_gain>4243.5 & capital_gain<=4401, 1
+2, 0.307, 0.046687563503761, age<=30.5 & capital_gain<=4668.5, 0.0490981963927856
+3, 0.002, 0, age>52.5 & capital_gain>4243.5 & capital_gain<=4826, 1
+2, 0.002, 0, age>65.5 & hours_per_week<=2.5, 0
+2, 0.002, 0, hours_per_week>2.5 & hours_per_week<=4.5, 0
+4, 0.007, 0.0399305555555556, age<=63.5 & hours_per_week<=28.5 & workclass_Self_emp_not_inc>0.5 & relationship_Wife<=0.5, 0.0416666666666667
+3, 0.002, 0, age>69.5 & age<=70.5 & hours_per_week<=65, 0
+3, 0, 0, age>69.5 & age<=70.5 & hours_per_week>65, 1
+3, 0.002, 0, age>47.5 & age<=52.5 & education_Doctorate>0.5, 1
+2, 0.007, 0.109375, education_Doctorate>0.5 & marital_status_married>0.5, 0.875
+3, 0, 0, age<=36.5 & workclass_Federal_gov>0.5 & race_Asian_Pac_Islander>0.5, 0
+2, 0.385, 0.0838869224298027, age<=34.5 & hours_per_week<=50.5, 0.0924302788844621
+2, 0.073, 0.0442592889316171, age<=44.5 & occupation_Other_service>0.5, 0.0464135021097046
+2, 0.107, 0.0514774098734822, hours_per_week<=28.5 & workclass_Self_emp_not_inc<=0.5, 0.0544412607449857
+2, 0, 0, hours_per_week<=6.5 & occupation_Transport_moving>0.5, 1
+4, 0.001, 0, age<=63.5 & age>56 & workclass_Self_emp_not_inc>0.5 & relationship_Wife>0.5, 1
+2, 0.006, 0.1275, age>64.5 & workclass_Self_emp_not_inc>0.5, 0.15
+4, 0, 0, age>59.5 & age<=61.5 & hours_per_week<=55.5 & hours_per_week>52.5, 0
+3, 0.001, 0, age>59.5 & hours_per_week>55.5 & marital_status_married<=0.5, 0
+4, 0.001, 0, age>59.5 & hours_per_week>55.5 & hours_per_week<=59.5 & marital_status_married>0.5, 1
+4, 0, 0, age<=43.5 & hours_per_week<=7.5 & relationship_Unmarried>0.5 & sex_Female<=0.5, 1
+3, 0.077, 0.0344387755102041, relationship_Unmarried>0.5 & race_Asian_Pac_Islander<=0.5 & sex_Female>0.5, 0.0357142857142857
+3, 0.001, 0, age>51.5 & relationship_Unmarried>0.5 & race_Asian_Pac_Islander>0.5, 1
+1, 0.973, 0.18086154713167, capital_loss<=1894.5, 0.237058080808081
+3, 0, 0, capital_loss>1894.5 & workclass_State_gov>0.5 & education_Doctorate<=0.5, 0
+1, 0.218, 0.24588158295221, hours_per_week>47, 0.435825105782793
+1, 0.013, 0.235827664399093, hours_per_week>71, 0.380952380952381
+2, 0.001, 0, occupation_Tech_support>0.5 & race_White<=0.5, 0
+2, 0.15, 0.0101615303855057, education_Doctorate<=0.5 & relationship_Own_child>0.5, 0.0102669404517454
+3, 0, 0, age>46.5 & education_Doctorate>0.5 & relationship_Own_child>0.5, 1
+2, 0.03, 0.0296751353602666, education_Some_college>0.5 & marital_status_divorced>0.5, 0.0306122448979592
+1, 0.875, 0.184392120652508, age<=55.5, 0.243859649122807
+1, 0.125, 0.203019971365478, age>55.5, 0.283251231527094
+2, 0.024, 0.0710059171597633, age<=36.5 & workclass_Local_gov>0.5, 0.0769230769230769
+3, 0.001, 0, age<=36.5 & hours_per_week>64.5 & workclass_Local_gov>0.5, 0
+3, 0, 0, workclass_Local_gov>0.5 & occupation_Other_service>0.5 & native_country_Other>0.5, 1
+1, 0.939, 0.187213631531819, age<=61, 0.249427917620137
+3, 0, 0, age>61 & education_Some_college>0.5 & occupation_Protective_serv>0.5, 0
+1, 0.978, 0.178228513011035, capital_gain<=10585.5, 0.232097989949749
+2, 0.017, 0, capital_gain>57 & capital_gain<=2985, 0
+2, 0.106, 0.0468473009871876, hours_per_week<=56.5 & relationship_Unmarried>0.5, 0.0492753623188406
+4, 0.001, 0, age<=40.5 & hours_per_week<=56.5 & hours_per_week>55.5 & relationship_Husband<=0.5, 0
+4, 0, 0, age<=40.5 & hours_per_week<=56.5 & hours_per_week>55.5 & relationship_Husband>0.5, 1
+4, 0.002, 0.138888888888889, age>40.5 & age<=54.5 & hours_per_week<=56.5 & hours_per_week>55.5, 0.833333333333333
+3, 0.001, 0, age>54.5 & hours_per_week<=56.5 & hours_per_week>55.5, 0
+3, 0.001, 0, age<=37.5 & hours_per_week>56.5 & relationship_Wife>0.5, 0
+3, 0, 0, age<=37.5 & age>36.5 & hours_per_week>88, 1
+3, 0.001, 0, age<=37.5 & hours_per_week>56.5 & hours_per_week<=59, 0
+2, 0, 0, hours_per_week>66.5 & relationship_Unmarried>0.5, 0
+2, 0.304, 0.0378787491527122, age<=32.5 & relationship_Husband<=0.5, 0.0394337714863498
+2, 0.003, 0, age<=32.5 & race_Other>0.5, 0
+3, 0.001, 0, age>50.5 & capital_gain>4082.5 & capital_gain<=4401, 1
+2, 0.002, 0, hours_per_week>73.5 & education_Some_college>0.5, 1
+3, 0.001, 0, hours_per_week<=41.5 & workclass_Local_gov>0.5 & race_Asian_Pac_Islander>0.5, 0
+2, 0.092, 0.029289221206252, age<=30.5 & relationship_Not_in_family>0.5, 0.0302013422818792
+4, 0, 0, hours_per_week>58 & workclass_Private>0.5 & education_Voc<=0.5 & occupation_Protective_serv>0.5, 1
+3, 0, 0, workclass_Self_emp_not_inc>0.5 & education_Bachelors>0.5 & race_Black>0.5, 1
+4, 0, 0, age>44.5 & age<=50.5 & education_Prof_school>0.5 & marital_status_not_married>0.5, 1
+3, 0, 0, age>50.5 & education_Prof_school>0.5 & marital_status_not_married>0.5, 0
+4, 0.003, 0, age>60.5 & hours_per_week<=28.5 & education_Some_college>0.5 & relationship_Wife<=0.5, 0
+3, 0, 0, hours_per_week<=28.5 & education_Masters>0.5 & relationship_Wife>0.5, 1
+2, 0.082, 0.0427712185341947, relationship_Husband<=0.5 & race_Black>0.5, 0.0447761194029851
+3, 0.014, 0.0217283950617284, age<=46.5 & occupation_Transport_moving>0.5 & relationship_Husband<=0.5, 0.0222222222222222
+4, 0, 0, age<=46.5 & age>41.5 & capital_gain>2994 & occupation_Transport_moving>0.5, 0
+4, 0, 0, age<=46.5 & age>41.5 & hours_per_week>62.5 & occupation_Transport_moving>0.5, 0
+3, 0, 0, age>46.5 & workclass_State_gov>0.5 & race_Black>0.5, 1
+2, 0.002, 0, age>61.5 & occupation_Transport_moving>0.5, 0
+4, 0, 0, age>46.5 & hours_per_week>59 & education_School>0.5 & occupation_Transport_moving>0.5, 1
+2, 0.093, 0.037915512465374, hours_per_week<=43.5 & relationship_Unmarried>0.5, 0.0394736842105263
+4, 0.064, 0.018950267217438, occupation_Craft_repair<=0.5 & occupation_Prof_specialty<=0.5 & relationship_Unmarried>0.5 & sex_Male<=0.5, 0.0193236714975845
+3, 0, 0, workclass_Federal_gov>0.5 & occupation_Prof_specialty>0.5 & relationship_Unmarried>0.5, 1
+2, 0.008, 0.0384, occupation_Craft_repair>0.5 & relationship_Unmarried>0.5, 0.04
+2, 0, 0, hours_per_week<=1.5 & occupation_Prof_specialty<=0.5, 0
+3, 0, 0, age<=67 & hours_per_week<=1.5 & occupation_Prof_specialty>0.5, 1
+2, 0.001, 0, hours_per_week>72.5 & occupation_Craft_repair>0.5, 1
+3, 0.001, 0, hours_per_week>72.5 & marital_status_divorced<=0.5 & occupation_Sales>0.5, 1
+2, 0.002, 0, hours_per_week>72.5 & marital_status_divorced>0.5, 0
+1, 0.002, 0.24, hours_per_week>90.5, 0.6
+2, 0.679, 0.138133803659634, hours_per_week<=42.5 & education_Masters<=0.5, 0.165535956580733
+1, 0.709, 0.146265812109968, hours_per_week<=42.5, 0.177922077922078
+3, 0.005, 0.15234375, age>47.5 & hours_per_week>42.5 & workclass_Local_gov>0.5, 0.1875
+2, 0.004, 0, occupation_Protective_serv>0.5 & race_Black>0.5, 0
+3, 0, 0, age>59.5 & education_Some_college>0.5 & occupation_Protective_serv>0.5, 0
+3, 0, 0, hours_per_week>41.5 & workclass_State_gov>0.5 & occupation_Protective_serv>0.5, 0
+1, 1, 0.186922635859755, workclass_Without_pay<=0.5, 0.248847926267281
+2, 0.008, 0.16, hours_per_week>51.5 & education_Voc>0.5, 0.2
+2, 0.046, 0.218368541957569, hours_per_week>48.5 & occupation_Exec_managerial>0.5, 0.677852348993289
+1, 0.227, 0.0801223520818116, hours_per_week<=39, 0.0878378378378378
+1, 0.773, 0.20842679980083, hours_per_week>39, 0.29610492845787
+3, 0.001, 0, education_Voc<=0.5 & occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5, 0
+3, 0, 0, education_Voc>0.5 & occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5, 1
+1, 0.051, 0.0618740020322253, hours_per_week<=19.5, 0.0662650602409639
+2, 0.031, 0.0475, age<=47.5 & hours_per_week<=19.5, 0.05
+3, 0.013, 0.0464009518143962, age<=60.5 & hours_per_week<=19.5 & education_Some_college>0.5, 0.0487804878048781
+1, 0.989, 0.18784899885263, age<=73.5, 0.250698974836906
+2, 0.001, 0, age>73.5 & native_country_United_States<=0.5, 0
+1, 0.004, 0, age>77.5, 0
+2, 0.002, 0, age>73.5 & age<=74.5, 0
+1, 0.011, 0.0745069393718042, age>73.5, 0.0810810810810811
+2, 0, 0, age>73.5 & occupation_Sales>0.5, 0
+3, 0.001, 0, age<=31.5 & hours_per_week<=85.5 & hours_per_week>72.5, 0
+3, 0.001, 0, hours_per_week>72.5 & education_HS_grad<=0.5 & occupation_Sales>0.5, 1
+1, 0.951, 0.187580671175848, occupation_Transport_moving<=0.5, 0.250161394448031
+3, 0.001, 0, age>49.5 & hours_per_week>85.5 & education_Some_college<=0.5, 0
+2, 0, 0, hours_per_week>85.5 & education_Some_college>0.5, 1
+2, 0, 0, hours_per_week>85.5 & occupation_Transport_moving>0.5, 0
+2, 0, 0, hours_per_week<=1.5 & workclass_State_gov>0.5, 1
+4, 0.003, 0, age>48.5 & age<=55.5 & occupation_Other_service>0.5 & sex_Female<=0.5, 0
+2, 0.002, 0, hours_per_week<=4.5 & marital_status_married<=0.5, 0
+2, 0.001, 0, hours_per_week<=4.5 & occupation_Prof_specialty<=0.5, 0
+2, 0.003, 0, hours_per_week<=4.5 & relationship_Husband<=0.5, 0
+1, 0.996, 0.187422863321131, age<=77.5, 0.249845774213449
+1, 0.996, 0.187268447249834, hours_per_week>4.5, 0.249537322640345
+2, 0.119, 0.0778177808481241, relationship_Not_in_family>0.5 & sex_Female>0.5, 0.0850515463917526
+2, 0.049, 0.096018266303477, capital_gain>4243.5 & occupation_Craft_repair<=0.5, 0.892405063291139
+3, 0.009, 0, age<=56.5 & age>54.5 & relationship_Husband<=0.5, 0
+2, 0.001, 0, age>61.5 & education_Doctorate>0.5, 1
+1, 0.286, 0.0391503540191587, age<=29, 0.0408163265306122
+2, 0.006, 0, age<=69.5 & age>67.5, 0
+2, 0.025, 0.0464009518143962, education_Masters<=0.5 & relationship_Other_relative>0.5, 0.0487804878048781
+2, 0.182, 0.112058772163387, age<=47.5 & education_Some_college>0.5, 0.128595600676819
+3, 0.001, 0, age>48.5 & hours_per_week>84.5 & education_Some_college<=0.5, 0
+2, 0, 0, hours_per_week>84.5 & education_Some_college>0.5, 1
+3, 0.002, 0, hours_per_week<=47.5 & marital_status_divorced>0.5 & occupation_Protective_serv>0.5, 0
+2, 0.097, 0.0395666414714034, hours_per_week<=44 & marital_status_divorced>0.5, 0.0412698412698413
+2, 0.027, 0.0332936979785969, age>50.5 & marital_status_divorced>0.5, 0.0344827586206897
+2, 0.018, 0.0498614958448754, marital_status_divorced>0.5 & occupation_Craft_repair>0.5, 0.0526315789473684
+2, 0.268, 0.0300379230756049, age<=30.5 & relationship_Husband<=0.5, 0.0309988518943743
+3, 0.006, 0.0498614958448753, capital_loss>1894.5 & capital_loss<=1938 & education_HS_grad<=0.5, 0.947368421052632
+3, 0.001, 0, capital_loss>1748 & workclass_Local_gov>0.5 & education_HS_grad>0.5, 0
+2, 0.001, 0, capital_loss>2252 & workclass_Local_gov>0.5, 0
+2, 0.003, 0.222222222222222, capital_gain<=4973.5 & capital_gain>4401, 0.333333333333333
+2, 0.002, 0, capital_gain>4973.5 & capital_gain<=5036.5, 0
+2, 0.521, 0.0476061181692773, capital_gain<=7073.5 & marital_status_married<=0.5, 0.0501179245283019
+2, 0.004, 0, capital_gain>5036.5 & capital_gain<=6640.5, 1
+1, 0.044, 0.0401975646730892, capital_gain>6640.5, 0.958041958041958
+1, 0.09, 0, age<=21.5, 0
+3, 0.002, 0, hours_per_week<=19.5 & education_Some_college<=0.5 & occupation_Adm_clerical>0.5, 0
+1, 0.91, 0.198597747873265, age>21.5, 0.273279352226721
+1, 0.877, 0.182589355649308, occupation_Sales<=0.5, 0.240364400840925
+3, 0, 0, hours_per_week>65.5 & hours_per_week<=69 & occupation_Sales<=0.5, 0
+3, 0.001, 0, age>59.5 & hours_per_week>65.5 & occupation_Sales>0.5, 1
+3, 0.002, 0, age>40 & hours_per_week>65.5 & education_Some_college>0.5, 1
+3, 0.002, 0, age<=56.5 & age>54.5 & race_White<=0.5, 0
+4, 0, 0, age<=56.5 & age>54.5 & hours_per_week>44.5 & occupation_Transport_moving>0.5, 0
+3, 0.016, 0.233756247597078, age<=60.5 & hours_per_week>45.5 & occupation_Transport_moving>0.5, 0.372549019607843
+3, 0.001, 0, age>60.5 & hours_per_week>42.5 & occupation_Transport_moving>0.5, 0
+3, 0.002, 0.122448979591837, hours_per_week>50.5 & education_HS_grad>0.5 & relationship_Wife>0.5, 0.142857142857143
+4, 0.002, 0, age<=49.5 & age>32.5 & workclass_Private>0.5 & occupation_Protective_serv>0.5, 0
+3, 0.003, 0, age>49.5 & education_Bachelors<=0.5 & occupation_Protective_serv>0.5, 0
+3, 0.001, 0, age>49.5 & education_Bachelors>0.5 & occupation_Protective_serv>0.5, 1
+1, 0.082, 0.171683559812876, native_country_United_States<=0.5, 0.220149253731343
+3, 0, 0, workclass_Local_gov>0.5 & relationship_Husband>0.5 & native_country_United_States<=0.5, 0
+1, 0.971, 0.188602687870534, age<=66.5, 0.252215189873418
+2, 0.041, 0.0149219467401286, capital_gain>5036.5 & marital_status_married>0.5, 0.984848484848485
+1, 0.001, 0, occupation_Armed_Forces>0.5, 0
+2, 0.001, 0, hours_per_week<=64.5 & hours_per_week>63.5, 0
+3, 0.001, 0, age<=44.5 & hours_per_week>71 & education_Bachelors>0.5, 1
+3, 0.001, 0, age>44.5 & hours_per_week>45.5 & race_Black>0.5, 1
+4, 0.002, 0, age>44.5 & age<=50.5 & hours_per_week>45 & education_Prof_school>0.5, 1
+2, 0.002, 0, hours_per_week>65.5 & sex_Male<=0.5, 0
+3, 0.001, 0, hours_per_week>65.5 & education_Masters>0.5 & marital_status_married<=0.5, 0
+1, 0.291, 0.24388098994766, hours_per_week>42.5, 0.421775898520085
+1, 0.974, 0.189066353766962, hours_per_week>11, 0.253152585119798
+3, 0.001, 0, workclass_State_gov>0.5 & education_HS_grad>0.5 & occupation_Prof_specialty>0.5, 1
+4, 0.002, 0, age>50.5 & education_Bachelors<=0.5 & occupation_Adm_clerical>0.5 & relationship_Wife>0.5, 1
+3, 0.069, 0.0424691358024691, marital_status_divorced<=0.5 & relationship_Husband<=0.5 & race_Black>0.5, 0.0444444444444444
+1, 0.22, 0.246126460951636, hours_per_week>46.5, 0.437762237762238
+3, 0.012, 0.21, occupation_Prof_specialty>0.5 & race_White<=0.5 & sex_Female<=0.5, 0.3
+2, 0.001, 0, hours_per_week>79 & marital_status_divorced>0.5, 0
+2, 0.033, 0.0353505597171955, age>48.5 & marital_status_divorced>0.5, 0.036697247706422
+2, 0.383, 0.0558628703343476, age<=38.5 & relationship_Husband<=0.5, 0.0593900481540931
+2, 0.034, 0.0430159889619349, age<=38.5 & occupation_Machine_op_inspct>0.5, 0.045045045045045
+4, 0, 0, age>57.5 & hours_per_week>45.5 & workclass_Self_emp_not_inc<=0.5 & occupation_Craft_repair>0.5, 1
+4, 0.001, 0, age>56.5 & age<=66.5 & workclass_Self_emp_not_inc>0.5 & education_Masters>0.5, 0
+2, 0.005, 0.0622222222222222, age>66.5 & workclass_Self_emp_not_inc>0.5, 0.0666666666666667
+2, 0.042, 0.028344610794395, age<=33.5 & race_Black>0.5, 0.0291970802919708
+5, 0, 0, age<=36.5 & workclass_Self_emp_not_inc>0.5 & education_School<=0.5 & occupation_Transport_moving<=0.5 & race_Black>0.5, 1
+1, 0.092, 0.195970962293487, age>58.5, 0.267558528428094
+4, 0, 0, age>63.5 & hours_per_week>43.5 & workclass_Self_emp_not_inc>0.5 & education_School>0.5, 1
+3, 0.001, 0, age<=49.5 & age>48.5 & native_country_Other>0.5, 0
+2, 0.1, 0.0810436975422485, occupation_Adm_clerical>0.5 & relationship_Wife<=0.5, 0.0889570552147239
+3, 0, 0, age>59.5 & education_HS_grad>0.5 & occupation_Tech_support>0.5, 1
+1, 0.01, 0.103806228373702, hours_per_week<=6.5, 0.117647058823529
+2, 0.001, 0, hours_per_week<=6.5 & education_Bachelors>0.5, 0
+2, 0, 0, hours_per_week<=6.5 & education_Prof_school>0.5, 1
+3, 0, 0, hours_per_week>6.5 & hours_per_week<=7.5 & education_Bachelors<=0.5, 0
+3, 0, 0, hours_per_week>6.5 & hours_per_week<=7.5 & education_Bachelors>0.5, 1
+1, 0.99, 0.187577567476239, hours_per_week>6.5, 0.250155183116077
+2, 0.031, 0.0466166858900423, age<=50.5 & hours_per_week<=19.5, 0.0490196078431373
+3, 0.001, 0, age>73.5 & hours_per_week<=19.5 & education_Some_college>0.5, 0
+2, 0.006, 0.0475, age>73.5 & marital_status_married<=0.5, 0.05
+3, 0, 0, age>73.5 & hours_per_week>19.5 & education_Bachelors>0.5, 0
+3, 0.001, 0.1875, age>41.5 & hours_per_week>55.5 & workclass_State_gov>0.5, 0.75
+3, 0, 0, workclass_Local_gov>0.5 & relationship_Wife>0.5 & native_country_United_States<=0.5, 1
+3, 0.001, 0, hours_per_week<=52.5 & hours_per_week>47.5 & occupation_Protective_serv>0.5, 0
+3, 0, 0, age>48.5 & hours_per_week>52.5 & occupation_Protective_serv>0.5, 0
+2, 0.202, 0.014944241171039, age<=26.5 & hours_per_week<=53.5, 0.0151745068285281
+2, 0, 0, capital_loss<=1551.5 & capital_loss>1494.5, 0
+2, 0.48, 0.0692119197284162, hours_per_week<=44.5 & relationship_Husband<=0.5, 0.0748081841432225
+3, 0, 0, hours_per_week<=44.5 & hours_per_week>42.5 & relationship_Wife>0.5, 0
+3, 0.001, 0, age<=31.5 & workclass_Federal_gov>0.5 & relationship_Husband>0.5, 0
+1, 0.281, 0.243893815879841, hours_per_week>44.5, 0.421857923497268
+3, 0.013, 0.193310657596372, hours_per_week>44.5 & education_Masters>0.5 & occupation_Prof_specialty<=0.5, 0.738095238095238
+4, 0.001, 0, hours_per_week>44.5 & workclass_Self_emp_not_inc>0.5 & education_Masters>0.5 & occupation_Sales>0.5, 0
+3, 0.001, 0, hours_per_week>55 & workclass_Self_emp_not_inc>0.5 & occupation_Prof_specialty>0.5, 1
+4, 0.001, 0, age>30.5 & hours_per_week>44.5 & workclass_Self_emp_not_inc>0.5 & education_Voc>0.5, 0
+2, 0.003, 0, age<=69.5 & age>68.5, 0
+3, 0.004, 0, age<=41.5 & hours_per_week<=28.5 & relationship_Husband>0.5, 0
+4, 0, 0, age>41.5 & age<=44.5 & hours_per_week<=28.5 & occupation_Tech_support>0.5, 1
+2, 0.005, 0.207612456747405, age>60.5 & education_Masters>0.5, 0.705882352941177
+2, 0.112, 0.116224432351285, workclass_Self_emp_inc<=0.5 & occupation_Adm_clerical>0.5, 0.134246575342466
+1, 0.968, 0.184084771082248, hours_per_week<=64.5, 0.24326038693308
+2, 0.001, 0, hours_per_week<=64.5 & hours_per_week>61, 0
+4, 0.002, 0, age>39.5 & hours_per_week>64.5 & education_Bachelors<=0.5 & occupation_Sales>0.5, 1
+3, 0, 0, age>65.5 & education_Bachelors>0.5 & occupation_Sales>0.5, 1
+3, 0, 0, workclass_Federal_gov>0.5 & education_Bachelors>0.5 & occupation_Sales>0.5, 0
+3, 0.001, 0, age>59.5 & workclass_Self_emp_inc>0.5 & relationship_Wife>0.5, 1
+4, 0.003, 0, age<=49.5 & hours_per_week<=57 & workclass_Private>0.5 & occupation_Protective_serv>0.5, 0
+2, 0.001, 0, hours_per_week<=2.5 & occupation_Prof_specialty<=0.5, 0
+2, 0.01, 0.0826446280991735, hours_per_week<=6.5 & education_Prof_school<=0.5, 0.0909090909090909
+3, 0.001, 0, hours_per_week<=6.5 & education_Masters<=0.5 & occupation_Sales>0.5, 0
+3, 0, 0, hours_per_week<=6.5 & education_Masters>0.5 & occupation_Sales>0.5, 1
+2, 0.005, 0, age>65 & hours_per_week<=6.5, 0
+2, 0.007, 0.143667296786389, age>69.5 & hours_per_week>35.5, 0.173913043478261
+2, 0.008, 0.10207100591716, occupation_Adm_clerical>0.5 & native_country_United_States<=0.5, 0.115384615384615
+3, 0, 0, age<=36 & workclass_Federal_gov>0.5 & native_country_United_States<=0.5, 0
+4, 0.002, 0.16, age>36 & workclass_Federal_gov>0.5 & relationship_Other_relative<=0.5 & native_country_United_States<=0.5, 0.8
+2, 0.025, 0.0464009518143962, hours_per_week<=56.5 & relationship_Other_relative>0.5, 0.0487804878048781
+2, 0.025, 0.0464009518143962, capital_loss<=782 & relationship_Other_relative>0.5, 0.0487804878048781
+3, 0, 0, capital_loss>782 & hours_per_week>56.5 & relationship_Other_relative>0.5, 1
+2, 0.072, 0.0845303073829359, age<=44.5 & race_Black>0.5, 0.0932203389830508
+3, 0, 0, workclass_Self_emp_not_inc>0.5 & relationship_Wife>0.5 & race_Black>0.5, 1
+4, 0.002, 0.138888888888889, age<=54.5 & age>53.5 & workclass_Self_emp_inc<=0.5 & occupation_Sales>0.5, 0.166666666666667
+3, 0.001, 0, age<=54.5 & age>53.5 & workclass_Self_emp_inc>0.5, 1
+2, 0.112, 0.184038042342262, age>54.5 & hours_per_week<=45.5, 0.243169398907104
+1, 0.78, 0.157335943962541, hours_per_week<=46.5, 0.195592286501377
+3, 0, 0, age>70.5 & hours_per_week>46.5 & hours_per_week<=48.5, 1
+4, 0, 0, workclass_Private<=0.5 & education_Voc>0.5 & marital_status_divorced<=0.5 & occupation_Sales>0.5, 1
+3, 0.002, 0, hours_per_week<=64 & workclass_Self_emp_inc>0.5 & marital_status_divorced>0.5, 0
+4, 0, 0, hours_per_week<=71 & hours_per_week>64 & workclass_Self_emp_inc>0.5 & marital_status_divorced>0.5, 1
+2, 0.002, 0, hours_per_week>71 & marital_status_divorced>0.5, 0
+3, 0, 0, age>51.5 & workclass_State_gov>0.5 & education_Bachelors>0.5, 1
+3, 0.006, 0.0941828254847645, age>29.5 & education_Voc>0.5 & relationship_Wife>0.5, 0.894736842105263
+3, 0.001, 0, hours_per_week>52.5 & occupation_Adm_clerical>0.5 & relationship_Wife>0.5, 0
+3, 0.348, 0.0671361988768308, age<=33.5 & workclass_Self_emp_not_inc<=0.5 & occupation_Exec_managerial<=0.5, 0.0723742277140335
+2, 0.061, 0.0293847566574839, age<=33.5 & race_White<=0.5, 0.0303030303030303
+5, 0.003, 0, age<=33.5 & hours_per_week<=63.5 & education_HS_grad>0.5 & marital_status_divorced<=0.5 & occupation_Exec_managerial>0.5, 0
+4, 0.001, 0, age<=33.5 & hours_per_week>63.5 & hours_per_week<=67.5 & occupation_Exec_managerial>0.5, 1
+2, 0.026, 0.0448442906574394, age<=33.5 & marital_status_divorced>0.5, 0.0470588235294118
+3, 0.111, 0.0163442576407486, age<=34.5 & hours_per_week<=39.5 & occupation_Craft_repair<=0.5, 0.0166204986149584
+2, 0.342, 0.0846416910288188, age<=34.5 & occupation_Prof_specialty<=0.5, 0.0933572710951526
+4, 0, 0, age>33.5 & age<=34.5 & workclass_Self_emp_not_inc>0.5 & occupation_Prof_specialty>0.5, 1
+3, 0.021, 0.0427712185341947, age<=34.5 & education_Some_college>0.5 & occupation_Prof_specialty>0.5, 0.0447761194029851
+3, 0.001, 0, age>33.5 & marital_status_married>0.5 & relationship_Own_child>0.5, 0
+2, 0.053, 0.0113621350244418, hours_per_week<=37.5 & relationship_Not_in_family>0.5, 0.0114942528735632
+3, 0, 0, age<=65.5 & hours_per_week<=2.5 & relationship_Unmarried<=0.5, 1
+2, 0.011, 0.0511322132943755, age>65.5 & education_HS_grad>0.5, 0.0540540540540541
+2, 0.001, 0, age>72.5 & occupation_Sales>0.5, 0
+3, 0, 0, hours_per_week<=65.5 & hours_per_week>63.5 & race_Black>0.5, 0
+4, 0, 0, hours_per_week<=65.5 & hours_per_week>63.5 & workclass_Self_emp_inc>0.5 & relationship_Husband<=0.5, 1
+1, 0.038, 0.226521852237253, workclass_Self_emp_inc>0.5, 0.653225806451613
+3, 0, 0, hours_per_week<=65.5 & hours_per_week>63.5 & education_Prof_school>0.5, 1
+3, 0, 0, age<=53.5 & hours_per_week>65.5 & hours_per_week<=69, 0
+3, 0, 0, age>53.5 & hours_per_week>65.5 & hours_per_week<=69, 1
+2, 0, 0, hours_per_week>65.5 & workclass_Federal_gov>0.5, 1
+1, 0.048, 0.0543639053254438, hours_per_week<=17.5, 0.0576923076923077
+2, 0.007, 0.0399305555555556, age>69.5 & hours_per_week<=17.5, 0.0416666666666667
+3, 0.002, 0, age>73.5 & hours_per_week<=17.5 & relationship_Husband>0.5, 0
+3, 0, 0, age>73.5 & hours_per_week<=17.5 & education_Masters>0.5, 0
+1, 0.991, 0.185823268941778, capital_loss<=2168.5, 0.24666873256895
+2, 0.025, 0.16734375, capital_loss<=2168.5 & capital_loss>1820.5, 0.7875
+3, 0.024, 0.155325443786982, age>25 & capital_loss<=2168.5 & capital_loss>1820.5, 0.807692307692308
+2, 0.002, 0, capital_loss<=2168.5 & capital_loss>2001.5, 0
+2, 0.002, 0, age<=36.5 & capital_loss>2168.5, 0
+3, 0.003, 0.172839506172839, age>53.5 & hours_per_week>53.5 & occupation_Sales>0.5, 0.777777777777778
+2, 0.003, 0, age>72.5 & age<=74.5, 0
+2, 0.013, 0, age<=28.5 & hours_per_week<=14.5, 0
+2, 0.022, 0, age<=38.5 & hours_per_week<=15.5, 0
+2, 0.01, 0, hours_per_week>14.5 & hours_per_week<=15.5, 0
+3, 0.62, 0.150556563082051, age<=48.5 & hours_per_week<=50.5 & education_Voc<=0.5, 0.184653465346535
+3, 0.007, 0, age>48.5 & hours_per_week<=50.5 & occupation_Farming_fishing>0.5, 0
+2, 0.003, 0, age>63.5 & occupation_Farming_fishing>0.5, 0
+3, 0, 0, hours_per_week>50.5 & hours_per_week<=53.5 & education_Prof_school>0.5, 1
+2, 0.003, 0, capital_gain>5036.5 & capital_gain<=6457.5, 1
+2, 0.03, 0.0569329660238751, capital_gain>6457.5 & education_Bachelors<=0.5, 0.939393939393939
+2, 0.015, 0, capital_gain>4973.5 & education_Bachelors>0.5, 1
+2, 0.345, 0.0616037696880729, age<=32.5 & occupation_Exec_managerial<=0.5, 0.0659536541889483
+3, 0.006, 0.138888888888889, hours_per_week>42.5 & hours_per_week<=45.5 & education_Voc>0.5, 0.166666666666667
+1, 0.779, 0.1973319219019, education_Some_college<=0.5, 0.270504731861199
+1, 0.701, 0.14512847180349, hours_per_week<=41, 0.176161262050833
+3, 0.058, 0.111362607514713, occupation_Exec_managerial<=0.5 & occupation_Prof_specialty<=0.5 & native_country_Other>0.5, 0.127659574468085
+2, 0.025, 0.208504801097394, occupation_Exec_managerial<=0.5 & race_Asian_Pac_Islander>0.5, 0.296296296296296
+3, 0, 0, hours_per_week<=39.5 & workclass_State_gov>0.5 & occupation_Exec_managerial>0.5, 0
+3, 0, 0, hours_per_week<=39.5 & education_Prof_school>0.5 & occupation_Exec_managerial>0.5, 0
+2, 0.01, 0.234375, age>60.5 & occupation_Exec_managerial>0.5, 0.625
+2, 0.131, 0.0490851211072664, age<=63.5 & hours_per_week<=31, 0.0517647058823529
+2, 0.059, 0.0353060497245141, hours_per_week<=36 & education_HS_grad>0.5, 0.0366492146596859
+3, 0, 0, age<=45.5 & hours_per_week<=6.5 & workclass_State_gov>0.5, 0
+3, 0, 0, age>45.5 & hours_per_week<=6.5 & workclass_State_gov>0.5, 1
+2, 0.029, 0.0302734375, hours_per_week>6.5 & hours_per_week<=15.5, 0.03125
+3, 0.001, 0, age>48.5 & workclass_Federal_gov>0.5 & occupation_Prof_specialty>0.5, 1
+3, 0, 0, workclass_Private<=0.5 & education_Bachelors>0.5 & occupation_Other_service>0.5, 0
+2, 0.186, 0.00493408920155727, age<=26.5 & marital_status_married<=0.5, 0.00495867768595041
+2, 0.009, 0, capital_loss>1568.5 & capital_loss<=1740.5, 0
+2, 0.007, 0, capital_loss>1975.5 & capital_loss<=1978.5, 1
+2, 0.003, 0, capital_loss<=2168.5 & capital_loss>1978.5, 0
+1, 0.009, 0.249702734839477, capital_loss>2168.5, 0.482758620689655
+1, 0.713, 0.146456229781394, hours_per_week<=43.5, 0.178217821782178
+3, 0, 0, hours_per_week<=43.5 & hours_per_week>42.5 & occupation_Sales>0.5, 1
+1, 0.287, 0.24429027822293, hours_per_week>43.5, 0.42443729903537
+1, 0.996, 0.187422863321131, age<=77, 0.249845774213449
+3, 0, 0, age>59.5 & occupation_Tech_support>0.5 & relationship_Wife>0.5, 1
+3, 0.001, 0, age>44.5 & age<=45.5 & occupation_Tech_support>0.5, 0
+2, 0, 0, capital_loss<=731.5 & capital_loss>639, 1
+2, 0.004, 0, hours_per_week>72.5 & marital_status_married<=0.5, 0
+3, 0.004, 0, hours_per_week<=85.5 & hours_per_week>72.5 & relationship_Husband<=0.5, 0
+4, 0, 0, age<=36.5 & hours_per_week>85.5 & education_Masters<=0.5 & occupation_Transport_moving<=0.5, 1
+4, 0, 0, age<=36.5 & age>24.5 & hours_per_week>85.5 & education_Masters>0.5, 1
+3, 0, 0, age>36.5 & age<=37.5 & hours_per_week>85.5, 1
+3, 0.001, 0, age>37.5 & hours_per_week>85.5 & education_Some_college<=0.5, 0
+2, 0.049, 0.0472204004475136, hours_per_week<=19.5 & occupation_Tech_support<=0.5, 0.0496894409937888
+2, 0.032, 0.00952292899408284, hours_per_week<=19.5 & marital_status_not_married>0.5, 0.00961538461538462
+2, 0.047, 0.0433884297520661, hours_per_week<=19.5 & relationship_Wife<=0.5, 0.0454545454545455
+3, 0, 0, hours_per_week<=19.5 & occupation_Tech_support>0.5 & relationship_Wife>0.5, 1
+2, 0.005, 0, marital_status_divorced>0.5 & occupation_Tech_support>0.5, 0
+3, 0.001, 0, hours_per_week<=19.5 & hours_per_week>17 & occupation_Tech_support>0.5, 1
+1, 0.227, 0.0803185199873679, hours_per_week<=38.5, 0.0880758807588076
+2, 0.001, 0, age>73.5 & hours_per_week>46.5, 0
+2, 0, 0, age>73.5 & hours_per_week>52.5, 0
+3, 0.002, 0, age<=53.5 & age>51.5 & relationship_Wife>0.5, 1
+2, 0.196, 0.0123819537936931, age<=26.5 & relationship_Husband<=0.5, 0.0125391849529781
+3, 0, 0, age<=26.5 & hours_per_week>76.5 & occupation_Transport_moving>0.5, 0
+3, 0, 0, age>48.5 & hours_per_week>84.5 & education_HS_grad>0.5, 0
+2, 0.011, 0.0262965668371074, workclass_Local_gov>0.5 & marital_status_divorced>0.5, 0.027027027027027
+2, 0.006, 0, age>59.5 & marital_status_divorced>0.5, 0
+2, 0.003, 0, age>63.5 & marital_status_divorced>0.5, 0
+2, 0.002, 0, age>61.5 & hours_per_week<=2.5, 0
+2, 0.002, 0, age>66 & hours_per_week<=2.5, 0
+2, 0.001, 0, age<=30.5 & hours_per_week<=4.5, 0
+2, 0.037, 0.0467616232195646, hours_per_week>2.5 & hours_per_week<=15.5, 0.0491803278688525
+2, 0.018, 0.0172360726377347, capital_gain>10585.5 & capital_gain<=67047, 0.982456140350877
+1, 0.005, 0, capital_gain>67047, 1
+3, 0, 0, capital_gain>4243.5 & capital_gain<=4401 & occupation_Sales>0.5, 1
+3, 0, 0, capital_gain>4243.5 & capital_gain<=4401 & occupation_Tech_support>0.5, 0
+3, 0.011, 0.200617283950617, hours_per_week>46.5 & education_Masters>0.5 & occupation_Prof_specialty<=0.5, 0.722222222222222
+3, 0.002, 0, hours_per_week>46.5 & workclass_Self_emp_not_inc>0.5 & education_Masters>0.5, 0
+4, 0.001, 0, hours_per_week>46.5 & marital_status_married>0.5 & occupation_Prof_specialty>0.5 & relationship_Not_in_family>0.5, 0
+1, 0.945, 0.178721238826358, education_Masters<=0.5, 0.233019174520637
+2, 0.1, 0.052166058188114, education_Voc<=0.5 & relationship_Unmarried>0.5, 0.0552147239263804
+3, 0.001, 0, workclass_Federal_gov>0.5 & education_Voc>0.5 & relationship_Unmarried>0.5, 1
+4, 0.001, 0, age<=54.5 & age>53.5 & workclass_Local_gov<=0.5 & occupation_Exec_managerial>0.5, 1
+3, 0.002, 0, age<=54.5 & age>53.5 & workclass_Local_gov>0.5, 0
+3, 0.006, 0.0453514739229025, age>54.5 & hours_per_week<=47.5 & occupation_Machine_op_inspct>0.5, 0.0476190476190476
+5, 0, 0, age>54.5 & occupation_Machine_op_inspct>0.5 & relationship_Husband>0.5 & race_Black>0.5 & native_country_Other<=0.5, 1
+3, 0.003, 0, age>54.5 & education_School>0.5 & occupation_Machine_op_inspct>0.5, 0
+2, 0.005, 0, hours_per_week<=37.5 & occupation_Machine_op_inspct>0.5, 0
+2, 0.001, 0, workclass_State_gov>0.5 & occupation_Transport_moving>0.5, 0
+3, 0.001, 0, workclass_Self_emp_inc>0.5 & education_School<=0.5 & occupation_Transport_moving>0.5, 1
+2, 0.015, 0.0391503540191587, education_School>0.5 & marital_status_divorced>0.5, 0.0408163265306122
+1, 0.103, 0.195462368675822, age>57.5, 0.266467065868263
+2, 0.001, 0, hours_per_week>72.5 & sex_Female>0.5, 0
+4, 0, 0, age<=35.5 & age>34.5 & occupation_Other_service>0.5 & relationship_Wife>0.5, 1
+2, 0.007, 0.0433884297520661, education_Voc>0.5 & occupation_Other_service>0.5, 0.0454545454545455
+3, 0.002, 0, age<=44.5 & hours_per_week>55.5 & occupation_Other_service>0.5, 0
+3, 0.003, 0, age<=48.5 & hours_per_week>55.5 & occupation_Other_service>0.5, 0
+2, 0.002, 0, hours_per_week<=2.5 & marital_status_married<=0.5, 0
+4, 0.001, 0, age<=35.5 & hours_per_week<=40.5 & workclass_State_gov>0.5 & education_Masters>0.5, 0
+3, 0.005, 0.179930795847751, hours_per_week>40.5 & workclass_State_gov>0.5 & relationship_Not_in_family<=0.5, 0.764705882352941
+1, 0.969, 0.185423463626127, race_Asian_Pac_Islander<=0.5, 0.245880861850444
+3, 0.001, 0, age<=38.5 & hours_per_week>46.5 & education_Doctorate>0.5, 0
+3, 0.001, 0, capital_loss>1748 & workclass_Federal_gov>0.5 & education_HS_grad<=0.5, 1
+3, 0, 0, capital_loss>1894.5 & education_HS_grad<=0.5 & relationship_Unmarried>0.5, 1
+3, 0, 0, age<=47.5 & capital_loss>1748 & workclass_State_gov>0.5, 0
+1, 0.947, 0.179779294910018, capital_loss<=106.5, 0.235008103727715
+2, 0.005, 0.115555555555556, capital_loss>106.5 & education_Masters>0.5, 0.866666666666667
+2, 0.001, 0, age>66.5 & native_country_Other>0.5, 0
+2, 0.007, 0, hours_per_week<=36.5 & relationship_Other_relative>0.5, 0
+2, 0.023, 0.0129847645429363, hours_per_week<=36.5 & marital_status_divorced>0.5, 0.0131578947368421
+2, 0.003, 0, occupation_Sales>0.5 & relationship_Other_relative>0.5, 0
+3, 0.001, 0, education_Voc>0.5 & occupation_Tech_support<=0.5 & relationship_Other_relative>0.5, 0
+3, 0, 0, education_Voc>0.5 & occupation_Tech_support>0.5 & relationship_Other_relative>0.5, 1
+3, 0, 0, age>64.5 & workclass_Self_emp_inc>0.5 & race_White<=0.5, 1
+3, 0.001, 0, workclass_Local_gov>0.5 & education_Some_college>0.5 & relationship_Wife>0.5, 0
+1, 0.908, 0.185926129328171, age<=58.5, 0.246871829556983
+3, 0.001, 0, age>58.5 & age<=63.5 & occupation_Protective_serv>0.5, 0
+3, 0.001, 0, age>58.5 & workclass_Private<=0.5 & occupation_Protective_serv>0.5, 0
+1, 0.764, 0.170714488666702, age<=48, 0.218423169750603
+4, 0, 0, age>48 & age<=59.5 & workclass_Private>0.5 & occupation_Protective_serv>0.5, 0
+1, 0.236, 0.226515432619329, age>48, 0.346753246753247
+2, 0.084, 0.0450380165289256, age<=50.5 & hours_per_week<=28.5, 0.0472727272727273
+2, 0.085, 0.0448829027515228, age<=51.5 & hours_per_week<=28.5, 0.0471014492753623
+2, 0.025, 0.05859375, hours_per_week<=28.5 & hours_per_week>24.5, 0.0625
+3, 0, 0, hours_per_week<=28.5 & hours_per_week>24.5 & education_Doctorate>0.5, 1
+2, 0.078, 0.0303883121876201, age<=42.5 & hours_per_week<=28.5, 0.0313725490196078
+3, 0.002, 0, age>42.5 & hours_per_week<=28.5 & education_Masters>0.5, 0
+3, 0.001, 0, hours_per_week<=28.5 & hours_per_week>24.5 & education_Masters>0.5, 0
+1, 0.995, 0.187538586200655, age<=76.5, 0.250077184316147
+2, 0.003, 0, age>73.5 & education_HS_grad>0.5, 0
+1, 0.005, 0, age>76.5, 0
+2, 0.006, 0.0453514739229025, age>72.5 & hours_per_week<=28.5, 0.0476190476190476
+2, 0.092, 0.0476504737083478, age<=57.5 & hours_per_week<=28.5, 0.0501672240802676
+2, 0.001, 0, age>62.5 & occupation_Tech_support>0.5, 0
+3, 0.001, 0, age>33.5 & hours_per_week>48.5 & occupation_Handlers_cleaners>0.5, 0
+2, 0.002, 0, hours_per_week<=2.5 & relationship_Husband<=0.5, 0
+4, 0, 0, age<=66 & hours_per_week<=2.5 & occupation_Prof_specialty>0.5 & relationship_Husband>0.5, 1
+3, 0, 0, hours_per_week<=31 & relationship_Wife>0.5 & race_Asian_Pac_Islander>0.5, 1
+3, 0, 0, age<=30.5 & capital_loss>1748 & workclass_State_gov>0.5, 0
+2, 0.029, 0.176649305555556, age>30.5 & capital_loss>1748, 0.770833333333333
+4, 0.001, 0, age>30.5 & capital_loss>1748 & occupation_Adm_clerical>0.5 & relationship_Not_in_family<=0.5, 1
+4, 0.002, 0.16, age>33.5 & workclass_Federal_gov>0.5 & relationship_Other_relative<=0.5 & native_country_Other>0.5, 0.8
+3, 0.003, 0, age<=37.5 & race_Black>0.5 & native_country_Other>0.5, 0
+3, 0.006, 0.0453514739229025, age<=50.5 & occupation_Craft_repair>0.5 & native_country_Other>0.5, 0.0476190476190476
+2, 0.018, 0.0490487514863258, age<=32.5 & relationship_Other_relative>0.5, 0.0517241379310345
+3, 0, 0, hours_per_week<=19.5 & education_Bachelors>0.5 & marital_status_divorced>0.5, 0
+3, 0.002, 0, hours_per_week<=72.5 & hours_per_week>65.5 & occupation_Craft_repair>0.5, 0
+3, 0, 0, age>48.5 & education_Bachelors>0.5 & occupation_Other_service>0.5, 0
+2, 0.852, 0.158741122244927, workclass_Self_emp_inc<=0.5 & occupation_Exec_managerial<=0.5, 0.197909156452776
+1, 0.889, 0.174199042254753, hours_per_week<=53, 0.224680262703076
+1, 0.111, 0.246491967002861, hours_per_week>53, 0.440771349862259
+1, 0.862, 0.183521237652292, age<=54, 0.242165242165242
+3, 0.005, 0, age<=36.5 & hours_per_week>55 & sex_Female>0.5, 0
+4, 0.002, 0, age<=54 & age>36.5 & workclass_Self_emp_inc>0.5 & sex_Female>0.5, 0
+5, 0, 0, age>54 & workclass_Self_emp_inc>0.5 & education_HS_grad<=0.5 & education_Some_college<=0.5 & sex_Female>0.5, 0
+4, 0.001, 0, age>54 & workclass_Self_emp_inc>0.5 & education_HS_grad>0.5 & sex_Female>0.5, 1
+4, 0, 0, age>54 & workclass_Self_emp_inc>0.5 & education_Some_college>0.5 & sex_Female>0.5, 1
+2, 0.029, 0.0933159722222222, relationship_Unmarried>0.5 & sex_Female<=0.5, 0.104166666666667
+2, 0.018, 0.048261993679977, age>53.5 & relationship_Unmarried>0.5, 0.0508474576271186
+2, 0.078, 0.0487431454951647, education_Some_college>0.5 & sex_Female>0.5, 0.0513833992094862
+4, 0.001, 0, age>29.5 & age<=35.5 & education_Voc>0.5 & relationship_Wife>0.5, 1
+2, 0.007, 0.206597222222222, education_Voc>0.5 & relationship_Wife>0.5, 0.708333333333333
+1, 0.916, 0.177403704475702, hours_per_week<=57.5, 0.230563002680965
+3, 0.001, 0, hours_per_week>57.5 & occupation_Adm_clerical>0.5 & relationship_Wife>0.5, 0
+2, 0.006, 0, education_School>0.5 & occupation_Adm_clerical>0.5, 0
+3, 0.001, 0, capital_gain<=3844 & workclass_Federal_gov>0.5 & occupation_Sales>0.5, 0
+2, 0.094, 0.0495535904993806, workclass_Local_gov<=0.5 & occupation_Other_service>0.5, 0.0522875816993464
+1, 0.948, 0.179870254363025, capital_loss<=951, 0.235179786200194
+3, 0.001, 0, age<=35.5 & hours_per_week>72.5 & workclass_Private<=0.5, 0
+3, 0.001, 0, hours_per_week>72.5 & hours_per_week<=76.5 & education_HS_grad>0.5, 0
+3, 0, 0, age>49.5 & hours_per_week>85.5 & education_HS_grad>0.5, 0
+4, 0.001, 0, age<=31.5 & age>24.5 & workclass_Private<=0.5 & relationship_Wife>0.5, 1
+4, 0, 0, age<=44.5 & age>31.5 & hours_per_week<=6 & workclass_Private<=0.5, 1
+4, 0.001, 0, age>44.5 & age<=45.5 & workclass_Local_gov>0.5 & sex_Female<=0.5, 1
+2, 0.095, 0.0374430764041154, hours_per_week<=42.5 & marital_status_divorced>0.5, 0.038961038961039
+1, 0.152, 0.0532648283038502, hours_per_week<=30.5, 0.0564516129032258
+3, 0.001, 0, age>44.5 & hours_per_week>58 & race_Black>0.5, 1
+3, 0, 0, age>44.5 & workclass_State_gov>0.5 & race_Black>0.5, 1
+3, 0.001, 0, hours_per_week<=79 & hours_per_week>72.5 & education_HS_grad>0.5, 0
+3, 0.001, 0, age<=40.5 & hours_per_week>79 & occupation_Transport_moving>0.5, 0
+3, 0, 0, age>40.5 & hours_per_week>79 & occupation_Transport_moving>0.5, 1
+2, 0.001, 0, hours_per_week>79 & education_Some_college>0.5, 1
+3, 0.001, 0, age<=36.5 & hours_per_week>85.5 & marital_status_not_married<=0.5, 1
+2, 0.043, 0.0475, hours_per_week<=24.5 & hours_per_week>18, 0.05
+2, 0, 0, hours_per_week<=2.5 & workclass_State_gov>0.5, 1
+3, 0.006, 0.0453514739229025, hours_per_week<=28.5 & hours_per_week>2.5 & workclass_State_gov>0.5, 0.0476190476190476
+2, 0.001, 0, age<=37.5 & hours_per_week>96.5, 1
+1, 0.82, 0.18003568985124, age<=51, 0.235492324971921
+1, 0.18, 0.21367229162101, age>51, 0.309401709401709
+2, 0, 0, hours_per_week>85.5 & occupation_Exec_managerial>0.5, 0
+4, 0, 0, age<=50.5 & age>49 & capital_gain>4243.5 & capital_gain<=4401, 0
+3, 0.036, 0.048261993679977, workclass_Federal_gov<=0.5 & education_Voc>0.5 & marital_status_married<=0.5, 0.0508474576271186
+3, 0.001, 0, workclass_Federal_gov>0.5 & education_Voc>0.5 & occupation_Prof_specialty>0.5, 1
+1, 0.948, 0.179658241664206, relationship_Wife<=0.5, 0.234779792746114
+3, 0, 0, age<=31.5 & age>30.5 & workclass_Self_emp_inc>0.5, 0
+4, 0, 0, age<=38.5 & age>31.5 & workclass_Self_emp_inc>0.5 & marital_status_not_married>0.5, 1
+4, 0.003, 0, age<=38.5 & age>33.5 & workclass_Self_emp_inc>0.5 & relationship_Husband>0.5, 1
+3, 0.001, 0, hours_per_week>59.5 & workclass_State_gov>0.5 & relationship_Husband<=0.5, 0
+3, 0.001, 0, hours_per_week>59.5 & workclass_State_gov>0.5 & relationship_Husband>0.5, 1
+2, 0.063, 0.110283721368649, workclass_State_gov<=0.5 & occupation_Machine_op_inspct>0.5, 0.12621359223301
+4, 0, 0, age<=41.5 & age>39.5 & hours_per_week<=28.5 & occupation_Tech_support>0.5, 0
+2, 0.02, 0.0149219467401286, marital_status_married<=0.5 & relationship_Other_relative>0.5, 0.0151515151515152
+2, 0.025, 0.03609375, occupation_Tech_support<=0.5 & relationship_Other_relative>0.5, 0.0375
+2, 0, 0, workclass_Self_emp_inc>0.5 & occupation_Handlers_cleaners>0.5, 0
+3, 0.001, 0, age<=38.5 & occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5, 0
+3, 0, 0, age>38.5 & occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5, 1
+2, 0.276, 0.0937197732154106, education_Bachelors<=0.5 & sex_Male<=0.5, 0.10467706013363
+2, 0.002, 0, occupation_Protective_serv>0.5 & sex_Male<=0.5, 0
+3, 0.1, 0.0121193872558245, age<=29.5 & relationship_Wife<=0.5 & sex_Male<=0.5, 0.0122699386503067
+3, 0.256, 0.0424934703217456, education_Masters<=0.5 & relationship_Wife<=0.5 & sex_Male<=0.5, 0.0444711538461538
+2, 0.044, 0.0205389016577828, education_HS_grad>0.5 & relationship_Unmarried>0.5, 0.020979020979021
+1, 0.719, 0.148315022532604, hours_per_week<=44, 0.181119179837676
+4, 0, 0, age<=44.5 & age>40.5 & race_Black>0.5 & native_country_United_States<=0.5, 1
+4, 0.001, 0, age>44.5 & age<=45.5 & workclass_Local_gov>0.5 & sex_Male>0.5, 1
+2, 0.003, 0, capital_loss<=1448 & capital_loss>1033, 0
+3, 0.007, 0.148760330578512, capital_loss>1748 & capital_loss<=1894.5 & relationship_Not_in_family<=0.5, 0.818181818181818
+3, 0, 0, age>66.5 & capital_loss>1748 & capital_loss<=1894.5, 0
+3, 0.005, 0, capital_loss>1748 & capital_loss<=2365.5 & relationship_Not_in_family>0.5, 0
+2, 0.001, 0, capital_loss>2365.5 & relationship_Not_in_family>0.5, 1
+2, 0.008, 0.0384, age>69.5 & hours_per_week<=19.5, 0.04
+3, 0.002, 0, age>73.5 & hours_per_week<=19.5 & relationship_Husband>0.5, 0
+2, 0.003, 0, age<=40.5 & hours_per_week<=6.5, 0
+3, 0.007, 0.0763888888888889, hours_per_week>2.5 & hours_per_week<=6.5 & occupation_Sales<=0.5, 0.0833333333333333
+1, 0.966, 0.188883356376109, age<=65, 0.252782193958665
+2, 0, 0, hours_per_week<=5.5 & marital_status_divorced>0.5, 1
+2, 0.067, 0.0397545074221156, hours_per_week<=39 & education_HS_grad>0.5, 0.0414746543778802
+2, 0.07, 0.080024622960911, occupation_Sales>0.5 & relationship_Husband<=0.5, 0.087719298245614
+3, 0.001, 0, hours_per_week>45.5 & occupation_Adm_clerical>0.5 & relationship_Wife>0.5, 0
+3, 0.001, 0, hours_per_week>58 & workclass_Private<=0.5 & relationship_Wife>0.5, 0
+3, 0.002, 0, hours_per_week>58 & workclass_Private>0.5 & occupation_Adm_clerical>0.5, 0
+2, 0, 0, hours_per_week<=19.5 & workclass_Self_emp_inc>0.5, 0
+1, 0.949, 0.191714477225836, hours_per_week>19.5, 0.258576051779935
+2, 0.009, 0.14268727705113, age>35.5 & education_Doctorate>0.5, 0.827586206896552
+2, 0.006, 0.0453514739229025, hours_per_week<=31 & occupation_Exec_managerial>0.5, 0.0476190476190476
+4, 0.002, 0, age>46.5 & hours_per_week>31 & hours_per_week<=39.5 & relationship_Wife>0.5, 1
+1, 1, 0.186884240170481, workclass_Never_worked<=0.5, 0.248771498771499
+2, 0.009, 0, age<=29.5 & race_Asian_Pac_Islander>0.5, 0
+3, 0, 0, education_Doctorate>0.5 & marital_status_not_married<=0.5 & relationship_Own_child>0.5, 1
+2, 0.348, 0.0332087567537303, hours_per_week<=49 & marital_status_not_married>0.5, 0.0343915343915344
+2, 0.138, 0.00663687184091349, marital_status_not_married>0.5 & relationship_Own_child>0.5, 0.0066815144766147
+2, 0.32, 0.0386469077969461, workclass_Private>0.5 & marital_status_not_married>0.5, 0.0402684563758389
+2, 0.038, 0.0312174817898023, age<=30.5 & occupation_Adm_clerical>0.5, 0.032258064516129
+2, 0, 0, hours_per_week<=2.5 & education_Doctorate>0.5, 1
+2, 0.002, 0, age>63 & hours_per_week<=2.5, 0
+1, 0.028, 0.0702977315689981, hours_per_week<=12.5, 0.0760869565217391
+4, 0.001, 0, age<=32.5 & hours_per_week<=65.5 & hours_per_week>63.5 & workclass_Self_emp_inc>0.5, 1
+3, 0.006, 0.222222222222222, age<=42.5 & hours_per_week<=65.5 & hours_per_week>63.5, 0.333333333333333
+4, 0.002, 0.109375, age>42.5 & hours_per_week<=65.5 & hours_per_week>63.5 & race_Black<=0.5, 0.875
+1, 0.965, 0.172760926335703, capital_gain<=7565.5, 0.222080814508431
+1, 0.035, 0.00877124285378651, capital_gain>7565.5, 0.991150442477876
+3, 0, 0, capital_loss<=2384.5 & capital_loss>1978.5 & occupation_Sales>0.5, 0
+2, 0.281, 0.0696532770160752, relationship_Husband<=0.5 & sex_Female<=0.5, 0.0753275109170306
+2, 0.001, 0, workclass_Federal_gov>0.5 & occupation_Other_service>0.5, 0
+2, 0.038, 0.007936, education_School>0.5 & sex_Female>0.5, 0.008
+2, 0.001, 0, workclass_State_gov>0.5 & education_School>0.5, 0
+3, 0.001, 0, hours_per_week>40.5 & marital_status_divorced>0.5 & race_Asian_Pac_Islander>0.5, 0
+2, 0.304, 0.0227149810708491, age<=34.5 & marital_status_married<=0.5, 0.0232558139534884
+5, 0.001, 0, age<=54.5 & age>53.5 & workclass_Private<=0.5 & workclass_Self_emp_inc<=0.5 & occupation_Sales>0.5, 0
+4, 0.003, 0.0826446280991735, age>54.5 & age<=56.5 & workclass_Self_emp_not_inc>0.5 & occupation_Other_service<=0.5, 0.0909090909090909
+2, 0.085, 0.0448829027515228, age<=52.5 & hours_per_week<=28.5, 0.0471014492753623
+3, 0.001, 0, hours_per_week<=28.5 & hours_per_week>24.5 & occupation_Transport_moving>0.5, 0
+2, 0.028, 0.0322222222222222, hours_per_week<=28.5 & education_HS_grad>0.5, 0.0333333333333333
+2, 0.003, 0, age>69.5 & race_Black>0.5, 0
+2, 0.017, 0, capital_gain<=3048 & capital_gain>57, 0
+1, 0.927, 0.196315463036849, age>20.5, 0.268300761841669
+2, 0.011, 0.0277551020408163, marital_status_divorced>0.5 & occupation_Machine_op_inspct>0.5, 0.0285714285714286
+1, 0.812, 0.211171327310887, age>25, 0.302950075642965
+2, 0, 0, capital_loss>2168.5 & race_Asian_Pac_Islander>0.5, 1
+2, 0.001, 0, hours_per_week<=2.5 & education_School>0.5, 0
+2, 0.099, 0.106448439489217, age<=43.5 & race_White<=0.5, 0.12111801242236
+4, 0, 0, age>43.5 & workclass_State_gov>0.5 & education_Doctorate<=0.5 & race_White<=0.5, 1
+4, 0, 0, age<=37.5 & age>34.5 & education_Doctorate>0.5 & race_Asian_Pac_Islander>0.5, 1
+2, 0.008, 0.0736, education_Doctorate>0.5 & relationship_Not_in_family<=0.5, 0.92
+3, 0, 0, age>37.5 & hours_per_week>67.5 & education_Doctorate>0.5, 1
+1, 0.977, 0.185279359993671, hours_per_week<=69, 0.24559748427673
+3, 0.014, 0.0217283950617284, age<=48.5 & occupation_Transport_moving>0.5 & relationship_Husband<=0.5, 0.0222222222222222
+2, 0.023, 0.0498614958448753, education_School>0.5 & native_country_United_States<=0.5, 0.0526315789473684
+4, 0, 0, age<=48.5 & age>47.5 & occupation_Sales>0.5 & race_Asian_Pac_Islander>0.5, 0
+3, 0, 0, age<=48.5 & age>47.5 & workclass_Local_gov>0.5, 1
+3, 0.002, 0, age>48.5 & age<=49.5 & occupation_Machine_op_inspct>0.5, 0
+3, 0, 0, age>48.5 & hours_per_week>52.5 & occupation_Machine_op_inspct>0.5, 1
+4, 0.003, 0.16, age>48.5 & hours_per_week<=56.5 & hours_per_week>45.5 & occupation_Craft_repair>0.5, 0.8
+3, 0.001, 0, age>48.5 & education_Bachelors>0.5 & occupation_Craft_repair>0.5, 1
+4, 0.001, 0, age>48.5 & hours_per_week>56.5 & workclass_Private<=0.5 & occupation_Craft_repair>0.5, 0
+3, 0, 0, hours_per_week>71 & workclass_Private>0.5 & education_Bachelors>0.5, 1
+2, 0.001, 0, age>70.5 & relationship_Wife>0.5, 1
+3, 0, 0, age<=48.5 & age>47.5 & hours_per_week>76, 0
+2, 0.023, 0.0498614958448753, education_School>0.5 & native_country_Other>0.5, 0.0526315789473684
+3, 0, 0, age>48.5 & hours_per_week>79 & education_Bachelors>0.5, 0
+3, 0.002, 0, age>48.5 & age<=51.5 & workclass_Federal_gov>0.5, 1
+3, 0.006, 0.16, age>51.5 & workclass_Federal_gov>0.5 & occupation_Prof_specialty<=0.5, 0.2
+3, 0, 0, age>48.5 & workclass_Federal_gov>0.5 & education_Voc>0.5, 1
+3, 0.002, 0, hours_per_week<=47.5 & occupation_Transport_moving>0.5 & native_country_United_States<=0.5, 0
+3, 0, 0, hours_per_week>47.5 & education_Voc>0.5 & native_country_United_States<=0.5, 1
+3, 0, 0, age>51.5 & hours_per_week>50.5 & native_country_United_States<=0.5, 1
+4, 0.065, 0.118080277678889, age<=39.5 & workclass_Local_gov<=0.5 & education_Masters<=0.5 & occupation_Craft_repair>0.5, 0.136792452830189
+4, 0.001, 0, age<=40.5 & age>34.5 & education_Masters>0.5 & native_country_United_States<=0.5, 1
+3, 0, 0, education_Masters>0.5 & relationship_Wife>0.5 & native_country_United_States<=0.5, 0
+4, 0, 0, age>42 & workclass_Local_gov>0.5 & occupation_Other_service>0.5 & relationship_Wife>0.5, 1
+3, 0.002, 0, age<=33.5 & workclass_State_gov>0.5 & education_HS_grad>0.5, 0
+3, 0.001, 0, age<=33.5 & workclass_Local_gov>0.5 & education_Masters>0.5, 0
+2, 0.018, 0.048261993679977, age<=33.5 & workclass_Local_gov>0.5, 0.0508474576271186
+3, 0.001, 0, age>33.5 & age<=34.5 & hours_per_week>67.5, 0
+3, 0.001, 0, age>33.5 & age<=34.5 & hours_per_week>63.5, 0
+3, 0.34, 0.0398614821669735, age<=35.5 & education_Masters<=0.5 & relationship_Husband<=0.5, 0.0415913200723327
+3, 0, 0, workclass_State_gov>0.5 & education_Prof_school>0.5 & relationship_Husband<=0.5, 0
+3, 0.002, 0, age>65.5 & age<=66.5 & education_HS_grad>0.5, 0
+4, 0.001, 0, age<=65.5 & hours_per_week<=17.5 & education_Bachelors>0.5 & relationship_Husband>0.5, 0
+3, 0.001, 0, age>65.5 & age<=66.5 & hours_per_week<=17.5, 0
+1, 0.998, 0.187076337678462, age<=89, 0.249154106428791
+5, 0.001, 0, age>36.5 & age<=38.5 & hours_per_week>48.5 & occupation_Prof_specialty>0.5 & relationship_Husband>0.5, 1
+2, 0, 0, hours_per_week>84.5 & occupation_Exec_managerial>0.5, 0
+1, 0.004, 0, age>78.5, 0
+2, 0.082, 0.105828480976878, workclass_Private>0.5 & occupation_Adm_clerical>0.5, 0.120300751879699
+3, 0, 0, hours_per_week<=49.5 & education_Prof_school>0.5 & occupation_Adm_clerical>0.5, 0
+2, 0.047, 0.0436584219744543, age<=32.5 & occupation_Adm_clerical>0.5, 0.0457516339869281
+1, 0.029, 0.0689225894069715, hours_per_week<=13.5, 0.074468085106383
+1, 0.971, 0.189460969346217, hours_per_week>13.5, 0.253953194180898
+3, 0.001, 0, workclass_Self_emp_not_inc>0.5 & occupation_Other_service>0.5 & relationship_Wife>0.5, 0
+1, 0.968, 0.184164029473448, hours_per_week<=62.5, 0.243414788955887
+4, 0, 0, age<=48.5 & age>41.5 & hours_per_week>62.5 & occupation_Transport_moving>0.5, 0
+4, 0, 0, age<=48.5 & age>47.5 & hours_per_week<=35.5 & workclass_Private<=0.5, 1
+2, 0.08, 0.0437037468678981, workclass_Private>0.5 & relationship_Unmarried>0.5, 0.0458015267175573
+3, 0.001, 0, age>48.5 & age<=49.5 & workclass_Federal_gov>0.5, 1
+2, 0.076, 0.188512129023729, age>59.5 & hours_per_week<=56.5, 0.252032520325203
+4, 0.001, 0, age>48.5 & capital_loss>836 & capital_loss<=1779.5 & hours_per_week>56.5, 0
+3, 0.031, 0.0192233756247597, education_Some_college<=0.5 & occupation_Machine_op_inspct>0.5 & relationship_Husband<=0.5, 0.0196078431372549
+4, 0, 0, education_Some_college>0.5 & marital_status_married>0.5 & occupation_Machine_op_inspct>0.5 & relationship_Husband<=0.5, 1
+2, 0.002, 0, hours_per_week>74.5 & marital_status_not_married>0.5, 0
+4, 0, 0, age>33.5 & age<=34.5 & education_Masters>0.5 & occupation_Prof_specialty<=0.5, 1
+3, 0.002, 0, age>54.5 & workclass_Self_emp_not_inc<=0.5 & occupation_Farming_fishing>0.5, 0
+2, 0.016, 0.155325443786982, workclass_Self_emp_not_inc>0.5 & occupation_Craft_repair>0.5, 0.192307692307692
+3, 0.001, 0, age>69.5 & hours_per_week<=28.5 & occupation_Exec_managerial>0.5, 0
+4, 0.002, 0.109375, age<=65.5 & hours_per_week>28.5 & workclass_Self_emp_not_inc>0.5 & education_Prof_school>0.5, 0.875
+4, 0, 0, age>60.5 & hours_per_week>28.5 & workclass_Self_emp_not_inc>0.5 & education_Bachelors>0.5, 1
+3, 0.001, 0, age>65.5 & age<=67.5 & workclass_Self_emp_not_inc>0.5, 0
+2, 0, 0, hours_per_week<=79 & hours_per_week>76.5, 0
+2, 0.289, 0.0967360796740607, occupation_Exec_managerial<=0.5 & sex_Female>0.5, 0.108510638297872
+2, 0.025, 0.227318914211061, hours_per_week>51 & occupation_Exec_managerial>0.5, 0.650602409638554
+3, 0, 0, hours_per_week>51 & education_Prof_school>0.5 & occupation_Exec_managerial>0.5, 1
+1, 0.302, 0.227484738002813, age>45, 0.349949135300102
+4, 0.001, 0, age<=33.5 & hours_per_week>74 & education_Masters<=0.5 & race_Black<=0.5, 0
+3, 0, 0, age<=33.5 & hours_per_week>69 & workclass_Local_gov>0.5, 0
+4, 0, 0, age<=58.5 & age>54.5 & occupation_Craft_repair>0.5 & race_Black>0.5, 0
+5, 0, 0, age<=58.5 & age>54.5 & hours_per_week<=47.5 & education_Some_college>0.5 & occupation_Exec_managerial>0.5, 0
+4, 0.001, 0, age>54.5 & hours_per_week>47.5 & education_Some_college>0.5 & occupation_Exec_managerial>0.5, 1
+3, 0.001, 0, age>58.5 & age<=60.5 & education_Masters>0.5, 0
+3, 0, 0, age>58.5 & education_Masters>0.5 & race_Black>0.5, 1
+3, 0.001, 0, age>58.5 & occupation_Exec_managerial>0.5 & race_Asian_Pac_Islander>0.5, 1
+4, 0.001, 0, age<=58.5 & age>56.5 & education_Voc>0.5 & occupation_Prof_specialty>0.5, 0
+2, 0.475, 0.0693612634751081, hours_per_week<=42.5 & relationship_Husband<=0.5, 0.074983839689722
+4, 0, 0, hours_per_week<=42.5 & hours_per_week>41.5 & occupation_Transport_moving<=0.5 & race_Black>0.5, 0
+3, 0.001, 0, hours_per_week<=42.5 & hours_per_week>41.5 & occupation_Transport_moving>0.5, 1
+3, 0.001, 0, hours_per_week<=39.5 & occupation_Prof_specialty>0.5 & race_Asian_Pac_Islander>0.5, 0
+2, 0.162, 0.00563891638466129, hours_per_week<=39.5 & marital_status_married<=0.5, 0.0056710775047259
+3, 0.001, 0, hours_per_week>39.5 & occupation_Tech_support>0.5 & relationship_Wife>0.5, 1
+3, 0.003, 0.0987654320987654, age<=32.5 & education_Bachelors>0.5 & relationship_Wife>0.5, 0.888888888888889
+2, 0.783, 0.190024989587672, occupation_Sales<=0.5 & race_Black<=0.5, 0.255102040816327
+3, 0, 0, age>66.5 & education_Masters>0.5 & occupation_Sales>0.5, 1
+3, 0, 0, age>66.5 & education_Masters>0.5 & race_Black>0.5, 1
+3, 0.006, 0, education_HS_grad<=0.5 & occupation_Machine_op_inspct>0.5 & race_Black>0.5, 0
+3, 0.056, 0.0420239101557783, age<=39.5 & hours_per_week<=53.5 & race_Black>0.5, 0.043956043956044
+3, 0.003, 0, age>58.5 & education_HS_grad>0.5 & race_Black>0.5, 0
+3, 0.001, 0, hours_per_week<=53.5 & hours_per_week>51.5 & race_Black>0.5, 1
+2, 0.021, 0.067212770426381, hours_per_week<=50.5 & occupation_Farming_fishing>0.5, 0.072463768115942
+2, 0, 0, occupation_Tech_support>0.5 & race_Asian_Pac_Islander>0.5, 0
+2, 0, 0, workclass_Self_emp_inc>0.5 & occupation_Tech_support>0.5, 0
+2, 0.102, 0.0487217166692527, age<=31.5 & education_HS_grad>0.5, 0.0513595166163142
+3, 0, 0, capital_loss>106.5 & capital_loss<=1494.5 & education_Masters>0.5, 0
+3, 0, 0, age<=29 & capital_loss>106.5 & education_Masters>0.5, 0
+3, 0.004, 0, age>29 & capital_loss>1494.5 & education_Masters>0.5, 1
+3, 0, 0, age<=40.5 & capital_loss>1776.5 & workclass_State_gov>0.5, 0
+2, 0.037, 0.16, age<=43.5 & workclass_Self_emp_not_inc>0.5, 0.2
+4, 0, 0, age>40.5 & age<=43.5 & hours_per_week>67 & occupation_Farming_fishing<=0.5, 0
+4, 0, 0, age>40.5 & age<=43.5 & hours_per_week>67 & occupation_Farming_fishing>0.5, 1
+3, 0.004, 0.177514792899408, age>43.5 & hours_per_week<=59.5 & hours_per_week>55.5, 0.769230769230769
+2, 0.061, 0.0660156149346801, age<=40.5 & race_Black>0.5, 0.0710659898477157
+4, 0.002, 0, age>40.5 & age<=48.5 & occupation_Sales>0.5 & race_Black>0.5, 0
+3, 0, 0, age>48.5 & workclass_State_gov>0.5 & race_Black>0.5, 1
+3, 0, 0, age>48.5 & education_Masters>0.5 & race_Black>0.5, 1
+2, 0.017, 0.0356652949245542, age>65.5 & marital_status_married<=0.5, 0.037037037037037
+3, 0.005, 0, age>37.5 & hours_per_week>44 & education_Doctorate>0.5, 1
+3, 0, 0, hours_per_week<=65.5 & hours_per_week>63.5 & native_country_Other>0.5, 1
+3, 0.003, 0, hours_per_week<=84.5 & hours_per_week>72.5 & relationship_Husband<=0.5, 0
+3, 0.001, 0, age<=30.5 & hours_per_week<=84.5 & hours_per_week>72.5, 0
+2, 0.017, 0.122448979591837, capital_loss<=1748 & capital_loss>77.5, 0.142857142857143
+4, 0.001, 0, capital_loss<=1748 & capital_loss>77.5 & hours_per_week>67.5 & occupation_Exec_managerial<=0.5, 0
+4, 0.001, 0, age>41.5 & capital_loss>77.5 & capital_loss<=1551.5 & occupation_Exec_managerial>0.5, 0
+2, 0.021, 0.165292938293607, capital_loss>1894.5 & education_HS_grad<=0.5, 0.791044776119403
+2, 0.005, 0.115555555555556, capital_loss>1938 & education_HS_grad>0.5, 0.133333333333333
+2, 0.001, 0, hours_per_week>71 & occupation_Craft_repair>0.5, 1
+1, 0.945, 0.187459369414367, age<=62, 0.249918752031199
+3, 0, 0, age>62 & workclass_Federal_gov>0.5 & education_Voc>0.5, 1
+2, 0.034, 0.1296972648324, age<=48.5 & occupation_Transport_moving>0.5, 0.153153153153153
+3, 0, 0, age>46.5 & age<=47.5 & occupation_Tech_support>0.5, 0
+3, 0.001, 0, age<=48.5 & age>47.5 & occupation_Tech_support>0.5, 1
+3, 0.002, 0, age>48.5 & hours_per_week>56.5 & relationship_Not_in_family>0.5, 0
+1, 0.201, 0.0770254093837967, hours_per_week<=35.5, 0.0840978593272171
+3, 0, 0, hours_per_week<=35.5 & hours_per_week>16.5 & education_Doctorate>0.5, 1
+1, 0.799, 0.205967767950037, hours_per_week>35.5, 0.290161414296695
+3, 0, 0, capital_gain>4243.5 & capital_gain<=4401 & hours_per_week>47.5, 1
+3, 0.001, 0, hours_per_week>47.5 & hours_per_week<=52.5 & occupation_Protective_serv>0.5, 0
+2, 0.003, 0.148760330578512, age>49.5 & occupation_Protective_serv>0.5, 0.181818181818182
+2, 0.513, 0.0772605229992683, education_Bachelors<=0.5 & relationship_Husband<=0.5, 0.0843806104129264
+1, 0.009, 0.09, age>74.5, 0.1
+2, 0.012, 0.0249835634451019, age>56.5 & marital_status_divorced>0.5, 0.0256410256410256
+3, 0.01, 0, hours_per_week<=57 & marital_status_divorced>0.5 & occupation_Machine_op_inspct>0.5, 0
+3, 0, 0, hours_per_week<=45 & workclass_Local_gov>0.5 & education_Prof_school>0.5, 0
+3, 0.001, 0, hours_per_week>45 & education_Prof_school>0.5 & marital_status_divorced>0.5, 0
+2, 0.083, 0.0356652949245542, age<=29.5 & education_HS_grad>0.5, 0.037037037037037
+2, 0.027, 0, occupation_Handlers_cleaners>0.5 & relationship_Husband<=0.5, 0
+4, 0, 0, age<=57.5 & workclass_Self_emp_not_inc>0.5 & occupation_Handlers_cleaners>0.5 & relationship_Husband>0.5, 1
+3, 0, 0, education_Bachelors>0.5 & relationship_Wife>0.5 & native_country_Other>0.5, 0
+2, 0.107, 0.0387180360272073, age<=32.5 & education_Some_college>0.5, 0.0403458213256484
+2, 0.387, 0.0796228714670141, age<=36.5 & hours_per_week<=46.5, 0.0872323552735924
+4, 0.001, 0, age<=36.5 & hours_per_week>46.5 & education_Bachelors>0.5 & marital_status_divorced>0.5, 0
+2, 0.034, 0.0089278467656846, marital_status_married<=0.5 & occupation_Machine_op_inspct>0.5, 0.00900900900900901
+4, 0.001, 0, age<=37.5 & hours_per_week>50.5 & workclass_Federal_gov>0.5 & race_White>0.5, 0
+4, 0.001, 0, hours_per_week>57 & hours_per_week<=59 & relationship_Unmarried>0.5 & sex_Female<=0.5, 1
+1, 0.084, 0.247350778546713, hours_per_week>57, 0.448529411764706
+3, 0.001, 0, workclass_Self_emp_not_inc>0.5 & marital_status_married>0.5 & relationship_Not_in_family>0.5, 0
+3, 0.005, 0.16, workclass_Private<=0.5 & occupation_Prof_specialty>0.5 & relationship_Wife>0.5, 0.8
+3, 0.002, 0.138888888888889, workclass_Private>0.5 & education_Masters>0.5 & relationship_Wife>0.5, 0.166666666666667
+3, 0.001, 0, age>61.5 & occupation_Adm_clerical>0.5 & relationship_Wife>0.5, 1
+4, 0.001, 0, age<=38.5 & education_HS_grad<=0.5 & occupation_Craft_repair>0.5 & relationship_Wife>0.5, 0
+4, 0, 0, age<=38.5 & hours_per_week>46 & occupation_Craft_repair>0.5 & relationship_Wife>0.5, 0
+3, 0.001, 0, age>38.5 & occupation_Craft_repair>0.5 & relationship_Wife>0.5, 1
+3, 0, 0, age>41.5 & occupation_Craft_repair>0.5 & relationship_Wife>0.5, 1
+2, 0.072, 0.0484563150746944, age<=45.5 & relationship_Unmarried>0.5, 0.051063829787234
+2, 0.001, 0, occupation_Protective_serv>0.5 & relationship_Unmarried>0.5, 0
+2, 0, 0, capital_loss<=845 & capital_loss>639, 1
+2, 0.003, 0, capital_loss<=1448 & capital_loss>845, 0
+3, 0, 0, age>49.5 & capital_loss<=1568.5 & capital_loss>1448, 1
+3, 0.001, 0, age<=56.5 & capital_loss>1748 & workclass_Federal_gov>0.5, 1
+3, 0.001, 0, capital_loss>1748 & capital_loss<=1939.5 & occupation_Farming_fishing>0.5, 1
+2, 0.001, 0, capital_loss>1939.5 & occupation_Farming_fishing>0.5, 0
+4, 0, 0, age>56.5 & age<=58.5 & capital_loss>1748 & occupation_Craft_repair>0.5, 1
+3, 0, 0, age>58.5 & capital_loss>1748 & occupation_Craft_repair>0.5, 0
+3, 0, 0, age>56.5 & capital_loss>1748 & education_Voc>0.5, 1
+2, 0.002, 0.16, education_Voc>0.5 & race_Asian_Pac_Islander>0.5, 0.8
+2, 0.062, 0.195248610740372, hours_per_week<=59.5 & workclass_Self_emp_not_inc>0.5, 0.266009852216749
+4, 0, 0, capital_gain<=1203.5 & hours_per_week>75.5 & education_Masters>0.5 & marital_status_not_married<=0.5, 1
+3, 0.001, 0, capital_gain>1203.5 & hours_per_week>75.5 & education_Masters>0.5, 0
+2, 0.047, 0.0436584219744543, marital_status_not_married>0.5 & occupation_Sales>0.5, 0.0457516339869281
+3, 0.002, 0, workclass_Federal_gov>0.5 & education_Masters>0.5 & marital_status_not_married<=0.5, 1
+2, 0.001, 0, capital_gain>6457.5 & capital_gain<=6618.5, 1
+1, 0.044, 0.0401975646730892, capital_gain>6618.5, 0.958041958041958
+2, 0.014, 0, capital_gain>6457.5 & education_Bachelors>0.5, 1
+2, 0.003, 0, capital_gain>7073.5 & marital_status_divorced>0.5, 1
+2, 0.017, 0.138888888888889, capital_loss<=2001.5 & capital_loss>1894.5, 0.833333333333333
+2, 0, 0, age<=57.5 & hours_per_week<=2.5, 0
+3, 0, 0, age<=65.5 & age>57.5 & hours_per_week<=2.5, 1
+4, 0.002, 0, hours_per_week>2.5 & hours_per_week<=6.5 & workclass_Private<=0.5 & marital_status_divorced<=0.5, 0
+2, 0, 0, hours_per_week<=6.5 & marital_status_divorced>0.5, 1
+2, 0.008, 0.0736, hours_per_week<=6.5 & workclass_Private>0.5, 0.08
+3, 0.007, 0.170132325141777, hours_per_week>50.5 & education_Masters>0.5 & occupation_Prof_specialty<=0.5, 0.782608695652174
+3, 0, 0, hours_per_week<=35.5 & education_Doctorate>0.5 & sex_Male<=0.5, 0
+2, 0.082, 0.0463185063614302, hours_per_week<=33.5 & sex_Male>0.5, 0.048689138576779
+2, 0.005, 0.103806228373702, hours_per_week>44 & education_Doctorate>0.5, 0.882352941176471
+3, 0.002, 0.138888888888889, hours_per_week>71 & marital_status_divorced<=0.5 & occupation_Exec_managerial>0.5, 0.833333333333333
+2, 0.062, 0.208803058523674, age<=49.5 & education_Voc>0.5, 0.297029702970297
+2, 0.022, 0.013695987654321, hours_per_week<=35.5 & marital_status_divorced>0.5, 0.0138888888888889
+2, 0.016, 0.0185119259522962, age<=30.5 & marital_status_divorced>0.5, 0.0188679245283019
+2, 0.001, 0, marital_status_divorced>0.5 & occupation_Farming_fishing>0.5, 0
+3, 0.001, 0, hours_per_week>57.5 & education_Voc>0.5 & marital_status_divorced>0.5, 0
+3, 0.001, 0, workclass_Self_emp_not_inc>0.5 & education_Voc>0.5 & marital_status_divorced>0.5, 0
+2, 0.022, 0.0763888888888889, hours_per_week<=55.5 & occupation_Farming_fishing>0.5, 0.0833333333333333
+3, 0, 0, hours_per_week<=55.5 & hours_per_week>50.5 & workclass_State_gov>0.5, 1
+1, 0.088, 0.247411511234226, hours_per_week>55.5, 0.449122807017544
+3, 0, 0, hours_per_week>55.5 & hours_per_week<=56.5 & workclass_State_gov>0.5, 1
+3, 0, 0, marital_status_married>0.5 & occupation_Adm_clerical>0.5 & relationship_Other_relative>0.5, 1
+4, 0.006, 0, age>30.5 & age<=45.5 & capital_loss>1748 & capital_loss<=1938, 1
+3, 0, 0, hours_per_week>43.5 & workclass_Federal_gov>0.5 & education_Voc>0.5, 0
+2, 0.004, 0, age>62.5 & marital_status_divorced>0.5, 0
+2, 0, 0, age<=65.5 & hours_per_week<=1.5, 1
+2, 0.001, 0, age>65.5 & hours_per_week<=1.5, 0
+3, 0, 0, hours_per_week>1.5 & hours_per_week<=17.5 & education_Doctorate>0.5, 0
+2, 0.03, 0.0100999583506872, capital_gain>7565.5 & capital_gain<=70654.5, 0.989795918367347
+3, 0.001, 0, age>48.5 & education_Bachelors>0.5 & occupation_Transport_moving>0.5, 1
+3, 0, 0, age>48.5 & hours_per_week>56.5 & occupation_Machine_op_inspct>0.5, 1
+2, 0.01, 0.15234375, age>29.5 & education_Doctorate>0.5, 0.8125
+1, 0.916, 0.177445349325022, hours_per_week<=56, 0.230640295005029
+3, 0, 0, hours_per_week>56 & education_Doctorate>0.5 & marital_status_not_married>0.5, 0
+4, 0.001, 0, age>58.5 & occupation_Exec_managerial>0.5 & race_Black<=0.5 & race_White<=0.5, 1
+2, 0.099, 0.0817222440548649, hours_per_week<=50.5 & race_Black>0.5, 0.0897832817337461
+2, 0, 0, hours_per_week>50.5 & race_Other>0.5, 1
+4, 0.001, 0, age<=40.5 & hours_per_week>55.5 & hours_per_week<=56.5 & relationship_Husband<=0.5, 0
+4, 0, 0, age<=40.5 & hours_per_week>55.5 & hours_per_week<=56.5 & relationship_Husband>0.5, 1
+4, 0.002, 0.138888888888889, age>40.5 & age<=54.5 & hours_per_week>55.5 & hours_per_week<=56.5, 0.833333333333333
+3, 0.001, 0, age>54.5 & hours_per_week>55.5 & hours_per_week<=56.5, 0
+3, 0.009, 0.183115338882283, hours_per_week>55.5 & occupation_Prof_specialty>0.5 & relationship_Husband>0.5, 0.758620689655172
+3, 0.001, 0, age>59.5 & hours_per_week>55.5 & occupation_Sales>0.5, 1
+1, 0.952, 0.187661186264308, age<=63, 0.250322580645161
+2, 0.003, 0, age<=34.5 & race_Other>0.5, 0
+1, 0.04, 0.0509467455621302, hours_per_week<=15.5, 0.0538461538461538
+2, 0.039, 0.044677734375, hours_per_week<=15.5 & education_Doctorate<=0.5, 0.046875
+2, 0.011, 0.16, age<=59.5 & age>58.5, 0.2
+3, 0.003, 0, age>58.5 & occupation_Sales>0.5 & relationship_Husband<=0.5, 0
+3, 0.001, 0, age>59.5 & hours_per_week<=43.5 & hours_per_week>41.5, 0
+4, 0, 0, age>59.5 & hours_per_week>41 & workclass_Private<=0.5 & occupation_Craft_repair>0.5, 1
+3, 0.001, 0, age<=37.5 & education_Doctorate>0.5 & relationship_Not_in_family>0.5, 0
+3, 0.007, 0.0433884297520661, age>37.5 & education_Doctorate>0.5 & relationship_Not_in_family<=0.5, 0.954545454545455
+2, 0.279, 0.0183323270136457, age<=32 & marital_status_married<=0.5, 0.0186813186813187
+2, 0.003, 0, capital_gain<=6457.5 & capital_gain>5119, 1
+2, 0.013, 0, age<=33.5 & hours_per_week<=14.5, 0
+1, 0.029, 0.0675998263888889, hours_per_week<=14.5, 0.0729166666666667
+2, 0.002, 0, hours_per_week<=14.5 & occupation_Exec_managerial>0.5, 0
+1, 0.007, 0.0433884297520661, age>75.5, 0.0454545454545455
+4, 0, 0, hours_per_week<=38.5 & workclass_Self_emp_not_inc>0.5 & education_Voc>0.5 & marital_status_divorced<=0.5, 1
+1, 0.773, 0.208330836089764, hours_per_week>38.5, 0.295869737887212
+2, 0.004, 0.138888888888889, workclass_Self_emp_not_inc>0.5 & education_Voc>0.5, 0.166666666666667
+2, 0.109, 0.0326601864709383, hours_per_week<=42.5 & education_School>0.5, 0.0338028169014084
+2, 0.004, 0, marital_status_divorced>0.5 & occupation_Transport_moving>0.5, 0
+3, 0.001, 0, hours_per_week<=72.5 & hours_per_week>71 & workclass_Private<=0.5, 0
+3, 0, 0, age>30.5 & age<=31.5 & hours_per_week>84.5, 1
+2, 0.04, 0.155325443786982, hours_per_week<=55.5 & occupation_Transport_moving>0.5, 0.192307692307692
+2, 0, 0, hours_per_week>85.5 & occupation_Craft_repair>0.5, 1
+1, 0.967, 0.18420367850844, hours_per_week<=61.5, 0.243492063492063
+2, 0.001, 0, education_Doctorate>0.5 & marital_status_divorced>0.5, 1
+2, 0.006, 0.138888888888889, age>47.5 & education_Doctorate>0.5, 0.833333333333333
+1, 0.968, 0.184084771082248, hours_per_week<=64, 0.24326038693308
+4, 0.001, 0, hours_per_week>64 & workclass_Self_emp_inc>0.5 & occupation_Prof_specialty<=0.5 & relationship_Husband<=0.5, 1
+1, 0.609, 0.234672985632541, marital_status_not_married<=0.5, 0.3761976802824
+3, 0.219, 0.0299034756249889, hours_per_week<=41.5 & marital_status_married<=0.5 & sex_Female>0.5, 0.0308555399719495
+4, 0.009, 0.0332936979785969, marital_status_married>0.5 & occupation_Tech_support<=0.5 & relationship_Wife<=0.5 & sex_Female>0.5, 0.0344827586206897
+4, 0, 0, hours_per_week>46.5 & marital_status_married>0.5 & occupation_Tech_support>0.5 & sex_Female>0.5, 1
+1, 0.152, 0.0532648283038502, hours_per_week<=31, 0.0564516129032258
+3, 0, 0, hours_per_week<=31 & education_Masters>0.5 & relationship_Wife>0.5, 1
+4, 0.002, 0.109375, age>43.5 & hours_per_week>31 & hours_per_week<=39.5 & relationship_Wife>0.5, 0.875
+4, 0.001, 0, age>43.5 & hours_per_week<=39.5 & relationship_Wife>0.5 & race_Black>0.5, 1
+1, 0.848, 0.203055555555556, hours_per_week>31, 0.283333333333333
+3, 0.012, 0.024375, age<=33.5 & workclass_Local_gov>0.5 & education_Bachelors<=0.5, 0.025
+2, 0.016, 0.0192233756247597, hours_per_week<=37.5 & occupation_Craft_repair>0.5, 0.0196078431372549
+3, 0.107, 0.0169920853092377, age<=38.5 & education_Some_college>0.5 & relationship_Husband<=0.5, 0.0172910662824208
+2, 0, 0, hours_per_week>90.5 & relationship_Husband<=0.5, 1
+2, 0.011, 0, marital_status_not_married>0.5 & occupation_Farming_fishing>0.5, 0
+3, 0.012, 0.0498614958448753, age<=56 & hours_per_week<=12.5 & occupation_Prof_specialty<=0.5, 0.0526315789473684
+2, 0.009, 0.0332936979785969, age>64.5 & hours_per_week<=12.5, 0.0344827586206897
+1, 0.972, 0.189381949427903, hours_per_week>12.5, 0.253792667509482
+3, 0.001, 0, hours_per_week>12.5 & hours_per_week<=26.5 & education_Prof_school>0.5, 0
+2, 0.18, 0.00847395719190591, age<=26.5 & hours_per_week<=42, 0.00854700854700855
+3, 0.037, 0.0161246976619188, age<=26.5 & hours_per_week<=47.5 & occupation_Prof_specialty>0.5, 0.0163934426229508
+4, 0, 0, age>26.5 & age<=27.5 & occupation_Prof_specialty>0.5 & relationship_Husband>0.5, 1
+2, 0.298, 0.0534860240195557, age<=33.5 & hours_per_week<=40.5, 0.0567010309278351
+3, 0.001, 0, age>33.5 & age<=34.5 & hours_per_week>63, 0
+3, 0.267, 0.0365326069540138, age<=34.5 & occupation_Prof_specialty<=0.5 & relationship_Husband<=0.5, 0.0379746835443038
+4, 0.001, 0, hours_per_week<=53 & hours_per_week>47.5 & marital_status_not_married<=0.5 & race_Black>0.5, 0
+2, 0.043, 0.191915532322344, marital_status_not_married<=0.5 & race_Black>0.5, 0.258992805755396
+4, 0, 0, age<=53.5 & age>50.5 & occupation_Craft_repair>0.5 & race_Black>0.5, 0
+3, 0.057, 0.0107514177693762, education_Bachelors<=0.5 & marital_status_not_married>0.5 & race_Black>0.5, 0.0108695652173913
+2, 0.061, 0.014775, marital_status_not_married>0.5 & race_Black>0.5, 0.015
+2, 0.019, 0.242378432854623, hours_per_week>49.5 & education_Masters>0.5, 0.587301587301587
+3, 0.002, 0.138888888888889, age>59.5 & hours_per_week>49.5 & occupation_Prof_specialty>0.5, 0.166666666666667
+3, 0, 0, hours_per_week<=14.5 & education_Prof_school>0.5 & relationship_Wife>0.5, 0
+2, 0.039, 0.04501209002418, hours_per_week>1.5 & hours_per_week<=15.5, 0.047244094488189
+3, 0, 0, age<=59.5 & age>53.5 & occupation_Protective_serv>0.5, 0
+3, 0.002, 0.16, age>29.5 & hours_per_week>41.5 & occupation_Protective_serv>0.5, 0.8
+3, 0, 0, age<=40.5 & education_Masters>0.5 & occupation_Farming_fishing>0.5, 1
+2, 0, 0, workclass_State_gov>0.5 & occupation_Sales>0.5, 0
+3, 0.007, 0.0415879017013233, hours_per_week<=6.5 & workclass_Private>0.5 & occupation_Adm_clerical<=0.5, 0.0434782608695652
+3, 0.001, 0, hours_per_week>72.5 & workclass_Self_emp_inc>0.5 & occupation_Exec_managerial>0.5, 1
+4, 0.002, 0, age<=48 & age>32.5 & workclass_Private>0.5 & occupation_Protective_serv>0.5, 0
+2, 0.004, 0.177514792899408, age>48 & occupation_Protective_serv>0.5, 0.230769230769231
+2, 0.085, 0.0448829027515228, age<=52 & hours_per_week<=28.5, 0.0471014492753623
+5, 0.001, 0, age<=52 & age>36.5 & hours_per_week<=28.5 & education_Bachelors<=0.5 & occupation_Tech_support>0.5, 1
+4, 0, 0, age>52 & hours_per_week<=28.5 & education_Bachelors<=0.5 & occupation_Tech_support>0.5, 0
+1, 0.623, 0.150776554014636, age<=42, 0.185002466699556
+3, 0.004, 0, age<=42 & hours_per_week<=28.5 & relationship_Husband>0.5, 0
+4, 0.001, 0, age>42 & education_Bachelors>0.5 & occupation_Tech_support>0.5 & sex_Female<=0.5, 1
+4, 0, 0, age>42 & hours_per_week<=28.5 & occupation_Tech_support>0.5 & sex_Female>0.5, 0
+2, 0.001, 0, age>69.5 & workclass_Federal_gov>0.5, 0
+3, 0, 0, age>69.5 & hours_per_week>62.5 & occupation_Sales>0.5, 1
+2, 0, 0, capital_gain>30961.5 & capital_gain<=70654.5, 0
+2, 0.034, 0.05859375, age<=59.5 & hours_per_week<=19.5, 0.0625
+4, 0.002, 0, age<=73.5 & age>59.5 & hours_per_week<=19.5 & hours_per_week>15.5, 0
+2, 0.019, 0.0861678004535147, age>69.5 & workclass_Self_emp_inc<=0.5, 0.0952380952380952
+3, 0, 0, hours_per_week>42.5 & hours_per_week<=43.5 & relationship_Wife>0.5, 0
+3, 0.001, 0, hours_per_week<=45.5 & hours_per_week>43.5 & relationship_Wife>0.5, 1
+3, 0, 0, hours_per_week>45.5 & hours_per_week<=46.5 & relationship_Wife>0.5, 1
+1, 0.78, 0.157335943962541, hours_per_week<=46, 0.195592286501377
+4, 0.001, 0, hours_per_week<=46 & hours_per_week>41 & education_HS_grad<=0.5 & relationship_Wife>0.5, 1
+1, 0.22, 0.246126460951636, hours_per_week>46, 0.437762237762238
+3, 0, 0, hours_per_week<=6.5 & education_Masters>0.5 & relationship_Unmarried<=0.5, 0
+3, 0, 0, hours_per_week<=6.5 & education_Masters>0.5 & relationship_Unmarried>0.5, 1
+2, 0.019, 0.0460457856399584, hours_per_week>6.5 & hours_per_week<=14.5, 0.0483870967741935
+3, 0, 0, age>55.5 & hours_per_week<=38.5 & occupation_Tech_support>0.5, 0
+3, 0, 0, age>49.5 & age<=54.5 & hours_per_week>85.5, 0
+2, 0.012, 0.0498614958448753, age<=36.5 & occupation_Farming_fishing>0.5, 0.0526315789473684
+2, 0.001, 0, capital_loss>2218.5 & occupation_Farming_fishing>0.5, 0
+2, 0.018, 0, hours_per_week<=32.5 & race_Black>0.5, 0
+1, 0.843, 0.203679429895779, hours_per_week>32.5, 0.284777858703569
+3, 0.008, 0.0369822485207101, age<=41.5 & education_Some_college>0.5 & occupation_Machine_op_inspct>0.5, 0.0384615384615385
+2, 0.022, 0.0138861337036302, age<=28.5 & native_country_Other>0.5, 0.0140845070422535
+2, 0.315, 0.0427844498444624, age<=33.5 & relationship_Husband<=0.5, 0.0447906523855891
+2, 0.003, 0, age<=33.5 & race_Other>0.5, 0
+1, 0.094, 0.0555334587476485, hours_per_week<=24.5, 0.059016393442623
+3, 0.006, 0.0498614958448753, age<=37.5 & hours_per_week<=24.5 & education_Bachelors>0.5, 0.0526315789473684
+3, 0.001, 0, hours_per_week>24.5 & hours_per_week<=28.5 & education_Masters>0.5, 0
+1, 0.017, 0.0971900826446281, hours_per_week<=9, 0.109090909090909
+1, 0.983, 0.188084382018623, hours_per_week>9, 0.251171508903468
+2, 0.001, 0, education_Prof_school>0.5 & relationship_Unmarried>0.5, 0
+3, 0, 0, occupation_Sales>0.5 & relationship_Wife>0.5 & race_Asian_Pac_Islander>0.5, 0
+2, 0.125, 0.023966338462653, age<=36.5 & hours_per_week<=39.5, 0.0245700245700246
+3, 0.006, 0.0475, age<=36.5 & hours_per_week<=39.5 & hours_per_week>36.5, 0.05
+2, 0.064, 0.0187724640003663, age<=36.5 & education_School>0.5, 0.0191387559808612
+2, 0.044, 0.110692322951795, age<=37.5 & native_country_United_States<=0.5, 0.126760563380282
+4, 0.047, 0.037915512465374, age<=37.5 & hours_per_week<=52.5 & education_Bachelors>0.5 & marital_status_married<=0.5, 0.0394736842105263
+4, 0.001, 0, age>36.5 & age<=37.5 & hours_per_week<=36.5 & marital_status_married>0.5, 1
+3, 0.014, 0.214320987654321, age>36.5 & age<=37.5 & marital_status_married>0.5, 0.688888888888889
+4, 0.001, 0, age>36.5 & hours_per_week>59.5 & education_Some_college<=0.5 & occupation_Machine_op_inspct>0.5, 1
+3, 0, 0, hours_per_week>59.5 & education_Some_college>0.5 & occupation_Machine_op_inspct>0.5, 0
+3, 0.009, 0.0642092746730083, hours_per_week<=6.5 & workclass_State_gov<=0.5 & occupation_Adm_clerical<=0.5, 0.0689655172413793
+3, 0, 0, hours_per_week<=6.5 & workclass_State_gov>0.5 & occupation_Adm_clerical<=0.5, 1
+3, 0.094, 0.0467616232195646, age<=58.5 & education_School>0.5 & occupation_Machine_op_inspct<=0.5, 0.0491803278688525
+3, 0.004, 0, age<=58.5 & education_School>0.5 & relationship_Wife>0.5, 0
+3, 0.001, 0, age>49.5 & occupation_Transport_moving>0.5 & race_Black>0.5, 0
+3, 0, 0, workclass_Federal_gov>0.5 & occupation_Craft_repair>0.5 & race_Black>0.5, 1
+4, 0.002, 0, workclass_Local_gov<=0.5 & education_School>0.5 & occupation_Craft_repair>0.5 & race_Black>0.5, 0
+4, 0.001, 0, workclass_Local_gov>0.5 & education_School>0.5 & occupation_Craft_repair>0.5 & race_Black>0.5, 1
+3, 0.001, 0, age<=66.5 & age>65.5 & hours_per_week>42.5, 0
+1, 0.025, 0.0772245608941791, age>67.5, 0.0843373493975904
+3, 0.01, 0.0285467128027682, hours_per_week<=47.5 & education_Some_college>0.5 & native_country_Other>0.5, 0.0294117647058824
+2, 0.015, 0.0399305555555556, age>66.5 & marital_status_married<=0.5, 0.0416666666666667
+2, 0.019, 0.0460457856399584, marital_status_divorced>0.5 & race_White<=0.5, 0.0483870967741935
+1, 0.975, 0.189026958771759, age<=67, 0.253072801764891
+3, 0, 0, hours_per_week>65 & occupation_Craft_repair>0.5 & native_country_Other>0.5, 0
+3, 0.032, 0.046187199547554, age<=39.5 & relationship_Husband<=0.5 & native_country_Other>0.5, 0.0485436893203883
+3, 0.012, 0.0727146814404432, age<=42.5 & capital_loss<=1748 & capital_loss>77.5, 0.0789473684210526
+4, 0, 0, capital_loss<=1748 & capital_loss>77.5 & workclass_Self_emp_not_inc>0.5 & occupation_Exec_managerial<=0.5, 0
+4, 0.001, 0, age>41.5 & age<=42.5 & capital_loss<=1748 & capital_loss>77.5, 0
+2, 0.008, 0.0384, capital_loss>1748 & occupation_Exec_managerial>0.5, 0.96
+3, 0.001, 0, capital_loss>1748 & workclass_Federal_gov>0.5 & marital_status_not_married<=0.5, 1
+3, 0, 0, capital_loss>1748 & workclass_Federal_gov>0.5 & marital_status_not_married>0.5, 0
+4, 0.005, 0, hours_per_week<=53.5 & hours_per_week>42.5 & occupation_Exec_managerial<=0.5 & race_Black>0.5, 0
+3, 0, 0, hours_per_week>53.5 & occupation_Machine_op_inspct>0.5 & race_Black>0.5, 0
+2, 0.002, 0, hours_per_week<=6.5 & education_HS_grad>0.5, 0
+2, 0.027, 0.0438631259083102, hours_per_week<=13.5 & relationship_Wife<=0.5, 0.0459770114942529
+2, 0.019, 0.112382934443288, capital_loss<=1820.5 & capital_loss>77.5, 0.129032258064516
+4, 0.001, 0, capital_loss<=1820.5 & capital_loss>77.5 & hours_per_week>67.5 & occupation_Exec_managerial<=0.5, 0
+2, 0.567, 0.135677662807362, age<=41.5 & relationship_Wife<=0.5, 0.161884136437466
+3, 0.001, 0, capital_loss>77.5 & occupation_Exec_managerial>0.5 & relationship_Wife>0.5, 1
+4, 0.001, 0, age>41.5 & age<=42.5 & capital_loss<=1820.5 & capital_loss>77.5, 0
+3, 0, 0, capital_loss>1820.5 & education_HS_grad<=0.5 & relationship_Unmarried>0.5, 1
+1, 0.878, 0.188717785710793, occupation_Craft_repair<=0.5, 0.252447552447552
+1, 0.886, 0.184474647747718, age<=56, 0.244020797227036
+3, 0.002, 0, capital_loss>1820.5 & capital_loss<=1923 & workclass_Self_emp_not_inc>0.5, 1
+2, 0.078, 0.197370242214533, capital_loss<=2364.5 & workclass_Self_emp_not_inc>0.5, 0.270588235294118
+2, 0.001, 0, capital_loss>2364.5 & workclass_Self_emp_not_inc>0.5, 1
+1, 1, 0.186884240170481, capital_loss<=3343.5, 0.248771498771499
+2, 0.005, 0, capital_loss<=2384.5 & capital_loss>2176.5, 0
+2, 0.019, 0.0312174817898023, relationship_Other_relative>0.5 & native_country_Other<=0.5, 0.032258064516129
+3, 0, 0, age<=36 & workclass_Federal_gov>0.5 & native_country_Other>0.5, 0
+3, 0.002, 0, age>21.5 & workclass_Federal_gov>0.5 & relationship_Wife>0.5, 1
+3, 0.002, 0, workclass_Self_emp_inc>0.5 & education_Prof_school>0.5 & occupation_Exec_managerial<=0.5, 1
+3, 0.001, 0, hours_per_week<=45 & education_Prof_school>0.5 & occupation_Exec_managerial>0.5, 0
+3, 0.002, 0, hours_per_week>45 & workclass_Self_emp_inc>0.5 & education_Prof_school>0.5, 1
+2, 0.293, 0.0477355335654176, age<=30.5 & occupation_Exec_managerial<=0.5, 0.050261780104712
+3, 0.001, 0, occupation_Exec_managerial>0.5 & relationship_Wife>0.5 & race_Asian_Pac_Islander>0.5, 1
+3, 0.001, 0, age>56 & occupation_Exec_managerial>0.5 & race_Asian_Pac_Islander>0.5, 1
+2, 0.001, 0, age>66.5 & native_country_United_States<=0.5, 0
+3, 0.003, 0, age<=34.5 & occupation_Craft_repair>0.5 & native_country_United_States<=0.5, 0
+3, 0.032, 0.046187199547554, age<=39.5 & relationship_Husband<=0.5 & native_country_United_States<=0.5, 0.0485436893203883
+3, 0.001, 0, age>70.5 & education_Masters<=0.5 & occupation_Sales>0.5, 0
+3, 0.003, 0, age>74.5 & hours_per_week>37.5 & education_Masters<=0.5, 0
+3, 0, 0, age<=68.5 & age>66.5 & education_Masters>0.5, 1
+4, 0.001, 0, age<=75.5 & age>68.5 & capital_gain<=1025 & education_Masters>0.5, 0
+3, 0, 0, age>68.5 & capital_gain>1025 & education_Masters>0.5, 1
+3, 0.034, 0.103400697995293, age<=37.5 & race_Asian_Pac_Islander<=0.5 & native_country_United_States<=0.5, 0.117117117117117
+2, 0.606, 0.143624177280258, hours_per_week<=47.5 & workclass_Private>0.5, 0.173846933603649
+5, 0.002, 0, hours_per_week<=47.5 & hours_per_week>42.5 & workclass_Private>0.5 & race_Asian_Pac_Islander<=0.5 & native_country_United_States<=0.5, 0
+4, 0.003, 0.0826446280991735, hours_per_week>50.5 & workclass_Private>0.5 & race_Asian_Pac_Islander<=0.5 & native_country_United_States<=0.5, 0.0909090909090909
+2, 0.022, 0.222222222222222, occupation_Prof_specialty<=0.5 & race_Asian_Pac_Islander>0.5, 0.333333333333333
+3, 0, 0, age<=42.5 & hours_per_week>71 & race_Asian_Pac_Islander>0.5, 1
+3, 0, 0, age>42.5 & hours_per_week>71 & race_Asian_Pac_Islander>0.5, 0
+3, 0, 0, occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5 & native_country_Other<=0.5, 1
+3, 0.001, 0, occupation_Machine_op_inspct>0.5 & race_Asian_Pac_Islander>0.5 & native_country_Other>0.5, 0
+3, 0.002, 0, hours_per_week<=48.5 & workclass_Self_emp_inc>0.5 & occupation_Prof_specialty>0.5, 1
+1, 0.187, 0.219028631405817, occupation_Prof_specialty>0.5, 0.324013157894737
+4, 0, 0, age<=48.5 & education_Prof_school>0.5 & occupation_Prof_specialty<=0.5 & race_Asian_Pac_Islander>0.5, 0
+3, 0.001, 0, age>48.5 & occupation_Sales>0.5 & race_Asian_Pac_Islander>0.5, 1
+3, 0.001, 0, age<=45.5 & age>44.5 & workclass_Self_emp_inc>0.5, 1
+3, 0.001, 0, age<=45.5 & age>44.5 & occupation_Tech_support>0.5, 0
+2, 0.678, 0.139843382539676, hours_per_week<=49.5 & education_Bachelors<=0.5, 0.168101495242411
+4, 0, 0, age<=46.5 & age>45.5 & education_Masters>0.5 & occupation_Prof_specialty>0.5, 0
+3, 0.001, 0, age<=46.5 & age>45.5 & workclass_Self_emp_inc>0.5, 0
+3, 0.005, 0.222222222222222, age>46.5 & workclass_Federal_gov>0.5 & relationship_Husband>0.5, 0.666666666666667
+2, 0.006, 0.0987654320987654, workclass_Federal_gov>0.5 & education_Some_college>0.5, 0.111111111111111
+3, 0, 0, age>46.5 & workclass_Federal_gov>0.5 & occupation_Craft_repair>0.5, 0
+2, 0.001, 0, occupation_Transport_moving>0.5 & race_Amer_Indian_Eskimo>0.5, 0
+3, 0.001, 0, age>46.5 & workclass_Federal_gov>0.5 & occupation_Transport_moving>0.5, 0
+2, 0.439, 0.0967022699348348, age<=36.5 & hours_per_week<=55.5, 0.108467459762071
+4, 0.001, 0, age<=58.5 & age>53.5 & hours_per_week<=55.5 & hours_per_week>52.5, 1
+2, 0.034, 0.0433884297520661, age<=37.5 & occupation_Machine_op_inspct>0.5, 0.0454545454545455
+4, 0.002, 0, hours_per_week>44.5 & education_Voc>0.5 & occupation_Tech_support>0.5 & relationship_Husband<=0.5, 0
+3, 0, 0, hours_per_week<=47 & hours_per_week>45.5 & occupation_Machine_op_inspct>0.5, 0
+4, 0, 0, age>62.5 & hours_per_week>39.5 & occupation_Adm_clerical>0.5 & relationship_Husband>0.5, 0
+3, 0.138, 0.046695631377551, age<=34.5 & hours_per_week<=42.5 & sex_Male<=0.5, 0.0491071428571429
+2, 0.34, 0.0624311253102427, age<=35.5 & hours_per_week<=42.5, 0.0669077757685353
+3, 0.038, 0.179175338189386, age<=40.5 & education_Voc>0.5 & occupation_Craft_repair<=0.5, 0.233870967741935
+3, 0.001, 0, workclass_Private<=0.5 & occupation_Craft_repair>0.5 & sex_Male<=0.5, 1
+4, 0.002, 0, hours_per_week>42.5 & workclass_Private>0.5 & occupation_Craft_repair>0.5 & sex_Male<=0.5, 0
+4, 0.001, 0, age>52.5 & hours_per_week>42.5 & education_Some_college>0.5 & sex_Male<=0.5, 0
+2, 0, 0, relationship_Wife>0.5 & sex_Male>0.5, 1
+4, 0.001, 0, hours_per_week>57 & hours_per_week<=59 & relationship_Unmarried>0.5 & sex_Male>0.5, 1
+2, 0.01, 0.0293847566574839, marital_status_not_married>0.5 & occupation_Tech_support>0.5, 0.0303030303030303
+3, 0, 0, age>59.5 & age<=60.5 & native_country_United_States<=0.5, 0
+2, 0.002, 0, age>62 & native_country_United_States<=0.5, 0
+3, 0.099, 0.0470818276797439, workclass_Federal_gov<=0.5 & workclass_Self_emp_not_inc<=0.5 & relationship_Unmarried>0.5, 0.0495356037151703
+3, 0.002, 0, age>48.5 & workclass_Federal_gov>0.5 & relationship_Unmarried>0.5, 0
+2, 0.062, 0.0382168758199054, age<=42.5 & relationship_Unmarried>0.5, 0.0398009950248756
+4, 0, 0, age<=42.5 & age>37.5 & education_Masters>0.5 & occupation_Sales>0.5, 1
+2, 0.1, 0.0413427831123304, hours_per_week<=49 & relationship_Unmarried>0.5, 0.0432098765432099
+2, 0.001, 0, age>67.5 & workclass_Federal_gov>0.5, 0
+4, 0, 0, hours_per_week<=39 & workclass_Federal_gov>0.5 & marital_status_married>0.5 & occupation_Adm_clerical>0.5, 1
+1, 0.985, 0.188160856809857, age<=71, 0.251325226067976
+3, 0.001, 0, hours_per_week>46.5 & occupation_Transport_moving>0.5 & relationship_Unmarried>0.5, 0
+3, 0.007, 0.0399305555555556, education_Masters<=0.5 & occupation_Sales>0.5 & relationship_Unmarried>0.5, 0.0416666666666667
+3, 0, 0, education_Masters>0.5 & occupation_Sales>0.5 & relationship_Unmarried>0.5, 1
+4, 0.001, 0, age<=40.5 & workclass_Self_emp_not_inc>0.5 & marital_status_not_married<=0.5 & race_Black>0.5, 1
+4, 0.003, 0.09, age>43.5 & age<=44.5 & hours_per_week>39 & race_Black>0.5, 0.1
+3, 0.006, 0, capital_loss>1820.5 & capital_loss<=1894.5 & relationship_Not_in_family<=0.5, 1
+3, 0.004, 0, capital_loss>1820.5 & capital_loss<=2365.5 & relationship_Not_in_family>0.5, 0
+2, 0.001, 0, age>60.5 & occupation_Tech_support>0.5, 0
+4, 0, 0, hours_per_week<=39 & workclass_Federal_gov>0.5 & occupation_Adm_clerical>0.5 & relationship_Unmarried<=0.5, 1
+2, 0.002, 0.109375, workclass_Local_gov>0.5 & native_country_Other>0.5, 0.125
+2, 0.009, 0.0332936979785969, age>68.5 & relationship_Not_in_family>0.5, 0.0344827586206897
+2, 0.002, 0, age>73.5 & education_School>0.5, 0
+5, 0.001, 0, age<=37.5 & age>30.5 & workclass_Federal_gov>0.5 & occupation_Adm_clerical<=0.5 & race_Black<=0.5, 0
+3, 0.005, 0, hours_per_week>45.5 & occupation_Adm_clerical>0.5 & relationship_Husband<=0.5, 0
+2, 0.011, 0.200617283950617, age<=38.5 & workclass_Federal_gov>0.5, 0.277777777777778
+2, 0.094, 0.0907808040403612, occupation_Craft_repair<=0.5 & race_Black>0.5, 0.100977198697068
+2, 0.001, 0, hours_per_week<=41.5 & hours_per_week>40.5, 0
+3, 0, 0, hours_per_week<=42.5 & hours_per_week>41.5 & education_Prof_school>0.5, 1
+4, 0, 0, hours_per_week<=42.5 & hours_per_week>41.5 & marital_status_married>0.5 & race_Black>0.5, 1
+3, 0.001, 0, age<=30.5 & workclass_Self_emp_inc>0.5 & education_Some_college>0.5, 0
+3, 0.004, 0, age<=32.5 & hours_per_week>42.5 & occupation_Adm_clerical>0.5, 0
+2, 0.076, 0.0814330094520457, occupation_Adm_clerical>0.5 & sex_Female>0.5, 0.0894308943089431
+3, 0.013, 0.0464009518143962, age>64.5 & race_Asian_Pac_Islander<=0.5 & sex_Female>0.5, 0.0487804878048781
+2, 0.348, 0.0469833425385744, age<=35.5 & relationship_Husband<=0.5, 0.0494263018534863
+3, 0.002, 0, age<=35.5 & occupation_Sales>0.5 & race_Asian_Pac_Islander>0.5, 0
+3, 0.003, 0.21, education_Masters<=0.5 & occupation_Sales>0.5 & race_Asian_Pac_Islander>0.5, 0.3
+4, 0, 0, age>35.5 & age<=38.5 & education_Masters>0.5 & race_Asian_Pac_Islander>0.5, 1
+2, 0.008, 0.10207100591716, education_Doctorate>0.5 & marital_status_not_married<=0.5, 0.884615384615385
+3, 0.014, 0.0217283950617284, age<=50.5 & occupation_Transport_moving>0.5 & relationship_Husband<=0.5, 0.0222222222222222
+4, 0.001, 0, age<=50.5 & age>47.5 & marital_status_married>0.5 & occupation_Tech_support>0.5, 1
+4, 0.001, 0, age>50.5 & hours_per_week<=46.5 & hours_per_week>43.5 & workclass_Local_gov>0.5, 0
+3, 0, 0, age>50.5 & hours_per_week>46.5 & workclass_Federal_gov>0.5, 1
+3, 0, 0, age>50.5 & occupation_Adm_clerical>0.5 & race_Asian_Pac_Islander>0.5, 0
+3, 0, 0, age>71.5 & hours_per_week<=19.5 & education_Masters>0.5, 0
+2, 0.001, 0, age>64.5 & native_country_Other>0.5, 0
+2, 0.001, 0, hours_per_week>52.5 & hours_per_week<=53.5, 0
+1, 0.112, 0.246200037530494, hours_per_week>52.5, 0.438356164383562
+4, 0.001, 0, age<=38.5 & age>34 & workclass_Private<=0.5 & occupation_Transport_moving>0.5, 0
+4, 0.001, 0, age<=40.5 & hours_per_week>55.5 & hours_per_week<=56.5 & education_Some_college<=0.5, 0
+4, 0, 0, age<=54.5 & hours_per_week>55.5 & hours_per_week<=56.5 & education_Some_college>0.5, 1
+3, 0.001, 0, age>56.5 & hours_per_week>55.5 & education_Prof_school>0.5, 0
+2, 0.002, 0.122448979591837, hours_per_week>55.5 & occupation_Tech_support>0.5, 0.142857142857143
+2, 0.029, 0.167496604798551, age>30.5 & capital_loss>1820.5, 0.787234042553192
+3, 0, 0, age>56 & capital_loss>1820.5 & education_Voc>0.5, 1
+3, 0, 0, age>57.5 & capital_loss>1820.5 & occupation_Craft_repair>0.5, 0
+3, 0, 0, age<=48.5 & capital_loss>1820.5 & workclass_Federal_gov>0.5, 1
+3, 0.001, 0, capital_loss>1820.5 & workclass_Federal_gov>0.5 & marital_status_not_married<=0.5, 1
+3, 0, 0, capital_loss>1820.5 & workclass_Federal_gov>0.5 & marital_status_not_married>0.5, 0
+2, 0.533, 0.122390227395283, age<=41.5 & occupation_Exec_managerial<=0.5, 0.142774899251583
+3, 0.001, 0, hours_per_week>59 & education_Voc>0.5 & occupation_Exec_managerial>0.5, 0
+4, 0, 0, age<=39.5 & age>38.5 & workclass_Self_emp_not_inc>0.5 & occupation_Exec_managerial>0.5, 0
+4, 0.002, 0.109375, age>39.5 & age<=40.5 & education_Some_college<=0.5 & occupation_Exec_managerial>0.5, 0.875
+3, 0, 0, age>74.5 & education_Some_college>0.5 & occupation_Exec_managerial>0.5, 1
+4, 0.001, 0, hours_per_week<=39 & workclass_Self_emp_inc>0.5 & education_HS_grad<=0.5 & occupation_Exec_managerial>0.5, 0
+2, 0.009, 0.09, hours_per_week<=6.5 & education_Some_college<=0.5, 0.1
+3, 0, 0, hours_per_week>2.5 & hours_per_week<=6.5 & workclass_State_gov>0.5, 0
+2, 0.003, 0, age>68.5 & hours_per_week<=6.5, 0
+4, 0.001, 0, age<=48.5 & age>46.5 & hours_per_week>55.5 & occupation_Prof_specialty>0.5, 1
+3, 0, 0, age<=51.5 & age>42.5 & hours_per_week>85.5, 0
+3, 0, 0, age<=62.5 & age>51.5 & hours_per_week>85.5, 1
+2, 0, 0, age>62.5 & hours_per_week>85.5, 0
+4, 0.001, 0, hours_per_week<=49.5 & hours_per_week>43.5 & education_Bachelors>0.5 & occupation_Craft_repair>0.5, 1
+3, 0.001, 0, hours_per_week<=49.5 & hours_per_week>46.5 & occupation_Transport_moving>0.5, 1
+4, 0, 0, hours_per_week>49.5 & workclass_Local_gov>0.5 & education_School<=0.5 & occupation_Craft_repair>0.5, 1
+3, 0, 0, workclass_Self_emp_inc>0.5 & education_School>0.5 & occupation_Craft_repair>0.5, 1
+3, 0.062, 0.0468344293722245, age<=42.5 & occupation_Adm_clerical>0.5 & relationship_Husband<=0.5, 0.0492610837438424
+4, 0.001, 0, age>42.5 & hours_per_week>56 & education_Bachelors<=0.5 & occupation_Adm_clerical>0.5, 1
+3, 0.001, 0, hours_per_week>56 & education_Bachelors>0.5 & occupation_Adm_clerical>0.5, 0
+3, 0.001, 0, age>69.5 & age<=70.5 & hours_per_week<=28.5, 0
+3, 0, 0, age<=63 & hours_per_week<=2.5 & relationship_Husband>0.5, 1
+2, 0.001, 0, age<=35 & hours_per_week<=4.5, 0
+3, 0.003, 0, age>74.5 & occupation_Prof_specialty<=0.5 & relationship_Husband<=0.5, 0
+3, 0.001, 0, age>74.5 & occupation_Prof_specialty>0.5 & relationship_Husband>0.5, 0
+1, 1, 0.186884240170481, capital_loss<=2581, 0.248771498771499
+3, 0.013, 0.0663265306122449, age<=42.5 & capital_loss<=1820.5 & capital_loss>77.5, 0.0714285714285714
+3, 0.012, 0.0486522024983563, capital_loss<=1820.5 & capital_loss>1494.5 & occupation_Exec_managerial<=0.5, 0.0512820512820513
+4, 0, 0, capital_loss>77.5 & capital_loss<=1494.5 & education_Some_college>0.5 & occupation_Exec_managerial>0.5, 0
+3, 0.004, 0, capital_loss<=1820.5 & capital_loss>1494.5 & relationship_Husband>0.5, 0
+2, 0.029, 0.161272068809416, capital_loss>1820.5 & relationship_Not_in_family<=0.5, 0.797872340425532
+3, 0.001, 0, age<=47.5 & capital_loss>1820.5 & occupation_Machine_op_inspct>0.5, 0
+3, 0.001, 0, age>47.5 & capital_loss>1820.5 & occupation_Machine_op_inspct>0.5, 1
+3, 0.001, 0, capital_loss>1820.5 & capital_loss<=2176.5 & race_Black>0.5, 1
+2, 0.086, 0.020969387755102, age<=29.5 & relationship_Not_in_family>0.5, 0.0214285714285714
+2, 0.004, 0, age>29.5 & capital_loss>2365.5, 1
+2, 0.104, 0.104606010442991, workclass_Federal_gov<=0.5 & occupation_Adm_clerical>0.5, 0.118694362017804
+3, 0.001, 0, hours_per_week>42.5 & occupation_Transport_moving>0.5 & race_Black>0.5, 0
+3, 0.001, 0, hours_per_week<=53.5 & workclass_Self_emp_not_inc>0.5 & occupation_Transport_moving>0.5, 0
+1, 0.875, 0.184392120652508, age<=55, 0.243859649122807
+3, 0.001, 0, age>44.5 & hours_per_week>53.5 & race_Black>0.5, 1
+2, 0.019, 0.0158688865764828, age<=28.5 & occupation_Machine_op_inspct>0.5, 0.0161290322580645
+4, 0, 0, age<=28.5 & workclass_Self_emp_inc>0.5 & education_Some_college<=0.5 & marital_status_not_married<=0.5, 1
+3, 0.01, 0.0293847566574839, age<=37.5 & workclass_State_gov>0.5 & marital_status_not_married>0.5, 0.0303030303030303
+4, 0, 0, age>37.5 & hours_per_week>49.5 & workclass_State_gov>0.5 & occupation_Adm_clerical>0.5, 1
+3, 0, 0, age<=65.5 & age>63.5 & workclass_Federal_gov>0.5, 1
+3, 0.001, 0, age>65.5 & hours_per_week>62.5 & education_School<=0.5, 1
+2, 0.001, 0, workclass_Self_emp_not_inc>0.5 & occupation_Tech_support>0.5, 0
+3, 0.102, 0.0375149924699474, workclass_Self_emp_not_inc<=0.5 & education_School>0.5 & occupation_Craft_repair<=0.5, 0.039039039039039
+4, 0.001, 0, hours_per_week>50.5 & workclass_Private<=0.5 & workclass_Self_emp_not_inc<=0.5 & education_School>0.5, 0
+2, 0.085, 0.0176621292893743, education_School>0.5 & relationship_Husband<=0.5, 0.0179856115107914
+3, 0.001, 0, hours_per_week<=54.5 & hours_per_week>52.5 & workclass_Private<=0.5, 1
+4, 0, 0, hours_per_week<=55.5 & hours_per_week>52.5 & workclass_Private>0.5 & occupation_Farming_fishing>0.5, 0
+3, 0, 0, hours_per_week>55.5 & hours_per_week<=56.5 & occupation_Sales>0.5, 0
+3, 0.35, 0.0371068020929517, hours_per_week<=56.5 & marital_status_not_married>0.5 & occupation_Exec_managerial<=0.5, 0.0385964912280702
+3, 0.001, 0, hours_per_week>55.5 & hours_per_week<=56.5 & occupation_Exec_managerial>0.5, 1
+2, 0, 0, hours_per_week>65.5 & relationship_Unmarried>0.5, 0
+2, 0.113, 0.117678503812487, hours_per_week<=69 & occupation_Adm_clerical>0.5, 0.136239782016349
+2, 0, 0, hours_per_week>69 & workclass_Federal_gov>0.5, 1
+2, 0.063, 0.01441998810232, age<=30.5 & hours_per_week<=28.5, 0.0146341463414634
+3, 0.005, 0, hours_per_week<=28.5 & workclass_Private<=0.5 & education_Bachelors>0.5, 0
+2, 0.004, 0, hours_per_week<=28.5 & hours_per_week>26.5, 0
+1, 0.157, 0.0518877354863514, hours_per_week<=32.5, 0.0549019607843137
+2, 0.011, 0.0277551020408163, age>69.5 & marital_status_married<=0.5, 0.0285714285714286
+4, 0, 0, age>69.5 & hours_per_week>28.5 & workclass_Self_emp_not_inc<=0.5 & occupation_Sales>0.5, 1
+2, 0.001, 0, age>69.5 & education_Prof_school>0.5, 0
+2, 0.005, 0.115555555555556, age<=66.5 & age>65.5, 0.133333333333333
+2, 0.003, 0, age<=68.5 & age>67.5, 0
+2, 0.001, 0, age>68.5 & education_Prof_school>0.5, 0
+4, 0.001, 0, age>68.5 & hours_per_week<=46.5 & hours_per_week>22 & education_Bachelors>0.5, 0
+3, 0, 0, age>68.5 & hours_per_week>46.5 & education_Bachelors>0.5, 1
+2, 0.014, 0.0597555454956994, capital_loss<=1881.5 & capital_loss>1568.5, 0.0638297872340425
+2, 0.023, 0.153396639883126, capital_loss<=2168.5 & capital_loss>1881.5, 0.810810810810811
+4, 0.003, 0, age<=56.5 & age>49.5 & hours_per_week<=28.5 & workclass_Private<=0.5, 0
+2, 0.006, 0, age>62.5 & relationship_Unmarried>0.5, 0
+3, 0, 0, age>69.5 & hours_per_week>28.5 & workclass_Self_emp_inc>0.5, 0
+2, 0.482, 0.0765216444650801, occupation_Prof_specialty<=0.5 & relationship_Husband<=0.5, 0.0834926704907584
+3, 0.027, 0.216942148760331, workclass_Private<=0.5 & marital_status_married>0.5 & occupation_Prof_specialty>0.5, 0.681818181818182
+3, 0.005, 0, age>58.5 & hours_per_week<=63.5 & occupation_Machine_op_inspct>0.5, 0
+3, 0, 0, hours_per_week>63.5 & occupation_Machine_op_inspct>0.5 & relationship_Husband>0.5, 1
+2, 0.178, 0.199549118529688, hours_per_week<=48.5 & workclass_Private<=0.5, 0.275387263339071
+2, 0.017, 0.0178512396694215, hours_per_week<=39 & occupation_Craft_repair>0.5, 0.0181818181818182
+3, 0, 0, hours_per_week>65.5 & workclass_Private>0.5 & education_Doctorate>0.5, 0
+2, 0.045, 0.0326424397370343, hours_per_week<=31 & education_Some_college>0.5, 0.0337837837837838
+2, 0.005, 0, capital_gain<=3048 & capital_gain>2397, 0
+1, 0.032, 0.243189744556509, hours_per_week>64.5, 0.41747572815534
+2, 0.743, 0.148760330578512, hours_per_week<=45.5 & education_Masters<=0.5, 0.181818181818182
+2, 0.035, 0.00869498307171437, occupation_Adm_clerical>0.5 & relationship_Not_in_family>0.5, 0.0087719298245614
+2, 0.002, 0, hours_per_week<=27 & workclass_Federal_gov>0.5, 0
+3, 0, 0, hours_per_week<=39 & hours_per_week>27 & workclass_Federal_gov>0.5, 1
+3, 0.003, 0, education_HS_grad>0.5 & occupation_Prof_specialty>0.5 & race_Black>0.5, 0
+4, 0, 0, age<=58.5 & age>56.5 & education_HS_grad>0.5 & race_Black>0.5, 1
+3, 0.001, 0, age>58.5 & occupation_Craft_repair>0.5 & relationship_Husband<=0.5, 0
+2, 0.031, 0.0466166858900423, age<=51 & hours_per_week<=19.5, 0.0490196078431373
+1, 0.055, 0.176586248868637, age>62, 0.229050279329609
+2, 0.019, 0.073066263542454, age>69.5 & relationship_Wife<=0.5, 0.0793650793650794
+2, 0, 0, relationship_Wife>0.5 & sex_Female<=0.5, 1
+3, 0.003, 0.0987654320987654, hours_per_week>52.5 & relationship_Wife>0.5 & native_country_Other<=0.5, 0.111111111111111
+4, 0, 0, hours_per_week>52.5 & education_HS_grad<=0.5 & relationship_Wife>0.5 & native_country_Other>0.5, 1
+4, 0.001, 0, hours_per_week>52.5 & hours_per_week<=55.5 & relationship_Wife>0.5 & race_Black<=0.5, 0
+3, 0.001, 0, hours_per_week>55.5 & education_HS_grad>0.5 & relationship_Wife>0.5, 0
+3, 0, 0, hours_per_week>52.5 & relationship_Wife>0.5 & race_Black>0.5, 1
+1, 0.951, 0.179467479699802, capital_loss<=1448, 0.234420406845334
+1, 0.049, 0.249199003203987, capital_loss>1448, 0.528301886792453
+2, 0, 0, capital_loss>1494.5 & capital_loss<=1551.5, 0
+3, 0, 0, hours_per_week>47.5 & education_Bachelors>0.5 & race_Other>0.5, 1
+1, 0.998, 0.187114792899408, age<=85.5, 0.249230769230769
+3, 0, 0, age<=38.5 & occupation_Transport_moving>0.5 & relationship_Wife>0.5, 0
+2, 0.019, 0.0312174817898023, relationship_Other_relative>0.5 & native_country_United_States>0.5, 0.032258064516129
+2, 0.001, 0, age>74.5 & native_country_Other>0.5, 0
+3, 0, 0, workclass_Self_emp_inc>0.5 & occupation_Adm_clerical>0.5 & relationship_Wife<=0.5, 0
+2, 0.058, 0.0637396121883657, age<=39.5 & race_Black>0.5, 0.068421052631579
+2, 0.075, 0.020152754492032, marital_status_married<=0.5 & race_Black>0.5, 0.0205761316872428
+3, 0.001, 0, capital_gain<=7073.5 & capital_gain>6457.5 & hours_per_week>49, 0
+1, 0.002, 0, age>89, 0
+3, 0.002, 0, capital_loss>1820.5 & capital_loss<=1938 & race_White<=0.5, 1
+3, 0.002, 0, age<=39.5 & capital_loss>1820.5 & relationship_Not_in_family>0.5, 0
+3, 0, 0, age<=28.5 & workclass_Self_emp_inc>0.5 & education_Bachelors>0.5, 0
+2, 0.475, 0.11365025502456, age<=41.5 & hours_per_week<=47.5, 0.130744336569579
+4, 0.001, 0, hours_per_week<=65.5 & hours_per_week>63.5 & education_Prof_school<=0.5 & occupation_Farming_fishing>0.5, 0
+4, 0.002, 0, age>32.5 & age<=39.5 & hours_per_week<=65.5 & hours_per_week>63.5, 0
+4, 0.003, 0.09, age>39.5 & hours_per_week<=65.5 & hours_per_week>63.5 & race_Black<=0.5, 0.9
+4, 0.001, 0, age>50.5 & age<=57.5 & hours_per_week<=79 & hours_per_week>71, 0
+3, 0, 0, age>57.5 & hours_per_week<=79 & hours_per_week>71, 1
+3, 0, 0, age>50.5 & age<=52.5 & hours_per_week>79, 1
+3, 0.001, 0, age>52.5 & hours_per_week<=85.5 & hours_per_week>79, 0
+2, 0.001, 0, age<=49.5 & hours_per_week>96.5, 1
+3, 0.001, 0, age>49.5 & hours_per_week>85.5 & hours_per_week<=98.5, 0
+3, 0.003, 0.09, age<=50.5 & age>43.5 & education_Prof_school>0.5, 0.9
+3, 0, 0, age>50.5 & age<=54 & hours_per_week>79, 1
+3, 0.001, 0, age>54 & hours_per_week<=84.5 & hours_per_week>79, 0
+3, 0.002, 0, age>71.5 & hours_per_week<=19.5 & relationship_Husband>0.5, 0
+4, 0, 0, hours_per_week>52.5 & education_HS_grad<=0.5 & occupation_Sales>0.5 & relationship_Wife>0.5, 1
+3, 0.001, 0, age<=37.5 & hours_per_week>52.5 & relationship_Wife>0.5, 0
+1, 0.567, 0.138587897258875, age<=40, 0.166215484569572
+4, 0.001, 0, age>40 & hours_per_week>52.5 & education_HS_grad>0.5 & relationship_Wife>0.5, 0
+2, 0, 0, capital_loss<=639 & capital_loss>184, 0
+2, 0.003, 0, capital_loss<=1448 & capital_loss>731.5, 0
+2, 0.001, 0, capital_loss>1551.5 & capital_loss<=1568.5, 1
+2, 0.005, 0, capital_loss<=1894.5 & capital_loss>1881.5, 1
+2, 0.008, 0.1056, capital_loss<=1975.5 & capital_loss>1894.5, 0.88
+2, 0.001, 0, capital_loss>2168.5 & occupation_Exec_managerial>0.5, 1
+2, 0.007, 0.0763888888888889, hours_per_week<=5.5 & education_Masters<=0.5, 0.0833333333333333
+3, 0, 0, hours_per_week>4.5 & hours_per_week<=5.5 & education_Masters>0.5, 1
+3, 0.002, 0, hours_per_week>5.5 & hours_per_week<=6.5 & relationship_Wife<=0.5, 0
+3, 0.001, 0, hours_per_week<=35.5 & education_Masters>0.5 & relationship_Wife>0.5, 1
+2, 0.035, 0.107725453985842, education_HS_grad<=0.5 & occupation_Machine_op_inspct>0.5, 0.12280701754386
+3, 0, 0, hours_per_week>43.5 & education_HS_grad>0.5 & occupation_Tech_support>0.5, 1
+1, 0.084, 0.0549842825936384, hours_per_week<=23.5, 0.0583941605839416
+2, 0.056, 0.0418047717160859, age<=50.5 & hours_per_week<=23.5, 0.0437158469945355
+3, 0, 0, hours_per_week>42.5 & hours_per_week<=43.5 & occupation_Sales>0.5, 1
+4, 0.003, 0.0987654320987654, hours_per_week>43.5 & hours_per_week<=44.5 & occupation_Sales<=0.5 & relationship_Not_in_family<=0.5, 0.888888888888889
+3, 0.002, 0, hours_per_week>43.5 & hours_per_week<=44.5 & relationship_Not_in_family>0.5, 0
+3, 0.001, 0, workclass_Self_emp_inc>0.5 & occupation_Sales>0.5 & relationship_Not_in_family>0.5, 0
+2, 0.147, 0.0513334582746763, hours_per_week<=31.5 & education_Masters<=0.5, 0.0542797494780793
+2, 0.014, 0.0424691358024691, age>68.5 & hours_per_week<=31.5, 0.0444444444444444
+3, 0.001, 0, age<=50.5 & age>49.5 & workclass_Federal_gov>0.5, 1
+3, 0.001, 0, hours_per_week<=49 & hours_per_week>45.5 & relationship_Wife>0.5, 1
+4, 0.001, 0.1875, age<=48.5 & age>44.5 & hours_per_week>49 & relationship_Wife>0.5, 0.25
+3, 0.001, 0, age>48.5 & hours_per_week>49 & relationship_Wife>0.5, 1
+2, 0.002, 0, age>68.5 & relationship_Unmarried>0.5, 0
+3, 0, 0, age>68.5 & hours_per_week>47.5 & education_Bachelors>0.5, 1
+3, 0, 0, age<=37.5 & age>35.5 & education_Doctorate>0.5, 0
+3, 0.001, 0, workclass_State_gov>0.5 & education_Doctorate>0.5 & marital_status_married<=0.5, 1
+2, 0.009, 0.122448979591837, age>37.5 & education_Doctorate>0.5, 0.857142857142857
