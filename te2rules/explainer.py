@@ -11,6 +11,7 @@ import logging
 import re
 from typing import Dict, List, Set, Tuple
 
+import numpy as np
 import pandas as pd
 import sklearn
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
@@ -920,6 +921,7 @@ class RuleBuilder:
         pairs = set()
         count_all = 0
         count_valid = 0
+        np.random.seed(123)
         for i in range(len(join_keys)):
             for j in left_map[join_keys[i]]:
                 for k in right_map[join_keys[i]]:
@@ -959,8 +961,10 @@ class RuleBuilder:
                             if (jaccard_similarity_score > 0) and (
                                 jaccard_similarity_score <= self.jaccard_threshold
                             ):
-                                pairs.add((j, k))
-                                count_valid = count_valid + 1
+                                coin_flip = np.random.randint(0, 3)
+                                if coin_flip == 1:
+                                    pairs.add((j, k))
+                                    count_valid = count_valid + 1
 
         log.info("Using only " + str(int(count_valid / count_all * 100)) + "% pairs")
         log.info("Using only " + str(int(len(pairs) / count_all * 100)) + "% pairs")
