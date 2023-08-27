@@ -194,8 +194,8 @@ class ModelExplainer:
             jaccard_threshold=jaccard_threshold,
         )
         rules = self.rule_builder.explain(X, y)
-        # rules_as_str = [str(r) for r in rules]
-        rules_as_str = self._prune_rules_by_dropping_terms(rules, X, y, min_precision)
+        rules_as_str = [str(r) for r in rules]
+        # rules_as_str = self._prune_rules_by_dropping_terms(rules, X, y, min_precision)
         return rules_as_str
 
     def _prune_rules_by_dropping_terms(
@@ -497,10 +497,10 @@ class RuleBuilder:
         self.solution_rules = self._deduplicate(self.solution_rules)
         log.info(str(len(self.solution_rules)) + " solutions")
 
-        log.info("")
-        log.info("Removing subset rules")
-        self._remove_subset_rules()
-        log.info(str(len(self.solution_rules)) + " solutions")
+        # log.info("")
+        # log.info("Removing subset rules")
+        # self._remove_subset_rules()
+        # log.info(str(len(self.solution_rules)) + " solutions")
 
         log.info("")
         log.info("Set Cover")
@@ -627,9 +627,9 @@ class RuleBuilder:
             log.info(str(len(self.candidate_rules)) + " candidates")
             log.info(str(len(self.solution_rules)) + " solutions")
 
-            log.info("Removing subset rules")
-            self._remove_subset_rules()
-            log.info(str(len(self.solution_rules)) + " solutions")
+            # log.info("Removing subset rules")
+            # self._remove_subset_rules()
+            # log.info(str(len(self.solution_rules)) + " solutions")
 
             for rule in new_solutions:
                 self.positives_to_explain = list(
