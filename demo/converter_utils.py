@@ -1,4 +1,4 @@
-import xgboost as xgb 
+import xgboost as xgb
 import numpy as np
 import json
 
@@ -17,7 +17,6 @@ def decompose_skl_model(model_skl):
     base_weights_list = []
     default_left_list = []
     left_children_list = []
-    parents_list = []
     right_children_list = []
     split_conditions_list = []
     split_indices_list = []
@@ -41,42 +40,14 @@ def decompose_skl_model(model_skl):
             if((children_left[i] == -1) and (children_right[i] == -1)):
                 non_leaf[i] = 0
 
-        parents = [0]*len(children_left)
-        parents[0] = 2147483647
-        for i in range(len(children_left)):
-            if(children_left[i] >= 0):
-                parents[children_left[i]] = i
-        for i in range(len(children_right)):
-            if(children_right[i] >= 0):
-                parents[children_right[i]] = i
-
         base_weights_list.append(value)
         default_left_list.append(non_leaf)
         left_children_list.append(children_left)
-        parents_list.append(parents)
         right_children_list.append(children_right)
         split_conditions_list.append(threshold)
         split_indices_list.append(feature_indices)
-    
-    return base_weights_list, default_left_list, left_children_list, parents_list, right_children_list, split_conditions_list, split_indices_list
 
-def traverse(n, left, right):
-    if(n >= 0):
-        nodes = [n]
-        nodes = nodes + traverse(left[n], left, right)
-        nodes = nodes + traverse(right[n], left, right)
-        return nodes
-    else:
-        return []
-
-def dfs(n, left, right):
-    if(n >= 0):
-        nodes = [n]
-        nodes = nodes + traverse(left[n], left, right)
-        nodes = nodes + traverse(right[n], left, right)
-        return nodes
-    else:
-        return []
+    return base_weights_list, default_left_list, left_children_list, right_children_list, split_conditions_list, split_indices_list
 
 def bfs(n, left, right):
     nodes = []
@@ -90,19 +61,87 @@ def bfs(n, left, right):
             queue.append(right[n])
     return nodes
 
+def reorder(values, mapping):
+    reordered_values = list(values)
+    for k, v in mapping.items():
+        reordered_values[k] = values[v]
+    return reordered_values
+
+def reindex(indices, mapping):
+    remapped_indices = list(indices)
+    for j in range(len(remapped_indices)):
+        if(remapped_indices[j] > 0):
+            remapped_indices[j] = mapping[remapped_indices[j]]
+    return remapped_indices
+
+def get_parents(left, right):
+    parents = [0]*len(left)
+    parents[0] = 2147483647
+    for j in range(len(left)):
+        if(left[j] >= 0):
+            parents[left[j]] = j
+    for j in range(len(right)):
+        if(right[j] >= 0):
+            parents[right[j]] = j
+    return parents
+
+def update_xgb_tree(tree, base_weights, default_left,
+                    left_children, right_children,
+                    split_conditions, split_indices):
+    # reindex the tree nodes
+    # xgb models are indexed in a bfs order
+    traversal_bfs = bfs(0, left_children, right_children)
+    node_mapping = {}
+    for j in range(len(traversal_bfs)):
+        node_mapping[j] = traversal_bfs[j]
+
+    reverse_node_mapping = {}
+    for j in range(len(traversal_bfs)):
+        reverse_node_mapping[traversal_bfs[j]] = j
+
+    # reindex the tree nodes:
+    # base weights, split indices, split conditions, default left
+    # reorder the lists
+    tree["base_weights"] = reorder(list(base_weights), node_mapping)
+    tree["split_indices"] = reorder(list(split_indices), node_mapping)
+    tree["split_conditions"] = reorder(list(split_conditions), node_mapping)
+    tree["default_left"] = reorder(list(default_left), node_mapping)
+
+    tree["left_children"] = reorder(list(left_children), node_mapping)
+    tree["right_children"] = reorder(list(right_children), node_mapping)
+
+    # reindex the tree nodes:
+    # left child, right child
+    # reorder the lists and remap the entries in the list
+    tree["left_children"] = reindex(list(tree["left_children"]), reverse_node_mapping)
+    tree["right_children"] = reindex(list(tree["right_children"]), reverse_node_mapping)
+
+    # create parents list from left and right children
+    tree["parents"] = get_parents(list(tree["left_children"]), list(tree["right_children"]))
+
+    # set the correct number of nodes
+    num_nodes = len(tree["parents"])
+    tree["tree_param"]["num_nodes"] = str(num_nodes)
+    tree["split_type"] = [0]*num_nodes
+    tree["sum_hessian"] = [0.0]*num_nodes
+    tree["loss_changes"] = [0.0]*num_nodes
+    return
+
 def skl2xgb(model_bundle, n_estimators, max_depth, output_path):
+    # get bias term from scikit-learn model
+    # xgb library doesnt use a bias term
     bias = get_bias(model_bundle)
 
-    clf = xgb.XGBClassifier(
-        n_estimators=n_estimators,
-        max_depth=max_depth, 
-        objective='binary:logistic')
-    clf.fit(model_bundle.x_train, model_bundle.y_train)
-    
-    model_xgb = clf.get_booster()  
-    model_xgb.save_model(output_path + "/clf.json")
+    # get learning rate from scikit model (default: 0.1)
+    # in scikit-learn, learning rate acts as a multiplier to leaf values
+    learning_rate = model_bundle.model.get_params()["learning_rate"]
 
-    base_weights_list, default_left_list, left_children_list, parents_list, right_children_list, split_conditions_list, split_indices_list = decompose_skl_model(model_bundle.model)
+    # get tree parameters of xgb model from scikit-learn model
+    base_weights_list, default_left_list, left_children_list, right_children_list, split_conditions_list, split_indices_list = decompose_skl_model(model_bundle.model)
+    # adjust for leaf nodes:
+    # feature to be split is invalid and is represented differently in the 2 libs
+    # in xgb, leaf values are used as it is, while in scikit-learn, it is scaled by learning rate
+    # distribute bias across leaf values, since there is no bias term in xgb
     for i in range(n_estimators):
         feature_indices = split_indices_list[i]
         for j in range(len(feature_indices)):
@@ -116,105 +155,35 @@ def skl2xgb(model_bundle, n_estimators, max_depth, output_path):
         value = base_weights_list[i]
         for j in range(len(threshold)):
             if(threshold[j] == -2):
-                threshold[j] = 0.1*value[j] + bias/n_estimators
+                threshold[j] = learning_rate*value[j] + bias/n_estimators
         split_conditions_list[i] = threshold
+
+    # train a dummy xgb model
+    # the model's learnt parameters will be over-written later
+    clf = xgb.XGBClassifier(
+        n_estimators=n_estimators,
+        max_depth=max_depth,
+        objective='binary:logistic')
+    clf.fit(model_bundle.x_train, model_bundle.y_train)
+
+    model_xgb = clf.get_booster()
+    model_xgb.save_model(output_path + "/clf.json")
 
     with open(output_path + "/clf.json", "r") as f:
         json_string = f.read()
     json_dict = json.loads(json_string)
     tree_array = json_dict["learner"]["gradient_booster"]["model"]["trees"]
 
+    # update tree parameters
     for i in range(len(tree_array)):
-        tree = tree_array[i]
-
-        traversal_bfs = bfs(0, left_children_list[i], right_children_list[i])
-
-        node_mapping = {}
-        for j in range(len(traversal_bfs)):
-            node_mapping[j] = traversal_bfs[j]
-        
-        reverse_node_mapping = {}
-        for j in range(len(traversal_bfs)):
-            reverse_node_mapping[traversal_bfs[j]] = j
-        #print(node_mapping)
-
-        """
-        new_nodes = traverse(0, left_children_list[i], right_children_list[i])
-        old_nodes = traverse(0, tree["left_children"], tree["right_children"])
-        
-        node_mapping = {}
-        for j in range(len(new_nodes)):
-            node_mapping[old_nodes[j]] = new_nodes[j]
-        print(node_mapping)
-        print("---")
-        """
-        
-        new_base_weights = list(base_weights_list[i])
-        for k, v in node_mapping.items():
-            new_base_weights[k] = base_weights_list[i][v]
-        tree["base_weights"] = new_base_weights
-
-        new_split_indices = list(split_indices_list[i])
-        for k, v in node_mapping.items():
-            new_split_indices[k] = split_indices_list[i][v]
-        tree["split_indices"] = new_split_indices
-
-        new_split_conditions = list(split_conditions_list[i])
-        for k, v in node_mapping.items():
-            new_split_conditions[k] = split_conditions_list[i][v]
-        tree["split_conditions"] = new_split_conditions
-
-        new_default_left = list(default_left_list[i])
-        for k, v in node_mapping.items():
-            new_default_left[k] = default_left_list[i][v]
-        tree["default_left"] = new_default_left
-        
-        new_left = list(left_children_list[i])
-        for j in range(len(new_left)):
-            if(new_left[j] > 0):
-                new_left[j] = reverse_node_mapping[new_left[j]] 
-        new_left_reordered = list(new_left)
-        for j in range(len(new_left)):
-            new_left_reordered[reverse_node_mapping[j]] = new_left[j] 
-        tree["left_children"] = new_left_reordered
-
-        new_right = list(right_children_list[i])
-        for j in range(len(new_right)):
-            if(new_right[j] > 0):
-                new_right[j] = reverse_node_mapping[new_right[j]] 
-        new_right_reordered = list(new_right)
-        for j in range(len(new_right)):
-            new_right_reordered[reverse_node_mapping[j]] = new_right[j]    
-        tree["right_children"] = new_right_reordered
-
-        new_parents = [0]*len(new_left_reordered)
-        new_parents[0] = 2147483647
-        for i in range(len(new_left_reordered)):
-            if(new_left_reordered[i] >= 0):
-                new_parents[new_left_reordered[i]] = i
-        for i in range(len(new_right_reordered)):
-            if(new_right_reordered[i] >= 0):
-                new_parents[new_right_reordered[i]] = i
-        tree["parents"] = new_parents
-
-        num_nodes = len(new_parents)
-        old_num_nodes = int(tree["tree_param"]["num_nodes"])
-        tree["tree_param"]["num_nodes"] = str(num_nodes)
-        tree["split_type"] = [0]*num_nodes
-        """
-        if(old_num_nodes > num_nodes):
-            tree["sum_hessian"] = tree["sum_hessian"][:num_nodes]
-            tree["loss_changes"] = tree["loss_changes"][:num_nodes]
-        else:
-            tree["sum_hessian"] = tree["sum_hessian"] + [0.0]*(num_nodes - old_num_nodes)
-            tree["loss_changes"] = tree["loss_changes"] + [0.0]*(num_nodes - old_num_nodes)
-        """
-        tree["sum_hessian"] = [0.0]*num_nodes        
-        tree["loss_changes"] = [0.0]*num_nodes        
+        update_xgb_tree(tree_array[i], base_weights_list[i], default_left_list[i],
+                    left_children_list[i], right_children_list[i],
+                    split_conditions_list[i], split_indices_list[i])
 
     with open(output_path + "/clf.json", "w") as outfile:
         json.dump(json_dict, outfile)
-    
+
+    # save the updated model
     clf = xgb.XGBClassifier()
     clf.load_model(output_path + "/clf.json")
     clf.save_model(output_path + "/clf.model")
