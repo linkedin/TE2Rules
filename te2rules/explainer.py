@@ -2,7 +2,7 @@
 This file contains ModelExplainer and RuleBuilder classes that explain a tree ensemble
 model by extracting rules to explain the positive class. This file contains the
 implementation of TE2Rules Algorithm described in the paper:
-"TE2Rules: Extracting Rule Lists from Tree Ensembles"
+"TE2Rules: Explaining Tree Ensembles using Rules"
 (https://arxiv.org/abs/2206.14359/).
 """
 from __future__ import annotations
@@ -33,7 +33,7 @@ class ModelExplainer:
     on a binary classification task, using a rule list. The algorithm
     used by TE2Rules is based on Apriori Rule Mining.
     For more details on the algorithm, please check out our paper
-    `TE2Rules: Extracting Rule Lists from Tree Ensembles
+    `TE2Rules: Explaining Tree Ensembles using Rules
     <https://arxiv.org/abs/2206.14359/>`_.
     """
 
@@ -436,7 +436,7 @@ class RuleBuilder:
 
         TE2Rules Algorithm is implemented here.
         For more details on the algorithm, please check out our paper
-        "TE2Rules: Extracting Rule Lists from Tree Ensembles"
+        "TE2Rules: Explaining Tree Ensembles using Rules"
         (https://arxiv.org/abs/2206.14359/).
 
         A rough sketch of the steps:

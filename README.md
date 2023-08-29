@@ -66,7 +66,7 @@ Please cite [TE2Rules](https://arxiv.org/abs/2206.14359) in your publications if
 
 ```bash
 @article{te2rules2022,
-  title={TE2Rules: Extracting Rule Lists from Tree Ensembles},
+  title={TE2Rules: Explaining Tree Ensembles using Rules},
   author={Lal, G Roshan and Chen, Xiaotong and Mithal, Varun},
   journal={arXiv preprint arXiv:2206.14359},
   year={2022}
