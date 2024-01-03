@@ -193,10 +193,11 @@ class ModelExplainer:
             min_precision=min_precision,
             jaccard_threshold=jaccard_threshold,
         )
-        rules = self.rule_builder.explain(X, y)
-        rules_as_str = [str(r) for r in rules]
-        # rules_as_str = self._prune_rules_by_dropping_terms(rules, X, y, min_precision)
-        return rules_as_str
+
+        self.rules = [str(r) for r in self.rule_builder.explain(X, y)]
+        self.longer_rules = [str(r) for r in self.rule_builder.longer_rules]
+
+        return self.rules
 
     def _prune_rules_by_dropping_terms(
         self,
@@ -389,6 +390,60 @@ class ModelExplainer:
 
         return self.rule_builder.get_fidelity()
 
+    def explain_instance_with_rules(
+        self, X: List[List[float]], explore_all_rules: bool = True
+    ) -> List[List[str]]:
+        """
+        A method to explain the model output for a list of inputs using rules.
+        For each instance in the list, if the model output is positive, this method
+        returns a corresponding list of rules that explain that instance.
+        For any instance in the list, for which the model output is negative,
+        this method returns an empty list corresponding to that instance.
+
+        Returns a list of explanations corresponding to each input.
+        Each explanation is a list of possible rules that can explain
+        the corresponding instance.
+
+        Parameters
+        ----------
+        X: 2d numpy.array
+            2 dimensional data with feature values that can be sent
+            to the model for predicting outcome.
+        explore_all_rules: boolean, optional
+            optional boolean variable guiding the algorithm's behavior.
+            When set to True, the algorithm considers all possible rules (longer_rules)
+            extracted by the explain() function before employing set cover to select
+            a condensed subset of rules. When set to False, the algorithm considers
+            only the condensed subset of rules returned by explain().
+
+            By default, the function utilizes all possible rules (longer_rules) obtained
+            through explain().
+
+        Returns
+        -------
+        list of explaining rules for each instance, with each explanation presented
+        as a list of rules each of which can independently explain the instance.
+        """
+        dataframe = pd.DataFrame(X, columns=self.feature_names)
+        if explore_all_rules is True:
+            rules = self.longer_rules
+        else:
+            rules = self.rules
+
+        rule_support = []
+        for r in rules:
+            support = dataframe.query(str(r)).index.tolist()
+            rule_support.append(support)
+
+        selected_rules: List[List[str]] = []
+        for i in range(len(dataframe)):
+            selected_rules.append([])
+        for i in range(len(rule_support)):
+            for j in rule_support[i]:
+                selected_rules[j].append(rules[i])
+
+        return selected_rules
+
 
 class RuleBuilder:
     """
@@ -497,6 +552,8 @@ class RuleBuilder:
         self.solution_rules = self._deduplicate(self.solution_rules)
         log.info(str(len(self.solution_rules)) + " solutions")
 
+        self.longer_rules = [r for r in self.solution_rules]
+
         # log.info("")
         # log.info("Removing subset rules")
         # self._remove_subset_rules()
@@ -548,7 +605,20 @@ class RuleBuilder:
                             original_rules[max_coverage_rule].decision_rule
                         ):
                             max_coverage_rule = rule
+            """
+            scores = self._score_rule_using_data(
+                original_rules[max_coverage_rule], self.labels
+                )
+            avg_score = 0.0
+            if len(scores) > 0:
+                avg_score = sum(scores) / len(scores)
 
+            print(
+                int(len(set(self.positives).intersection(set(original_rules[max_coverage_rule].decision_support)))/len(set(self.positives))*100*10)/10,
+                int(avg_score*100*10)/10,
+                max_coverage_rule
+                )
+            """
             selected_rules.append(original_rules[max_coverage_rule])
             new_covered_positives = positive_coverage[max_coverage_rule]
             covered_positives = list(
