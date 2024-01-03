@@ -24,9 +24,13 @@ tree ensemble model to be explained.
 .. autofunction:: te2rules.explainer.ModelExplainer.__init__
    :noindex:
 
-To explain, the tree ensemble model with a list of rules:
+To explain, the tree ensemble model globally with a list of rules:
 
 .. autofunction:: te2rules.explainer.ModelExplainer.explain
+
+To explain, the tree ensemble model's positive class prediction locally, for some specific input:
+
+.. autofunction:: te2rules.explainer.ModelExplainer.explain_instance_with_rules
 
 To evaluate the extracted rule list:
 
