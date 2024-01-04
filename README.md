@@ -2,6 +2,7 @@
 
 [![Paper](https://img.shields.io/badge/arxiv-2206.14359-orange.svg)](https://arxiv.org/abs/2206.14359)
 [![PyPI](https://img.shields.io/pypi/v/te2rules?color=blue)](https://pypi.org/project/te2rules/)
+[![Downloads](https://static.pepy.tech/badge/te2rules)](https://pepy.tech/project/te2rules)
 [![PyPI](https://img.shields.io/readthedocs/te2rules)](https://te2rules.readthedocs.io/en/latest/index.html)
 
 TE2Rules is a technique to explain Tree Ensemble models (TE) like XGBoost, Random Forest, trained on a binary classification task, using a rule list. The extracted rule list (RL) captures the necessary and sufficient conditions for classification by the Tree Ensemble. The algorithm used by TE2Rules is based on Apriori Rule Mining. For more details on the algorithm, please check out our [paper](https://arxiv.org/abs/2206.14359).
