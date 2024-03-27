@@ -1032,8 +1032,11 @@ class RuleBuilder:
                                 pairs.add((j, k))
                                 count_valid = count_valid + 1
 
-        log.info("Using only " + str(int(count_valid / count_all * 100)) + "% pairs")
-        log.info("Using only " + str(int(len(pairs) / count_all * 100)) + "% pairs")
+        if count_all > 0:
+            log.info(
+                "Using only " + str(int(count_valid / count_all * 100)) + "% pairs"
+            )
+            log.info("Using only " + str(int(len(pairs) / count_all * 100)) + "% pairs")
 
         pairs_list = list(pairs)
         # pairs_list.sort()  # can be removed
