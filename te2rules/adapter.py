@@ -3,13 +3,17 @@ This file contains adapters to convert scikit learn tree ensemble models
 into corresponding te2rules tree ensemble models. The tree ensemble models
 of te2rules have the necessary structure for explaining itself using rules.
 """
+
 from __future__ import annotations
 
 from typing import List
 
 import numpy as np
+import re
+import json
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, _tree
+from xgboost import XGBClassifier
 
 from te2rules.tree import DecisionTree, LeafNode, RandomForest, TreeNode
 
@@ -229,3 +233,121 @@ class ScikitDecisionTreeClassifierAdapter:
 
         root_node = nodes[0]
         return root_node
+
+
+class XgboostXGBClassifierAdapter:
+    """
+    Class to convert xgboost.sklearn.XGBClassifier
+    into a te2rules.tree.RandomForest object.
+
+    Usage:
+    adapter = XgboostXGBClassifierAdapter(model, feature_names)
+    adapted_model = adapter.random_forest
+    """
+
+    def __init__(self, xgb_model: XGBClassifier, feature_names: List[str]):
+        self.xgb_model = xgb_model
+        self.feature_names = feature_names
+
+        # TODO: n0 and n1 are not accessible from the xgboost model itself, in this way bias term will be 0
+        self.n0 = 1
+        self.n1 = 1
+        self.bias = np.log(self.n1 / self.n0)
+
+        # Default learning rate 0.3
+        self.weight = self.xgb_model.get_params()["learning_rate"] or 0.3
+        self.activation = "sigmoid"
+
+        tree_ensemble = self._extract_tree_ensemble()
+        self.tree_ensemble = tree_ensemble
+
+        self.random_forest = self._convert()
+
+    def _extract_tree_ensemble(self) -> np.ndarray:
+        """
+        Private method to extract trees
+        from the xgboost.sklearn.XGBClassifier object.
+        """
+
+        # Extract booster and dump it
+        booster = self.xgb_model.get_booster()
+        tree_ensemble = booster.get_dump(fmap="", with_stats=True, dump_format="json")
+        regressors = np.empty(len(tree_ensemble), dtype=object)
+
+        # Check whether feature names are already present in the model
+        self.replace_feature_names = True if booster.feature_names is None else False
+
+        # Iterate over ensemble trees and build them using te2rules.tree.DecisionTree
+        for i, tree in enumerate(tree_ensemble):
+            tree_dict = json.loads(tree)
+
+            # We initiate Decision Tree TreeNode with placeholder values that will be filled later
+            regressor = DecisionTree(TreeNode(node_name="", threshold=1.0))
+
+            self.build_tree(tree_dict, regressor)
+
+            regressors[i] = regressor
+
+        return regressors
+
+    def build_tree(self, node, tree) -> None:
+        """
+        Private method to iteratively build the tree.
+        """
+        if "leaf" in node:
+            tree.node = LeafNode(value=node["leaf"])
+        else:
+            # We initiate left and right Decision Tree TreeNode with placeholder values that will be filled later
+            tree.left = DecisionTree(TreeNode(node_name="", threshold=0.5))
+            tree.right = DecisionTree(TreeNode(node_name="", threshold=0.5))
+
+            # Recursively we build the left / right tree
+            self.build_tree(
+                [
+                    children
+                    for children in node["children"]
+                    if children["nodeid"] == node["yes"]
+                ][0],
+                tree.left,
+            )
+            self.build_tree(
+                [
+                    children
+                    for children in node["children"]
+                    if children["nodeid"] == node["no"]
+                ][0],
+                tree.right,
+            )
+
+            # We define the node_name, depending on whether feature_names are already present in the model or needs to be replaced
+            if self.replace_feature_names:
+                # XGBoost stores variable as f0, f1, f2 etc, therefore we extract in the following way the variable index
+                feature_index = re.search("^f(\d+)", node["split"]).group(1)
+                node_name = self.feature_names[int(feature_index)]
+            else:
+                node_name = node["split"]
+
+            tree.node = TreeNode(
+                node_name=node_name,
+                threshold=(
+                    # TODO: For binary variables threshold is 1, we should have 0.5 instead
+                    #  How can we be really sure it is a binary variable and not an integer one?
+                    float(node["split_condition"])
+                    if node["split_condition"] != 1
+                    else 0.5
+                ),
+            )
+
+    def _convert(self) -> RandomForest:
+        """
+        Private method to create the te2rules.tree.RandomForest
+        from the xgboost.sklearn.XGBClassifier object.
+        """
+
+        return RandomForest(
+            list(self.tree_ensemble),
+            weight=self.weight,
+            bias=self.bias,
+            feature_names=self.feature_names,
+            activation=self.activation,
+        )
