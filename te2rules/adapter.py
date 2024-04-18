@@ -3,12 +3,10 @@ This file contains adapters to convert scikit learn tree ensemble models
 into corresponding te2rules tree ensemble models. The tree ensemble models
 of te2rules have the necessary structure for explaining itself using rules.
 """
-
 from __future__ import annotations
 
 import json
-import re
-from typing import List
+from typing import Any, Dict, List
 
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
@@ -246,98 +244,52 @@ class XgboostXGBClassifierAdapter:
     """
 
     def __init__(self, xgb_model: XGBClassifier, feature_names: List[str]):
-        self.xgb_model = xgb_model
+        self.xgb_model_json = xgb_model.get_booster().get_dump(dump_format="json")
         self.feature_names = feature_names
 
-        self.bias = 0
-        self.weight = 1
+        self.bias = 0.0
+        self.weight = 1.0
         self.activation = "sigmoid"
 
         self.random_forest = self._convert()
 
-    def build_tree(self, node: dict, tree: DecisionTree) -> None:
+    def _build_tree(self, tree_dict: Dict[str, Any]) -> DecisionTree:
         """
-        Private method to iteratively build the tree.
+        Private method to perform a DFS traversal of the model json
+        and build the te2rules.tree.DecisionTree object.
         """
-        if "leaf" in node:
-            tree.node = LeafNode(value=node["leaf"])
+        if "leaf" in tree_dict:
+            node = DecisionTree(LeafNode(value=float(tree_dict["leaf"])))
         else:
-            # We initiate left and right Decision Tree TreeNode
-            # with placeholder values that will be filled later
-            tree.left = DecisionTree(
-                TreeNode(node_name="", threshold=0.5, equality_on_left=False)
-            )
-            tree.right = DecisionTree(
-                TreeNode(node_name="", threshold=0.5, equality_on_left=False)
-            )
+            # Get feature index. Ex: feature-21 would be
+            # represented as f21. Get index 21 from f21.
+            i = int(tree_dict["split"][1:])
 
-            # Recursively we build the left / right tree
-            self.build_tree(
-                [
-                    children
-                    for children in node["children"]
-                    if children["nodeid"] == node["yes"]
-                ][0],
-                tree.left,
+            # XGBoost and Scikit Learn treat splits differently.
+            # Scikit Learn uses left node for f1 <= threshold while
+            # XGBoost uses left node for f1 < threshold
+            node = DecisionTree(
+                TreeNode(
+                    node_name=self.feature_names[i],
+                    threshold=float(tree_dict["split_condition"]),
+                    equality_on_left=False,
+                )
             )
-            self.build_tree(
-                [
-                    children
-                    for children in node["children"]
-                    if children["nodeid"] == node["no"]
-                ][0],
-                tree.right,
-            )
-
-            # We define the node_name, depending on whether feature_names
-            # are already present in the model or needs to be replaced
-            if self.replace_feature_names:
-                # XGBoost stores variable as f0, f1, f2 etc, therefore we
-                # extract in the following way the variable index
-                feature_index_match = re.search(r"^f(\d+)", node["split"])
-                assert feature_index_match is not None
-                feature_index = feature_index_match.group(1)
-                node_name = self.feature_names[int(feature_index)]
-            else:
-                node_name = node["split"]
-
-            tree.node = TreeNode(
-                node_name=node_name,
-                threshold=float(node["split_condition"]),
-                equality_on_left=False,
-            )
+            node.left = self._build_tree(tree_dict["children"][0])
+            node.right = self._build_tree(tree_dict["children"][1])
+        return node
 
     def _convert(self) -> RandomForest:
         """
         Private method to create the te2rules.tree.RandomForest
         from the xgboost.sklearn.XGBClassifier object.
         """
+        self.tree_ensemble = []
+        for i in range(len(self.xgb_model_json)):
+            tree_dict = json.loads(self.xgb_model_json[i])
+            node = self._build_tree(tree_dict)
+            self.tree_ensemble.append(node)
 
-        # Extract booster and dump it
-        booster = self.xgb_model.get_booster()
-        tree_ensemble = booster.get_dump(fmap="", with_stats=True, dump_format="json")
-        regressors = np.empty(len(tree_ensemble), dtype=object)
-
-        # Check whether feature names are already present in the model
-        self.replace_feature_names = True if booster.feature_names is None else False
-
-        # Iterate over ensemble trees and build them using te2rules.tree.DecisionTree
-        for i, tree in enumerate(tree_ensemble):
-            tree_dict = json.loads(tree)
-
-            # We initiate Decision Tree TreeNode
-            # with placeholder values that will be filled later
-            regressor = DecisionTree(
-                TreeNode(node_name="", threshold=1.0, equality_on_left=False)
-            )
-
-            self.build_tree(tree_dict, regressor)
-
-            regressors[i] = regressor
-
-        self.tree_ensemble = regressors
-
-        # Convert to te2rules.tree.RandomForest
         return RandomForest(
             list(self.tree_ensemble),
             weight=self.weight,
