@@ -26,23 +26,35 @@ class TreeNode(Node):
     Each internal node has a feature name and threshold value
     on which the split is performed.
 
-    The left split is taken when feature value <= threshold value
-    and the right split is taken when feature value > threshold value.
+    By default, equality_on_left = True, the left split is taken
+    when feature value <= threshold value and the right split is
+    taken when feature value > threshold value.
+
+    When equality_on_left = False, the left split is taken
+    when feature value < threshold value and the right split is
+    taken when feature value >= threshold value.
     """
 
-    def __init__(self, node_name: str, threshold: float):
+    def __init__(self, node_name: str, threshold: float, equality_on_left: bool = True):
         super().__init__(is_leaf=False)
         self.node_name = node_name
         self.threshold = threshold
+        self.equality_on_left = equality_on_left
 
     def __str__(self) -> str:
         return self.node_name
 
     def get_left_clause(self) -> str:
-        return self.node_name + " <= " + str(self.threshold)
+        if self.equality_on_left is True:
+            return self.node_name + " <= " + str(self.threshold)
+        else:
+            return self.node_name + " < " + str(self.threshold)
 
     def get_right_clause(self) -> str:
-        return self.node_name + " > " + str(self.threshold)
+        if self.equality_on_left is True:
+            return self.node_name + " > " + str(self.threshold)
+        else:
+            return self.node_name + " >= " + str(self.threshold)
 
 
 class LeafNode(Node):
@@ -192,10 +204,16 @@ class DecisionTree:
                 left_decision_support = []
                 right_decision_support = []
                 for index in self.decision_support:
-                    if data[index][feature_index] <= self.node.threshold:
-                        left_decision_support.append(index)
+                    if self.node.equality_on_left is True:
+                        if data[index][feature_index] <= self.node.threshold:
+                            left_decision_support.append(index)
+                        else:
+                            right_decision_support.append(index)
                     else:
-                        right_decision_support.append(index)
+                        if data[index][feature_index] < self.node.threshold:
+                            left_decision_support.append(index)
+                        else:
+                            right_decision_support.append(index)
                 self.left._propagate_decision_support(
                     data, feature_names, left_decision_support
                 )
