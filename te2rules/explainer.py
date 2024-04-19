@@ -10,13 +10,13 @@ from __future__ import annotations
 
 import logging
 import re
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 import pandas as pd
 import sklearn
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
-from xgboost import XGBClassifier
 from tqdm import tqdm
+from xgboost import XGBClassifier
 
 from te2rules.adapter import (
     ScikitGradientBoostingClassifierAdapter,
@@ -116,7 +116,8 @@ class ModelExplainer:
             ).random_forest
         else:
             raise ValueError(
-                "Only GradientBoostingClassifier, RandomForestClassifier and XGBClassifier "
+                "Only GradientBoostingClassifier, RandomForestClassifier "
+                + "and XGBClassifier "
                 + "are supported. But received "
                 + str(type(model))
             )
@@ -125,7 +126,7 @@ class ModelExplainer:
         self,
         X: List[List[float]],
         y: List[int],
-        num_stages: int = None,
+        num_stages: Optional[int] = None,
         min_precision: float = 0.95,
         jaccard_threshold: float = 0.20,
     ) -> List[str]:
@@ -346,7 +347,7 @@ class ModelExplainer:
         return y_rules
 
     def get_fidelity(
-        self, X: List[List[float]] = None, y: List[int] = None
+        self, X: Optional[List[List[float]]] = None, y: Optional[List[int]] = None
     ) -> Tuple[float, float, float]:
         """
         A method to evaluate the rule list extracted by the `explain` method
@@ -479,7 +480,7 @@ class RuleBuilder:
     def __init__(
         self,
         random_forest: RandomForest,
-        num_stages: int = None,
+        num_stages: Optional[int] = None,
         min_precision: float = 0.95,
         jaccard_threshold: float = 0.20,
     ):
@@ -829,7 +830,7 @@ class RuleBuilder:
                 keep_candidate = True
                 return is_solution, keep_candidate
 
-    def get_fidelity(self, use_top: int = None) -> Tuple[float, float, float]:
+    def get_fidelity(self, use_top: Optional[int] = None) -> Tuple[float, float, float]:
         """
         A method to compute fidelity of the rule list.
         Fidelity is defined as the fraction of data on which the

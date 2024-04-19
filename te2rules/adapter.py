@@ -6,11 +6,11 @@ of te2rules have the necessary structure for explaining itself using rules.
 
 from __future__ import annotations
 
+import json
+import re
 from typing import List
 
 import numpy as np
-import re
-import json
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, _tree
 from xgboost import XGBClassifier
@@ -249,13 +249,8 @@ class XgboostXGBClassifierAdapter:
         self.xgb_model = xgb_model
         self.feature_names = feature_names
 
-        # TODO: n0 and n1 are not accessible from the xgboost model itself, in this way bias term will be 0
-        self.n0 = 1
-        self.n1 = 1
-        self.bias = np.log(self.n1 / self.n0)
-
-        # Default learning rate 0.3
-        self.weight = self.xgb_model.get_params()["learning_rate"] or 0.3
+        self.bias = 0
+        self.weight = 1
         self.activation = "sigmoid"
 
         tree_ensemble = self._extract_tree_ensemble()
@@ -281,8 +276,11 @@ class XgboostXGBClassifierAdapter:
         for i, tree in enumerate(tree_ensemble):
             tree_dict = json.loads(tree)
 
-            # We initiate Decision Tree TreeNode with placeholder values that will be filled later
-            regressor = DecisionTree(TreeNode(node_name="", threshold=1.0))
+            # We initiate Decision Tree TreeNode
+            # with placeholder values that will be filled later
+            regressor = DecisionTree(
+                TreeNode(node_name="", threshold=1.0, equality_on_left=False)
+            )
 
             self.build_tree(tree_dict, regressor)
 
@@ -290,16 +288,21 @@ class XgboostXGBClassifierAdapter:
 
         return regressors
 
-    def build_tree(self, node, tree) -> None:
+    def build_tree(self, node: dict, tree: DecisionTree) -> None:
         """
         Private method to iteratively build the tree.
         """
         if "leaf" in node:
             tree.node = LeafNode(value=node["leaf"])
         else:
-            # We initiate left and right Decision Tree TreeNode with placeholder values that will be filled later
-            tree.left = DecisionTree(TreeNode(node_name="", threshold=0.5))
-            tree.right = DecisionTree(TreeNode(node_name="", threshold=0.5))
+            # We initiate left and right Decision Tree TreeNode
+            # with placeholder values that will be filled later
+            tree.left = DecisionTree(
+                TreeNode(node_name="", threshold=0.5, equality_on_left=False)
+            )
+            tree.right = DecisionTree(
+                TreeNode(node_name="", threshold=0.5, equality_on_left=False)
+            )
 
             # Recursively we build the left / right tree
             self.build_tree(
@@ -319,23 +322,22 @@ class XgboostXGBClassifierAdapter:
                 tree.right,
             )
 
-            # We define the node_name, depending on whether feature_names are already present in the model or needs to be replaced
+            # We define the node_name, depending on whether feature_names
+            # are already present in the model or needs to be replaced
             if self.replace_feature_names:
-                # XGBoost stores variable as f0, f1, f2 etc, therefore we extract in the following way the variable index
-                feature_index = re.search("^f(\d+)", node["split"]).group(1)
+                # XGBoost stores variable as f0, f1, f2 etc, therefore we
+                # extract in the following way the variable index
+                feature_index_match = re.search(r"^f(\d+)", node["split"])
+                assert feature_index_match is not None
+                feature_index = feature_index_match.group(1)
                 node_name = self.feature_names[int(feature_index)]
             else:
                 node_name = node["split"]
 
             tree.node = TreeNode(
                 node_name=node_name,
-                threshold=(
-                    # TODO: For binary variables threshold is 1, we should have 0.5 instead
-                    #  How can we be really sure it is a binary variable and not an integer one?
-                    float(node["split_condition"])
-                    if node["split_condition"] != 1
-                    else 0.5
-                ),
+                threshold=float(node["split_condition"]),
+                equality_on_left=False,
             )
 
     def _convert(self) -> RandomForest:
