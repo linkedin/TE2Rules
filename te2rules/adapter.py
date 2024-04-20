@@ -253,40 +253,7 @@ class XgboostXGBClassifierAdapter:
         self.weight = 1
         self.activation = "sigmoid"
 
-        tree_ensemble = self._extract_tree_ensemble()
-        self.tree_ensemble = tree_ensemble
-
         self.random_forest = self._convert()
-
-    def _extract_tree_ensemble(self) -> np.ndarray:
-        """
-        Private method to extract trees
-        from the xgboost.sklearn.XGBClassifier object.
-        """
-
-        # Extract booster and dump it
-        booster = self.xgb_model.get_booster()
-        tree_ensemble = booster.get_dump(fmap="", with_stats=True, dump_format="json")
-        regressors = np.empty(len(tree_ensemble), dtype=object)
-
-        # Check whether feature names are already present in the model
-        self.replace_feature_names = True if booster.feature_names is None else False
-
-        # Iterate over ensemble trees and build them using te2rules.tree.DecisionTree
-        for i, tree in enumerate(tree_ensemble):
-            tree_dict = json.loads(tree)
-
-            # We initiate Decision Tree TreeNode
-            # with placeholder values that will be filled later
-            regressor = DecisionTree(
-                TreeNode(node_name="", threshold=1.0, equality_on_left=False)
-            )
-
-            self.build_tree(tree_dict, regressor)
-
-            regressors[i] = regressor
-
-        return regressors
 
     def build_tree(self, node: dict, tree: DecisionTree) -> None:
         """
@@ -346,6 +313,31 @@ class XgboostXGBClassifierAdapter:
         from the xgboost.sklearn.XGBClassifier object.
         """
 
+        # Extract booster and dump it
+        booster = self.xgb_model.get_booster()
+        tree_ensemble = booster.get_dump(fmap="", with_stats=True, dump_format="json")
+        regressors = np.empty(len(tree_ensemble), dtype=object)
+
+        # Check whether feature names are already present in the model
+        self.replace_feature_names = True if booster.feature_names is None else False
+
+        # Iterate over ensemble trees and build them using te2rules.tree.DecisionTree
+        for i, tree in enumerate(tree_ensemble):
+            tree_dict = json.loads(tree)
+
+            # We initiate Decision Tree TreeNode
+            # with placeholder values that will be filled later
+            regressor = DecisionTree(
+                TreeNode(node_name="", threshold=1.0, equality_on_left=False)
+            )
+
+            self.build_tree(tree_dict, regressor)
+
+            regressors[i] = regressor
+
+        self.tree_ensemble = regressors
+
+        # Convert to te2rules.tree.RandomForest
         return RandomForest(
             list(self.tree_ensemble),
             weight=self.weight,
