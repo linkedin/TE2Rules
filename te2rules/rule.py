@@ -1,6 +1,7 @@
 """
 This file defines the rule object used in explaining te2rules tree ensemble models.
 """
+
 from __future__ import annotations
 
 from typing import Dict, List, Optional

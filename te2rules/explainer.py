@@ -5,20 +5,23 @@ implementation of TE2Rules Algorithm described in the paper:
 "TE2Rules: Explaining Tree Ensembles using Rules"
 (https://arxiv.org/abs/2206.14359/).
 """
+
 from __future__ import annotations
 
 import logging
 import re
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 import pandas as pd
 import sklearn
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from tqdm import tqdm
+from xgboost import XGBClassifier
 
 from te2rules.adapter import (
     ScikitGradientBoostingClassifierAdapter,
     ScikitRandomForestClassifierAdapter,
+    XgboostXGBClassifierAdapter,
 )
 from te2rules.rule import Rule
 from te2rules.tree import RandomForest
@@ -38,7 +41,10 @@ class ModelExplainer:
     """
 
     def __init__(
-        self, model: sklearn.ensemble, feature_names: List[str], verbose: bool = False
+        self,
+        model: sklearn.ensemble | XGBClassifier,
+        feature_names: List[str],
+        verbose: bool = False,
     ):
         """
         Initialize the explainer with the trained tree ensemble model
@@ -104,9 +110,14 @@ class ModelExplainer:
             self.random_forest = ScikitRandomForestClassifierAdapter(
                 model, feature_names
             ).random_forest
+        elif isinstance(model, XGBClassifier):
+            self.random_forest = XgboostXGBClassifierAdapter(
+                model, feature_names
+            ).random_forest
         else:
             raise ValueError(
-                "Only GradientBoostingClassifier and RandomForestClassifier "
+                "Only GradientBoostingClassifier, RandomForestClassifier "
+                + "and XGBClassifier "
                 + "are supported. But received "
                 + str(type(model))
             )
@@ -115,7 +126,7 @@ class ModelExplainer:
         self,
         X: List[List[float]],
         y: List[int],
-        num_stages: int = None,
+        num_stages: Optional[int] = None,
         min_precision: float = 0.95,
         jaccard_threshold: float = 0.20,
     ) -> List[str]:
@@ -336,7 +347,7 @@ class ModelExplainer:
         return y_rules
 
     def get_fidelity(
-        self, X: List[List[float]] = None, y: List[int] = None
+        self, X: Optional[List[List[float]]] = None, y: Optional[List[int]] = None
     ) -> Tuple[float, float, float]:
         """
         A method to evaluate the rule list extracted by the `explain` method
@@ -469,7 +480,7 @@ class RuleBuilder:
     def __init__(
         self,
         random_forest: RandomForest,
-        num_stages: int = None,
+        num_stages: Optional[int] = None,
         min_precision: float = 0.95,
         jaccard_threshold: float = 0.20,
     ):
@@ -681,7 +692,7 @@ class RuleBuilder:
                         new_candidates.append(r)
             else:
                 join_indices = self._get_join_indices(self.candidate_rules)
-                for (i, j) in tqdm(join_indices):
+                for i, j in tqdm(join_indices):
                     joined_rule = self.candidate_rules[i].join(self.candidate_rules[j])
                     if joined_rule is not None:
                         is_solution, keep_candidate = self._filter_candidates(
@@ -819,7 +830,7 @@ class RuleBuilder:
                 keep_candidate = True
                 return is_solution, keep_candidate
 
-    def get_fidelity(self, use_top: int = None) -> Tuple[float, float, float]:
+    def get_fidelity(self, use_top: Optional[int] = None) -> Tuple[float, float, float]:
         """
         A method to compute fidelity of the rule list.
         Fidelity is defined as the fraction of data on which the
@@ -911,7 +922,7 @@ class RuleBuilder:
                         pred_dict[(f, op_type)] = (op, val)
             # make shorter rule from predicate list
             final_rule = []
-            for (f, _) in pred_dict:
+            for f, _ in pred_dict:
                 op, val = pred_dict[(f, _)]
                 final_rule.append((" ").join([f, op, val]))
             rules[i].decision_rule = final_rule
@@ -1032,11 +1043,8 @@ class RuleBuilder:
                                 pairs.add((j, k))
                                 count_valid = count_valid + 1
 
-        if count_all > 0:
-            log.info(
-                "Using only " + str(int(count_valid / count_all * 100)) + "% pairs"
-            )
-            log.info("Using only " + str(int(len(pairs) / count_all * 100)) + "% pairs")
+        log.info("Using only " + str(int(count_valid / count_all * 100)) + "% pairs")
+        log.info("Using only " + str(int(len(pairs) / count_all * 100)) + "% pairs")
 
         pairs_list = list(pairs)
         # pairs_list.sort()  # can be removed

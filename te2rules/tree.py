@@ -3,6 +3,7 @@ This file contains the tree and tree ensemble objects in te2rules.
 The tree ensemble models of te2rules have the necessary structure for
 explaining itself using rules.
 """
+
 from __future__ import annotations
 
 from typing import Dict, List, Optional
