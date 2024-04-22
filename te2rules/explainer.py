@@ -55,7 +55,8 @@ class ModelExplainer:
         Parameters
         ----------
         model: sklearn.ensemble.GradientBoostingClassifier or \
-            sklearn.ensemble.RandomForestClassifier
+            sklearn.ensemble.RandomForestClassifier or \
+            xgboost.XGBClassifier
             The trained Tree Ensemble model to be explained.
             The model is expected to be a binary classifier.
         feature_name: List[str]
@@ -75,18 +76,13 @@ class ModelExplainer:
         ------
         ValueError:
             when `model` is not a supported Tree Ensemble Model.
-            Currently, only Scikit Learn's GradientBoostingClassifier and
-            RandomForestClassifier are supported.
+            Currently, only scikit-learn's GradientBoostingClassifier,
+            RandomForestClassifier and xgboost's XGBClassifier are supported.
 
         ValueError:
             when `feature_name` list contains a name that has any character other
             than alphanumeric characters or underscore.
 
-        Warning
-        ------
-        The implementation works fine with scikit learn's GradientBoostingClassifier.
-        For now, we are still testing the case when the `model` is scikit learn's
-        RandomForestClassifier.
         """
         self.feature_names = feature_names
         for f in feature_names:

@@ -1,5 +1,5 @@
 """
-This file contains adapters to convert scikit learn tree ensemble models
+This file contains adapters to convert scikit learn and xgboost tree ensemble models
 into corresponding te2rules tree ensemble models. The tree ensemble models
 of te2rules have the necessary structure for explaining itself using rules.
 """
