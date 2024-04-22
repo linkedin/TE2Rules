@@ -46,6 +46,21 @@ Let us use TE2Rules ```ModelExplainer``` to explain the positive class predicito
 ![TE2Rules Adult Screenshot4](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/4-explain.png)
 ![TE2Rules Adult Screenshot5](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/5-evaluate.png)
 
+These are not the only possible way to explain the model prediction. TE2Rules generates all possible explanations that can be extracted out of the tree ensemble model and then selects a short subset of rules out of all the possible rules such that the selected subset is small while explaining most of the positive class prediction by the model.
+
+However, we need not settle with the subset of rules selected by TE2Rules. To see all the possible explanations, we can use ```longer_rules``` as shown below. From this set of rules, a domain expert can go through them and select their own small subset of rules that explains most of the positive model predictions and also aligns with the decision-making process often used in that domain. This way TE2Rules offers the flexibility to choose the explanations that most closely aligns with the human decision making process.
+![TE2Rules Adult Screenshot6a](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/all-explanations-6a.png)
+![TE2Rules Adult Screenshot6b](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/all-explanations-6b.png)
+
+
+The longer set of all possible explanations would have significant overlap among the rules. For a given input to the model, multiple rules satisfying the input can be used to explain the input. The ```explain_instance_with_rules``` method provides one way to show all the possible rules that can explain each input instance. Again, a domain expert can pick the rule that is most suitable to explain that instance.
+![TE2Rules Adult Screenshot7](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/local-7.png)
+![TE2Rules Adult Screenshot8a](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/local-8a.png)
+![TE2Rules Adult Screenshot8b](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/local-8b.png)
+![TE2Rules Adult Screenshot8c](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/local-8c.png)
+![TE2Rules Adult Screenshot8d](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/local-8d.png)
+
+
 ## For reproducing results in the paper
 
 Run the follwing python scripts to generate the results in the [paper](https://arxiv.org/abs/2206.14359):
