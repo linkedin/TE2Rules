@@ -60,6 +60,16 @@ The longer set of all possible explanations would have significant overlap among
 ![TE2Rules Adult Screenshot8c](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/local-8c.png)
 ![TE2Rules Adult Screenshot8d](https://raw.githubusercontent.com/linkedin/TE2Rules/main/docs/images/local-8d.png)
 
+## Some popular applications of TE2Rules
+
+Here is a list of some applications of TE2Rules in high-stake domains like healthcare, where understanding why a ML model made a particular decision is critical in developing trust on the system.
+
+ - An Explainable Artificial Intelligence model in the assessment of Brain MRI Lesions in Multiple Sclerosis using Amplitude Modulation – Frequency Modulation multi-scale feature sets, Andria Nicolaou, Antonis Kakas et al, 2023 24th International Conference on Digital Signal Processing (DSP), https://ieeexplore.ieee.org/abstract/document/10167888
+ - Emergency Department Triage Hospitalization Prediction Based on Machine Learning and Rule Extraction, Waqar A. Sulaiman, Andria Nicolaou et al, 2023 IEEE EMBS Special Topic Conference on Data Science and Engineering in Healthcare, Medicine and Biology, https://ieeexplore.ieee.org/abstract/document/10405176
+ - An Explainable AI model in the assessment of Multiple Sclerosis using clinical data and Brain MRI lesion texture features, A. Nicolaou, M. Pantzaris et al, 2023 IEEE EMBS International Conference on Biomedical and Health Informatics (BHI), https://ieeexplore.ieee.org/abstract/document/10313379
+ - A Comparative Study of Explainable AI models in the Assessment of Multiple Sclerosis, Andria Nicolaou, Nicoletta Prentzas et al, 2023 Computer Analysis of Images and Patterns
+(CAIP 2023), https://link.springer.com/chapter/10.1007/978-3-031-44240-7_14
+
 
 ## For reproducing results in the paper
 
