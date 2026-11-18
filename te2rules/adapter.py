@@ -244,7 +244,16 @@ class XgboostXGBClassifierAdapter:
     """
 
     def __init__(self, xgb_model: XGBClassifier, feature_names: List[str]):
-        self.xgb_model_json = xgb_model.get_booster().get_dump(dump_format="json")
+        booster = xgb_model.get_booster()
+        self.xgb_model_json = booster.get_dump(dump_format="json")
+        if booster.feature_names is None:
+            # Unnamed columns appear as "0" in older dumps and "f0" in newer ones.
+            self.split_features = {str(i): name for i, name in enumerate(feature_names)}
+            self.split_features.update(
+                {f"f{i}": name for i, name in enumerate(feature_names)}
+            )
+        else:
+            self.split_features = dict(zip(booster.feature_names, feature_names))
         self.feature_names = feature_names
 
         self.bias = 0.0
@@ -261,16 +270,12 @@ class XgboostXGBClassifierAdapter:
         if "leaf" in tree_dict:
             node = DecisionTree(LeafNode(value=float(tree_dict["leaf"])))
         else:
-            # Get feature index. Ex: feature-21 would be
-            # represented as f21. Get index 21 from f21.
-            i = int(tree_dict["split"][1:])
-
             # XGBoost and Scikit Learn treat splits differently.
             # Scikit Learn uses left node for f1 <= threshold while
             # XGBoost uses left node for f1 < threshold
             node = DecisionTree(
                 TreeNode(
-                    node_name=self.feature_names[i],
+                    node_name=self.split_features[tree_dict["split"]],
                     threshold=float(tree_dict["split_condition"]),
                     equality_on_left=False,
                 )
